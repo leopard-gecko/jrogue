@@ -175,7 +175,13 @@ h4 {
 }
 
 @media screen and (max-width: 480px)　{
-img.bigimage  { display: none; }
+    #content {
+        width: auto;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 <!-- Copyright (C) Net Mania. All Rights Reserved. http://www.netmania.jp/ -->

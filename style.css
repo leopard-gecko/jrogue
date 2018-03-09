@@ -1,6 +1,13 @@
 @import "http://";
 @charset "utf-8";
 
+@media screen and (max-width: 480px)　{
+#out {
+	margin:10px auto 5px auto;
+}	
+img.bigimage  { display: none; }  /* bigを非表示 */
+}
+
 /***** default styles
 *******************************************/
 
@@ -172,15 +179,6 @@ h4 {
 	color: #888888;
 	border-bottom:none;
 	text-decoration: none;
-}
-
-@media screen and (max-width: 480px)　{
-
-#out {
-	margin:10px auto 5px auto;
-}	
-
-img.bigimage  { display: none; }  /* bigを非表示 */
 }
 
 <!-- Copyright (C) Net Mania. All Rights Reserved. http://www.netmania.jp/ -->

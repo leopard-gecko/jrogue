@@ -1,1 +1,1 @@
-# jrogue
+# jRogue for macOS

@@ -174,7 +174,6 @@ h4 {
 	text-decoration: none;
 }
 
-img.bigimage  { display: none; }
 @media screen and (max-width: 480px)　{
 #out {
 	margin:10px auto 5px auto;

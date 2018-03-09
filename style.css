@@ -74,7 +74,7 @@ img {border: 0;	vertical-align: bottom;}
 #out {
 	margin:20px auto 10px auto;
 	text-align: left;
-	width:950px;
+	width:100%;
 	border: 1px solid #cccccc;
 }
 
@@ -175,10 +175,7 @@ h4 {
 }
 
 @media screen and (max-width: 480px)　{
-#out {
-	text-align: left;
-	border: 1px solid #cccccc;
-}
+
 }
 
 <!-- Copyright (C) Net Mania. All Rights Reserved. http://www.netmania.jp/ -->

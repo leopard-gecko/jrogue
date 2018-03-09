@@ -75,6 +75,7 @@ img {border: 0;	vertical-align: bottom;}
 	margin:20px auto 10px auto;
 	text-align: left;
 	width:100%;
+	max-width:950px;
 	border: 1px solid #cccccc;
 }
 

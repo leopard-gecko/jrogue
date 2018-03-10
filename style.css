@@ -44,8 +44,13 @@ p, ul, ol, dl, table, pre {
 	letter-spacing: 0.02em;
 }
 
-img {border: 0;	vertical-align: bottom;}
-
+img
+{
+	border: 0;
+	vertical-align: bottom;
+	max-width: 90% ;		/* 横幅の90% */
+	height: auto ;			/* 縦幅を自動調整 */
+} 
 
 /***** Link styles
 *******************************************/

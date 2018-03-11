@@ -44,30 +44,25 @@ p, ul, ol, dl, table, pre {
 	letter-spacing: 0.02em;
 }
 
-img
-{
-	border: 0;
-	vertical-align: bottom;
-	max-width: 100% ;
-	height: auto ;
-} 
+img {border: 0;	vertical-align: bottom;}
+
 
 /***** Link styles
 *******************************************/
 
-a {text-decoration: none;}
+#out a {text-decoration: none;}
 
-a:link {
+#out a:link {
 	color: #337ED2;
 	border-bottom: 1px solid #56AEE1;
 }
 
-a:visited {
+#out a:visited {
 	color: #56AEE1;
 	border-bottom: 1px solid #56AEE1;
 }
 
-a:hover {
+#out a:hover {
 	color: #337ED2;
 	border-bottom: 1px solid #337ED2;
 }
@@ -76,7 +71,7 @@ a:hover {
 *******************************************/
 
 
-.out {
+#out {
 	margin:20px auto 10px auto;
 	text-align: left;
 	width:100%;
@@ -86,7 +81,7 @@ a:hover {
 
 
 
-.head {
+#head {
 	letter-spacing: 0.1em;
 	text-align: left;
 	margin:0px auto 20px auto;
@@ -95,7 +90,7 @@ a:hover {
 	background-color:#EFEFEF;
 }
 
-.menu  {
+#menu  {
 	text-align:right;
 	font-size:87%;
 	color:#CCCCCC;
@@ -181,7 +176,8 @@ h4 {
 }
 
 @media screen and (max-width: 480px)　{
-.out {
+img.bigimage  { display: none; }  /* bigを非表示 */
+#out {
 	margin:10px auto 5px auto;
 }	
 }

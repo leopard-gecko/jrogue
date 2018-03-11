@@ -55,19 +55,19 @@ img
 /***** Link styles
 *******************************************/
 
-#out a {text-decoration: none;}
+a {text-decoration: none;}
 
-#out a:link {
+a:link {
 	color: #337ED2;
 	border-bottom: 1px solid #56AEE1;
 }
 
-#out a:visited {
+a:visited {
 	color: #56AEE1;
 	border-bottom: 1px solid #56AEE1;
 }
 
-#out a:hover {
+a:hover {
 	color: #337ED2;
 	border-bottom: 1px solid #337ED2;
 }
@@ -181,7 +181,7 @@ h4 {
 }
 
 @media screen and (max-width: 480px)　{
-body {
+.out {
 	margin:10px auto 5px auto;
 }	
 }

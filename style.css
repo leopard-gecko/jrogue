@@ -44,8 +44,13 @@ p, ul, ol, dl, table, pre {
 	letter-spacing: 0.02em;
 }
 
-img {border: 0;	vertical-align: bottom;}
-
+img
+{
+	border: 0;
+	vertical-align: bottom;
+	max-width: 100% ;
+	height: auto ;
+} 
 
 /***** Link styles
 *******************************************/

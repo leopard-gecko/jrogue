@@ -79,7 +79,11 @@ img {border: 0;	vertical-align: bottom;}
 	border: 1px solid #cccccc;
 }
 
-
+@media screen and (max-width: 480px)　{
+	#out {
+		margin:10px auto 5px auto;
+	}	
+}
 
 #head {
 	letter-spacing: 0.1em;
@@ -173,13 +177,6 @@ h4 {
 	color: #888888;
 	border-bottom:none;
 	text-decoration: none;
-}
-
-@media screen and (max-width: 480px)　{
-img.bigimage  { display: none; }  /* bigを非表示 */
-#out {
-	margin:10px auto 5px auto;
-}	
 }
 
 <!-- Copyright (C) Net Mania. All Rights Reserved. http://www.netmania.jp/ -->

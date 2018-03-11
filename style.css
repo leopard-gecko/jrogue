@@ -181,13 +181,19 @@ h4 {
 
 @media screen and (max-width: 480px)　{
 	#out {
-		margin:0;
+		width: auto;
+  		float: none;
+ 		margin: 0;
 	}
 	#head {
-		margin:0;
+		width: auto;
+  		float: none;
+ 		margin: 0;
 	}
 	#main {
-		margin:0;
+		width: auto;
+  		float: none;
+ 		margin: 0;
 		font-size: 100%;
 	}
 	h1 {

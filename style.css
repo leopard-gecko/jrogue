@@ -184,6 +184,8 @@ li {
 .sns
 {
 	text-align: right;
+	display: inline-block;
+  height: 20px;
 }
 
 span.aks {

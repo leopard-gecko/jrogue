@@ -8,6 +8,7 @@ body {
 	font-size: 15px;
 	*font-size: small; /* IE7 */
 	*font: x-small; /* IE6 */
+	-webkit-text-size-adjust: 100%;
 }
 
 * {line-height: 1.6;font-size: 100%;}
@@ -231,9 +232,6 @@ span.aks {
 	.sns
 	{
 		text-align: left;
-	}
-	body {
-		-webkit-text-size-adjust: 100%;
 	}
 	h1 {
 		font-size: 130%;

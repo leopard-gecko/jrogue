@@ -47,9 +47,9 @@ p, ul, ol, dl, table, pre {
 img
 {
 	border: 0;
-	vertical-align: bottom;
 	max-width: 100% ;
 	height: auto ;
+	vertical-align: middle;
 }
 
 /***** Link styles
@@ -115,7 +115,7 @@ h1 {
 }
 
 h2 {
-	font-size: 100%;
+	font-size: 130%;
 	font-weight:normal;
 	margin:0;
 	padding:0;
@@ -181,6 +181,10 @@ li {
 	text-decoration: none;
 }
 
+span.aks {
+ display: inline-block;
+}
+
 @media screen and (max-width: 479px) {
 	.out {
 		margin:0px auto 0px auto;
@@ -188,7 +192,7 @@ li {
 	}
 	.header {
 		margin:0px auto 5px auto;
-		padding:5px 20px;
+		padding:10px 20px;
 	}
 	.main {
 		width: auto;
@@ -214,6 +218,10 @@ li {
 	}
 	.only-sp {
 		display: block ;		/* 表示する */
+	}
+	.only-pc
+	{
+		display: none ;		/* 非表示にする */
 	}
 	h1 {
 		font-size: 130%;

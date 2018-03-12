@@ -183,8 +183,8 @@ li {
 
 @media screen and (max-width: 479px) {
 	.out {
-	margin:0px auto 0px auto;
-	width:auto;
+		margin:0px auto 0px auto;
+		width:auto;
 	}
 	.header {
 		margin:0px auto 5px auto;
@@ -193,8 +193,7 @@ li {
 	.main {
 		width: auto;
 		margin:0 10px;
-  		padding: 0;
- 		font-size: 100%;
+  	padding: 0;
 	}
 	.menu  {
 		font-size:80%;
@@ -202,15 +201,16 @@ li {
 	.scroll{
 		overflow: auto;					/*tableをスクロールさせる*/
 		white-space: nowrap;			/*tableのセル内にある文字の折り返しを禁止*/
+		font-size: 90%;
 		}
 	.scroll::-webkit-scrollbar{			/*tableにスクロールバーを追加*/
 		height: 5px;
 	}
 	.scroll::-webkit-scrollbar-track{	/*tableにスクロールバーを追加*/
-	background: #F1F1F1;
+		background: #F1F1F1;
 	}
 	.scroll::-webkit-scrollbar-thumb {	/*tableにスクロールバーを追加*/
-	background: #BCBCBC;
+		background: #BCBCBC;
 	}
 	.only-sp {
 		display: block ;		/* 表示する */

@@ -181,6 +181,11 @@ li {
 	text-decoration: none;
 }
 
+.sns
+{
+	text-align: right;
+}
+
 span.aks {
  display: inline-block;
 }
@@ -222,6 +227,10 @@ span.aks {
 	.only-pc
 	{
 		display: none ;		/* 非表示にする */
+	}
+	.sns
+	{
+		text-align: left;
 	}
 	h1 {
 		font-size: 130%;

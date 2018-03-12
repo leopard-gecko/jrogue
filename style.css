@@ -170,20 +170,22 @@ li {
 	letter-spacing: 0.1em;
 }
 
-.only-sp
-{
-	display: none ;		/* 非表示にする */
-}
-
 .copyright a:link,a:visited,a:hover {
 	color: #888888;
 	border-bottom:none;
 	text-decoration: none;
 }
 
+.only-sp
+{
+	display: none ;		/* 非表示にする */
+}
+
 .sns
 {
 	text-align: right;
+	vertical-align: top;
+  line-height: 0;
 }
 
 span.aks {

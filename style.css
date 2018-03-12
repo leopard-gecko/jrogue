@@ -235,4 +235,7 @@ span.aks {
 	h1 {
 		font-size: 130%;
 	}
+	table {
+		font-size: 90%;
+	}
 }

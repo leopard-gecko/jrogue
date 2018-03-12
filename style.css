@@ -24,7 +24,7 @@ html {
 }
 
 body {
-	text-align: center;
+
 	color: #5D5D5D;
 	margin:0 auto;
 	padding:0;
@@ -50,24 +50,24 @@ img
 	vertical-align: bottom;
 	max-width: 100% ;
 	height: auto ;
-} 
+}
 
 /***** Link styles
 *******************************************/
 
-#out a {text-decoration: none;}
+a {text-decoration: none;}
 
-#out a:link {
+a:link {
 	color: #337ED2;
 	border-bottom: 1px solid #56AEE1;
 }
 
-#out a:visited {
+a:visited {
 	color: #56AEE1;
 	border-bottom: 1px solid #56AEE1;
 }
 
-#out a:hover {
+a:hover {
 	color: #337ED2;
 	border-bottom: 1px solid #337ED2;
 }
@@ -76,15 +76,15 @@ img
 *******************************************/
 
 
-#out {
+.out {
 	margin:20px auto 10px auto;
 	text-align: left;
 	width:100%;
-	max-width:950px;
+	width:950px;
 	border: 1px solid #cccccc;
 }
 
-#head {
+.header {
 	letter-spacing: 0.1em;
 	text-align: left;
 	margin:0px auto 20px auto;
@@ -93,11 +93,18 @@ img
 	background-color:#EFEFEF;
 }
 
-#menu  {
+.menu  {
 	text-align:right;
 	font-size:87%;
 	color:#CCCCCC;
 
+}
+
+.main{
+	letter-spacing: 0.1em;
+	font-size: 110%;
+	margin:0 3em;
+	line-height: 1.9;
 }
 
 h1 {
@@ -131,27 +138,20 @@ h4 {
 	border-bottom: 1px solid #cccccc;
 }
 
-#main{
-	letter-spacing: 0.1em;
-	font-size: 110%;
-	margin:0 3em;
-	line-height: 1.9;
-}
-
-#main ul {
+ul {
 	margin:0 5px 5px 0;
 	padding: 3px;
 	list-style: circle;
 }
 
-#main li {
+li {
 	margin: 0.5em 0 0.5em 1.5em;
 	letter-spacing: 0.02em;
 	padding: 0.3em 0 0.3em 0.1em;
 }
 
 
-#footer {
+.footer {
 	margin: 3em 0 0 0;
 	padding:25px;
 	border-top: 1px solid #cccccc;
@@ -170,7 +170,10 @@ h4 {
 	letter-spacing: 0.1em;
 }
 
-
+.only-sp
+{
+	display: none ;		/* 非表示にする */
+}
 
 .copyright a:link,a:visited,a:hover {
 	color: #888888;
@@ -178,27 +181,41 @@ h4 {
 	text-decoration: none;
 }
 
-
-@media screen and (max-width: 480px)　{
-	#out {
-		width: auto;
-  		float: none;
- 		margin: 0;
+@media screen and (max-width: 479px) {
+	.out {
+	margin:0px auto 0px auto;
+	width:auto;
 	}
-	#head {
-		width: auto;
-  		float: none;
- 		margin: 0;
+	.header {
+		margin:0px auto 5px auto;
+		padding:5px 20px;
 	}
-	#main {
+	.main {
 		width: auto;
-  		float: none;
- 		margin: 0;
-		font-size: 100%;
+		margin:0 10px;
+  		padding: 0;
+ 		font-size: 100%;
+	}
+	.menu  {
+		font-size:80%;
+	}
+	.scroll{
+		overflow: auto;					/*tableをスクロールさせる*/
+		white-space: nowrap;			/*tableのセル内にある文字の折り返しを禁止*/
+		}
+	.scroll::-webkit-scrollbar{			/*tableにスクロールバーを追加*/
+		height: 5px;
+	}
+	.scroll::-webkit-scrollbar-track{	/*tableにスクロールバーを追加*/
+	background: #F1F1F1;
+	}
+	.scroll::-webkit-scrollbar-thumb {	/*tableにスクロールバーを追加*/
+	background: #BCBCBC;
+	}
+	.only-sp {
+		display: block ;		/* 表示する */
 	}
 	h1 {
 		font-size: 130%;
 	}
 }
-
-<!-- Copyright (C) Net Mania. All Rights Reserved. http://www.netmania.jp/ -->

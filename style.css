@@ -211,7 +211,6 @@ span.aks {
 	.scroll{
 		overflow: auto;					/*tableをスクロールさせる*/
 		white-space: nowrap;			/*tableのセル内にある文字の折り返しを禁止*/
-		font-size: 90%;
 		}
 	.scroll::-webkit-scrollbar{			/*tableにスクロールバーを追加*/
 		height: 5px;
@@ -236,7 +235,7 @@ span.aks {
 	h1 {
 		font-size: 130%;
 	}
-	table th {
+	table {
 		font-size: 90%;
 	}
 }

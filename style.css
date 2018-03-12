@@ -5,7 +5,7 @@
 *******************************************/
 
 body {
-	font-size: 13px;
+	font-size: 15px;
 	*font-size: small; /* IE7 */
 	*font: x-small; /* IE6 */
 }
@@ -40,7 +40,7 @@ p {
 
 
 p, ul, ol, dl, table, pre {
-	font-size: 100%;
+
 	letter-spacing: 0.02em;
 }
 
@@ -102,7 +102,7 @@ a:hover {
 
 .main{
 	letter-spacing: 0.1em;
-	font-size: 110%;
+
 	margin:0 3em;
 	line-height: 1.9;
 }

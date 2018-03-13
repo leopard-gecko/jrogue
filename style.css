@@ -45,12 +45,11 @@ p, ul, ol, dl, table, pre {
 	letter-spacing: 0.02em;
 }
 
-img
+.rogueimg
 {
 	border: 0;
 	max-width: 100% ;
 	height: auto ;
-	vertical-align: middle;
 }
 
 /***** Link styles

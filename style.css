@@ -63,6 +63,10 @@ a:link {
 	border-bottom: 1px solid #56AEE1;
 }
 
+.counter a:link,a:visited,a:hover {
+	border-bottom: none;
+}
+
 a:visited {
 	color: #56AEE1;
 	border-bottom: 1px solid #56AEE1;

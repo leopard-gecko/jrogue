@@ -68,7 +68,7 @@ a:visited {
 
 a:hover {
 	color: #337ED2;
-	border-bottom: 1px solid #56AEE1;
+	border-bottom: 1px solid #337ED2;
 }
 
 /***** layout styles

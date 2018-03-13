@@ -60,21 +60,15 @@ a {text-decoration: none;}
 
 a:link {
 	color: #337ED2;
-	border-bottom: 1px solid #56AEE1;
-}
-
-.counter a:link,a:visited,a:hover {
-	border-bottom: none;
 }
 
 a:visited {
-	color: #56AEE1;
-	border-bottom: 1px solid #56AEE1;
+	color: #337ED2;
 }
 
 a:hover {
 	color: #337ED2;
-	border-bottom: 1px solid #337ED2;
+	border-bottom: 1px solid #56AEE1;
 }
 
 /***** layout styles

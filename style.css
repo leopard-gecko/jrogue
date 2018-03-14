@@ -45,6 +45,17 @@ p, ul, ol, dl, table, pre {
 	letter-spacing: 0.02em;
 }
 
+.source {
+  font-size: 90%;
+  background: #EFEFEF;
+  color: #444444;
+	border-radius: 3px;
+  font-family: 'Monaco', 'Consolas', 'Courier New', Courier, monospace, sans-serif;
+  margin: 0 0;
+  padding: 10px 1em;
+
+}
+
 .rogueimg
 {
 	border: 0;
@@ -169,6 +180,14 @@ li {
 	text-align: right;
 	height: 20px;
 }
+
+.noselect {
+	user-select: none; /* CSS3 */
+	-moz-user-select: none; /* Firefox */
+	-webkit-user-select: none; /* Safari、Chromeなど */
+	-ms-user-select: none; /* IE10かららしい */
+}
+
 
 span.aks {
  display: inline-block;

@@ -56,6 +56,9 @@ p, ul, ol, dl, table, pre {
 
 }
 
+/***** image styles
+*******************************************/
+
 .rogueimg
 {
 	border: 0;
@@ -190,7 +193,7 @@ li {
 
 
 span.aks {
- display: inline-block;
+ display: inline-block;  /* あまり改行したくない */
 }
 
 @media screen and (max-width: 479px) {

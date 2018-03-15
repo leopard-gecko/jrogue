@@ -37,14 +37,13 @@
 </div>
 
 <div class="main">
-<div class="menu"><a href="ps.html">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<div class="menu"><a href="ps.html">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/" target=”_blank”>ブログ</a></div>
 <br>
-
 <p><a href="https://github.com/leopard-gecko/jrogue/releases/download/v5.4.5J.040/jRogue_040.dmg" target="_blank"><b><span class="aks">jRogue(GUI版) ダウンロード</a>&nbsp;</span><span class="aks">(2018年3月8日 バージョン:5.4.5J.040)</span></b>
 <br>
 動作確認：macOS High Sierra 10.13.3
 <br>
-（注：署名はありませんので、<b>初回の起動は右クリックして「開く」を選んでください</b>）
+（注：署名はありませんので、<b>初回の起動は<a href="https://support.apple.com/ja-jp/HT202491" target=”_blank”>右クリックして「開く」</a>を選んでください</b>）
 </p><br>
 <p>Homebrewをお使いの方は、以下のコマンドでCUI版をインストールすることも可能です。<br>
 
@@ -56,7 +55,7 @@
   </table>
 </div>
 
-<p><a href="https://github.com/leopard-gecko/homebrew-game">CUI版についての詳しい説明はこちら。</a>
+<p><a href="https://github.com/leopard-gecko/homebrew-game" target=”_blank”>CUI版についての詳しい説明はこちら。</a>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -101,6 +100,7 @@
 <li><a href="#06">注意点。</a></li>
 <li><a href="#07">外部リンク。</a></li>
 <li><a href="#08">更新履歴。</a></li>
+<li><a href="#09">連絡先。</a></li>
 </ul>
 
 <h3 id="01">はじめに。</h3>
@@ -120,7 +120,7 @@
 	<ul>
 		<li><b>通常</b>：カラー表示あり、識別の巻き物が１種類（後で説明します）、走る時に曲がり角で止まらない。背景色は黒。</li>
 		<li><b>オリジナル</b>：もともとのRogue 5.4のデフォルト設定。カラー表示なし（本来Rogue 5.4にはカラー表示の機能はない）	、識別の巻き物が５種類、曲がり角で立ち止まる。背景色は黒。</li>
-		<li><b>細かく設定</b>：各オプションを個別に設定できる。オプションについての詳細は添付文書の「<a href="https://github.com/leopard-gecko/homebrew-game/blob/master/%E9%81%8B%E5%91%BD%E3%81%AE%E6%B4%9E%E7%AA%9F%E3%81%B8%E3%81%AE%E6%A1%88%E5%86%85%E6%9B%B8.md"><b>運命の洞窟への案内書</b></a>」を参照してください。</li>
+		<li><b>細かく設定</b>：各オプションを個別に設定できる。オプションについての詳細は添付文書の「<a href="https://github.com/leopard-gecko/homebrew-game/blob/master/%E9%81%8B%E5%91%BD%E3%81%AE%E6%B4%9E%E7%AA%9F%E3%81%B8%E3%81%AE%E6%A1%88%E5%86%85%E6%9B%B8.md" target=”_blank”><b>運命の洞窟への案内書</b></a>」を参照してください。</li>
 	</ul>
 <p>識別の巻き物が云々というのは、Rogue5.4にはアイテムを識別するための巻き物が５種類あるのですが、他のバージョンでは１種類しかないものでした。UNIX以外の機種への移植版でも１種類の設定が採用されていたようです。上述の5.4pでは識別の巻き物を１種類にまとめるオプションが用意されており、こちらのアプリにもそのオプションを採用しデフォルトの仕様としました。</p>
 <p>GUI版ではスコアファイル（jrogue.scr）が書類フォルダに自動的に保存されます。セーブして終了した場合はセーブファイル（jrogue.save）が同様に書類フォルダに保存されます。（CUI版はいずれもカレントディレクトリへの保存がデフォルトです）</p>
@@ -130,16 +130,18 @@
 <p>（おまけ情報：本体のUNIX実行ファイル(jrogue)はアプリのパッケージの中に収納しています。ターミナルからコマンドで起動したいけれどHomebrewは使っていないというような場合は、アプリの中から実行ファイルを取り出すという裏技が使えます）</p>
 
 <h3 id="03">CUI版との違い。</h3>
-<p>ここでいうCUI版とはターミナルからコマンドを入力して起動するバージョンです。CUI版についての詳しい説明は<a href="https://github.com/leopard-gecko/homebrew-game">こちらの配布サイト</a>を参照してください。</p>
+<p>ここでいうCUI版とはターミナルからコマンドを入力して起動するバージョンです。CUI版についての詳しい説明は<a href="https://github.com/leopard-gecko/homebrew-game" target=”_blank”>こちらの配布サイト</a>を参照してください。</p>
 <p>GUI版はCUI版のUNIX実行ファイルをAppleScriptで起動しているだけですから、両者は実質的には同じものです。ただしGUI版は各オプションを設定するために内部で環境変数ROGUEOPTSを変更してから起動しているため、GUI版では .bashrc などに設定した環境変数は無視されます。CUI版をオプションなしで起動するとオリジナルのRogue 5.4の素の状態とほぼ同じになり、GUI版での「オリジナル」モードに相当します。</p>
 
 <h3 id="04">スポイラー。</h3>
 <p><b>これらはあくまでスポイラー（ゲームのヒント）なので、正攻法で攻略したい人は読まないでください</b></p>
+<ul>
 <li><a href="ps.html"><b>巻き物と水薬の一覧</b></a>
 <p>データ分離版では巻き物や水薬は使った後に名前を自動で判別してくれますが、Rogue 5.4では使用後のメッセージや効果を見て自分で呼び名をつけなければなりません。<br>
 そこが少々面倒なところなので、一種のスポイラーとして巻き物と水薬の一覧表を作成してみました。</p></li>
 <li><a href="wizardmode.html"><b>ウィザードモードのコマンド</b></a>
-<p>ウィザードモードに入った時に追加されるコマンドの一覧です。<br>注：ウィザードモードはCUI版のみの特殊なオプションです。このモードについては<a href="http://leopardgecko.hatenablog.com/entry/2017/11/01/133425">こちらを参照</a>。</p></li>
+<p>ウィザードモードに入った時に追加されるコマンドの一覧です。<br>注：ウィザードモードはCUI版のみの特殊なオプションです。このモードについては<a href="http://leopardgecko.hatenablog.com/entry/2017/11/01/133425" target=”_blank”>こちらを参照</a>。</p></li>
+</ul>
 
 <h3 id="05">その他もろもろ。</h3>
 <p>ローグには走るコマンド（コントロールキーまたはシフトキーを押しながら移動）がありますが、曲がり角で止まらない設定（passgo）にすると長い通路では一瞬でどこかにワープして見失ってしまいます。ところがソースコードを見ると、走る時でもきちんと一コマ一コマ描写しているので、昔の動作が遅い端末では移動していく様子が肉眼でも見られたのでしょう。そこであえて遅延処理を加えて走る様子が見られるようにしました。物を投げたり魔法のミサイルを飛ばしたりする時にもそういう表示になるはずなので、それらにも遅延処理を加えました。</p>
@@ -152,7 +154,10 @@
 <p>通常日本語は1文字で3バイト分のデータがありますが、特殊な漢字の一部は4バイトのものもあります。4バイトの漢字もゲーム中の入力は可能ですが、一旦変換を確定してからデリートキーで削除しようとすると表示が崩れます。デリートキーで削除するのではなくて初めから入力をやり直してください。</p>
 
 <h3 id="07">外部リンク。</h3>
-<p><a href="http://yozvox.web.fc2.com/rvm_jp.html">The Rogue's Vade-Mecum（ローグのガイドブック）</a><br>要はこれもスポイラーです。ローグの内容についての詳細な解説の和訳。ほとんど完全なネタバレになりますので、ある程度やり込んだ方のみお読みください。jRogueのバージョンは、ここでいうところの「V5」にあたります。</p>
+<ul>
+<li><a href="http://yozvox.web.fc2.com/rvm_jp.html" target=”_blank”>The Rogue's Vade-Mecum（ローグのガイドブック）</a><br>要はこれもスポイラーです。ローグの内容についての詳細な解説の和訳。ほとんど完全なネタバレになりますので、ある程度やり込んだ方のみお読みください。jRogueのバージョンは、ここでいうところの「V5」にあたります。
+</li>
+</ul>
 
 <h3 id="08">更新履歴。</h3>
 <p>2018/03/09 配布サイトをGitHubに移動。
@@ -191,8 +196,14 @@
 </details>
 <p>2016/12/06 Rogue 5.4.5J 公開開始。</p>
 
+<h3 id="09">連絡先。</h3>
+<ul>
+<li><a href="https://twitter.com/@leopard_gecko" target=”_blank”>Twitter@leopard_gecko</a></li>
+<li><a href="http://leopardgecko.hatenablog.com/" target=”_blank”>leopardgeckoのブログ</a></li>
+</ul>
+
 <br>
-<div class="menu"><a href="ps.html">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<div class="menu"><a href="ps.html">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/" target=”_blank”>ブログ</a></div>
 
 	</div><!-- main -->
 

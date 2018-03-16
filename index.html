@@ -33,12 +33,16 @@
 
 <div class="out">
 <div class="header">
-<h1><img src="https://leopard-gecko.github.io/jrogue/icon_32x32.png" width="32" height="32" alt="" style="vertical-align: middle;"><span class="aks">&nbsp;jRogue for macOS</span><span class="aks">（日本語版Rogue 5.4）</span></h1>
+<h1 style="text-align: center;"><img src="https://leopard-gecko.github.io/jrogue/icon_32x32.png" width="32" height="32" alt="" style="vertical-align: middle;"><span class="aks">&nbsp;jRogue for macOS</span><span class="aks">（日本語版Rogue 5.4）</span></h1>
 </div>
 
 <div class="main">
+
+<div class="padding_3em">
 <div class="menu"><a href="guide.html">【運命の洞窟】への案内書</a> | <a href="ps.html"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target=”_blank”><span class="aks">ブログ</span></a></div>
+
 <br>
+
 <p><a href="https://github.com/leopard-gecko/jrogue/releases/download/v5.4.5J.040/jRogue_040.dmg" target="_blank"><b><span class="aks">jRogue(GUI版) ダウンロード</a>&nbsp;</span><span class="aks">(2018年3月8日&nbsp;バージョン:5.4.5J.040)</span></b>
 <br>
 動作確認：macOS High Sierra 10.13.3
@@ -56,6 +60,7 @@
 </div>
 
 <p><a href="https://github.com/leopard-gecko/homebrew-game" target=”_blank”>CUI版についての詳しい説明はこちら。</a>
+</div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -82,7 +87,6 @@
   <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
   <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
   </span>
-
 </div>
 
 <div class="only-sp"><p>&nbsp;</div>
@@ -91,6 +95,7 @@
 </div>
 
 <h3>目次</h3>
+<div class="padding_3em">
 <ul>
 <li><a href="#01">はじめに。</a></li>
 <li><a href="#02">アプリ（GUI版）について。</a></li>
@@ -102,8 +107,10 @@
 <li><a href="#08">更新履歴。</a></li>
 <li><a href="#09">連絡先。</a></li>
 </ul>
+</div>
 
 <h3 id="01">はじめに。</h3>
+<div class="padding_3em">
 <p>ここはMac用日本語版Rogue（ローグ）の配布サイトです。
 <p>Rougeとは1980年に作られた最初期のRPGの一つで、一文字で表現されたキャラクターやプレイするたびにランダムに作られる迷宮などが特徴です。非常に古いものなのですがなんとも言えない独特の味があり、今遊んでも楽しめるものだと思います。</p>
 <p>以前は日本語化されたMac用のフリーソフトもあったのですが、今では私の知る限りアプリとしてのMac用日本語版ローグは存在しません。テキストエディタのvim上で動くローグやWindows用のアプリを無理やりMacで動かす方法はあるのですが、いずれも少々敷居が高いものです。</p>
@@ -113,8 +120,10 @@
 <p>単に5.4を日本語化しただけでなく、Windows/Linux用のローグをメンテナンスしておられるY.Oz VoxさんによるRogue 5.4pの独自要素（カラー化、識別の巻き物を１種類にまとめる、起動時にプレーヤー名を変更できる）も加えています。オリジナルそのままの形だけにこだわるのではなく、ユーザーフレンドリーなスタイルを目指しました。</p>
 <p>当初はデータ分離版の和訳を流用していましたが、元の英語をほぼそのまま訳すスタイルに変えました。カラー設定はほぼ新規です。</p>
 <p>ゲームを始める前に、まずはローグにはお決まりの添付文書である<a href="guide.html"><b>【運命の洞窟】への案内書</b></a>を参照してください。
+</div>
 
 <h3 id="02">アプリ（GUI版）について。</h3>
+<div class="padding_3em">
 <p>GUI版はアプリケーションの形を取っていますが、実際にはターミナルからCUI版のjRogueを起動するためのApplescriptです。ターミナルを使ったことがない人でも普通のアプリのようにクリック操作のみで起動できる環境を目指しました。</p>
 <p>右クリックからアプリを開いて指示の通りに進んでいくとターミナルが開いてjRougeが起動します。ゲームの遊び方については、添付した文書や、ゲーム中に「?」をタイプすると表示されるヘルプを参照してください。</p>
 <p>このアプリ独自の仕様として、ゲーム開始時にモードを３種類選べるようにしてみました。
@@ -129,12 +138,16 @@
 <p>背景色はデフォルトでは黒に設定していますが、ターミナルで設定した背景色を使いたい場合は同じように「細かく設定」から背景色を「ターミナルの設定」に変更してください。
 <p>プレイヤー名は初回起動時にはユーザー名を取得しています。「設定を変更する」を選べば名前の変更もできます。変更した場合は次回起動時からはその名前がデフォルトになります。名前を消して設定すれば初期設定に戻すことができます。
 <p>（おまけ情報：本体のUNIX実行ファイル(jrogue)はアプリのパッケージの中に収納しています。ターミナルからコマンドで起動したいけれどHomebrewは使っていないというような場合は、アプリの中から実行ファイルを取り出すという裏技が使えます）</p>
+</div>
 
 <h3 id="03">CUI版との違い。</h3>
+<div class="padding_3em">
 <p>ここでいうCUI版とはターミナルからコマンドを入力して起動するバージョンです。CUI版についての詳しい説明は<a href="https://github.com/leopard-gecko/homebrew-game" target=”_blank”>こちらの配布サイト</a>を参照してください。</p>
 <p>GUI版はCUI版のUNIX実行ファイルをAppleScriptで起動しているだけですから、両者は実質的には同じものです。ただしGUI版は各オプションを設定するために内部で環境変数ROGUEOPTSを変更してから起動しているため、GUI版では .bashrc などに設定した環境変数は無視されます。CUI版をオプションなしで起動するとオリジナルのRogue 5.4の素の状態とほぼ同じになり、GUI版での「オリジナル」モードに相当します。</p>
+</div>
 
 <h3 id="04">スポイラー。</h3>
+<div class="padding_3em">
 <p><b>これらはあくまでスポイラー（ゲームのヒント）なので、正攻法で攻略したい人は読まないでください</b></p>
 <ul>
 <li><a href="ps.html"><b>巻き物と水薬の一覧</b></a>
@@ -143,24 +156,32 @@
 <li><a href="wizardmode.html"><b>ウィザードモードのコマンド</b></a>
 <p>ウィザードモードに入った時に追加されるコマンドの一覧です。<br>注：ウィザードモードはCUI版のみの特殊なオプションです。このモードについては<a href="http://leopardgecko.hatenablog.com/entry/2017/11/01/133425" target=”_blank”>こちらを参照</a>。</p></li>
 </ul>
+</div>
 
 <h3 id="05">その他もろもろ。</h3>
+<div class="padding_3em">
 <p>ローグには走るコマンド（コントロールキーまたはシフトキーを押しながら移動）がありますが、曲がり角で止まらない設定（passgo）にすると長い通路では一瞬でどこかにワープして見失ってしまいます。ところがソースコードを見ると、走る時でもきちんと一コマ一コマ描写しているので、昔の動作が遅い端末では移動していく様子が肉眼でも見られたのでしょう。そこであえて遅延処理を加えて走る様子が見られるようにしました。物を投げたり魔法のミサイルを飛ばしたりする時にもそういう表示になるはずなので、それらにも遅延処理を加えました。</p>
 <p>そういうのが鬱陶しいと感じる人のためにローグではもともとちゃんと対策が取られており、走る時のアニメ表示を切りたい場合はオプションのjumpを有効にすれば瞬間移動するようになりますし、物を投げる時はterse（簡潔表示）を有効にすればアニメ表示がオフになります。これでjumpやterseの実質的な存在意義も再現できるようになったと思います。</p>
 <p>これはjRogue独自の修正点ですが、むしろオリジナルのあり方に近づくことができたのではないかと思います。</p>
+</div>
 
 <h3 id="06">注意点。</h3>
+<div class="padding_3em">
 <p>日本語の表示と入力はMacの標準的な環境(UTF-8)のみに対応しています。文字コード関係の設定を変更している場合は適切な表示や入力ができない可能性があります。</p>
 <p>プレイヤー名や好きな果物の名前などに日本語だけでなく絵文字を使うことも可能です（例えば好きな果物の名前を🍏に設定したり、使っている剣に⚔という呼び名をつけるなど）。ただしターミナルに表示される絵文字は半角1文字分の表示となりますので、続けて文字を入力すると表示が重なってしまいます。絵文字を入力した後には半角スペースを一つ加えてください。</p>
 <p>通常日本語は1文字で3バイト分のデータがありますが、特殊な漢字の一部は4バイトのものもあります。4バイトの漢字もゲーム中の入力は可能ですが、一旦変換を確定してからデリートキーで削除しようとすると表示が崩れます。デリートキーで削除するのではなくて初めから入力をやり直してください。</p>
+</div>
 
 <h3 id="07">外部リンク。</h3>
+<div class="padding_3em">
 <ul>
 <li><a href="http://yozvox.web.fc2.com/rvm_jp.html" target=”_blank”>The Rogue's Vade-Mecum（ローグのガイドブック）</a><br>要はこれもスポイラーです。ローグの内容についての詳細な解説の和訳。ほとんど完全なネタバレになりますので、ある程度やり込んだ方のみお読みください。jRogueのバージョンは、ここでいうところの「V5」にあたります。
 </li>
 </ul>
+</div>
 
 <h3 id="08">更新履歴。</h3>
+<div class="padding_3em">
 <p>2018/03/09 配布サイトをGitHubに移動。
 <p>2018/03/08 ver 5.4.5J.040。ごく細部の修正。
 <details><summary>途中経過（クリックで表示）</summary>
@@ -196,8 +217,10 @@
 <p>2016/12/07 ソースコードのベースを5.4.4から5.4p(5.4.5)に変更。</p>
 </details>
 <p>2016/12/06 Rogue 5.4.5J 公開開始。</p>
+</div>
 
 <h3 id="09">連絡先。</h3>
+<div class="padding_3em">
 <ul>
 <li><a href="https://twitter.com/@leopard_gecko" target=”_blank”>Twitter@leopard_gecko</a></li>
 <li><a href="http://leopardgecko.hatenablog.com/" target=”_blank”>leopardgeckoのブログ</a></li>
@@ -205,6 +228,7 @@
 
 <br>
 <div class="menu"><a href="guide.html">【運命の洞窟】への案内書</a> | <a href="ps.html">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/" target=”_blank”>ブログ</a></div>
+</div>
 
 	</div><!-- main -->
 

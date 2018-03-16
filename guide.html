@@ -22,11 +22,10 @@
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript">
-$('a, input[type="button"], input[type="submit"], button, .touch-hover')
-  .on('touchstart', function(){
-    $(this).addClass('hover');
-}).on('touchend', function(){
-    $(this).removeClass('hover');
+$( 'a' ).bind('touchstart', function(){
+  $(this).addClass( 'hover' );
+}).bind('touchend', function(){
+  $(this).removeClass( 'hover' );
 });
 </script>
 

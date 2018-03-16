@@ -290,4 +290,7 @@ span.aks {
 		position: fixed;
 		width: 20em;
 	}
+	.message a:active {
+		pointer-events:none;
+	}
 }

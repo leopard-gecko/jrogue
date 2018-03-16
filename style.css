@@ -285,7 +285,7 @@ span.aks {
 	h1 {
 		font-size: 130%;
 	}
-	.message a:hover span.remark {
+	.message a.hover span.remark {
 		position: fixed;
 		width: 20em;
 	}

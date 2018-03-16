@@ -162,6 +162,9 @@ li {
 	padding: 0.2em 0 0.2em 0.1em;
 }
 
+sup {
+	font-size: 80%
+}
 
 .footer {
 	margin: 3em 0 0 0;
@@ -191,9 +194,40 @@ li {
 	-ms-user-select: none; /* IE10かららしい */
 }
 
+.padding_6em {
+	padding: 0 6em;
+}
+.padding_3em {
+	padding: 0 3em;
+}
+.center_pc {
+	text-align: center;
+}
 
 span.aks {
  display: inline-block;  /* あまり改行したくない */
+}
+
+.message {
+    position: relative;
+		margin: 1px;
+}
+.message span.remark {
+    display: none;
+}
+.message a:hover span.remark {
+    background: none repeat scroll 0 0 #EFEFEF;
+    border: 1px solid #CCCCCC;
+    color: #000000;
+    display: block;
+    line-height: 1.5em;
+    margin: 0.5em;
+    padding: 0.2em 0.5em;
+    position: absolute;
+    top: 20px;
+		left: 0px;
+    width: 30em;
+		font-size: 90%;
 }
 
 @media screen and (max-width: 479px) {
@@ -211,7 +245,8 @@ span.aks {
   	padding: 0;
 	}
 	.menu  {
-		font-size:80%;
+		font-size:70%;
+		letter-spacing: 0em;
 	}
 	.scroll{
 		overflow: auto;					/*tableをスクロールさせる*/
@@ -236,6 +271,16 @@ span.aks {
 	.sns
 	{
 		text-align: left;
+	}
+	.padding_6em {
+		padding: 0 0;
+	}
+	.padding_3em {
+		padding: 0 0;
+	}
+	.center_pc {
+		text-align: center;
+		font-size: 80%;
 	}
 	h1 {
 		font-size: 130%;

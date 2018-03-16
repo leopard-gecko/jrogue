@@ -37,9 +37,9 @@
 </div>
 
 <div class="main">
-<div class="menu"><a href="ps.html">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/" target=”_blank”>ブログ</a></div>
+<div class="menu"><a href="guide.html">【運命の洞窟】への案内書</a> | <a href="ps.html"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target=”_blank”><span class="aks">ブログ</span></a></div>
 <br>
-<p><a href="https://github.com/leopard-gecko/jrogue/releases/download/v5.4.5J.040/jRogue_040.dmg" target="_blank"><b><span class="aks">jRogue(GUI版) ダウンロード</a>&nbsp;</span><span class="aks">(2018年3月8日 バージョン:5.4.5J.040)</span></b>
+<p><a href="https://github.com/leopard-gecko/jrogue/releases/download/v5.4.5J.040/jRogue_040.dmg" target="_blank"><b><span class="aks">jRogue(GUI版) ダウンロード</a>&nbsp;</span><span class="aks">(2018年3月8日 </span><span class="aks">&nbsp;バージョン:5.4.5J.040)</span></b>
 <br>
 動作確認：macOS High Sierra 10.13.3
 <br>
@@ -112,15 +112,16 @@
 <p>今回Mac用の日本語版ローグを作るにあたって当初はデータ分離版の移植を考えたのですが、現在はクローンではないオリジナルのローグのソースコードも公開されていますので、オリジナルローグの最終版といわれるバージョン5.4の日本語化を行いました。おそらく現在日本語化されているRogue 5.4は他機種用も含めてこれが唯一のものだろうと思います。</p>
 <p>単に5.4を日本語化しただけでなく、Windows/Linux用のローグをメンテナンスしておられるY.Oz VoxさんによるRogue 5.4pの独自要素（カラー化、識別の巻き物を１種類にまとめる、起動時にプレーヤー名を変更できる）も加えています。オリジナルそのままの形だけにこだわるのではなく、ユーザーフレンドリーなスタイルを目指しました。</p>
 <p>当初はデータ分離版の和訳を流用していましたが、元の英語をほぼそのまま訳すスタイルに変えました。カラー設定はほぼ新規です。</p>
+<p>ゲームを始める前に、まずはローグにはお決まりの添付文書である<a href="guide.html"><b>【運命の洞窟】への案内書</b></a>を参照してください。
 
 <h3 id="02">アプリ（GUI版）について。</h3>
 <p>GUI版はアプリケーションの形を取っていますが、実際にはターミナルからCUI版のjRogueを起動するためのApplescriptです。ターミナルを使ったことがない人でも普通のアプリのようにクリック操作のみで起動できる環境を目指しました。</p>
 <p>右クリックからアプリを開いて指示の通りに進んでいくとターミナルが開いてjRougeが起動します。ゲームの遊び方については、添付した文書や、ゲーム中に「?」をタイプすると表示されるヘルプを参照してください。</p>
 <p>このアプリ独自の仕様として、ゲーム開始時にモードを３種類選べるようにしてみました。
 	<ul>
-		<li><b>通常</b>：カラー表示あり、識別の巻き物が１種類（後で説明します）、走る時に曲がり角で止まらない。背景色は黒。</li>
-		<li><b>オリジナル</b>：もともとのRogue 5.4のデフォルト設定。カラー表示なし（本来Rogue 5.4にはカラー表示の機能はない）	、識別の巻き物が５種類、曲がり角で立ち止まる。背景色は黒。</li>
-		<li><b>細かく設定</b>：各オプションを個別に設定できる。オプションについての詳細は添付文書の「<a href="https://github.com/leopard-gecko/homebrew-game/blob/master/%E9%81%8B%E5%91%BD%E3%81%AE%E6%B4%9E%E7%AA%9F%E3%81%B8%E3%81%AE%E6%A1%88%E5%86%85%E6%9B%B8.md" target=”_blank”><b>運命の洞窟への案内書</b></a>」を参照してください。</li>
+		<li><b>通常</b><br>カラー表示あり、識別の巻き物が１種類（後で説明します）、走る時に曲がり角で止まらない。背景色は黒。</li>
+		<li><b>オリジナル</b><br>もともとのRogue 5.4のデフォルト設定。カラー表示なし（本来Rogue 5.4にはカラー表示の機能はない）	、識別の巻き物が５種類、曲がり角で立ち止まる。背景色は黒。</li>
+		<li><b>細かく設定</b><br>各オプションを個別に設定できる。オプションについては<a href="guide.html" target=”_blank”><b>【運命の洞窟】への案内書</b></a>に詳細な説明があります。</li>
 	</ul>
 <p>識別の巻き物が云々というのは、Rogue5.4にはアイテムを識別するための巻き物が５種類あるのですが、他のバージョンでは１種類しかないものでした。UNIX以外の機種への移植版でも１種類の設定が採用されていたようです。上述の5.4pでは識別の巻き物を１種類にまとめるオプションが用意されており、こちらのアプリにもそのオプションを採用しデフォルトの仕様としました。</p>
 <p>GUI版ではスコアファイル（jrogue.scr）が書類フォルダに自動的に保存されます。セーブして終了した場合はセーブファイル（jrogue.save）が同様に書類フォルダに保存されます。（CUI版はいずれもカレントディレクトリへの保存がデフォルトです）</p>
@@ -203,7 +204,7 @@
 </ul>
 
 <br>
-<div class="menu"><a href="ps.html">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/" target=”_blank”>ブログ</a></div>
+<div class="menu"><a href="guide.html">【運命の洞窟】への案内書</a> | <a href="ps.html">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/" target=”_blank”>ブログ</a></div>
 
 	</div><!-- main -->
 

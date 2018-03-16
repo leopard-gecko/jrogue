@@ -290,10 +290,8 @@ span.aks {
 	.message a:hover span.remark {
 		pointer-events:none;
 		position: fixed;
-		top: 1em;
 		left: 1em;
-		bottom: auto;
-		width: 20em;
+		width: 80%;
 		font-size: 100%;
 	}
 	.message a:active {

@@ -46,6 +46,12 @@ p, ul, ol, dl, table, pre {
 	letter-spacing: 0.02em;
 }
 
+hr {
+  border-width: 1px 0 0 0; /* 太さ */
+  border-style: solid; /* 種類 */
+  border-color: #CCCCCC; /* 色 */
+}
+
 .source {
   font-size: 90%;
   background: #EFEFEF;

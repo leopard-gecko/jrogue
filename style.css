@@ -230,7 +230,7 @@ span.aks {
 }
 .message a:hover span.remark {
 		text-indent: 0em;
-    background: none repeat scroll 0 0 #EFEFEF;
+    background: none repeat scroll 0 0 #FFFFFF;
     border: 1px solid #CCCCCC;
     color: #000000;
     display: block;
@@ -239,9 +239,9 @@ span.aks {
     padding: 0.2em 0.5em;
     position: absolute;
     bottom: 1.2em;
-		left: -10em;
-    width: 20em;
-		font-size: 90%;
+		left: -20em;
+    width: 30em;
+		font-size: 95%;
 }
 
 @media screen and (max-width: 479px) {

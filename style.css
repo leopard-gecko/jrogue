@@ -168,17 +168,19 @@ li {
 	letter-spacing: 0.02em;
 	padding: 0.2em 0 0.2em 0.1em;
 }
-
 li.mokuji {
+	list-style-type: decimal;
 	padding: 0;
 	margin: 0;
 	line-height: 1;
 }
-
 sup {
 	font-size: 80%
 }
 
+rt {
+	font-size: 50%;
+}
 .footer {
 	margin: 3em 0 0 0;
 	padding:25px;
@@ -302,7 +304,8 @@ span.aks {
 	.message a:hover span.remark {
 		pointer-events:none;
 		position: fixed;
-		bottom: 3em;
+		top: 3em;
+		bottom: auto;
 		left: 1em;
 		width: 80%;
 		font-size: 125%;

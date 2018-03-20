@@ -72,6 +72,23 @@ table.guide td {
 	vertical-align:top;
 }
 
+table.wm {
+	font-size: 95%;
+	border-collapse: collapse;
+	border: 1px solid #CCCCCC;
+}
+table.wm tr td {
+	padding:5px;
+	border: 1px solid #CCCCCC;
+}
+table.wm th {
+	padding:5px;
+	border: 1px solid #CCCCCC;
+	background: #EFEFEF;
+	font-style: oblique;
+	white-space: nowrap;
+}
+
 hr {
   border-width: 1px 0 0 0;
   border-style: solid;

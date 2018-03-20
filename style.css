@@ -13,11 +13,8 @@ body {
 
 * {line-height: 1.6;font-size: 100%;}
 
-
 /***** text styles
 *******************************************/
-
-
 
 html {
 	padding: 0;
@@ -31,7 +28,6 @@ body {
 	padding:0;
 	font-family: Verdana, Arial, "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", sans-serif;
 }
-
 
 p {
 	line-height: 1.9;
@@ -138,7 +134,6 @@ h2 {
 	font-weight:normal;
 	margin:0;
 	padding:0;
-
 }
 
 h3 {
@@ -182,6 +177,7 @@ li.mokuji {
 	margin: 0;
 	line-height: 1;
 }
+
 sup {
 	font-size: 80%
 }
@@ -189,6 +185,7 @@ sup {
 rt {
 	font-size: 50%;
 }
+
 .footer {
 	margin: 3em 0 0 0;
 	padding:25px;

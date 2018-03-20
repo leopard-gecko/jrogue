@@ -390,7 +390,7 @@ span.aks {
 		display:none;
 	}
 	table.ps tbody td::before{
-		content: "→ ";
+		content: " → ";
 	}
 	table.ps thead {
 		display:none;

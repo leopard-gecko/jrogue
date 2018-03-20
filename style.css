@@ -61,7 +61,10 @@ table.guide {
 	margin: 0;
 }
 table.guide tr td {
-	padding:5px;
+	padding:3px 0px;
+}
+table.guide td {
+	vertical-align:top;
 }
 
 hr {

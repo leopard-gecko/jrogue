@@ -42,10 +42,32 @@ p, ul, ol, dl, table, pre {
 	letter-spacing: 0.02em;
 }
 
+table.ps {
+	font-size: 95%;
+	border-collapse: collapse;
+	border: 1px solid #CCCCCC;
+}
+table.ps tr td {
+	padding:5px;
+	border: 1px solid #CCCCCC;
+}
+table.ps thead {
+	background: #EFEFEF;
+}
+
+table.guide {
+	border-collapse: collapse;
+	border: 0;
+	margin: 0;
+}
+table.guide tr td {
+	padding:5px;
+}
+
 hr {
-  border-width: 1px 0 0 0; /* 太さ */
-  border-style: solid; /* 種類 */
-  border-color: #CCCCCC; /* 色 */
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: #CCCCCC;
 }
 
 .source {
@@ -163,16 +185,7 @@ li {
 	letter-spacing: 0.02em;
 	padding: 0.2em 0 0.2em 0.1em;
 }
-.prompt {
-	list-style:none;
-	margin: 0;
-	padding: 0;
-}
-.prompt::before {
-	content: "$ ";
-}
-li.mokuji {
-	list-style-type: decimal;
+ol li {
 	padding: 0;
 	margin: 0;
 	line-height: 1;
@@ -184,6 +197,26 @@ sup {
 
 rt {
 	font-size: 50%;
+}
+
+pre.prompt {
+	font-family: 'Monaco', 'Consolas', 'Courier New', Courier, monospace, sans-serif;
+	font-size: 90%;
+	background: #EFEFEF;
+	border-radius: 3px;
+	padding: 0px 5px;
+	margin: 5px 0;
+}
+pre.prompt::before {
+	content: "$ ";
+}
+pre.map {
+	font-family: 'Monaco', 'Consolas', 'Courier New', Courier, monospace, sans-serif;
+	line-height: 1;
+	background: #000000;
+	color: #D4D4D4;
+	border-radius: 3px;
+	padding: 10px 1em;
 }
 
 .footer {
@@ -282,6 +315,7 @@ span.aks {
 	.scroll::-webkit-scrollbar-thumb {	/*tableにスクロールバーを追加*/
 		background: #BCBCBC;
 	}
+
 	.only-sp {
 		display: block ;		/* 表示する */
 	}
@@ -305,6 +339,9 @@ span.aks {
 	}
 	h1 {
 		font-size: 130%;
+	}
+	pre.prompt {
+		white-space: pre-wrap ;
 	}
 	.message a:hover span.remark {
 		pointer-events:none;

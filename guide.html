@@ -55,18 +55,18 @@
 <p style="font-size: 130%; text-align: center; margin: 0;">目次</p>
 	<table width="70%" align="center">
 	<tr><td><ol style="padding: 0; margin: 0;">
-		<li class="mokuji"><a href="#01">導入</a></li>
-		<li class="mokuji"><a href="#02">ここで何が起こっているのか？</a></li>
-		<li class="mokuji"><a href="#03">画面上のものは何を意味しているのか？</a></li>
-		<li class="mokuji"><a href="#04">コマンド</a></li>
-		<li class="mokuji"><a href="#05">部屋</a></li></ol>
+		<li><a href="#01">導入</a></li>
+		<li><a href="#02">ここで何が起こっているのか？</a></li>
+		<li><a href="#03">画面上のものは何を意味しているのか？</a></li>
+		<li><a href="#04">コマンド</a></li>
+		<li><a href="#05">部屋</a></li></ol>
 	</td>
 	<td><ol style="padding: 0; margin: 0;">
-		<li value="6" class="mokuji"><a href="#06">戦闘</a></li>
-		<li class="mokuji"><a href="#07">見つけられるアイテム</a></li>
-		<li class="mokuji"><a href="#08">オプション</a></li>
-		<li class="mokuji"><a href="#09">スコア</a></li>
-		<li class="mokuji"><a href="#10">謝辞</a></li></ol>
+		<li value="6"><a href="#06">戦闘</a></li>
+		<li><a href="#07">見つけられるアイテム</a></li>
+		<li><a href="#08">オプション</a></li>
+		<li><a href="#09">スコア</a></li>
+		<li><a href="#10">謝辞</a></li></ol>
 		</td></tr>
 	</table>
 <hr width="100%">
@@ -75,17 +75,17 @@
 <div class="only-sp">
 	<div style="font-size: 90%;">
 	<h3>目次</h3>
-	<ol type="1">
-	<li class="mokuji"><a href="#01">導入</a></li>
-	<li class="mokuji"><a href="#02">ここで何が起こっているのか？</a></li>
-	<li class="mokuji"><a href="#03">画面上のものは何を意味しているのか？</a></li>
-	<li class="mokuji"><a href="#04">コマンド</a></li>
-	<li class="mokuji"><a href="#05">部屋</a></li>
-	<li class="mokuji"><a href="#06">戦闘</a></li>
-	<li class="mokuji"><a href="#07">見つけられるアイテム</a></li>
-	<li class="mokuji"><a href="#08">オプション</a></li>
-	<li class="mokuji"><a href="#09">スコア</a></li>
-	<li class="mokuji"><a href="#10">謝辞</a></li></ol>
+	<ol>
+	<li><a href="#01">導入</a></li>
+	<li><a href="#02">ここで何が起こっているのか？</a></li>
+	<li><a href="#03">画面上のものは何を意味しているのか？</a></li>
+	<li><a href="#04">コマンド</a></li>
+	<li><a href="#05">部屋</a></li>
+	<li><a href="#06">戦闘</a></li>
+	<li><a href="#07">見つけられるアイテム</a></li>
+	<li><a href="#08">オプション</a></li>
+	<li><a href="#09">スコア</a></li>
+	<li><a href="#10">謝辞</a></li></ol>
 </div>
 </div>
 
@@ -112,32 +112,32 @@
 <div align="center">
 <div class="scroll">
 <table><tr><td>
-<pre style="font-family: Monaco; line-height: 1; background: #EFEFEF; border-radius: 3px; padding: 10px 1em;">
+<pre class="map">
 
 
-                        ------------
-                        |..........+
-                        |..@....]..|
-                        |....B.....|
-                        |..........|
-                        -----+------
+                         ------------
+                         |..........+
+                         |..@....]..|
+                         |....B.....|
+                         |..........|
+                         -----+------
 
 
 
 階: 1  金塊: 0      体力: 12(12)  強さ: 16(16)  守備: 4   経験: 1/0
-
-                            図1
-
 </pre>
+<p style="text-align: center;">図1</p>
 </td></tr></table>
 </div>
 </div>
+
 </div>
+
 <h4 align="justify"><b>3.1.  最下行</b></h2>
 	<div class="padding_3em">
-<p class="indent">画面の一番下の行はプレイヤーの現在の状態を示す暗号のような<sup class="message" id="b5"><a href="#c5">訳注<span class="remark">元の英語版では頭文字や略語なので、そのままでは意味がわからない。</span></a></sup>いくつかの情報である。以下はこれらが何を意味するのかの説明である：<br>
+<p class="indent">画面の一番下の行はプレイヤーの現在の状態を示す暗号のような<sup class="message" id="b5"><a href="#c5">訳注<span class="remark">英語版では頭文字や略語なので意味がわかりにくい。</span></a></sup>いくつかの情報である。以下はこれらが何を意味するのかの説明である：<br>
 <br>
-<table border="0" id="table1" cellpadding="5" style="border-collapse: collapse; margin:0 0;"  bordercolor="#cccccc">
+<table class="guide">
 	<tr>
 		<td width="6%" valign="top" style="white-space: nowrap;">階</td>
 		<td>この数値は洞窟の中でどこまで降りて行ったかを示している。１から始まり、洞窟を降りて行くに従い数値が上がっていく。</td>
@@ -173,7 +173,7 @@
 <h4 align="justify"><b>3.3.  画面の残りの部分</b></h3>
 	<div class="padding_3em">
 <p class="indent">画面の残りの部分はこれまでに探検した階の地図である。画面上の各々の文字は何らかのものを意味している。以下は個々の文字が何を意味しているかの一覧である：</p>
-<table border="0" id="table2" cellpadding="5" style="border-collapse: collapse; margin:0 0;"  bordercolor="#cccccc">
+<table class="guide">
 	<tr>
 		<td width="6%" valign="top">@</td>
 		<td>この記号は冒険者であるプレイヤーを表している。</td>
@@ -246,9 +246,7 @@
 	<p class="indent">ローグへのコマンドは一つか二つの文字を入力することによって与えられる。大部分のコマンドは前に回数を入力すると繰り返すことができる（例：「10s」と入力すると10回の検索(search)が行われる）。回数が意味を持たないコマンドは回数を無視する。回数または接頭辞を取り消すには、[esc]を入力する。コマンドのリストはかなり長いが、「?」コマンドでゲーム中にいつでも読むことができる。以下は参照用としての各コマンドの簡単な説明である。<br>
 	&nbsp;</p>
 
-	<div align="center">
-
-	<table border="0" cellspacing="0" cellpadding="5" id="table3" style="border-collapse: collapse; margin:0 0;">
+	<table class="guide">
 		<tr>
 			<td valign="top" align="left">?</td>
 			<td align="justify">ヘルプ用のコマンド。ヘルプを表示してほしいコマンドの文字は何かを尋ねてくる。そこで「*」と入力すれば全てのコマンドが一覧表示され、それ以外の文字を入力すれば、それが何を行うかを説明する。</td>
@@ -417,9 +415,9 @@
 		<tr>
 			<td align="left" valign="top">S</td>
 			<td align="justify">&quot;save game&quot;。現在のゲームをファイルに保存する。デフォルトのセーブファイルを使うかを尋ねる。<i>警告：</i>ローグはセーブのコピーは起動させない上に、セーブされたゲームを再開すると直ちにセーブファイルを削除する。これは、危険なところでゲームをセーブして死んでしまったらゲームをやり直すことをさせないようにするためである。<br>セーブファイルをデフォルトで保存した場合は、ゲームを再開するためには以下のようにする。<br>
-			<pre style="font-family: Monaco;font-size: 90%; background: #EFEFEF; border-radius: 3px; padding: 0px 5px;margin: 5px 0;"><li class="prompt">jrogue -r</li></pre>
+			<pre class="prompt">jrogue -r</pre>
 			ファイル名を指定して保存した場合は、以下のようにローグの引数としてファイル名を指定する。
-			<pre style="font-family: Monaco;font-size: 90%; background: #EFEFEF; border-radius: 3px; padding: 0px 5px;margin: 5px 0;"><li class="prompt">jrogue <i>save_file</i></li></pre>
+			<pre class="prompt">jrogue <i>save_file</i></pre>
 			</td>
 		</tr>
 		<tr>
@@ -443,7 +441,6 @@
 			<td align="justify">メッセージ行にステータス行を再表示する。</td>
 		</tr>
 	</table>
-</div>
 </div>
 
 <h3 align="justify" id="05"><b>5.  部屋</b></h2>
@@ -560,14 +557,7 @@
 <h4 align="justify"><b>8.1.2.  環境変数「ROGUEOPTS」の使用</b></h4>
 <div class="padding_3em">
 <p class="indent">環境変数「ROGUEOPTS」は、さまざまなオプションの初期値をカンマで区切ってリストにした文字列である。Boolean変数はその名前をリストに入れることにより有効にすることができ、名前の前に"no"を加えると無効にすることができる。したがって、「<b>jump</b>」(移動中の表示を行わない)を有効に、「<b>terse</b>」(簡潔な表示)を無効、「<b>name</b>」（プレイヤー名）を「ブルー・ミーニー」になるように環境変数を設定するには、次のコマンドを使用する。</p>
-
-<div class="scroll">
-	<table border="0" cellspacing="0" cellpadding="0"  width="100%" style="font-family: Monaco;font-size: 90%; background: #EFEFEF; border-radius: 3px; padding: 0px 0px;margin: 0 0;">
-	<tr>
-	<td class="noselect" align="right">$&nbsp;</td><td align="left">export ROGUEOPTS=&quot;jump,noterse,name=ブルー・ミーニー&quot;</td>
-	</tr>
-	</table>
-</div>
+<pre class="prompt">export ROGUEOPTS=&quot;jump,noterse,name=ブルー・ミーニー&quot;</pre>
 
 <p><b>注：環境変数「ROGUEOPTS」はCUI版のみ対応。GUI版では使えない。</b>
 </div>
@@ -649,7 +639,7 @@
 
 <p class="indent">ゲームを自分で終了したときには金塊は失われない。しかし、【運命の洞窟】で殺されてしまった場合は、死体は金塊の90%とともに近親者に送られ、金塊の10%は洞窟の魔法使いへの手数料となる<sup class="message" id="b4"><a href="#c4">[4]<span class="remark">洞窟の魔法使いは【驚くべきアナグマのウォリー】と呼ばれている。呪文には相当な額の寄付が付きものとされる。</span></a></sup>。怪物に最後の一撃を放って生き延びる可能性を望むのか、持ち物の全てを所持したまま終了するのかを考える必要がある。終了すれば金塊を全て手に入れられるのだが、攻撃して生き延びたならばもっと多くを見つけられるかもしれない。</p>
 <p>現在のトッププレイヤー／ゲームのリストを見たい場合は、次のように入力する。
-<pre style="font-family: Monaco;font-size: 90%; background: #EFEFEF; border-radius: 3px; padding: 0px 5px;margin: 5px 0;"><li class="prompt">jrogue &minus;s</li></pre></p>
+<pre class="prompt">jrogue &minus;s</pre></p>
 </div>
 
 <h3 align="justify" id="10"><b>10.  謝辞</b></h3>
@@ -664,7 +654,7 @@
 	<sup id="c2"><a href="#b2">2</a></sup> 最小の画面サイズは24行80桁が求められる。画面がそれ以上の場合は24x80の部分のみ使われる。<br>
 	<sup id="c3"><a href="#b3">3</a></sup> 実際には外モンゴルのある部族の27人だけのメンバーで話される方言なのだが、君はそれを知らないことになっている。<br>
 	<sup id="c4"><a href="#b4">4</a></sup> 洞窟の魔法使いは【驚くべきアナグマのウォリー】と呼ばれている。呪文には相当な額の寄付が付きものとされる。<br>
-	<sup id="c5"><a href="#b5">訳注</a></sup> 元の英語版では頭文字や略語なので、そのままでは意味がわからない。<br>
+	<sup id="c5"><a href="#b5">訳注</a></sup> 英語版では頭文字や略語なので意味がわかりにくい。<br>
 </div>
 <br>
 <p align="justify"><span class="aks">日本語訳およびMac版用の修正・追加：</span><a href="https://twitter.com/leopard_gecko" target=”_blank”>leopardgecko</a></p>

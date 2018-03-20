@@ -417,9 +417,9 @@
 		<tr>
 			<td align="left" valign="top">S</td>
 			<td align="justify">&quot;save game&quot;。現在のゲームをファイルに保存する。デフォルトのセーブファイルを使うかを尋ねる。<i>警告：</i>ローグはセーブのコピーは起動させない上に、セーブされたゲームを再開すると直ちにセーブファイルを削除する。これは、危険なところでゲームをセーブして死んでしまったらゲームをやり直すことをさせないようにするためである。<br>セーブファイルをデフォルトで保存した場合は、ゲームを再開するためには以下のようにする。<br>
-			<pre style="font-family: Monaco;font-size: 90%; background: #EFEFEF; border-radius: 3px; padding: 0px 5px;margin: 5px 0;">$ jrogue -r</pre>
+			<pre style="font-family: Monaco;font-size: 90%; background: #EFEFEF; border-radius: 3px; padding: 0px 5px;margin: 5px 0;"><li class="prompt">jrogue -r</li></pre>
 			ファイル名を指定して保存した場合は、以下のようにローグの引数としてファイル名を指定する。
-			<pre style="font-family: Monaco;font-size: 90%; background: #EFEFEF; border-radius: 3px; padding: 0px 5px;margin: 5px 0;">$ jrogue <i>save_file</i></pre>
+			<pre style="font-family: Monaco;font-size: 90%; background: #EFEFEF; border-radius: 3px; padding: 0px 5px;margin: 5px 0;"><li class="prompt">jrogue <i>save_file</i></li></pre>
 			</td>
 		</tr>
 		<tr>
@@ -562,7 +562,7 @@
 <p class="indent">環境変数「ROGUEOPTS」は、さまざまなオプションの初期値をカンマで区切ってリストにした文字列である。Boolean変数はその名前をリストに入れることにより有効にすることができ、名前の前に"no"を加えると無効にすることができる。したがって、「<b>jump</b>」(移動中の表示を行わない)を有効に、「<b>terse</b>」(簡潔な表示)を無効、「<b>name</b>」（プレイヤー名）を「ブルー・ミーニー」になるように環境変数を設定するには、次のコマンドを使用する。</p>
 
 <div class="scroll">
-	<table border="0" cellspacing="0" cellpadding="0"  width="100%" style="font-family: Monaco;font-size: 90%; background: #EFEFEF; border-radius: 3px; padding: 0px 0px;margin: 5px 0;">
+	<table border="0" cellspacing="0" cellpadding="0"  width="100%" style="font-family: Monaco;font-size: 90%; background: #EFEFEF; border-radius: 3px; padding: 0px 0px;margin: 0 0;">
 	<tr>
 	<td class="noselect" align="right">$&nbsp;</td><td align="left">export ROGUEOPTS=&quot;jump,noterse,name=ブルー・ミーニー&quot;</td>
 	</tr>
@@ -649,7 +649,7 @@
 
 <p class="indent">ゲームを自分で終了したときには金塊は失われない。しかし、【運命の洞窟】で殺されてしまった場合は、死体は金塊の90%とともに近親者に送られ、金塊の10%は洞窟の魔法使いへの手数料となる<sup class="message" id="b4"><a href="#c4">[4]<span class="remark">洞窟の魔法使いは【驚くべきアナグマのウォリー】と呼ばれている。呪文には相当な額の寄付が付きものとされる。</span></a></sup>。怪物に最後の一撃を放って生き延びる可能性を望むのか、持ち物の全てを所持したまま終了するのかを考える必要がある。終了すれば金塊を全て手に入れられるのだが、攻撃して生き延びたならばもっと多くを見つけられるかもしれない。</p>
 <p>現在のトッププレイヤー／ゲームのリストを見たい場合は、次のように入力する。
-<pre style="font-family: Monaco;font-size: 90%; background: #EFEFEF; border-radius: 3px; padding: 0px 5px;margin: 5px 0;">$ jrogue &minus;s</pre></p>
+<pre style="font-family: Monaco;font-size: 90%; background: #EFEFEF; border-radius: 3px; padding: 0px 5px;margin: 5px 0;"><li class="prompt">jrogue &minus;s</li></pre></p>
 </div>
 
 <h3 align="justify" id="10"><b>10.  謝辞</b></h3>

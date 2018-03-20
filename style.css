@@ -168,6 +168,14 @@ li {
 	letter-spacing: 0.02em;
 	padding: 0.2em 0 0.2em 0.1em;
 }
+.prompt {
+	list-style:none;
+	margin: 0;
+	padding: 0;
+}
+.prompt::before {
+	content: "$ ";
+}
 li.mokuji {
 	list-style-type: decimal;
 	padding: 0;

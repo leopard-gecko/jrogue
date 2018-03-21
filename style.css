@@ -58,6 +58,7 @@ table.ps th {
 }
 table.ps thead {
 	background: #EFEFEF;
+	font-style: oblique;
 }
 
 table.guide {
@@ -215,6 +216,10 @@ ol li {
 	margin: 0;
 	line-height: 1;
 }
+.br::before {
+	content:"\A";
+	white-space: pre ;
+}
 
 sup {
 	font-size: 80%
@@ -306,7 +311,7 @@ span.aks {
     bottom: 1.2em;
 		left: -20em;
     width: 30em;
-		font-size: 95%;
+		font-size: 110%;
 }
 
 @media screen and (max-width: 479px) {
@@ -383,7 +388,7 @@ span.aks {
 	}
 	table.ps tbody td {
 		display: block;
-  	padding: 5px;
+  	padding: 0 5px;
 		border: 0;
 	}
 	table.ps tbody td.en {
@@ -391,6 +396,10 @@ span.aks {
 	}
 	table.ps tbody td::before{
 		content: " → ";
+	}
+	.br::before {
+		content:"\A  → ";
+		white-space: pre ;
 	}
 	table.ps thead {
 		display:none;

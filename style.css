@@ -46,6 +46,7 @@ table.ps {
 	font-size: 95%;
 	border-collapse: collapse;
 	border: 1px solid #CCCCCC;
+	width: 100%;
 }
 table.ps tr td {
 	padding:5px;
@@ -378,7 +379,6 @@ span.aks {
 		border-collapse: collapse;
 		white-space: pre-wrap ;
 		border: 0;
-		width: 100%;
 	}
 	table.ps tbody th {
 		display: block;

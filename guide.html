@@ -566,71 +566,33 @@
 <div class="padding_3em">
 <p class="indent">ここではオプションの一覧と、それぞれのオプションの説明を示す。それぞれのデフォルトの値は角括弧で囲まれている。文字列オプションの場合、48文字を超える入力は無視される。</p>
 
-<p align="justify"><b>terse</b>
-[<i>noterse</i>]（簡潔な表示）</p>
-<blockquote>
-	<p align="justify">
+<p align="justify"><b>terse</b>[<i>noterse</i>]（簡潔な表示）</p>
+	<p align="justify" class="padding_option">
 	時々あるローグの長いメッセージにうんざりしている人に有用である。これは遅い端末で遊ぶのに便利なオプションなので、遅い（1200ボー以下）端末では<i>terse</i>（簡潔な表示）がデフォルトになる。</p>
-</blockquote>
-<p align="justify"><b>flush</b>
-[<i>noflush</i>]（先行入力をキャンセル）</p>
-<blockquote>
-	<p align="justify">全ての先行入力が戦闘のたびにキャンセルされる。これはタイプしすぎてこうもりに殺されてしまうのをがっかりしながら見ているような人にとって有用である。</p>
-</blockquote>
-<p align="justify"><b>jump</b>
-[<i>nojump</i>]（移動中の表示を行わない）</p>
-<blockquote>
-	<p align="justify">このオプションが設定されている場合、移動が終わるまで表示されない。これによりCPUと表示の時間がかなり節約される。遅い端末を使っている場合、このオプションのデフォルトは<i>jump</i>（移動中の表示を行わない）になる。</p>
-</blockquote>
-<p align="justify"><b>seefloor</b>
-[<i>seefloor</i>]（ランプで照らされた床を表示）</p>
-<blockquote>
-	<p align="justify">暗い部屋を移動するときにプレイヤーの周りに床を表示する。文字の量のために、遅い端末を使っているときは<i>noseefloor</i>（床を表示しない）がデフォルトである。</p>
-</blockquote>
-<p align="justify"><b>passgo</b>
-[<i>nopassgo</i>]（通路の角で止まらない）</p>
-<blockquote>
-	<p align="justify">通路の曲がり角に従って進む。通路を通って石や壁にぶつかると、ローグは右か左のどちらかに曲がれるかどうかを判別する。片方向だけに曲がれる場合にはその方向に曲がる。どちらにも曲がれるかどちらにも曲がれない場合は立ち止まる。このアルゴリズムはときに混乱を招くことがあるため、デフォルトは<i>nopassgo</i>（通路の角で立ち止まる）になっている。（<font size="2">注：GUI版の「通常」モードでは<i>passgo</i>（通路の角で止まらない）がデフォルト</font>）</p>
-</blockquote>
-<p align="justify"><b>tombstone</b>
-[<i>tombstone</i>]（死んだときに墓石を表示）</p>
-<blockquote>
-	<p align="justify">プレイヤーが死んでしまったとき、最後に墓石を表示する。これは良いものだが遅くなるので、望むなら無効にできる。</p>
-</blockquote>
-<p align="justify"><b>color</b>
-[<i>color</i>]（キャラクターをカラーで表示）</p>
-<blockquote>
-	<p align="justify">各種のキャラクターがカラーで表示される。</p>
-</blockquote>
-<p align="justify"><b>bright</b>
-[<i>nobright</i>]（PC-9801/8801風のカラーで表示）</p>
-<blockquote>
-	<p align="justify">カラーの配色がPC-9801/8801版を参考にしたものになる。</p>
-</blockquote>
-<p align="justify"><b>idscrl</b>
-[<i>noidscrl</i>]（識別の巻き物を１種類に設定）</p>
-<blockquote>
-	<p align="justify">識別の巻き物を１種類にまとめる。ゲーム開始後には設定が変更できない。GUI版では「通常」モードで有効であり、「オリジナル」モードでは無効である。</p>
-</blockquote>
-<p align="justify"><b>inven</b>
-[<i>overwrite</i>]（持ち物の表示方式）</p>
-<blockquote>
-	<p align="justify">持ち物リストのタイプ。これには<i>上書き(overwrite)</i>、<i>低速(slow)</i>、<i>クリア(clear)</i>の３つのうちいずれかを設定できる。<i>上書き(overwrite)</i>を選ぶと、持ち物リストが要求されたときか、「どのアイテムを表示しますか？」の質問で「*」を選んだときに、リストが地図上に上書きされる。しかし、リストが画面よりも長い場合は画面は消去される。<i>低速(slow)</i>ではリストは一度に一項目ずつ画面の上部に表示される。<i>クリア(clear)</i>では画面は消去されてリストが表示され、洞窟の階数が再表示される。clear-to-end-of-line機能を持たない端末では速度を考慮して<i>クリア(clear)</i>がデフォルトとなる。</p>
-</blockquote>
+<p align="justify"><b>flush</b>[<i>noflush</i>]（先行入力をキャンセル）</p>
+	<p align="justify" class="padding_option">全ての先行入力が戦闘のたびにキャンセルされる。これはタイプしすぎてこうもりに殺されてしまうのをがっかりしながら見ているような人にとって有用である。</p>
+<p align="justify"><b>jump</b>[<i>nojump</i>]（移動中の表示を行わない）</p>
+	<p align="justify" class="padding_option">このオプションが設定されている場合、移動が終わるまで表示されない。これによりCPUと表示の時間がかなり節約される。遅い端末を使っている場合、このオプションのデフォルトは<i>jump</i>（移動中の表示を行わない）になる。</p>
+<p align="justify"><b>seefloor</b>[<i>seefloor</i>]（ランプで照らされた床を表示）</p>
+	<p align="justify" class="padding_option">暗い部屋を移動するときにプレイヤーの周りに床を表示する。文字の量のために、遅い端末を使っているときは<i>noseefloor</i>（床を表示しない）がデフォルトである。</p>
+<p align="justify"><b>passgo</b>[<i>nopassgo</i>]（通路の角で止まらない）</p>
+	<p align="justify" class="padding_option">通路の曲がり角に従って進む。通路を通って石や壁にぶつかると、ローグは右か左のどちらかに曲がれるかどうかを判別する。片方向だけに曲がれる場合にはその方向に曲がる。どちらにも曲がれるかどちらにも曲がれない場合は立ち止まる。このアルゴリズムはときに混乱を招くことがあるため、デフォルトは<i>nopassgo</i>（通路の角で立ち止まる）になっている。（<font size="2">注：GUI版の「通常」モードでは<i>passgo</i>（通路の角で止まらない）がデフォルト</font>）</p>
+<p align="justify"><b>tombstone</b>[<i>tombstone</i>]（死んだときに墓石を表示）</p>
+	<p align="justify" class="padding_option">プレイヤーが死んでしまったとき、最後に墓石を表示する。これは良いものだが遅くなるので、望むなら無効にできる。</p>
+<p align="justify"><b>color</b>[<i>color</i>]（キャラクターをカラーで表示）</p>
+	<p align="justify" class="padding_option">各種のキャラクターがカラーで表示される。</p>
+<p align="justify"><b>bright</b>[<i>nobright</i>]（PC-9801/8801風のカラーで表示）</p>
+	<p align="justify" class="padding_option">カラーの配色がPC-9801/8801版を参考にしたものになる。</p>
+<p align="justify"><b>idscrl</b>[<i>noidscrl</i>]（識別の巻き物を１種類に設定）</p>
+	<p align="justify" class="padding_option">識別の巻き物を１種類にまとめる。ゲーム開始後には設定が変更できない。GUI版では「通常」モードで有効であり、「オリジナル」モードでは無効である。</p>
+<p align="justify"><b>inven</b>[<i>overwrite</i>]（持ち物の表示方式）</p>
+	<p align="justify" class="padding_option">持ち物リストのタイプ。これには<i>上書き(overwrite)</i>、<i>低速(slow)</i>、<i>クリア(clear)</i>の３つのうちいずれかを設定できる。<i>上書き(overwrite)</i>を選ぶと、持ち物リストが要求されたときか、「どのアイテムを表示しますか？」の質問で「*」を選んだときに、リストが地図上に上書きされる。しかし、リストが画面よりも長い場合は画面は消去される。<i>低速(slow)</i>ではリストは一度に一項目ずつ画面の上部に表示される。<i>クリア(clear)</i>では画面は消去されてリストが表示され、洞窟の階数が再表示される。clear-to-end-of-line機能を持たない端末では速度を考慮して<i>クリア(clear)</i>がデフォルトとなる。</p>
 <p align="justify"><b>name</b> [<i>アカウント名</i>]（プレイヤー名）</p>
-<blockquote>
-	<p align="justify">プレイヤーの名前。得点者リストのトップ10に入ったときに使われる。</p>
-</blockquote>
-<p align="justify"><b>fruit</b>
-[<i>ネバネバかび</i>]（好きな果物）</p>
-<blockquote>
-	<p align="justify">これは君が食べるのが好きな果物の名前にしておくべきだろう。これは要するにローグが所々でやっている遊びのうちの一つである。</p>
-</blockquote>
-<p align="justify"><b>file</b>
-[<i>jrogue.save</i>]（セーブファイル名）</p>
-<blockquote>
-	<p align="justify">ゲームをセーブするためのデフォルトのファイル名。電話回線がアクシデントでハングアップした場合、ローグは自動的にこのファイルにゲームをセーブする。ファイル名はホームディレクトリとして展開される特殊文字である「~」で始めても良い。</p>
-</blockquote>
+	<p align="justify" class="padding_option">プレイヤーの名前。得点者リストのトップ10に入ったときに使われる。</p>
+<p align="justify"><b>fruit</b>[<i>ネバネバかび</i>]（好きな果物）</p>
+	<p align="justify" class="padding_option">これは君が食べるのが好きな果物の名前にしておくべきだろう。これは要するにローグが所々でやっている遊びのうちの一つである。</p>
+<p align="justify"><b>file</b>[<i>jrogue.save</i>]（セーブファイル名）</p>
+	<p align="justify" class="padding_option">ゲームをセーブするためのデフォルトのファイル名。電話回線がアクシデントでハングアップした場合、ローグは自動的にこのファイルにゲームをセーブする。ファイル名はホームディレクトリとして展開される特殊文字である「~」で始めても良い。</p>
 </div>
 
 <h3 align="justify" id="09"><b>9.  スコア</b></h3>

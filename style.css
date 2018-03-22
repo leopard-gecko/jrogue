@@ -36,7 +36,9 @@ p {
 }
 
 p.indent {text-indent: 3em;}
-
+p.padding_option {
+	padding: 0 3em;
+}
 p, ul, ol, dl, table, pre {
 
 	letter-spacing: 0.02em;
@@ -367,6 +369,10 @@ span.aks {
 	.center_pc {
 		text-align: center;
 		font-size: 80%;
+	}
+	p.indent {text-indent: 2em;}
+	p.padding_option {
+		padding: 0 1em;
 	}
 	h1 {
 		font-size: 130%;

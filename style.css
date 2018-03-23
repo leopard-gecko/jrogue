@@ -45,7 +45,7 @@ p, ul, ol, dl, table, pre {
 }
 
 table.ps {
-	font-size: 95%;
+	font-size: 90%;
 	border-collapse: collapse;
 	border: 1px solid #CCCCCC;
 	width: 100%;
@@ -53,11 +53,13 @@ table.ps {
 table.ps tr td {
 	padding:5px;
 	border: 1px solid #CCCCCC;
+	width: 26%;
 }
 table.ps th {
 	font-weight: normal;
 	padding:5px;
 	border: 1px solid #CCCCCC;
+	width: 48%;
 }
 table.ps thead {
 	background: #EFEFEF;
@@ -391,11 +393,13 @@ span.aks {
   	padding: 5px;
 		background: #EFEFEF;
 		border: 0;
+		width: auto;
 	}
 	table.ps tbody td {
 		display: block;
   	padding: 0 5px;
 		border: 0;
+		width: auto;
 	}
 	table.ps tbody td.en {
 		display:none;

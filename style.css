@@ -5,7 +5,7 @@
 *******************************************/
 
 body {
-	font-size: 15px;
+	font-size: 16px;
 	*font-size: small; /* IE7 */
 	*font: x-small; /* IE6 */
 	-webkit-text-size-adjust: 100%;
@@ -26,7 +26,7 @@ body {
 	color: #5D5D5D;
 	margin:0 auto;
 	padding:0;
-	font-family: Verdana, Arial, "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", sans-serif;
+	font-family: -apple-system, 'BlinkMacSystemFont', Verdana, Arial, "ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN"", "ＭＳ Ｐゴシック", sans-serif;
 }
 
 p {
@@ -45,7 +45,7 @@ p, ul, ol, dl, table, pre {
 }
 
 table.ps {
-	font-size: 90%;
+	font-size: 85%;
 	border-collapse: collapse;
 	border: 1px solid #CCCCCC;
 	width: 100%;

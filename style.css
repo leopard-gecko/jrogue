@@ -26,13 +26,13 @@ body {
 /*	background-color: #F9F9F9; */
 	margin:0 auto;
 	padding:0;
-	font-family: -apple-system, 'BlinkMacSystemFont', Verdana, Arial, "ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", sans-serif;
+	font-family: -apple-system, 'BlinkMacSystemFont', sans-serif;
 }
 
 p {
 	line-height: 1.9;
 	text-align: justify;
-	text-justify: distribute;
+	text-justify: inter-ideograph;
 }
 
 p.indent {text-indent: 3em;}
@@ -162,7 +162,6 @@ a:hover {
 	border-bottom: 1px dashed #CCCCCC;
  	background-color:#FFFFFF;
 	height:120px;
-	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .menu  {
@@ -238,7 +237,7 @@ sup {
 }
 
 rt {
-	font-size: 50%;
+	font-size: 40%;
 }
 
 pre.prompt {

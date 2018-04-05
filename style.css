@@ -333,7 +333,7 @@ span.aks {
 		margin:0px auto 5px auto;
 		padding:10px 10px;
 		height:70px;
-		font-size: 4.7vw;
+		font-size: 110%;
 	}
 	.main {
 		width: auto;
@@ -344,7 +344,7 @@ span.aks {
 		letter-spacing: 0em;
 		padding:0 0 0 0;
 		text-align: center;
-		font-size: 2.8vw;
+		font-size: 2.77vw;
 	}
 	.scroll{
 		overflow: auto;					/*tableをスクロールさせる*/

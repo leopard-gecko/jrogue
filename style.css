@@ -391,6 +391,9 @@ span.aks {
 		font-size: 130%;
 		text-align: center;
 	}
+	rt {
+		font-size: 45%;
+	}
 	pre.prompt {
 		white-space: pre-wrap ;
 	}

@@ -14,10 +14,10 @@ if( localStorage['ga_exclude']!='1'){
 }
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>jRogue for macOS （日本語版Rogue 5.4）</title>
+<title>Rogue for macOS（日本語・英語対応 / Rogue 5.4・Clone III対応）</title>
 <meta name="robots" content="INDEX,FOLLOW" />
-<meta name="keywords" content="rogue roguelike mac sierra jrogue 日本語 ローグ" lang="ja" xml:lang="ja" />
-<meta name="description" content="jRogue for macOS （日本語版Rogue 5.4）" lang="ja" xml:lang="ja" />
+<meta name="keywords" content="rogue roguelike mac rogue 5.4 clone iii 日本語 英語 ローグ" lang="ja" xml:lang="ja" />
+<meta name="description" content="Rogue for macOS（日本語・英語対応 / Rogue 5.4・Clone III対応）" lang="ja" xml:lang="ja" />
 <meta http-equiv="content-style-type" content="text/css" />
 <meta http-equiv="content-script-type" content="text/javascript" />
 <meta http-equiv="content-language" content="ja" />
@@ -31,15 +31,14 @@ if( localStorage['ga_exclude']!='1'){
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@leopard_gecko" />
-<meta name="twitter:title" content="jRogue for macOS(日本語版ローグ)" />
+<meta name="twitter:title" content="Rogue for macOS" />
 <meta name="twitter:image" content="https://leopard-gecko.github.io/jrogue/for_twitter.png" />
 </head>
 
 <body>
 
-
 <div class="header">
-<h1><img src="https://leopard-gecko.github.io/jrogue/icon_32x32.png" width="32" height="32" alt="" style="vertical-align: middle;"><span class="aks">&nbsp;jRogue for macOS</span></h1>
+<h1><img src="https://leopard-gecko.github.io/jrogue/icon_32x32.png" width="32" height="32" alt="" style="vertical-align: middle;"><span class="aks">&nbsp;Rogue for macOS</span></h1>
 </div>
 <div class="out">
 <div class="main">
@@ -47,22 +46,21 @@ if( localStorage['ga_exclude']!='1'){
 <div class="padding_3em">
 <div class="menu">トップページ | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html">【運命の洞窟】への案内書</a> | <a href="ps.html"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target=”_blank”><span class="aks">ブログ</span></a><br></div>
 </div>
+
 <div class="padding_6em">
 <br>
-<p><a href="https://github.com/leopard-gecko/jrogue/releases/download/v5.4.5J.044/jRogue_044.dmg" target="_blank"><b><span class="aks" style="padding: 5px 10px;margin: 0 0 0 -10px;border-width: 1px;border-style: dashed;border-color: #CCCCCC;border-radius: 3px;">jRogue (GUI版) ダウンロード</a>&nbsp;</span><span class="aks">(2026年05月28日&nbsp;バージョン:5.4.5J.044)</span></b>
+<p><a href="https://github.com/leopard-gecko/jrogue/releases/download/v5.4.5.jec.050/Rogue_050.dmg" target="_blank"><b><span class="aks" style="padding: 5px 10px;margin: 0 0 0 -10px;border-width: 1px;border-style: dashed;border-color: #CCCCCC;border-radius: 3px;">Rogue for macOS ダウンロード</span></b></a>&nbsp;<b><span class="aks">(2026年6月14日 / バージョン：5.4.5.jec.050)</span></b>
 <br>
-動作確認：macOS Tahoe 26.5
+動作確認：macOS Tahoe 26.5.1
 <br>
-（注：いわゆるコード署名はありませんので、初回の起動時にはそのままでは開けません。開こうとして警告が出た場合は、<a href="https://support.apple.com/ja-jp/guide/mac-help/mh40616/mac" target=”_blank”>Appleが紹介している方法</a>に従って開いてください。2回目からは普通に起動できます）
-</p>
-<p>アプリの使い方については、<a href="gui.html">GUI版の解説書</a>を参照してください。</p>
-<br>
+（注：いわゆるコード署名はありませんので、<b>初回の起動時にはそのままでは開けません</b>。開こうとして警告が出た場合は、<a href="https://support.apple.com/ja-jp/guide/mac-help/mh40616/mac" target=”_blank”>Appleが紹介している方法</a>でシステム設定から許可を出して開いてください。2回目からは普通に起動できます）
+</p><br>
 <p>Homebrewをお使いの方は以下のコマンドでCUI版をインストールすることも可能です。<br>
 
 <div class="source">
   <table border="0" cellspacing="0" cellpadding="0">
   <tr>
-  <td class="noselect">&#037;&nbsp;<br>&#037;&nbsp;</td><td>brew tap leopard-gecko/game<br>brew install jrogue</td>
+  <td class="noselect">&#037;&nbsp;<br>&#037;&nbsp;</td><td>brew tap leopard-gecko/game<br>brew install jrogue --with-modern-settings</td>
   </tr>
   </table>
 </div>
@@ -98,9 +96,11 @@ if( localStorage['ga_exclude']!='1'){
   </span>
 </div>
 
+
+
 <div class="only-sp"><p>&nbsp;</div>
 <div align="center">
-<img class="rogueimg" src="https://leopard-gecko.github.io/jrogue/rogue.png" alt="">
+<img class="rogueimg" src="rogue.png" alt="">
 </div>
 
 <div class="only-pc">
@@ -111,7 +111,7 @@ if( localStorage['ga_exclude']!='1'){
 <tr><td><ol style="padding: 0; margin: 0;">
         <li><a href="#01">はじめに。</a></li>
         <li><a href="#02">アプリ（GUI版）について。</a></li>
-        <li><a href="#03">CUI版との違い。</a></li>
+        <li><a href="#03">Rogue 5.4とClone III。</a></li>
         <li><a href="#04">スポイラー。</a></li>
         <li><a href="#05">その他もろもろ。</a></li></ol>
    </td>
@@ -131,93 +131,85 @@ if( localStorage['ga_exclude']!='1'){
 	<ol>
 	<li><a href="#01">はじめに。</a></li>
 	<li><a href="#02">アプリ（GUI版）について。</a></li>
-	<li><a href="#03">CUI版との違い。</a></li>
+	<li><a href="#03">Rogue 5.4とClone III。</a></li>
 	<li><a href="#04">スポイラー。</a></li>
 	<li><a href="#05">その他もろもろ。</a></li>
 	<li><a href="#06">注意点。</a></li>
 	<li><a href="#07">外部リンク。</a></li>
 	<li><a href="#08">更新履歴。</a></li>
 	<li><a href="#09">連絡先。</a></li>
-</div>
+	</ol>
+  </div>
 </div>
 
 <h3 id="01">はじめに。</h3>
 <div class="padding_3em">
-<p>ここはMac用日本語版Rogue（ローグ）の配布サイトです。
+<p>ここはMac用Rogue（ローグ）の配布サイトです。</p>
 <p>Rougeとは1980年に作られた最初期のRPGの一つで、一文字で表現されたキャラクターやプレイするたびにランダムに作られる迷宮などが特徴です。非常に古いものなのですがなんとも言えない独特の味があり、今遊んでも楽しめるものだと思います。</p>
-<p>以前は日本語化されたMac用のフリーソフトもあったのですが、今では私の知る限りアプリとしてのMac用日本語版ローグは存在しません。テキストエディタのvim上で動くローグやWindows用のアプリを無理やりMacで動かす方法はあるのですが、いずれも少々敷居が高いものです。</p>
-<p>そこで、Macでネイティブに動作する日本語版ローグを作ってみました。日本語化したので「jRogue」という名前にしましたが、中身はRogueそのものです。</P>
-<p>近年一般的なWindows用などの日本語版ローグは「データ分離版」とか「メッセージ分離版」と呼ばれるもので、Rogue Clone IIというものがベースになっています。ローグには少々ややこしい歴史があり、このClone IIというのはオリジナルのローグが当時ソースコードが公開されていなかったために動作をそっくりにコピーしたクローンです。細かいところまで良くできているのですが、オリジナルに比べると暗い部屋が存在しなかったりアイテムが違ったり各種アルゴリズムが異なるなどの違いがあります。</p>
-<p>今回Mac用の日本語版ローグを作るにあたって当初はデータ分離版の移植を考えたのですが、現在はクローンではないオリジナルのローグのソースコードも公開されていますので、オリジナルローグの最終版といわれるバージョン5.4の日本語化を行いました。おそらく現在日本語化されているRogue 5.4は他機種用も含めてこれが唯一のものだろうと思います。</p>
-<p>単に5.4を日本語化しただけでなく、Windows/Linux用のローグをメンテナンスしておられるY.Oz VoxさんによるRogue 5.4pの独自要素（カラー化、識別の巻き物を１種類にまとめる、起動時にプレーヤー名を変更できる）も加えています。オリジナルそのままの形だけにこだわるのではなく、ユーザーフレンドリーなスタイルを目指しました。</p>
-<p>当初はデータ分離版の和訳を流用していましたが、意訳が多いので元の英語をそのまま訳すスタイルに変えました。カラー設定はほぼ新規です。</p>
-<p>ゲームを始める前に、まずはローグにはお決まりの添付文書である<a href="guide.html">【運命の洞窟】への案内書</a>を参照してください。
+<p>本来Rogueはターミナル上のプログラムとして動くので、ターミナルの使い方を知らないとやや敷居が高く感じてしまうかもしれません。そこで、MacでRogueをもっと気軽に遊べるようにするためにこのアプリを作りました。ターミナルにコマンドを入力しなくても普通のMacアプリのように開くことができ、そのまま冒険を始めることができます。</p>
+<p>以前ここで配布していた「jRogue for macOS」は、Rogueのバージョン 5.4を日本語化・カラー化したものでした。その後に方針を大きく変更し、元の英語版も取り込んで日本語版と切り替え可能にしました。英語版も統合したことから名称を<b>Rogue for macOS</b>に変更しています。さらに、Rogue 5.4だけでなく、Rogue Clone IIIも同じ起動画面から選べるようにしました。言うなれば、Rogueのバージョンや言語を選んで遊べるポータルアプリとして生まれ変わりました。</p>
+<p>このアプリ（GUI版）の使い方に関しては<a href="gui.html">GUI版の解説書</a>を読んでください。</p>
+<p>そして、ゲームを始める前にはローグにはお決まりの添付文書である<a href="guide.html">【運命の洞窟】への案内書</a>を読んでください。</p>
+
 </div>
 
 <h3 id="02">アプリ（GUI版）について。</h3>
 <div class="padding_3em">
-<p>GUI版はアプリケーションの形を取っていますが、実際にはターミナルからCUI版のjRogueを起動するためのAppleScriptです。ターミナルを使ったことがない人でも普通のアプリのようにクリック操作のみで起動できる環境を目指しました。</p>
-<p>アプリを開いて指示の通りに進んでいくとターミナルが開いてjRogueが起動します。ゲームの遊び方については、添付した文書や、ゲーム中に「?」をタイプすると表示されるヘルプを参照してください。</p>
-<p>このアプリ独自の仕様として、ゲーム開始時にモードを３種類選べるようにしてみました。
-	<ul>
-		<li><b>通常</b><br>カラー表示あり、識別の巻き物が１種類（後で説明します）、走る時に曲がり角で止まらない。背景色は黒。</li>
-		<li><b>オリジナル</b><br>もともとのRogue 5.4のデフォルト設定。カラー表示なし（本来Rogue 5.4にはカラー表示の機能はない）	、識別の巻き物が５種類、曲がり角で立ち止まる。背景色は黒。</li>
-		<li><b>細かく設定</b><br>各オプションを個別に設定できる。オプションについては<a href="guide.html" target=”_blank”>【運命の洞窟】への案内書</a>に詳細な説明があります。</li>
-	</ul>
-<p>識別の巻き物が云々というのは、Rogue5.4にはアイテムを識別するための巻き物が５種類あるのですが、他のバージョンでは１種類しかないものでした。UNIX以外の機種への移植版でも１種類の設定が採用されていたようです。上述の5.4pでは識別の巻き物を１種類にまとめるオプションが用意されており、こちらのアプリにもそのオプションを採用しデフォルトの仕様としました。</p>
-<p>GUI版ではスコアファイル（jrogue.scr）が書類フォルダに自動的に保存されます。セーブして終了した場合はセーブファイル（jrogue.save）が同様に書類フォルダに保存されます。（CUI版はいずれもカレントディレクトリへの保存がデフォルトです）</p>
-<p>フォントはターミナルの初期設定ではサイズが小さすぎるのでjRogue独自の設定に変更しています。ターミナルで設定したフォントを使いたい場合は、モードの「細かく設定」からフォントの設定を「ターミナルの設定」に変更してください。
-<p>背景色はデフォルトでは黒に設定していますが、ターミナルで設定した背景色を使いたい場合は同じように「細かく設定」から背景色を「ターミナルの設定」に変更してください。
-<p>プレイヤー名は初回起動時にはユーザー名を取得しています。「設定を変更する」を選べば名前の変更もできます。変更した場合は次回起動時からはその名前がデフォルトになります。名前を消して設定すれば初期設定に戻すことができます。
-<p>ゲームが終了するとjRogueを開いていたウインドウは自動的に閉じられます。ターミナルのウインドウが他に開いていない場合はターミナル自体を終了します。
-<p>（おまけ情報：本体のUNIX実行ファイル(jrogue)はアプリのパッケージの中に収納しています。ターミナルからコマンドで起動したいけれどHomebrewは使っていないというような場合は、アプリの中から実行ファイルを取り出すという裏技が使えます）</p>
+<p>GUI版はアプリケーションの形を取っていますが、実際にはターミナルからRogue本体を起動するためのAppleScriptです。ターミナルを使ったことがない人でも、クリック操作だけでRogueを遊べる環境を目指しています。</p>
+<p>アプリを開くと、Rogue 5.4とRogue Clone IIIのどちらで遊ぶかを選び、冒険を始めることができます。Rogueには豊富な設定機能があるのですが、おもなものはこのアプリから設定できます。設定は自動的に記録されるので、次回の起動からはリターンキーを押すだけでゲームを始めることができます。</p>
+<p>起動画面の各項目やボタンの詳しい説明は、<a href="gui.html">GUI版の解説書</a>にまとめています。</p>
 </div>
 
-<h3 id="03">CUI版との違い。</h3>
+<h3 id="03">Rogue 5.4とClone III。</h3>
 <div class="padding_3em">
-<p>ここでいうCUI版とはターミナルからコマンドを入力して起動するバージョンです。CUI版についての詳しい説明は<a href="https://github.com/leopard-gecko/homebrew-game" target=”_blank”>こちらの配布サイト</a>を参照してください。</p>
-<p>GUI版はCUI版のUNIX実行ファイルをAppleScriptで起動しているだけですから、両者は実質的には同じものです。ただしGUI版は各オプションを設定するために内部で環境変数ROGUEOPTSを変更してから起動しているため、GUI版では .zshrc や .bashrc などに設定した環境変数は無視されます。CUI版をオプションなしで起動するとオリジナルのRogue 5.4の素の状態とほぼ同じになり、GUI版での「オリジナル」モードに相当します。逆に、オプションや環境変数の設定次第でGUI版の「通常」モードと同等にすることもできます。</p>
+<p>このアプリでは、起動画面の「Rogue Version」から<b>5.4</b>と<b>Clone III</b>を選ぶことができます。</p>
+<p>Rogueには少々ややこしい歴史があります。Rogueにはオリジナル系統とクローン系統の二つがあり、<b>5.4</b>と<b>Clone III</b>はそれぞれの最終形とでもいうべきバージョンです。</p>
+<p>オリジナル系統は元々のRogueの流れであり、当時公開されていた最終版は5.3ですが、それを復刻してソースコードが公開されたものが<b>5.4</b>です。ここで配布しているものは<b>5.4</b>に日本語の入出力機能を加え、カラー化したものです。</p>
+<p>一方、当時はRogueのソースコードが公開されていなかったため、動作を再現するために作られたのがクローンの系統です。日本ではクローンのバージョン2が太田純氏によって日本語化されたものが有名であり、その派生である「データ分離版ローグ・クローンII」が普及しています。クローン系統の最終形はバージョン3（ここで「<b>Clone III</b>」と呼んでいるもの）であり、このアプリで採用したものです。こちらも<b>5.4</b>と同様に日本語の入出力機能とカラー機能を追加しました。</p>
+<p><b>5.4</b>は言うなればRogueの最終的な正統進化形であり、比較的機能が豊富です。<b>Clone III</b>は逆にシンプル指向で、サクサク遊べるのが特徴です。オリジナルと比べると暗い部屋が存在しなかったり、アイテムやオプションが違ったり各種アルゴリズムが異なるなどの違いがあります。外観上の大きな違いはゲームオーバー時の表示でしょう。オリジナル系統では墓石が、クローン系統ではガイコツが表示されます。</p>
+<p>どちらにも魅力があり一方が正解とはとても言えないので、思い切って両者を統合してしまうことにしました。ローグのバージョン違いを一つにまとめるアプローチは世界初であろうと思います。基本的な遊び方はほぼ同じですが細かな違いが色々とありますので、<a href="guide.html">【運命の洞窟】への案内書</a>も両方のバージョンに対応しました。</p>
 </div>
 
 <h3 id="04">スポイラー。</h3>
 <div class="padding_3em">
-<p><b>これらはあくまでスポイラー（ゲームのヒント）なので、正攻法で攻略したい人は読まないでください</b></p>
+<p><b>これらはあくまでスポイラー（ゲームのヒント）なので、正攻法で攻略したい人は読まないでください。</b></p>
 <ul>
 <li><a href="ps.html"><b>巻き物と水薬の一覧</b></a>
-<p>データ分離版では巻き物や水薬は使った後に名前を自動で判別してくれますが、Rogue 5.4では使用後のメッセージや効果を見て自分で呼び名をつけなければなりません。<br>
-そこが少々面倒なところなので、一種のスポイラーとして巻き物と水薬の一覧表を作成してみました。</p></li>
+<p>Rogue 5.4 では、巻き物や水薬を使った後のメッセージや効果を見て、自分で呼び名をつけなければなりません。そこが少々面倒なところなので、一種のスポイラーとして巻き物と水薬の一覧表を作成しています。<br>Clone IIIでは呼び名をつける必要はないのですが、5.4とは内容が若干違うのでClone III版も用意しています。</p></li>
 <li><a href="wizardmode.html"><b>ウィザードモードのコマンド</b></a>
-<p>ウィザードモードに入った時に追加されるコマンドの一覧です。<br>注：ウィザードモードはCUI版をとある方法で生成した時だけ使える特殊なモードです。通常のGUI/CUI版では使えません。</p></li>
+<p>ウィザードモードに入った時に追加されるコマンドの一覧です。5.4版とClone III版の両方を用意しています。
+  <br>注：ウィザードモードは開発者の動作確認用の特殊なモードです。通常のGUI版では使えません。</p></li>
 </ul>
 </div>
 
 <h3 id="05">その他もろもろ。</h3>
 <div class="padding_3em">
-<p>ローグには走るコマンド（コントロールキーまたはシフトキーを押しながら移動）がありますが、曲がり角で止まらない設定（passgo）にすると長い通路では一瞬でどこかにワープして見失ってしまいます。ところがソースコードを見ると、走る時でもきちんと一コマ一コマ描写しているので、昔の動作が遅い端末では移動していく様子が肉眼でも見られたのでしょう。そこであえて遅延処理を加えて走る様子が見られるようにしました。物を投げたり魔法のミサイルを飛ばしたりする時にもそういう表示になるはずなので、それらにも遅延処理を加えました。</p>
-<p>そういうのが鬱陶しいと感じる人のためにローグではもともとちゃんと対策が取られており、走る時のアニメ表示を切りたい場合はオプションのjumpを有効にすれば瞬間移動するようになりますし、物を投げる時はterse（簡潔表示）を有効にすればアニメ表示がオフになります。これでjumpやterseの実質的な存在意義も再現できるようになったと思います。</p>
-<p>これはjRogue独自の修正点ですが、むしろオリジナルのあり方に近づくことができたのではないかと思います。</p>
+<p>Rogueには走るコマンド（コントロールキーまたはシフトキーを押しながら移動）があります。ソースコードを見ると一コマずつプレーヤーが移動する様子が描写されるはずなのですが、今のPCでは処理が早すぎて一瞬で遥か彼方に行ってしまいます。他にも、ソースコードには物を投げたり魔法の杖で何かを発射したりするときには同様のアニメーション処理の記述があります。昔の端末では処理が遅かったため、走っている様子や物を投げる様子が肉眼でも見えたはずです。</p>
+<p>そこで、ここで配布しているRogueではそういったアニメーション処理が見えるよう、必要な場面に短い遅延処理を加えています。単に現代風に便利にするだけでなく、当時の雰囲気に少しでも近づけるための変更です。</p>
+<p></p>
 </div>
 
 <h3 id="06">注意点。</h3>
 <div class="padding_3em">
-<p>日本語の表示と入力はMacの標準的な環境(UTF-8)のみに対応しています。文字コード関係の設定を変更している場合は適切な表示や入力ができない可能性があります。</p>
-<p>プレイヤー名や好きな果物の名前などに日本語だけでなく絵文字を使うことも可能です（例えば好きな果物の名前を🍏に設定したり、使っている剣に⚔という呼び名をつけるなど）。ただしターミナルに表示される絵文字は半角1文字分の表示となりますので、続けて文字を入力すると表示が重なってしまいます。絵文字を入力した後には半角スペースを一つ加えてください。</p>
-<p>通常日本語は1文字で3バイト分のデータがありますが、特殊な漢字の一部は4バイトのものもあります。4バイトの漢字もゲーム中の入力は可能ですが、一旦変換を確定してからデリートキーで削除しようとすると表示が崩れます。デリートキーで削除するのではなくて初めから入力をやり直してください。</p>
+<p>日本語の表示と入力はMacの標準的な環境（UTF-8）を前提としています。文字コード関係の設定を変更している場合は、適切な表示や入力ができない可能性があります。</p>
+<p>プレイヤー名や好きな果物の名前などには、日本語だけでなく絵文字を使うことも可能です。ただしターミナルに表示される絵文字は半角1文字分として扱われることがあり、続けて文字を入力すると表示が重なる場合があります。絵文字を使う場合は、後ろに半角スペースを一つ加えると安全です。</p>
+<p>通常日本語は1文字で3バイト分のデータがありますが、特殊な漢字の一部は4バイトのものもあります。4バイトの漢字もゲーム中の入力は可能ですが、入力後にデリートキーで削除しようとすると表示が崩れることがあります。その場合は削除で直そうとせず、最初から入力し直してください。</p>
+<p>このアプリにはコード署名がありません。そのため初回起動時には、macOSの警告が表示されることがあります。警告が出た場合は、Appleの説明に従ってシステム設定から許可してください。</p>
 </div>
 
 <h3 id="07">外部リンク。</h3>
 <div class="padding_3em">
 <ul>
-<li><a href="http://yozvox.web.fc2.com/rvm_jp.html" target=”_blank”>The Rogue's Vade-Mecum（ローグのガイドブック）</a><br>要はこれもスポイラーです。ローグの内容についての詳細な解説の和訳。ほとんど完全なネタバレになりますので、ある程度やり込んだ方のみお読みください。jRogueのバージョンは、ここでいうところの「V5」にあたります。
-</li>
+<li><a href="http://yozvox.web.fc2.com/rvm_jp.html" target=”_blank”>The Rogue's Vade-Mecum（ローグのガイドブック）</a><br>要はこれもスポイラーです。ローグの内容についての詳細な解説の和訳。ほとんど完全なネタバレになりますので、ある程度やり込んだ方のみお読みください。</li>
 </ul>
 </div>
 
 <h3 id="08">更新履歴。</h3>
 <div class="padding_3em">
-<p>2026/05/28 ver 5.4.5J.044。GUI版を通常のアプリに近い操作性に変更。タイトル画像追加。ダークモード対応。添付文書の記載追加。CUI版でオプションありのインストールに再対応。
+<p>2026/06/14 ver 5.4.5jec.050。アプリ名をRogueに変更。日本語・英語表示切替に対応。Clone IIIも選択できるようにした。カラー設定を一部変更。起動画面を整理し、各種オプションを直接設定できるようにした。アプリにウィザードモードを追加（内容はブログに別記）。</p>
 <details><summary>途中経過（クリックで表示）</summary>
-<p>2026/05/20 ver 5.4.5J.043。macOS Tahoeに対応。アプリをユニバーサル化。内容には変更なし。
+<p>2026/05/28 ver 5.4.5J.044。GUI版を通常のアプリに近い操作性に変更。タイトル画像追加。ダークモード対応。添付文書の記載追加。CUI版でオプションありのインストールに再対応。</p>
+<p>2026/05/20 ver 5.4.5J.043。macOS Tahoeに対応。アプリをユニバーサル化。内容には変更なし。</p>
 <p>2025/04/12 「始めにお読みください.html」が開けない問題に対処。「ウィザードモードのコマンド」の記載を修正。
 <p>2019/10/11 ver 5.4.5J.042。macOS Catalinaに対応。デフォルトログインシェルの種類によらず動作できるようにした。
 <p>2018/03/19 ver 5.4.5J.041。和訳の修正。添付文書の修正。
@@ -255,6 +247,7 @@ if( localStorage['ga_exclude']!='1'){
 <p>2016/12/07 ソースコードのベースを5.4.4から5.4p(5.4.5)に変更。</p>
 </details>
 <p>2016/12/06 Rogue 5.4.5J 公開開始。</p>
+
 </div>
 
 <h3 id="09">連絡先。</h3>
@@ -265,7 +258,7 @@ if( localStorage['ga_exclude']!='1'){
 <p>ご感想・ご要望・不具合のご連絡など、お気軽にどうぞ。</p>
 </ul>
 <br>
-<div class="menu">トップページ | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html">【運命の洞窟】への案内書</a> | <a href="ps.html"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target=”_blank”><span class="aks">ブログ</span></a><br></div>
+<div class="menu">トップページ | <a href="guide.html">【運命の洞窟】への案内書</a> | <a href="gui.html">GUI版の解説書</a> | <a href="ps.html"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target=”_blank”><span class="aks">ブログ</span></a><br></div>
 </div>
 </div><!-- main -->
 </div><!-- out -->
@@ -280,7 +273,5 @@ if( localStorage['ga_exclude']!='1'){
   </div>
    /shinobi ct2 -->
 </div><!-- footer -->
-
-
 
 </body></html>

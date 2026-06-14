@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
 <head profile="http://purl.org/net/ns/metaprof">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>jRogue: GUI版の解説書</title>
+<title>Rogue: GUI版の解説書</title>
 <meta name="robots" content="INDEX,FOLLOW" />
 <meta name="keywords" content="rogue mac" lang="ja" xml:lang="ja" />
 <meta name="description" content="【運命の洞窟】への案内書" lang="ja" xml:lang="ja" />
@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="style.css" type="text/css" />
 <link rel="alternate" type="application/atom+xml" title="Atom" href="atom.xml" />
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="index.xml" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <body>
@@ -32,7 +32,7 @@
 <div class="main">
 
 <div class="padding_3em">
-<div class="menu"><a href="index.html">トップページ</a> | GUI版の解説書 | <a href="guide.html">【運命の洞窟】への案内書</a> |　<a href="ps.html"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target=”_blank”>ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | GUI版の解説書 | <a href="guide.html">【運命の洞窟】への案内書</a> | <a href="ps.html"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target="_blank">ブログ</a></div>
 </div>
 
 <span style="font-family: sans-serif;">
@@ -40,23 +40,24 @@
 <div class="padding_3em">
 <p style="font-size: 130%; text-align: center;"><i>概要</i></p>
 <div class="padding_3em">
-<p>君は今、【運命の<ruby>洞窟<rp>（</rp><rt>ダンジョン</rt><rp>）</rp></ruby>】の入り口の前に立っているところだ。これからその中で何をすべきかについては『<a href="guide.html">【運命の洞窟】への案内書</a>』に記されているが、まずは洞窟に入る前の心得についていくつか伝えておこう。</p>
+<p>君は今、【運命の<ruby>洞窟<rp>（</rp><rt>ダンジョン</rt><rp>）</rp></ruby>】の入り口の前に立っているところだ。その中で何をすべきかは『<a href="guide.html">【運命の洞窟】への案内書</a>』に記されているが、ここではまず、冒険を始める前の心得についていくつか伝えておこう。</p>
 </div>
 </div>
 
 <div class="only-pc">
-<p>&nbsp;
-<hr width="100%">
+<p>&nbsp;</p>
+<hr width="100%" />
 <p style="font-size: 130%; text-align: center; margin: 0;">目次</p>
 	<table width="40%" align="center">
 	<tr><td><ol style="padding: 0; margin: 0;">
 		<li><a href="#01">導入</a></li>
 		<li><a href="#02">画面上のものは何を意味しているのか？</a></li>
-		<li><a href="#03">ボタン</a></li>
-		<li><a href="#04">謝辞</a></li>
-	</td></tr>
+		<li><a href="#03">設定項目</a></li>
+		<li><a href="#04">ボタン</a></li>
+		<li><a href="#05">謝辞</a></li>
+	</ol></td></tr>
 	</table>
-<hr width="100%">
+<hr width="100%" />
 </div>
 
 <div class="only-sp">
@@ -65,120 +66,121 @@
 	<ol>
 	<li><a href="#01">導入</a></li>
 	<li><a href="#02">画面上のものは何を意味しているのか？</a></li>
-	<li><a href="#03">ボタン</a></li>
-	<li><a href="#04">謝辞ド</a></li>
-</div>
+	<li><a href="#03">設定項目</a></li>
+	<li><a href="#04">ボタン</a></li>
+	<li><a href="#05">謝辞</a></li>
+	</ol>
+	</div>
 </div>
 
 <h3 align="justify" id="01"><b>1.  導入</b></h3>
 <div class="padding_3em">
-<p  class="indent"><b>Rogue(ローグ)</b>とは、1980年代に作られた最初期のロール・プレイング・ゲームである。一つの文字のみで表現されたキャラクターや、プレイするたびにランダムに設定される迷宮などが特徴となる。この<b> jRogue for macOS </b>はRogueの最終版といわれるバージョン5.4を日本語化し、さらに若干の変更とmacOS用の調整を加えたものである。
-<p  class="indent">これはアプリケーションの形をとってはいるものの、実際にはこのアプリ自体はMac標準の「ターミナル」でjRogueを起動するためのAppleScriptである。クリック操作だけでjRogueを起動することができるので、jRogueの操作さえ習得しておけばターミナルの基本的な使い方を知らなくても冒険が楽しめるはずだ。</p>
-<p  class="indent">冒険が終わると、ターミナルで他のウインドウが開いていない場合はターミナル自体を終了し、他のウインドウが開いていればjRogueのウインドウだけが閉じられる。ターミナルに「exit」などのコマンドを入力する必要は一切ない。</p>
-<p  class="indent">このアプリにはコード署名が入っていないため、<b>初回の起動時にはそのまま開くことはできない。</b>開こうとしてMacから警告が出た場合は、<a href="https://support.apple.com/ja-jp/guide/mac-help/mh40616/mac" target=”_blank”>Appleによる説明</a>を参考にしてシステム設定から許可を出して開いてほしい。次回以降は通常通りの操作で開くことができるはずである。
+<p class="indent"><b>Rogue(ローグ)</b>とは、1980年代に作られた最初期のロール・プレイング・ゲームである。一つの文字のみで表現されたキャラクターや、プレイするたびにランダムに設定される迷宮などが特徴となる。この<b> Rogue for macOS </b>はRogueの最終版といわれるバージョン5.4およびClone IIIを日本語化し、さらに英語との切り替え機能、カラー表示、macOS用の調整を加えたものである。</p>
+<p class="indent">これはアプリケーションの形をとっているものの、実際にはこのアプリ自体はMac標準のターミナルアプリでRogueを起動するためのAppleScriptである。クリック操作だけでRogueを起動することができるので、<a href="guide.html">【運命の洞窟】への案内書</a>を読んでRogueの操作だけ習得すればターミナルの基本的な使い方を知らなくても冒険が楽しめるはずだ。</p>
+<p class="indent">冒険が終わると、ターミナルで他のウインドウが開いていない場合はターミナル自体を終了し、他のウインドウが開いていればRogueのウインドウだけが閉じられる。ターミナルにコマンドを入力する必要は一切ない。</p>
+<p class="indent">このアプリにはコード署名が入っていないため、<b>初回の起動時にはそのまま開くことはできない。</b>開こうとしてMacから警告が出た場合は、<a href="https://support.apple.com/ja-jp/guide/mac-help/mh40616/mac" target="_blank">こちらのAppleによる説明</a>を参考にしてシステム設定から許可を出して開いてほしい。次回以降は通常通りの操作で開くことができるはずである。</p>
 </div>
 
 <h3 align="justify" id="02"><b>2.  画面上のものは何を意味しているのか？</b></h3>
 <div class="padding_3em">
-<p class="indent">無事にjRogueを起動することができたならば、ウインドウには運命の洞窟の入り口と君の名を記した歓迎の言葉に加え、【現在のモード】と【オプション】と４つのボタンが現れているはずだ。以下にそれぞれの説明を記す。</p>
+<p class="indent">無事にRogueを起動することができたならば、ウインドウには運命の洞窟の入り口と君の名を記した歓迎の言葉に加え、洞窟のバージョン、【運命の洞窟への案内書】、プレーヤー名、好きな果物、各種設定、そして冒険を始めるためのボタンなどが現れているはずだ。以下にそれぞれの説明を記す。</p>
 
 <h4 align="justify"><b>2.1.  運命の洞窟の入り口</b></h4>
-<p class="indent">君がこれから入ってゆく洞窟の入り口である。同じ場所でも朝と夜では雰囲気が違ってくることがわかり、jRogueの製作者であっても何度でも入っていきたいと思うだろう。</p>
+<p class="indent">君がこれから入ってゆく洞窟の入り口である。同じ場所でも朝と夜では雰囲気が違ってくることがわかり、このアプリの製作者であっても何度でも入っていきたいと思うだろう。</p>
 
 <h4 align="justify"><b>2.2.  歓迎の言葉</b></h4>
-<p class="indent">プレーヤーの名前が表示される。jRogueはデフォルトでは君が使っているMacのアカウント名を使用する。これは「設定変更」によって好きな名に変えることができる。</p>
+<p class="indent">プレーヤーの名前が表示される。Rogueはデフォルトでは君が使っているMacのアカウント名を使用する。これは「プレイヤー名」の欄で好きな名に変えることができる。</p>
 
-<h4 align="justify"><b>2.3.  【現在のモード】</b></h4>
-<p class="indent">jRogueは３種類のモードからゲームの設定を選ぶことができるが、ここには現在選ばれているモードが記される。各モードについては、3.3.1の「設定変更／その他の項目」を参照してほしい。</p>
+<h4 align="justify"><b>2.3.  Version</b></h4>
+<p class="indent">ここでは洞窟のバージョンを選ぶことができる。「5.4」を選ぶとRogue 5.4、「Clone III」を選ぶとRogue Clone IIIが起動する。両者の違いについては、<a href="index.html#03">トップページでの説明</a>を参照してもらいたい。バージョンによって対応している機能が少し違うため、Clone IIIを選んだ場合は一部の設定項目や墓標表示が使えなくなる。</p>
 
-<h4 align="justify"><b>2.4.  【オプション】</b></h4>
-<p class="indent">現在設定されているオプションが表示される。詳細については、3.3.1の「設定変更／その他の項目」を参照してほしい。</p>
+<h4 align="justify"><b>2.4.  【運命の洞窟への案内書】</b></h4>
+<p class="indent">Versionのすぐ下には、選択中の洞窟に対応した案内書を開くためのボタンが置かれている。Rogue 5.4を選んでいる場合は5.4版の案内書、Rogue Clone IIIを選んでいる場合はClone III版の案内書が開かれる。英語表示の場合、このボタンは「Guidebook」と表示される。</p>
+<p class="indent">【運命の洞窟】への案内書は、Rogueの世界観、画面に表示される記号の意味、基本的なコマンド、部屋や戦闘の仕組み、アイテム、オプション、スコアなどを説明した文書である。これから洞窟に入る者のための手引きであり、ゲームを始める前に一度目を通しておくと、画面上の記号や操作方法がかなり理解しやすくなるだろう。</p>
+<p class="indent">このボタンはブラウザで案内書を開くだけなので、Rogueの設定を変更したりゲームを開始したりするものではない。案内書を確認した後は、ブラウザを閉じるかアプリに戻れば、そのまま冒険を始めることができる。</p>
 </div>
 
-<h3 align="justify" id="03"><b>3.  ボタン</b></h3>
+<h3 align="justify" id="03"><b>3.  設定項目</b></h3>
 <div class="padding_3em">
-<p class="indent">ウインドウの最下行には4つのボタンがあり、冒険を始めたり設定を変更することができる。</p>
+<p class="indent">Rogueでは、起動前の画面で冒険の設定を直接変更できる。ここでの設定は保存され、次回以降はその設定が最初から選ばれることになる。</p>
 
-<h4 align="justify"><b>3.1.  冒険をはじめる</b></h4>
-<p class="indent">運命の洞窟に入っていくためのボタンである。そこから先の冒険については<a href="guide.html">【運命の洞窟】への案内書</a>を参照してほしい。</p>
+<h4 align="justify"><b>3.1.  プレイヤー名</b></h4>
+<p class="indent">Rogueで使用するプレーヤーの名前を設定できる。デフォルトでは君が使っているMacのアカウント名が使用される。右下の「リセット」ボタンを押すと、Macのアカウント名に戻すことができる。</p>
 
-<h4 align="justify"><b>3.2.  セーブから再開</b></h4>
-<p class="indent">jRogueはゲーム中に「<b>S</b>(大文字)」コマンドでセーブして終了することができるが、そこから再開するためのボタンである。セーブから再開するとセーブファイルは消去される。</p>
-<p class="indent">セーブファイルはデフォルトでは「jrogue.save」という名称で書類フォルダに保存される。デフォルト名のセーブファイルが書類フォルダに存在すれば再開は自動で行われるが、ファイルの名称や場所を変えた場合は自分でファイルを選ぶ必要がある。</p>
+<h4 align="justify"><b>3.2.  好きな果物</b></h4>
+<p class="indent">これは君が好きな果物の名前にしておくべきだろう。これは要するにローグが所々でやっている遊びのうちの一つである。日本語では「ネバネバかび」、英語では「slime-mold」が初期値となる。右下の「リセット」ボタンを押すと、現在の言語に対応した初期値に戻すことができる。</p>
 
-<h4 align="justify"><b>3.3.  設定変更／その他</b></h4>
-<p class="indent">このボタンを押すと、<b>【モード／オプションを設定】【スコアを表示】【墓標を表示】</b>というボタンが表示される。以下はそれぞれの説明である。</p>
+<h4 align="justify"><b>3.3.  言語</b></h4>
+<p class="indent">ゲーム中の表示を「日本語」または「English」から選ぶことができる。言語を変更すると、起動画面の項目名やボタン名もその場で切り替わる。</p>
 
-<div class="padding_3em">
-<h4 align="justify"><b>3.3.1.  モード／オプションを設定</b></h4>
-<p class="indent">【現在のモード】と【オプション】に記されているモードやオプションを変更することができる。モードの説明は以下の通り。</p>
+<h4 align="justify"><b>3.4.  画面</b></h4>
+<p class="indent">ターミナルで表示するフォントの大きさと種類のセットを選ぶことができる。「おすすめの設定」を選ぶと16ポイントのMonacoで表示される。「ターミナルの設定」を選ぶと君自身がターミナルで使っているフォントが使用される。</p>
+
+<h4 align="justify"><b>3.5.  モード</b></h4>
+<p class="indent">Rogueは３種類のモードからゲームの設定を選ぶことができる。モードの説明は以下の通り。</p>
 	<ul>
-		<li><b>通常</b><br>jRogue独自のモード。カラー表示あり、識別の巻物は１種類にまとめられる、走る時に曲がり角で止まらない、ターミナルの背景色は黒になる。</li>
-		<li><b>オリジナル</b><br>Rogue 5.4のデフォルト設定。これがRogue本来の外観と操作感である。カラー表示なし（本来Rogue 5.4にはカラー表示の機能はない） 、識別の巻き物は５種類となり、走る時には曲がり角で立ち止まる。背景色は黒。</li>
-		<li><b>細かく設定</b><br>各オプションを個別に設定する。以下は個々のオプションの一覧である。<br>
-		</li>
+		<li><b>モダン</b><br />カラー表示あり、走る時に曲がり角で止まらない。5.4では識別の巻物が1種類となる。まずはこの設定で遊ぶと良いだろう。</li>
+		<li><b>クラシック</b><br />Rogue 5.4 / Clone IIIのオリジナルに近い設定。カラー表示なし、走る時には曲がり角で立ち止まる。5.4では識別の巻物が５種類となる。これが歴史的なRogue本来の外観と操作感である。</li>
+		<li><b>細かく設定</b><br />各オプションを個別に設定する。カラー表示、曲がり角、識別の巻物、表示の長さを自分で選びたい場合はこちらを使う。</li>
 	</ul>
+
+<h4 align="justify"><b>3.6.  個別オプション</b></h4>
+<p class="indent">「細かく設定」を選んだ場合、または個別の項目を変更した場合には、以下のオプションを好みに合わせて選ぶことができる。</p>
 	<table class="guide">
 	<tr>
 		<td style="width: 7em;">カラー表示</td>
-		<td>jRogueのオリジナルカラー、PC-8801/9801風、モノクロの3つから選ぶことができる。</td>
-	</tr>
-	<tr>
-		<td>識別の巻物</td>
-		<td>Rogue 5.4では識別の巻物が5種類あるが、他バージョンや他機種への移植版では1種類のものがほとんどである。識別の巻物を1種類にまとめたいプレーヤーのためにこのオプションがある。</td>
-	</tr>
-	<tr>
-		<td>表示の長さ</td>
-		<td>ゲーム中に表示されるメッセージの長さを設定する。シンプルなメッセージにしたい場合は「短くする」を選ぶと良いだろう。</td>
+		<td>「カラー」と「モノクロ」から選ぶことができる。カラーはRogue for macOS独自の設定である。</td>
 	</tr>
 	<tr>
 		<td>曲がり角</td>
 		<td>通路を走るときに曲がり角で止まるかどうかを選ぶオプションである。長い通路を一瞬で遠くまで行ってしまうのが嫌な場合は「止まる」を選ぶと良いだろう。</td>
 	</tr>
 	<tr>
-		<td>好きな果物</td>
-		<td>果物ではなくても好きな食べ物の名前に設定して問題はないが、ジュースにしても違和感がないものにしておいた方が良いだろう。</td>
+		<td>識別の巻物</td>
+		<td>Rogue 5.4では識別の巻物が5種類あるが、他バージョンや他機種への移植版では1種類のものがほとんどである。識別の巻物を1種類にまとめたいプレーヤーのためにこのオプションがある。Clone IIIではもともと1種類なので、この項目は表示されない。</td>
 	</tr>
 	<tr>
-		<td>フォント</td>
-		<td>ターミナルで表示するフォントを選ぶことができる。「jRogueの設定」を選ぶとMonacoで表示される。「ターミナルの設定」を選ぶと君自身がターミナルで使っているフォントが使用される。</td>
-	</tr>
-	<tr>
-		<td>背景色</td>
-		<td>jRogueの背景色を選ぶことができる。「黒」がデフォルトである。「ターミナルの設定」を選ぶと君自身がターミナルで使っている背景色が使用される。「カラー表示」で「モノクロ」を選んだ場合は、背景色を「白」に設定することができる。</td>
-	</tr>
-	<tr>
-		<td>プレーヤー名</td>
-		<td>jRogueで使用するプレーヤーの名前を設定できる。デフォルトでは君が使っているMacのアカウント名が使用される。</td>
+		<td>表示の長さ</td>
+		<td>ゲーム中に表示されるメッセージの長さを設定する。シンプルなメッセージにしたい場合は「短くする」を選ぶと良いだろう。Clone IIIでは表示の長さを変更する機能がないため、この項目は表示されない。</td>
 	</tr>
 	</table>
 
-<p class="indent">ここでの設定は保存され、次回以降はその設定が最初から選ばれることになる。</p>
-<p class="indent">ローグはほとんどのコンピューターファンタジーゲームとは違って、独特のオプション設定がいくつも存在する。二度とは戻れないかもしれぬ冒険を始めるにあたり、君自身が納得できるオプションを見つけてほしい。</p>
-
-<h4 align="justify"><b>3.3.2.  スコアを表示</b></h4>
-<p class="indent">jRogueでは冒険が終わるとスコアが得られるが、10位までの上位入賞者はリストに記録される。そのリストを表示するためのボタンである。</p>
-
-<h4 align="justify"><b>3.3.3.  墓標を表示</b></h4>
-<p class="indent">プレーヤーが怪物に殺されたり罠で死ぬなどの悲惨な最期となった場合、終了時に墓標が表示される。その墓標を表示するためのボタンである。墓標に刻まれる死因とスコアはランダムに選ばれる。ローグにはいかに多くの死因があるかを知り、君は愕然とするだろう。スコアが10位までの上位入賞者に入った場合はリストに記録される。</p>
-<p class="indent">外モンゴルの奥地に伝わる伝承では、<b>墓標を表示した時だけ見ることができる怪物</b>がいると言われている。君が十分な忍耐力か類まれな幸運の持ち主ならば出会うことができるだろう。</p>
+<p class="indent">ローグはほとんどのコンピューターファンタジーゲームとは違って、独特のオプション設定がいくつも存在する。生死をかけた冒険を始めるにあたり、君自身が納得できるオプションを見つけてほしい。</p>
 </div>
 
-<h4 align="justify"><b>3.4.  Webサイトに移動</b></h4>
-<p class="indent">Macで設定されているデフォルトのブラウザでjRogue for macOSのトップページを開く。</p>
+<h3 align="justify" id="04"><b>4.  ボタン</b></h3>
+<div class="padding_3em">
+<p class="indent">ウインドウの下部には4つの主要ボタンがあり、冒険を始めたり、セーブから再開したり、記録を確認したりすることができる。</p>
+
+<h4 align="justify"><b>4.1.  冒険をはじめる</b></h4>
+<p class="indent">運命の洞窟に入っていくためのボタンである。そこから先は<a href="guide.html">【運命の洞窟】への案内書</a>を参照してほしい。</p>
+
+<h4 align="justify"><b>4.2.  セーブから再開</b></h4>
+<p class="indent">Rogueはゲーム中に「<b>S</b>(大文字)」コマンドでセーブして終了することができるが、そこから再開するためのボタンである。セーブから再開するとセーブファイルは消去される。</p>
+<p class="indent">セーブファイルはデフォルトでは「rogue.save」という名称で書類フォルダに保存される。Rogue Clone III版では「rogue-clone.save」という名称になる。デフォルト名のセーブファイルが書類フォルダに存在すれば再開は自動で行われるが、ファイルの名称や場所を変えた場合は自分でファイルを選ぶ必要がある。</p>
+
+<h4 align="justify"><b>4.3.  スコアを表示</b></h4>
+<p class="indent">Rogueでは冒険が終わるとスコアが得られるが、10位までの上位入賞者はリストに記録される。そのリストを表示するためのボタンである。表示後は、アプリの初期画面に戻るか、そのまま終了するかを選ぶことができる。</p>
+
+<h4 align="justify"><b>4.4.  墓標を表示</b></h4>
+<p class="indent">Rogue 5.4ではプレーヤーが怪物に殺されたり罠で死ぬなどの悲惨な最期となった場合、終了時に墓標が表示される。その墓標を表示するためのボタンである。墓標に刻まれる死因とスコアはランダムに選ばれる。Rogueにはどんな死因があるのかを知る参考になるだろう。スコアが10位までの上位入賞者に入った場合はリストに記録される。</p>
+<p class="indent">外モンゴルの奥地に伝わる伝承では、<b>墓標を表示した時だけ見ることができる怪物</b>がいると言われている。君が十分な忍耐力か幸運の持ち主ならば出会うことができるだろう。</p>
+<p class="indent">なお、Rogue Clone III版を選んでいる場合、このボタンは使用できない。</p>
+
 </div>
 
-<h3 align="justify" id="04"><b>4.  謝辞</b></h3>
+<h3 align="justify" id="05"><b>5.  謝辞</b></h3>
 	<div class="padding_3em">
-	<p class="indent">以下の人々に感謝を表したい。Rogueを構想したグレン・ウィックマン氏とマイケル・トイ氏、ユーザーインターフェースを円滑にし多くの機能を追加したケン・アーノルド氏、Rogue Cloneを制作したティム・ストーアー氏、Rogue Clone IIを日本語化・カラー化した太田純氏、そのMac版を制作した後藤寿庵氏、オリジナルローグのソースコードをメンテナンスし独自拡張したY.Oz Vox氏、また、Rogueを愛する全ての人に。</p>
+	<p class="indent">以下の人々に感謝を表したい。Rogueを構想したグレン・ウィックマン氏とマイケル・トイ氏、Rogue Clone IIを日本語化した太田純氏、そのMac版を制作した後藤寿庵氏、オリジナルローグのソースコードをメンテナンスし独自拡張したY.Oz Vox氏、また、Rogueを愛する全ての人に。</p>
 
-<br>
-<p align="justify"><span class="aks">文書作成：</span><a href="https://twitter.com/leopard_gecko" target=”_blank”>leopardgecko</a></p>
+<br />
+<p align="justify"><span class="aks">文責：</span><a href="https://twitter.com/leopard_gecko" target="_blank">leopardgecko</a></p>
 
 <div class="padding_3em">
-    <div class="menu"><a href="index.html">トップページ</a> | GUI版の解説書 | <a href="guide.html">【運命の洞窟】への案内書</a> |　<a href="ps.html"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target=”_blank”>ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | GUI版の解説書 | <a href="guide.html">【運命の洞窟】への案内書</a> | <a href="ps.html"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target="_blank">ブログ</a></div>
 </div>
 
+	</div>
 </span><!-- font-family -->
 </div><!-- main -->
 </div><!-- out -->

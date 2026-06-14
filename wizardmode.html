@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
 <head profile="http://purl.org/net/ns/metaprof">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>jRogue: ウィザードモードのコマンド</title>
+<title>Rogue: ウィザードモードのコマンド</title>
 <meta name="robots" content="INDEX,FOLLOW" />
 <meta name="keywords" content="rogue mac" lang="ja" xml:lang="ja" />
 <meta name="description" content="ウィザードモードのコマンド" lang="ja" xml:lang="ja" />
@@ -18,113 +18,190 @@
 <link rel="alternate" type="application/atom+xml" title="Atom" href="atom.xml" />
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="index.xml" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
 
+<style type="text/css">
+.version_selector {
+	text-align: center;
+	margin: 1.5em 0 0.5em 0;
+	font-family: sans-serif;
+}
+.version_selector label { font-weight: bold; margin-right: 0.5em; }
+.version_selector select { font-size: 100%; padding: 0.2em 0.4em; }
+.version_panel_hidden { display: none; }
+.note { font-size: 90%; }
+</style>
+<script type="text/javascript">
+//<![CDATA[
+function normalizeRogueVersion(value) {
+	if (!value) return 'r545';
+	value = value.toLowerCase();
+	if (value == 'clone3' || value == 'clone' || value == 'cloneiii' || value == 'rogue-clone-iii') return 'clone3';
+	if (value == '54' || value == '5.4' || value == 'r545' || value == 'rogue54') return 'r545';
+	return 'r545';
+}
+function getInitialRogueVersion() {
+	var query = window.location.search.substring(1).split('&');
+	for (var i = 0; i < query.length; i++) {
+		var pair = query[i].split('=');
+		if (decodeURIComponent(pair[0]) == 'version' || decodeURIComponent(pair[0]) == 'v') {
+			return normalizeRogueVersion(decodeURIComponent(pair[1] || ''));
+		}
+	}
+	if (window.location.hash) return normalizeRogueVersion(window.location.hash.substring(1));
+	return 'r545';
+}
+function switchRogueVersion(value) {
+	var selected = normalizeRogueVersion(value || getInitialRogueVersion());
+	var r545 = document.getElementById('version_rogue_545');
+	var clone = document.getElementById('version_rogue_clone_iii');
+	var s545 = document.getElementById('rogue_version_select_545');
+	var sClone = document.getElementById('rogue_version_select_clone');
+	if (s545) s545.value = selected;
+	if (sClone) sClone.value = selected;
+	if (selected == 'clone3') {
+		r545.className = 'version_panel_hidden';
+		clone.className = '';
+	} else {
+		r545.className = '';
+		clone.className = 'version_panel_hidden';
+	}
+}
+function initializeRogueVersion() {
+	switchRogueVersion(getInitialRogueVersion());
+}
+window.onload = initializeRogueVersion;
+//]]>
+</script>
+
+</head>
 <body>
 
+<div id="version_rogue_545">
 	<div class="header">
 	<h2>ウィザードモードのコマンド</h2>
 	</div>
-
 <div class="out">
 <div class="main">
 <div class="padding_3em">
-<div class="menu"><a href="index.html">トップページ</a> | <a href="https://leopardgecko.hatenablog.com/entry/2025/04/12/195108">ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="guide.html">【運命の洞窟】への案内書</a> | <a href="gui.html">GUI版の解説書</a> | <a href="ps.html">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<div class="version_selector">
+	<label for="rogue_version_select_545">洞窟を選ぶ：</label>
+	<select id="rogue_version_select_545" onchange="switchRogueVersion(this.value)">
+		<option value="r545" selected="selected">Rogue 5.4 日本語・英語／カラー対応版</option>
+		<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+	</select>
+</div>
+
 <br>
 <p><b>注：これはスポイラー（ゲームのヒント）です。必要がない方は読まないでください。</b></p>
 <br>
-<p>ウィザードモードに入った時に追加されるコマンドの一覧です。</p>
-<p>このモードは本来デバッグ用のものであり、普通に遊ぶ際には全く必要がないものです。詳しくはブログの記事（<a href="https://leopardgecko.hatenablog.com/entry/2017/11/01/133425#CUI%E7%89%88%E3%81%AE%E6%A9%9F%E8%83%BD%E8%BF%BD%E5%8A%A0%E3%82%A6%E3%82%A3%E3%82%B6%E3%83%BC%E3%83%89%E3%83%A2%E3%83%BC%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">ここ</a>と<a href="https://leopardgecko.hatenablog.com/entry/2025/04/12/195108">ここ</a>）を参照してください。</p>
-<p>「shift-c」というのはシフトキーを押しながら「c」をタップ、「ctrl-g」というのはコントローキーを押しながら「g」をタップという意味です。</p>
+<p>Rogue 5.4でウィザードモードに入った時に追加されるコマンドと、ウィザードモード中に通常とは扱いが変わる操作の一覧です。</p>
+<p>このモードは本来デバッグ用のものであり、普通に遊ぶ際には全く必要がないものです。</p>
+<p>「shift-c」というのはシフトキーを押しながら「c」をタイプ、「ctrl-g」というのはコントロールキーを押しながら「g」をタイプという意味です。</p>
 <br>
-
-	<table class="wm">
-	    <tr>
-	        <th>コマンド</th>
-	        <th>説明</th>
-	    </tr>
-	    <tr>
-	        <td>+</td>
-	        <td>ウィザードモードのオンオフ切り替え</td>
-	    </tr>
-	    <tr>
-	        <td>|</td>
-	        <td>現在位置の座標を表示</td>
-	    </tr>
-	    <tr>
-	        <td>$</td>
-	        <td>荷物の数を表示</td>
-	    </tr>
-	    <tr>
-	        <td>~</td>
-	        <td>魔法の杖をチャージする</td>
-	    </tr>
-	    <tr>
-	        <td>*</td>
-	        <td><a href="item.html">アイテムの番号と出現確率</a>を表示</td>
-	    </tr>
-	    <tr>
-	        <td>shift-c</td>
-	        <td>アイテムを作る</td>
-	    </tr>
-	    <tr>
-	        <td>ctrl-g</td>
-	        <td>今いる階に落ちているアイテムの種類を表示</td>
-	    </tr>
-	    <tr>
-	        <td>ctrl-w</td>
-	        <td>所持品を鑑別</td>
-	    </tr>
-	    <tr>
-	        <td>ctrl-d</td>
-	        <td>一階下がる</td>
-	    </tr>
-	    <tr>
-	        <td>ctrl-a</td>
-	        <td>一階上がる</td>
-	    </tr>
-	    <tr>
-	        <td>ctrl-f</td>
-	        <td>マップと落ちているアイテムの位置を表示</td>
-	    </tr>
-	    <tr>
-	        <td>ctrl-t</td>
-	        <td>テレポートする</td>
-	    </tr>
-	    <tr>
-	        <td>ctrl-e</td>
-	        <td>空腹になるまでの残りターンを表示</td>
-	    </tr>
-	    <tr>
-	        <td>ctrl-q</td>
-	        <td>通路を表示</td>
-	    </tr>
-	    <tr>
-	        <td>ctrl-x</td>
-	        <td>遠くの怪物が見える状態の切り替え</td>
-	    </tr>
-	    <tr>
-	        <td>ctrl-i</td>
-	        <td>レベルを10上げて鋼鉄のよろいと大きな剣を装備する</td>
-	    </tr>
-	</table>
+<table class="wm">
+<tr><th>コマンド</th><th>説明</th></tr>
+<tr><td>+</td><td>ウィザードモードのオンオフ切り替え</td></tr>
+<tr><td>|</td><td>現在位置の座標を表示</td></tr>
+<tr><td>$</td><td>荷物の数を表示</td></tr>
+<tr><td>~</td><td>魔法の杖をチャージする</td></tr>
+<tr><td>*</td><td><a href="item.html?version=54">アイテムの番号と出現率</a>を表示</td></tr>
+<tr><td>shift-c</td><td>アイテムを作る</td></tr>
+<tr><td>ctrl-g</td><td>今いる階に落ちているアイテムの種類を表示</td></tr>
+<tr><td>ctrl-w</td><td>所持品を鑑別</td></tr>
+<tr><td>ctrl-d</td><td>一階下がる</td></tr>
+<tr><td>ctrl-a</td><td>一階上がる</td></tr>
+<tr><td>ctrl-f</td><td>マップと落ちているアイテムの位置を表示</td></tr>
+<tr><td>ctrl-t</td><td>テレポートする</td></tr>
+<tr><td>ctrl-e</td><td>空腹になるまでの残りターンを表示</td></tr>
+<tr><td>ctrl-q</td><td>通路を表示</td></tr>
+<tr><td>ctrl-x</td><td>遠くの怪物が見える状態の切り替え</td></tr>
+<tr><td>ctrl-i</td><td>レベルを10上げて、長い剣と全身のよろいを装備する</td></tr>
+</table>
+<br>
+<p>ウィザードモード中は、以下の通常処理も通常時とは扱いが変わります。</p>
+<table class="wm">
+<tr><th>操作・場面</th><th>ウィザードモード中の動作</th></tr>
+<tr><td>スコア登録</td><td>スコア登録の対象外になります。</td></tr>
+<tr><td>起動時</td><td>空の引数で起動してウィザードモードに入ると、最初の挨拶でダンジョン番号が表示されます。</td></tr>
+<tr><td>さまよえる怪物の発生</td><td>発生した怪物名がメッセージとして表示されます。</td></tr>
+<tr><td>ゲーム終了後の入力</td><td>スコア画面に進む前の入力で、<code>edit</code> と <code>names</code> が有効になります。</td></tr>
+</table>
+<br>
+<p>＜その他＞</p>
+<ul>
+<li>起動時のコマンドに空の引数を指定してパスワードを入力すると、最初からウィザードモードで起動できます。<pre class="prompt">rogue ''</pre></li>
+<li>ゲームが終わって最初の「リターンキーを押してください」の画面で「edit」と入力してからリターンキーを押すと、スコアの編集画面になります。消去したいスコアの行で「d」をタイプしてリターンキーを押すとそのスコアが消去されます。</li>
+<li>同じ画面で「names」と入力すると、スコアのリストでプレイヤー名に加えてアカウント名も表示されます。</li>
+</ul>
 
 <br>
-<p>＜その他＞
-<ul><li>起動時のコマンドを以下のようにしてパスワードを入力すれば、最初からウィザードモードで起動する。<pre class="prompt">jrogue &#39;&#39;</pre></li>
-<li>ゲームが終わって最初の「リターンキーを押してください」の画面で「edit」と入力してから（画面には表示されない）リターンキーを押すと、スコアの編集画面になる。消去したいスコアの行で「d」をタイプしてリターンキーを押すとそのスコアが消去される。</li>
-<li>同じように「リターンキーを押してください」の画面で「names」と入力すると、スコアのリストでプレイヤー名に加えてアカウント名も表示される。</li></ul>
-
-<br>
-<div class="menu"><a href="index.html">トップページ</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="guide.html">【運命の洞窟】への案内書</a> | <a href="gui.html">GUI版の解説書</a> | <a href="ps.html">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 </div>
 </div><!-- main -->
 </div><!-- out -->
-
-<div class="footer">
-<div class="padding_6em">
-2025 leopardgecko
+<div class="footer"><div class="padding_6em">2026 leopardgecko</div></div><!-- footer -->
 </div>
-</div><!-- footer -->
+
+<div id="version_rogue_clone_iii" class="version_panel_hidden">
+	<div class="header">
+	<h2>ウィザードモードのコマンド</h2>
+	</div>
+<div class="out">
+<div class="main">
+<div class="padding_3em">
+<div class="menu"><a href="index.html">トップページ</a> | <a href="guide.html">【運命の洞窟】への案内書</a> | <a href="gui.html">GUI版の解説書</a> | <a href="ps.html">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<div class="version_selector">
+	<label for="rogue_version_select_clone">洞窟を選ぶ：</label>
+	<select id="rogue_version_select_clone" onchange="switchRogueVersion(this.value)">
+		<option value="r545" selected="selected">Rogue 5.4 日本語・英語／カラー対応版</option>
+		<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+	</select>
+</div>
+
+
+<br>
+<p><b>注：これはスポイラー（ゲームのヒント）です。必要がない方は読まないでください。</b></p>
+<br>
+<p>Rogue Clone IIIでウィザードモードに入った時に追加されるコマンドと、ウィザードモード中に通常とは扱いが変わる操作の一覧です。</p>
+<p>このモードは本来デバッグ用のものであり、普通に遊ぶ際には全く必要がないものです。</p>
+<p>「ctrl-w」というのはコントロールキーを押しながら「w」をタイプするという意味です。</p>
+<br>
+<table class="wm">
+<tr><th>コマンド</th><th>説明</th></tr>
+<tr><td>ctrl-w</td><td>ウィザードモードのオンオフ切り替え</td></tr>
+<tr><td>ctrl-i</td><td>今いる階に落ちているアイテムの種類を表示</td></tr>
+<tr><td>ctrl-s</td><td>魔法の地図を表示</td></tr>
+<tr><td>ctrl-t</td><td>わなを表示</td></tr>
+<tr><td>ctrl-o</td><td>今いる階に落ちているアイテムの位置を表示</td></tr>
+<tr><td>ctrl-c</td><td><a href="item.html?version=clone3">アイテムを作る</a>。通常時は割り込み処理として扱われます。</td></tr>
+<tr><td>ctrl-m</td><td>怪物を表示</td></tr>
+<tr><td>ctrl-a</td><td>平均体力を表示。Clone IIIではウィザードモードでなくても動作します。</td></tr>
+</table>
+<br>
+<p>ウィザードモード中は、以下の通常コマンドや通常処理も通常時とは扱いが変わります。</p>
+<table class="wm">
+<tr><th>コマンド・場面</th><th>ウィザードモード中の動作</th></tr>
+<tr><td>&gt;</td><td>階段の上にいなくても一階下がります。</td></tr>
+<tr><td>&lt;</td><td>階段の上にいなくても、また【イェンダーの魔除け】を持っていなくても一階上がります。</td></tr>
+<tr><td>i / I</td><td>所持品表示で、未識別の巻き物・水薬・指輪・杖なども正体が表示されます。</td></tr>
+<tr><td>=</td><td>はめている指輪を表示した後、指輪関連の内部状態も表示されます。</td></tr>
+<tr><td>戦闘</td><td>プレイヤーの命中率と与えるダメージが大きくなり、怪物の命中率と与えるダメージが小さくなります。</td></tr>
+<tr><td>レベルアップ時の体力増加</td><td>経験レベルが上がった時の体力増加が固定値になります。</td></tr>
+</table>
+<br>
+<p>＜その他＞</p>
+<ul>
+<li>ウィザードモードに入るとスコア登録の対象外になります。</li>
+<li>Rogue Clone IIIでは、Rogue 5.4の「+」「*」「shift-c」ではなく、上記のコントロールキー系コマンドを使用します。</li>
+</ul>
+
+<br>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="guide.html">【運命の洞窟】への案内書</a> | <a href="gui.html">GUI版の解説書</a> | <a href="ps.html">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+</div>
+</div><!-- main -->
+</div><!-- out -->
+<div class="footer"><div class="padding_6em">2026 leopardgecko</div></div><!-- footer -->
+</div>
 
 </body></html>

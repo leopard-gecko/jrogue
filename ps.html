@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
 <head profile="http://purl.org/net/ns/metaprof">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>jRogue: 巻き物と水薬の一覧</title>
+<title>Rogue: 巻き物と水薬の一覧</title>
 <meta name="robots" content="INDEX,FOLLOW" />
 <meta name="keywords" content="rogue mac" lang="ja" xml:lang="ja" />
 <meta name="description" content="巻き物と水薬の一覧" lang="ja" xml:lang="ja" />
@@ -18,9 +18,75 @@
 <link rel="alternate" type="application/atom+xml" title="Atom" href="atom.xml" />
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="index.xml" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
 
+<style type="text/css">
+.version_selector {
+	text-align: center;
+	margin: 1.5em 0 0.5em 0;
+	font-family: sans-serif;
+}
+.version_selector label {
+	font-weight: bold;
+	margin-right: 0.5em;
+}
+.version_selector select {
+	font-size: 100%;
+	padding: 0.2em 0.4em;
+}
+.version_panel_hidden {
+	display: none;
+}
+</style>
+<script type="text/javascript">
+//<![CDATA[
+function normalizePsVersion(value) {
+	if (!value) return '54';
+	value = value.toLowerCase();
+	if (value == 'clone3' || value == 'clone' || value == 'cloneiii' || value == 'rogue-clone-iii') return 'clone3';
+	if (value == '54' || value == '5.4' || value == 'r545' || value == 'rogue54') return '54';
+	return '54';
+}
+function getInitialPsVersion() {
+	var query = window.location.search.substring(1).split('&');
+	for (var i = 0; i < query.length; i++) {
+		var pair = query[i].split('=');
+		if (decodeURIComponent(pair[0]) == 'version' || decodeURIComponent(pair[0]) == 'v') {
+			return normalizePsVersion(decodeURIComponent(pair[1] || ''));
+		}
+	}
+	if (window.location.hash) {
+		return normalizePsVersion(window.location.hash.substring(1));
+	}
+	return '54';
+}
+function switchPsVersion(value) {
+	var selected = normalizePsVersion(value || '54');
+	var ps54 = document.getElementById('version_rogue_54');
+	var psClone = document.getElementById('version_rogue_clone_iii');
+	var selectors = document.getElementsByName('ps_version_select');
+	for (var i = 0; i < selectors.length; i++) {
+		selectors[i].value = selected;
+	}
+	if (selected == 'clone3') {
+		ps54.className = 'version_panel_hidden';
+		psClone.className = '';
+	} else {
+		ps54.className = '';
+		psClone.className = 'version_panel_hidden';
+	}
+}
+function initializePsVersion() {
+	switchPsVersion(getInitialPsVersion());
+}
+window.onload = initializePsVersion;
+//]]>
+</script>
+
+</head>
 <body>
+
+<div id="version_rogue_54">
+
 
 
 	<div class="header">
@@ -32,12 +98,19 @@
 <div class="main">
 
 <div class="padding_3em">
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html">【運命の洞窟】への案内書</a> | 巻き物と水薬の一覧 | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=54">【運命の洞窟】への案内書</a> | 巻き物と水薬の一覧 | <a href="http://leopardgecko.hatenablog.com/" target="_blank">ブログ</a></div>
+<div class="version_selector">
+	<label>洞窟を選ぶ：</label>
+	<select name="ps_version_select" onchange="switchPsVersion(this.value)">
+		<option value="54" selected="selected">Rogue 5.4 日本語・英語／カラー対応版</option>
+		<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+	</select>
+</div>
 <br>
 <p><b>注：これはスポイラー（ゲームのヒント）です。必要がない方は読まないでください。</b></p>
 <br>
-<p>jRogueに出てくる巻き物と水薬の一覧表です。</p>
-<div class="only-pc"><p>アイテムを使用すると表示されるメッセージ（五十音順）	、和名、英名(Rogue 5.4での名称)、の順で記載しています。<br>（識別の巻き物は使った効果が一目瞭然なので記載は省略しました）</p></div>
+<p>Rogue 5.4に出てくる巻き物と水薬の一覧表です。</p>
+<div class="only-pc"><p>アイテムを使用すると表示されるメッセージ（五十音順）	、和名、英名（Rogue 5.4での名称）、の順で記載しています。<br>（識別の巻き物は使った効果が一目瞭然なので記載は省略しました）</p></div>
 <div class="only-sp"><p>使用すると表示されるメッセージとアイテム名を交互に記載しています。</p></div>
 <p>注意点として、幻覚を見ている状態では色の名前がランダムに変更されます。</p>
 </div>
@@ -45,13 +118,13 @@
 <div class="only-sp">
 	<h3>目次</h3>
 <ol>
-	<li><a href="#01">巻き物の一覧</a></li>
-	<li><a href="#02">水薬の一覧</a></li>
+	<li><a href="#r545_01">巻き物の一覧</a></li>
+	<li><a href="#r545_02">水薬の一覧</a></li>
 </ol>
 </div>
 
 
-<h3 id="01">巻き物の一覧</h3>
+<h3 id="r545_01">巻き物の一覧</h3>
 <div class="padding_3em">
 	<table class="ps">
 		<thead>
@@ -68,7 +141,7 @@
 	        <td class="en">magic mapping</td>
 	    </tr>
 	    <tr>
-	        <th>怪物（ども）は動けなくなった！</th>
+	        <th>怪物（ども）は動けなくなった。</th>
 	        <td>怪物を封じこめる巻き物</td>
 	        <td class="en">hold monster</td>
 	    </tr>
@@ -103,7 +176,7 @@
 	        <td class="en">enchant weapon</td>
 	    </tr>
 			<tr>
-	        <th>遠くから、狂ったような笑い声が聞こえてくる。<sup class="message" id="b1"><a href="#c1">[1]<span class="remark">この巻き物は読んでも効果は得られない。巻き物を地面に置くと怪物はそこを通れなくなる。</span></a></sup></th>
+	        <th>遠くから、狂ったような笑い声が聞こえてくる。<sup class="message" id="r545_b1"><a href="#r545_c1">[1]<span class="remark">この巻き物は読んでも効果は得られない。巻き物を地面に置くと怪物はそこを通れなくなる。</span></a></sup></th>
 	        <td>怪物を怖がらせる巻き物</td>
 	        <td class="en">scare monster</td>
 	    </tr>
@@ -130,7 +203,7 @@
 		</tbody>
 	</table>
 	<p style="font-size: 85%;">
-	<sup id="c1"><a href="#b1">[1]</a></sup> この巻き物は読んでも効果は得られない。巻き物を地面に置くと怪物はそこを通れなくなる。</p>
+	<sup id="r545_c1"><a href="#r545_b1">[1]</a></sup> この巻き物は読んでも効果は得られない。巻き物を地面に置くと怪物はそこを通れなくなる。</p>
 	<br>
 	<p>巻き物を読んでも何らかの理由で効果が現れなかった時には以下のメッセージが出ます。
 		<div class="only-sp">【無効時のメッセージ】</div>
@@ -144,7 +217,7 @@
 			</thead>
 			<tbody>
 				<tr>
-						<th>奇妙な喪失感をかんじた。<sup class="message" id="b2"><a href="#c2">[2]<span class="remark">三種類の巻き物で共通したメッセージなので、三つのうちのどれであるかを特定することはできない。</span></a></sup></th>
+						<th>奇妙な喪失感をかんじた。<sup class="message" id="r545_b2"><a href="#r545_c2">[2]<span class="remark">三種類の巻き物で共通したメッセージなので、三つのうちのどれであるかを特定することはできない。</span></a></sup></th>
 						<td>怪物を封じこめる巻き物<span class="br">武器に魔法をかける巻き物</span><span class="br">よろいを守る巻き物</span></td>
 						<td class="en">hold monster<br>enchant weapon<br>protect armor</td>
 				</tr>
@@ -161,9 +234,9 @@
 		</tbody>
 	</table>
 	<p style="font-size: 85%;">
-	<sup id="c2"><a href="#b2">[2]</a></sup> 三種類の巻き物で共通したメッセージなので、三つのうちのどれであるかを特定することはできない。</p>
+	<sup id="r545_c2"><a href="#r545_b2">[2]</a></sup> 三種類の巻き物で共通したメッセージなので、三つのうちのどれであるかを特定することはできない。</p>
 </div>
-<h3 id="02">水薬の一覧</h3>
+<h3 id="r545_02">水薬の一覧</h3>
 	<div class="padding_3em">
 	<table  class="ps">
 		<thead>
@@ -205,7 +278,7 @@
 	        <td class="en">see invisible</td>
 	    </tr>
 			<tr>
-	        <th>すごく具体が悪くなった。<br>具合が悪くなったが、すぐに治った。<i>（耐性がある時）</i></th>
+	        <th>すごく具合が悪くなった。<br>具合が悪くなったが、すぐに治った。<i>（耐性がある時）</i></th>
 	        <td>毒の水薬</td>
 	        <td class="en">poison</td>
 	    </tr>
@@ -259,19 +332,19 @@
 			</thead>
 			<tbody>
 				<tr>
-						<th>奇妙な気分におそわれたが、すぐに消えていった。<sup class="message" id="b3"><a href="#c3">[3]<span class="remark">二種類の水薬で共通したメッセージなので、二つのうちのどちらであるかを特定することはできない。</span></a></sup></th>
+						<th>奇妙な気分におそわれたが、すぐに消えていった。<br>まともな気分におそわれたが、すぐに消えていった。<i>（幻覚時）</i><sup class="message" id="r545_b3"><a href="#r545_c3">[3]<span class="remark">二種類の水薬で共通したメッセージなので、二つのうちのどちらであるかを特定することはできない。</span></a></sup></th>
 						<td>怪物探知の水薬<span class="br">魔法探知の水薬</span></td>
 						<td class="en">monster detection<br>magic detection</td>
 				</tr>
 		</tbody>
 	</table>
 	<p style="font-size: 85%;">
-	<sup id="c3"><a href="#b3">[3]</a></sup> 二種類の水薬で共通したメッセージなので、二つのうちのどちらであるかを特定することはできない。</p>
+	<sup id="r545_c3"><a href="#r545_b3">[3]</a></sup> 二種類の水薬で共通したメッセージなので、二つのうちのどちらであるかを特定することはできない。</p>
 </div>
 <br>
 
 <div class="padding_3em">
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html">【運命の洞窟】への案内書</a> | 巻き物と水薬の一覧 | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=54">【運命の洞窟】への案内書</a> | 巻き物と水薬の一覧 | <a href="http://leopardgecko.hatenablog.com/" target="_blank">ブログ</a></div>
 </div>
 
 </div><!-- main -->
@@ -279,10 +352,285 @@
 
 <div class="footer">
 	<div class="padding_6em">
-		2018 leopardgecko
+		2026 leopardgecko
 	</div>
 </div><!-- footer -->
 
 
+
+
+</div>
+
+
+<div id="version_rogue_clone_iii" class="version_panel_hidden">
+	<div class="header">
+	<h2>巻き物と水薬の一覧</h2>
+	</div>
+
+<div class="out">
+<div class="main">
+
+<div class="padding_3em">
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=clone3">【運命の洞窟】への案内書</a> | 巻き物と水薬の一覧 | <a href="http://leopardgecko.hatenablog.com/" target="_blank">ブログ</a></div>
+<div class="version_selector">
+	<label>洞窟を選ぶ：</label>
+	<select name="ps_version_select" onchange="switchPsVersion(this.value)">
+		<option value="54" selected="selected">Rogue 5.4 日本語・英語／カラー対応版</option>
+		<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+	</select>
+</div>
+<br>
+<p><b>注：これはスポイラー（ゲームのヒント）です。必要がない方は読まないでください。</b></p>
+<br>
+<p>Rogue Clone IIIに出てくる巻き物と水薬の一覧表です。</p>
+<div class="only-pc"><p>アイテムを使用すると表示されるメッセージ、和名、英名（Rogue Clone IIIでの名称）の順で記載しています。<br>（識別の巻き物は使った効果が一目瞭然なので記載は省略しました）</p></div>
+<div class="only-sp"><p>使用すると表示されるメッセージとアイテム名を交互に記載しています。</p></div>
+<p>注意点として、幻覚を見ている状態では色の名前がランダムに変更されます。</p>
+</div>
+
+<div class="only-sp">
+	<h3>目次</h3>
+<ol>
+	<li><a href="#rc3_01">巻き物の一覧</a></li>
+	<li><a href="#rc3_02">水薬の一覧</a></li>
+</ol>
+</div>
+
+<h3 id="rc3_01">巻き物の一覧</h3>
+<div class="padding_3em">
+	<table class="ps">
+		<thead>
+	    <tr>
+	        <td><i><b>メッセージ</b></i></td>
+	        <td><i><b>和名</b></i></td>
+	        <td><i><b>英名</b></i></td>
+	    </tr>
+		</thead>
+		<tbody>
+	    <tr>
+	        <th>この巻き物には地図が描かれているようだ。</th>
+	        <td>魔法の地図の巻き物</td>
+	        <td class="en">magic mapping</td>
+	    </tr>
+	    <tr>
+	        <th>怪物は動けなくなった。<br>怪物どもは動けなくなった。</th>
+	        <td>怪物を封じこめる巻き物</td>
+	        <td class="en">hold monster</td>
+	    </tr>
+		<tr>
+	        <th>かん高いうなり声が聞こえてくる。</th>
+	        <td>怪物を怒らせる巻き物</td>
+	        <td class="en">aggravate monster</td>
+	    </tr>
+		<tr>
+	        <th>着ているよろいが、少しのあいだ青い輝きに包まれた。</th>
+	        <td>よろいに魔法をかける巻き物</td>
+	        <td class="en">enchant armor</td>
+	    </tr>
+		<tr>
+	        <th>着ているよろいは、輝く金色のシールドに包まれた。</th>
+	        <td>よろいを守る巻き物</td>
+	        <td class="en">protect armor</td>
+	    </tr>
+		<tr>
+	        <th>誰かに見守られているような気がした。<br>宇宙の一体性に触れた気がした。<i>（幻覚時）</i></th>
+	        <td>のろいを解く巻き物</td>
+	        <td class="en">remove curse</td>
+	    </tr>
+		<tr>
+	        <th>手が少しのあいだ赤い輝きに包まれた。</th>
+	        <td>怪物を混乱させる巻き物</td>
+	        <td class="en">confuse monster</td>
+	    </tr>
+		<tr>
+	        <th>手に持った[<i>武器</i>]が、少しのあいだ青い輝きに包まれた。</th>
+	        <td>武器に魔法をかける巻き物</td>
+	        <td class="en">enchant weapon</td>
+	    </tr>
+		<tr>
+	        <th>遠くから、狂ったような笑い声が聞こえてくる。<sup class="message" id="rc3_b1"><a href="#rc3_c1">[1]<span class="remark">この巻き物は読んでも効果は得られない。巻き物を地面に置くと怪物はそこを通れなくなる。</span></a></sup></th>
+	        <td>怪物を怖がらせる巻き物</td>
+	        <td class="en">scare monster</td>
+	    </tr>
+		<tr>
+	        <th>知らないうちに眠り込んでしまった。</th>
+	        <td>眠りにおちる巻き物</td>
+	        <td class="en">sleep</td>
+	    </tr>
+		<tr>
+	        <th><i>（無し：プレーヤーの隣に怪物が出現する）</i></th>
+	        <td>怪物を作りだす巻き物</td>
+	        <td class="en">create monster</td>
+	    </tr>
+		<tr>
+	        <th><i>（無し：プレーヤーがテレポートする）</i></th>
+	        <td>テレポートする巻き物</td>
+	        <td class="en">teleportation</td>
+	    </tr>
+		</tbody>
+	</table>
+	<p style="font-size: 85%;">
+	<sup id="rc3_c1"><a href="#rc3_b1">[1]</a></sup> この巻き物は読んでも効果は得られない。巻き物を地面に置くと怪物はそこを通れなくなる。</p>
+	<br>
+	<p>巻き物を読んでも何らかの理由で効果が現れなかった時には以下のメッセージが出ます。</p>
+		<div class="only-sp">【無効時のメッセージ】</div>
+		<table class="ps">
+			<thead>
+		    <tr>
+		        <td><i><b>無効時のメッセージ</b></i></td>
+		        <td><i><b>和名</b></i></td>
+		        <td><i><b>英名</b></i></td>
+		    </tr>
+			</thead>
+			<tbody>
+				<tr>
+						<th>急に、体から力が抜けていくような気がした。</th>
+						<td>怪物を封じこめる巻き物</td>
+						<td class="en">hold monster</td>
+				</tr>
+				<tr>
+						<th>手がぴりぴりする。</th>
+						<td>武器に魔法をかける巻き物</td>
+						<td class="en">enchant weapon</td>
+				</tr>
+				<tr>
+						<th>身の毛がよだった。</th>
+						<td>よろいに魔法をかける巻き物</td>
+						<td class="en">enchant armor</td>
+				</tr>
+				<tr>
+						<th>ニキビが消えたようだ。</th>
+						<td>よろいを守る巻き物</td>
+						<td class="en">protect armor</td>
+				</tr>
+				<tr>
+						<th>遠くから、かすかな苦悶の叫びが聞こえる。</th>
+						<td>怪物を作りだす巻き物</td>
+						<td class="en">create monster</td>
+				</tr>
+		</tbody>
+	</table>
+</div>
+
+<h3 id="rc3_02">水薬の一覧</h3>
+	<div class="padding_3em">
+	<table  class="ps">
+		<thead>
+	    <tr>
+	        <td><i><b>メッセージ</b></i></td>
+	        <td><i><b>和名</b></i></td>
+	        <td><i><b>英名</b></i></td>
+	    </tr>
+		</thead>
+		<tbody>
+			<tr>
+	        <th>これはうまい。身体中があたたまる。</th>
+	        <td>強さが元にもどる水薬</td>
+	        <td class="en">restore strength</td>
+	    </tr>
+			<tr>
+	        <th>動きが素早くなったようだ。</th>
+	        <td>素早くなる水薬</td>
+	        <td class="en">haste self</td>
+	    </tr>
+			<tr>
+	        <th>体が宙に浮き始めた。</th>
+	        <td>空中に浮きあがる水薬</td>
+	        <td class="en">levitation</td>
+	    </tr>
+			<tr>
+	        <th>気分がよくなってきた。</th>
+	        <td>体力が回復する水薬</td>
+	        <td class="en">healing</td>
+	    </tr>
+			<tr>
+	        <th><i>（無し：この階にある物品が画面に表示される）</i></th>
+	        <td>物品探知の水薬</td>
+	        <td class="en">detect things</td>
+	    </tr>
+			<tr>
+	        <th>う〜む、[<i>好きな果物</i>]ジュースのような味がする。</th>
+	        <td>見えないものが見える水薬</td>
+	        <td class="en">see invisible</td>
+	    </tr>
+			<tr>
+	        <th>すごく具合が悪くなった。</th>
+	        <td>毒の水薬</td>
+	        <td class="en">poison</td>
+	    </tr>
+	    <tr>
+	        <th>ちょっと待った、何が起こったんだ？え？なに？だれ？<br>トリップしている気分だ！<i>（幻覚時）</i></th>
+	        <td>頭が混乱する水薬</td>
+	        <td class="en">confusion</td>
+	    </tr>
+			<tr>
+	        <th>強くなった気がするぞ。このはちきれそうな筋肉！</th>
+	        <td>強さが増す水薬</td>
+	        <td class="en">increase strength</td>
+	    </tr>
+			<tr>
+	        <th>突然に腕前がすごく上がったようだ。</th>
+	        <td>レベルが上がる水薬</td>
+	        <td class="en">raise level</td>
+	    </tr>
+			<tr>
+	        <th>とても気分がよくなってきた。</th>
+	        <td>体力がとても回復する水薬</td>
+	        <td class="en">extra healing</td>
+	    </tr>
+			<tr>
+	        <th>深い暗闇のとばりがあたりをおおってゆく。</th>
+	        <td>目が見えなくなる水薬</td>
+	        <td class="en">blindness</td>
+	    </tr>
+	    <tr>
+	        <th>わお！ 何もかもが宇宙っぽく見える！</th>
+	        <td>幻覚をおこす水薬</td>
+	        <td class="en">hallucination</td>
+	    </tr>
+			<tr>
+	        <th><i>（無し：遠くにいる怪物が画面に反転表示される）</i></th>
+	        <td>怪物探知の水薬</td>
+	        <td class="en">detect monster</td>
+	    </tr>
+		</tbody>
+	</table>
+	<br>
+	<p>水薬を飲んでも何らかの理由で効果が現れなかった時には以下のメッセージが出ます。</p>
+		<div class="only-sp">【無効時のメッセージ】</div>
+		<table class="ps">
+			<thead>
+				<tr>
+						<td><b>無効時のメッセージ</b></td>
+						<td><b>和名</b></td>
+						<td><b>英名</b></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+						<th>不思議な気分におそわれたが、すぐに消えていった。<sup class="message" id="rc3_b3"><a href="#rc3_c3">[3]<span class="remark">対象がない場合に出る共通メッセージである。</span></a></sup></th>
+						<td>怪物探知の水薬<span class="br">物品探知の水薬</span></td>
+						<td class="en">detect monster<br>detect things</td>
+				</tr>
+		</tbody>
+	</table>
+	<p style="font-size: 85%;">
+	<sup id="rc3_c3"><a href="#rc3_b3">[3]</a></sup> 対象となる怪物または物品が存在しない場合に出る共通メッセージである。</p>
+</div>
+<br>
+
+<div class="padding_3em">
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=clone3">【運命の洞窟】への案内書</a> | 巻き物と水薬の一覧 | <a href="http://leopardgecko.hatenablog.com/" target="_blank">ブログ</a></div>
+</div>
+
+</div><!-- main -->
+</div><!-- out -->
+
+<div class="footer">
+	<div class="padding_6em">
+		2026 leopardgecko
+	</div>
+</div><!-- footer -->
+</div>
 
 </body></html>

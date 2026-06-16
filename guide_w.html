@@ -76,6 +76,12 @@ function getInitialGuideVersion() {
 	}
 	return '52';
 }
+function updateGuidePsLinks(selected) {
+	var links = document.getElementsByClassName('ps_version_link');
+	for (var i = 0; i < links.length; i++) {
+		links[i].href = 'ps.html?version=' + selected;
+	}
+}
 function switchGuideVersion() {
 	var selected = document.getElementById('guide_version_select').value;
 	var panels = ['52', '36', 'clone2', 'clone2j'];
@@ -83,6 +89,7 @@ function switchGuideVersion() {
 		var panel = document.getElementById('version_rogue_' + panels[i]);
 		if (panel) panel.className = (selected == panels[i]) ? '' : 'version_panel_hidden';
 	}
+	updateGuidePsLinks(selected);
 }
 function initializeGuideVersion() {
 	document.getElementById('guide_version_select').value = getInitialGuideVersion();
@@ -99,7 +106,7 @@ window.onload = initializeGuideVersion;
 <div class="out">
 <div class="main">
 <div class="padding_3em">
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | 【運命の洞窟】への案内書 | <a href="ps.html"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target="”_blank”">ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | 【運命の洞窟】への案内書 | <a class="ps_version_link" href="ps.html?version=52"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target="”_blank”">ブログ</a></div>
 </div>
 <div class="version_selector">
 <label for="guide_version_select">洞窟を選ぶ：</label>
@@ -534,7 +541,7 @@ Level: 1  Gold: 0      Hp: 12(12)  Str: 16(16)  Ac: 6   Exp: 1/0
 <br/>
 <p align="justify"><span class="aks">日本語訳、Mac版およびシークレット版用の記述追加：</span><a href="https://twitter.com/leopard_gecko" target="”_blank”">leopardgecko</a></p>
 <div class="padding_3em">
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | 【運命の洞窟】への案内書 | <a href="ps.html"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target="”_blank”">ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | 【運命の洞窟】への案内書 | <a class="ps_version_link" href="ps.html?version=52"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target="”_blank”">ブログ</a></div>
 </div>
 </span><!-- font-family -->
 </div>
@@ -957,7 +964,7 @@ Level: 1  Gold: 0      Hp: 12(12)  Str: 16      Ac: 6   Exp: 1/0
 <br/>
 <p align="justify"><span class="aks">日本語訳、Mac版およびシークレット版用の記述追加：</span><a href="https://twitter.com/leopard_gecko" target="”_blank”">leopardgecko</a></p>
 <div class="padding_3em">
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | 【運命の洞窟】への案内書 | <a href="ps.html"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target="”_blank”">ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | 【運命の洞窟】への案内書 | <a class="ps_version_link" href="ps.html?version=52"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target="”_blank”">ブログ</a></div>
 </div>
 </span><!-- font-family -->
 </div>
@@ -1379,7 +1386,7 @@ Level: 1  Gold: 0      Hp: 12(12)  Str: 16(16)  Arm: 4  Exp: 1/0
 <br/>
 <p align="justify"><span class="aks">日本語訳、Mac版およびシークレット版用の記述追加：</span><a href="https://twitter.com/leopard_gecko" target="”_blank”">leopardgecko</a></p>
 <div class="padding_3em">
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | 【運命の洞窟】への案内書 | <a href="ps.html"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target="”_blank”">ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | 【運命の洞窟】への案内書 | <a class="ps_version_link" href="ps.html?version=52"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target="”_blank”">ブログ</a></div>
 </div>
 </span><!-- font-family -->
 </div><div class="version_panel_hidden" id="version_rogue_clone2j">
@@ -1782,7 +1789,7 @@ Level: 1  Gold: 0      Hp: 12(12)  Str: 16(16)  Arm: 4  Exp: 1/0
 <br/>
 <p align="justify"><span class="aks">日本語訳、Mac版およびシークレット版用の記述追加：</span><a href="https://twitter.com/leopard_gecko" target="”_blank”">leopardgecko</a></p>
 <div class="padding_3em">
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | 【運命の洞窟】への案内書 | <a href="ps.html"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target="”_blank”">ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | 【運命の洞窟】への案内書 | <a class="ps_version_link" href="ps.html?version=52"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target="”_blank”">ブログ</a></div>
 </div>
 </span><!-- font-family -->
 </div>

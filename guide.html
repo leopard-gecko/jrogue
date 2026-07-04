@@ -36,6 +36,63 @@
 .version_panel_hidden {
 	display: none;
 }
+
+.dos148_map {
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	white-space: pre;
+	background-color: #000000;
+	color: #d0d0d0;
+}
+.dos-symbol {
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.dos148_map .dos-wall,
+.dos-symbol.dos-wall {
+	color: #af5f00;
+}
+.dos148_map .dos-door,
+.dos-symbol.dos-door {
+	color: #af5f00;
+}
+.dos148_map .dos-floor,
+.dos-symbol.dos-floor {
+	color: #5f875f;
+}
+.dos148_map .dos-passage,
+.dos-symbol.dos-passage {
+	color: #6c6c6c;
+}
+.dos148_map .dos-player,
+.dos-symbol.dos-player {
+	color: #ffd787;
+}
+.dos148_map .dos-monster,
+.dos-symbol.dos-monster {
+	color: #afaf87;
+}
+.dos148_map .dos-armor,
+.dos-symbol.dos-armor,
+.dos-symbol.dos-item {
+	color: #5fafff;
+}
+.dos-symbol.dos-trap {
+	color: #d7005f;
+}
+.dos-symbol.dos-food {
+	color: #d75f5f;
+}
+.dos-symbol.dos-gold {
+	color: #ffd787;
+}
+.dos-symbol.dos-stairs {
+	color: #000000;
+	background-color: #005f00;
+}
+.dos148_map .dos-status {
+	color: #ffd787;
+	background-color: #000000;
+}
+
 </style>
 <script type="text/javascript">
 //<![CDATA[
@@ -43,6 +100,7 @@ function normalizeGuideVersion(value) {
 	if (!value) return 'r545';
 	value = value.toLowerCase();
 	if (value == 'clone3' || value == 'clone' || value == 'cloneiii' || value == 'rogue-clone-iii') return 'clone3';
+	if (value == 'dos148' || value == 'dos' || value == '148' || value == '1.48' || value == 'rogue148' || value == 'rogue-dos-148') return 'dos148';
 	if (value == '54' || value == '5.4' || value == 'rogue54') return 'r545';
 	return 'r545';
 }
@@ -63,13 +121,10 @@ function switchGuideVersion(value) {
 	var selected = normalizeGuideVersion(value);
 	var guide54 = document.getElementById('version_rogue_545');
 	var guideClone = document.getElementById('version_rogue_clone_iii');
-	if (selected == 'clone3') {
-		guide54.className = 'version_panel_hidden';
-		guideClone.className = '';
-	} else {
-		guide54.className = '';
-		guideClone.className = 'version_panel_hidden';
-	}
+	var guideDos = document.getElementById('version_rogue_dos148');
+	if (guide54) guide54.className = (selected == 'r545') ? '' : 'version_panel_hidden';
+	if (guideClone) guideClone.className = (selected == 'clone3') ? '' : 'version_panel_hidden';
+	if (guideDos) guideDos.className = (selected == 'dos148') ? '' : 'version_panel_hidden';
 	var selectors = document.getElementsByClassName('guide_version_select');
 	for (var i = 0; i < selectors.length; i++) {
 		selectors[i].value = selected;
@@ -105,6 +160,7 @@ window.onload = initializeGuideVersion;
 	<select class="guide_version_select" onchange="switchGuideVersion(this.value)">
 		<option value="r545" selected="selected">Rogue 5.4 日本語・英語／カラー対応版</option>
 		<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
 	</select>
 </div>
 
@@ -754,6 +810,7 @@ window.onload = initializeGuideVersion;
 	<select class="guide_version_select" onchange="switchGuideVersion(this.value)">
 		<option value="r545" selected="selected">Rogue 5.4 日本語・英語／カラー対応版</option>
 		<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
 	</select>
 </div>
 
@@ -1029,7 +1086,7 @@ window.onload = initializeGuideVersion;
 
 <h3 align="justify" id="rc3_05"><b>5.  部屋</b></h2>
 	<div class="padding_3em">
-<p class="indent">洞窟の部屋は明るい。部屋に入ると、入るのと同時に部屋全体が画面に描かれる。部屋を出ると、部屋の中にいる全ての怪物が画面から消去される。通路は常に暗い。</p>
+<p class="indent">洞窟の部屋は常に明るい。部屋に入ると、入るのと同時に部屋全体が画面に描かれる。部屋を出ると、部屋の中にいる全ての怪物が画面から消去される。暗闇の中で見えるのはプレイヤーの全周囲一コマ分だけである。通路は常に暗い。</p>
 </div>
 
 <h3 align="justify" id="rc3_06"><b>6.  戦闘</b></h2>
@@ -1223,4 +1280,509 @@ ROGUE_LANG=en ./rogue-clone</pre>
 
 
 </div>
+<div id="version_rogue_dos148" class="version_panel_hidden">
+
+
+
+	<div class="header">
+
+	<h2>【運命の<ruby>洞窟<rp>（</rp><rt>ダンジョン</rt><rp>）</rp></ruby>】への案内書</h2>
+	</div>
+
+<div class="out">
+<div class="main">
+
+<div class="padding_3em">
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | 【運命の洞窟】への案内書 | <a href="ps.html?version=dos148"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target=”_blank”>ブログ</a></div>
+
+<div class="version_selector">
+	<label>洞窟を選ぶ：</label>
+	<select class="guide_version_select" onchange="switchGuideVersion(this.value)">
+		<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
+		<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+		<option value="dos148" selected="selected">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+	</select>
+</div>
+
+</div>
+
+<span style="font-family: sans-serif;">
+<br>
+<p><div class="center_pc"><i>マイケル C. トイ<br>
+ケネス C. R. C. アーノルド</i></div></p>
+<p><div class="center_pc">カリフォルニア大学<br>
+電気工学およびコンピューターサイエンス学科<br>
+コンピューターシステムリサーチグループ<br>
+カリフォルニア州バークレー  94720</div></p>
+<div class="only-pc"><p>&nbsp;</div>
+
+<div class="padding_3em">
+<p style="font-size: 130%; text-align: center;"><i>概要</i></p>
+<div class="padding_3em">
+<p><b><i>ローグ</i></b>とは、視覚的なモニターをベースとしてUNIX<sup class="message" id="dos148_b0"><a href="#dos148_c0"><b style="font-size: 120%;">†</b><span class="remark">UNIXはベル研究所の登録商標である。</span></a></sup>時分割システムで動作するファンタジーゲームである。ここにローグを楽しむための案内を記し、【運命の<ruby>洞窟<rp>（</rp><rt>ダンジョン</rt><rp>）</rp></ruby>】の中で迷ってしまうかもしれぬ者達のためのいくばくかの手がかりとしよう。</p>
+</div>
+</div>
+
+<div class="only-pc">
+<p>&nbsp;
+<hr width="100%">
+<p style="font-size: 130%; text-align: center; margin: 0;">目次</p>
+	<table width="70%" align="center">
+	<tr><td><ol style="padding: 0; margin: 0;">
+		<li><a href="#dos148_01">導入</a></li>
+		<li><a href="#dos148_02">ここで何が起こっているのか？</a></li>
+		<li><a href="#dos148_03">画面上のものは何を意味しているのか？</a></li>
+		<li><a href="#dos148_04">コマンド</a></li>
+		<li><a href="#dos148_05">部屋</a></li></ol>
+	</td>
+	<td><ol style="padding: 0; margin: 0;">
+		<li value="6"><a href="#dos148_06">戦闘</a></li>
+		<li><a href="#dos148_07">見つけられるアイテム</a></li>
+		<li><a href="#dos148_08">オプション</a></li>
+		<li><a href="#dos148_09">スコア</a></li>
+		<li><a href="#dos148_10">謝辞</a></li></ol>
+		</td></tr>
+	</table>
+<hr width="100%">
+</div>
+
+<div class="only-sp">
+	<div style="font-size: 90%;">
+	<h3>目次</h3>
+	<ol>
+	<li><a href="#dos148_01">導入</a></li>
+	<li><a href="#dos148_02">ここで何が起こっているのか？</a></li>
+	<li><a href="#dos148_03">画面上のものは何を意味しているのか？</a></li>
+	<li><a href="#dos148_04">コマンド</a></li>
+	<li><a href="#dos148_05">部屋</a></li>
+	<li><a href="#dos148_06">戦闘</a></li>
+	<li><a href="#dos148_07">見つけられるアイテム</a></li>
+	<li><a href="#dos148_08">オプション</a></li>
+	<li><a href="#dos148_09">スコア</a></li>
+	<li><a href="#dos148_10">謝辞</a></li></ol>
+</div>
+</div>
+
+<h3 align="justify" id="dos148_01"><b>1.  導入</b></h3>
+<div class="padding_3em">
+<p  class="indent">君は、とある地方の<ruby>戦士組合<rp>（</rp><rt>ファイターズ・ギルド</rt><rp>）</rp></ruby>の訓練生としての数年の期間をちょうど終えたところだ。幾多の修練と流した汗の後についに訓練を完璧に仕上げ、危険に満ちた冒険に乗り出す準備ができた。地方ギルドの<ruby>長<rp>（</rp><rt>おさ</rt><rp>）</rp></ruby>たちは腕前を<ruby>検<rp>（</rp><rt>あらた</rt><rp>）</rp></ruby>める試練として君を【運命の洞窟】へと送り込んだ。任務は【イェンダーの魔除け】を持ち帰ってくることだ。この任務を成し遂げた暁には、地方ギルドの完全な会員資格が与えられるだろう。それに加え、洞窟から持ち帰った戦利品をすべて自分のものとすることも許されるのだ。</p>
+
+<p class="indent">旅立ちに備えて、魔法のかけられた<ruby>槌矛<rp>（</rp><rt>つちほこ</rt><rp>）</rp></ruby>と弓とひと束の矢が与えられる。これらは、はるか彼方の【暗き山】に<ruby>棲<rp>（</rp><rt>す</rt><rp>）</rp></ruby>むドラゴンの秘宝から得られたものである。さらに、エルフが<ruby>拵<rp>（</rp><rt>こしら</rt><rp>）</rp></ruby>えた鎧と、洞窟にたどり着くまでの食糧が用意される。これが最後となるかもしれない別れのあいさつを家族や友人たちに告げ、道に向かう。</p>
+
+<p class="indent">洞窟に至る道へ出発し、平穏無事な数日の旅の後に、【運命の洞窟】の入り口を示す<ruby>古<rp>（</rp><rt>いにしえ</rt><rp>）</rp></ruby>の廃墟を見つける。すでに夜も更けたため入り口で野営をし、広々とした空のもとで眠りにつき夜を過ごす。朝には武器をまとめ、鎧を身につけ、ほとんど最後となった食糧を口にし、洞窟へと入っていく。</p>
+</div>
+
+<h3 align="justify" id="dos148_02"><b>2.  ここで何が起こっているのか？</b></h3>
+<div class="padding_3em">
+<p class="indent">君はローグのゲームを始めたところである。ゴールは、できる限り多くの宝物を手に入れ、【イェンダーの魔除け】を見つけ、【運命の洞窟】から生きて帰ること。画面上にはプレイヤーが行ったことのある場所の地図と、現在いる洞窟の階数が示されている。その階での探索を進めていくにつれ、目の前の画面に表示されていく。</p>
+<p class="indent">ローグはほとんどのコンピューターファンタジーゲームと違ってスクリーン指向である。コマンドはすべて一つか二つのキーを押すこと<sup class="message" id="dos148_b1"><a href="#dos148_c1">[1]<span class="remark">英語のような文章ではなく。</span></a></sup>により行われ、コマンドの結果は言葉で説明されるのではなく、画面上でグラフィカルに表示される<sup class="message" id="dos148_b2"><a href="#dos148_c2">[2]<span class="remark">最小の画面サイズは24行80桁が求められる。画面がそれ以上の場合は24x80の部分だけが使われる。</span></a></sup>。</p>
+<p class="indent">ローグと他のコンピューターファンタジーゲームとの他の大きな違いは、標準的なファンタジーゲームでは一度全ての謎を解いてしまうとほとんどの興奮と楽しみが失われてしまうのに対して、ローグは毎回新しい洞窟を作り出すので作者ですら面白くてエキサイティングなゲームだと感じることだろう。</p>
+</div>
+
+<h3 align="justify" id="dos148_03"><b>3.  画面上のものは何を意味しているのか？</b></h3>
+<div class="padding_3em">
+<p class="indent">ローグで何が起こっているのかを理解するためには、まずローグが画面で何をしているのかをつかんでおく必要がある。ローグの画面は、標準的なファンタジーゲームでの「あなたは〜を見る」という説明に取って代わるものである。図１はローグの画面がどのように見えるかの例である。</p>
+
+<div align="center">
+<div class="scroll">
+<table><tr><td>
+<pre class="map dos148_map">
+
+
+                         <span class="dos-wall">╔══════════╗</span>
+                         <span class="dos-wall">║</span><span class="dos-floor">··········</span><span class="dos-door">╬</span>
+                         <span class="dos-wall">║</span><span class="dos-floor">··</span><span class="dos-player">☺</span><span class="dos-floor">····</span><span class="dos-armor">◘</span><span class="dos-floor">··</span><span class="dos-wall">║</span>
+                         <span class="dos-wall">║</span><span class="dos-floor">····</span><span class="dos-monster">B</span><span class="dos-floor">·····</span><span class="dos-wall">║</span>
+                         <span class="dos-wall">║</span><span class="dos-floor">··········</span><span class="dos-wall">║</span>
+                         <span class="dos-wall">╚════</span><span class="dos-door">╬</span><span class="dos-wall">═════╝</span>
+
+
+
+<span class="dos-status">階: 1  体力: 12(12)  強さ: 16(16)  金塊: 0      守備: 5</span>
+</pre>
+<p style="text-align: center;">図1</p>
+</td></tr></table>
+</div>
+</div>
+
+</div>
+
+<h4 align="justify"><b>3.1.  最下行</b></h2>
+	<div class="padding_3em">
+<p class="indent">画面の一番下の行はプレイヤーの現在の状態を示す暗号のような<sup class="message" id="dos148_b5"><a href="#dos148_c5">訳注<span class="remark">英語版の最下行では頭文字や略語が使われているので意味がわかりにくい。</span></a></sup>いくつかの情報である。以下はこれらが何を意味するのかの説明である：<br>
+<br>
+<table class="guide">
+	<tr>
+		<td style="width: 3em;">階</td>
+		<td>この数値は洞窟の中でどこまで降りて行ったかを示している。１から始まり、洞窟を降りて行くに従い数値が上がっていく。</td>
+	</tr>
+	<tr>
+		<td>体力</td>
+		<td>健康状態の現在値と最大値。体力ポイントは、死ぬまでにどれだけのダメージを受けることができるのかを示している。戦いで攻撃を受けるほど数値は下がっていく。休むことによって体力ポイントを取り戻すことができる。カッコ内の数値は体力ポイントの最大値である。</td>
+	</tr>
+	<tr>
+		<td>強さ</td>
+		<td>強さの現在値と最大値。3以上31以下の整数である。数値が高いほど、より強いことを示している。カッコ内の数値はこれまでのゲームで達した最大値である。</td>
+	</tr>
+	<tr>
+		<td>金塊</td>
+		<td>今まで見つけて手に入れた金塊の数。</td>
+	</tr>
+	<tr>
+		<td>守備</td>
+		<td>現在の鎧の守備力。この数値は非友好的な生き物からの攻撃を食い止めるのにどれだけ効果があるかを示している。この数値が高いほど、鎧の効果がより高い。</td>
+	</tr>
+	<tr>
+		<td>称号</td>
+		<td>最下行の右端には現在の経験レベルに応じた称号が表示される。経験レベル1では空欄で、経験を積むと「ギルドの新米」「見習い」などの称号が表示される。行動に応じて経験値が得られ、合計で一定の経験値になると経験レベルが上がる。経験を積んでいくにつれ、戦いの能力が上がり、不可思議な攻撃に耐えられるようになっていく。</td>
+	</tr>
+</table>
+</div>
+
+<h4 align="justify"><b>3.2.  最上行</b></h3>
+	<div class="padding_3em">
+<p class="indent">画面の一番上の行は、視覚的に表現できない物事を表すメッセージを表示するために予約されている。最上行に『--続く--』または『--More--』が表示された場合は、ローグは画面に他のメッセージを表示しようとしているが、まずはそこにあるメッセージがすでに読まれているのかを確認したいということである。次のメッセージを読むためにはスペースキーを押すだけで良い。</p>
+</div>
+
+<h4 align="justify"><b>3.3.  画面の残りの部分</b></h3>
+	<div class="padding_3em">
+<p class="indent">画面の残りの部分はこれまでに探検した階の地図である。画面上の各々の文字は何らかのものを意味している。以下は個々の文字が何を意味しているかの一覧である：</p>
+<table class="guide">
+	<tr>
+		<td style="width: 3em;"><span class="dos-symbol dos-player">☺</span></td>
+		<td>この記号は冒険者であるプレイヤー(player)を表している。</td>
+	</tr>
+	<tr>
+		<td><span class="dos-symbol dos-wall">║ ═</span></td>
+		<td>これらの記号は部屋の壁(wall)を表している。</td>
+	</tr>
+	<tr>
+		<td><span class="dos-symbol dos-door">╬</span></td>
+		<td>部屋に入る／出るためのドア(door)。</td>
+	</tr>
+	<tr>
+		<td><span class="dos-symbol dos-floor">·</span></td>
+		<td>部屋の床(floor)。</td>
+	</tr>
+	<tr>
+		<td><span class="dos-symbol dos-passage">░</span></td>
+		<td>部屋の間の通路(passage)の床。</td>
+	</tr>
+	<tr>
+		<td><span class="dos-symbol dos-gold">☼</span></td>
+		<td>金塊(gold)。</td>
+	</tr>
+	<tr>
+		<td><span class="dos-symbol dos-item">↑</span></td>
+		<td>何らかの武器(weapon)。</td>
+	</tr>
+	<tr>
+		<td><span class="dos-symbol dos-armor">◘</span></td>
+		<td>ひとそろいの鎧(armor)。</td>
+	</tr>
+	<tr>
+		<td><span class="dos-symbol dos-item">¡</span></td>
+		<td>魔法の薬が入っているフラスコ、すなわち水薬(potion)。</td>
+	</tr>
+	<tr>
+		<td><span class="dos-symbol dos-item">♪</span></td>
+		<td>一枚の紙、通常は魔法の巻き物(scroll)。</td>
+	</tr>
+	<tr>
+		<td><span class="dos-symbol dos-item">○</span></td>
+		<td>魔法の性質を持つ指輪(ring)。</td>
+	</tr>
+	<tr>
+		<td><span class="dos-symbol dos-item">τ</span></td>
+		<td>魔法の杖や棒(staff / wand)。</td>
+	</tr>
+	<tr>
+		<td><span class="dos-symbol dos-trap">♦</span></td>
+		<td>わな(trap)。これには気をつけよ。</td>
+	</tr>
+	<tr>
+		<td><span class="dos-symbol dos-stairs">≡</span></td>
+		<td>他の階への階段(stairs)。</td>
+	</tr>
+	<tr>
+		<td><span class="dos-symbol dos-food">♣</span></td>
+		<td>一片の食糧(food)。</td>
+	</tr>
+	<tr>
+		<td nowrap>A-Z</td>
+		<td>大文字のアルファベットは【運命の洞窟】の様々な住民を表している。注意せよ、奴らは厄介で凶暴だ。</td>
+	</tr>
+</table>
+</div>
+
+<h3 align="justify" id="dos148_04"><b>4.  コマンド</b></h2>
+	<div class="padding_3em">
+	<p class="indent">ローグへのコマンドは一つか二つの文字を入力することによって与えられる。大部分のコマンドは前に回数を入力すると繰り返すことができる（例：「10s」と入力すると10回の検索(search)が行われる）。回数が意味を持たないコマンドは回数を無視する。回数または接頭辞を取り消すには、[esc]を入力する。コマンドのリストはかなり長いが、「?」コマンドでゲーム中にいつでも読むことができる。以下はROGUEOPTSに<i>doscommands</i>を指定した場合の各コマンドの簡単な説明である。<br>
+	&nbsp;</p>
+
+	<table class="guide">
+		<tr><td style="width: 2em;" align="left">?</td><td align="justify">ヘルプ用のコマンド。現在のコマンドモードで使用できるコマンド一覧を表示する。</td></tr>
+		<tr><td align="left">/</td><td align="justify">「画面上のそれは何なのか？」のコマンド。画面上で使われる記号とその意味を一覧表示する。</td></tr>
+		<tr><td align="left">F1</td><td align="justify">コマンド一覧を表示する。</td></tr>
+		<tr><td align="left">F2</td><td align="justify">画面記号の一覧を表示する。</td></tr>
+		<tr><td align="left">F3</td><td align="justify">直前のコマンドを繰り返す。</td></tr>
+		<tr><td align="left">F4</td><td align="justify">最後のメッセージを再表示する。</td></tr>
+		<tr><td align="left">F5</td><td align="justify">持ちものに呼び名をつける。</td></tr>
+		<tr><td align="left">F6</td><td align="justify">今まで何を発見したかを表示する。</td></tr>
+		<tr><td align="left">F7</td><td align="justify">アイテムの一覧。画面をクリアして、持ち歩いている荷物をリスト表示する。</td></tr>
+		<tr><td align="left">F8</td><td align="justify">わなを確認する。コマンドの後に方向を指定すると、地図上に表示されているわなの種類を思い出すことができる。</td></tr>
+		<tr><td align="left">F9</td><td align="justify">The Any Key。定義されたマクロを実行する。</td></tr>
+		<tr><td align="left">F10</td><td align="justify">fake DOSに入る。ゲームに戻りたい時は「rogue」と入力するか[esc]を押す。</td></tr>
+		<tr><td nowrap align="left" colspan="2">h, H, Ctrl+方向キー</td></tr>
+		<tr><td align="left">&nbsp;</td><td align="justify">左に移動。一コマ左に移動する。大文字のHを入力すると、何かにぶつかるまで左に移動し続ける。これは全ての移動コマンドで機能する（例：「L」は「l」の方向に走ることを意味する）。Ctrlキーを押しながら方向キーを入力した場合は、興味深いものの隣に来るか壁に当たるまで指定した方向に移動し続ける。これはとても便利なコマンドだが、説明するのはとても難しいので試してみてほしい。これは全ての移動コマンドでも機能する。</td></tr>
+		<tr><td align="left">j</td><td align="justify">下に移動。</td></tr>
+		<tr><td align="left">k</td><td align="justify">上に移動。</td></tr>
+		<tr><td align="left">l</td><td align="justify">右に移動。</td></tr>
+		<tr><td align="left">y</td><td align="justify">斜め左上に移動。</td></tr>
+		<tr><td align="left">u</td><td align="justify">斜め右上に移動。</td></tr>
+		<tr><td align="left">b</td><td align="justify">斜め左下に移動。</td></tr>
+		<tr><td align="left">n</td><td align="justify">斜め右下に移動。</td></tr>
+		<tr><td align="left">f</td><td align="justify">&quot;forward until find something&quot;。何かを見つけるまで進む。コマンドの後に方向を指定すると、興味深いものの隣に来るか壁に当たるまで指定した方向に移動し続ける。</td></tr>
+		<tr><td align="left">g</td><td align="justify">&quot;move onto without picking up&quot;。物を拾わずに何かの上に移動する。指定した方向に一コマ進むが、そこに拾えるものがあっても拾わない。</td></tr>
+		<tr><td align="left">+</td><td align="justify">&quot;throw something&quot;。ものを投げる。これは接頭辞コマンドである。コマンドの後に指定した方向に向かってものを投げる。</td></tr>
+		<tr><td align="left">-</td><td align="justify">&quot;zap&quot;(素早く振る)の接頭辞コマンド。魔法の杖か棒を指定した方向に向けて発射する。方向性のない杖であっても、使う時にはどこかの方向を指す必要がある。</td></tr>
+		<tr><td align="left">^</td><td align="justify">わなを確認する。地図上に表示されているわなの種類を思い出せないときには、その隣に移動して「^」に続けて方向を入力することでローグにそれを思い出させることができる。</td></tr>
+		<tr><td align="left">s</td><td align="justify">&quot;search for trap/secret door&quot;。わなと隠された扉を探す。プレーヤーのすぐ隣の各コマにあるわなや隠された扉を調べる。そこに何かがあっても発見できる可能性は低いので、何かを見つけるまでは探索をしばらく続ける必要があるだろう。</td></tr>
+		<tr><td align="left">&gt;</td><td align="justify">階段で次の階に降りる。驚くほどのことではないが、これができるのは階段の上にいる時だけである。</td></tr>
+		<tr><td align="left">&lt;</td><td align="justify">階段で上の階に登る。これは【イェンダーの魔除け】を持っていなければできない。</td></tr>
+		<tr><td align="left">.</td><td align="justify">休息する。「何もしない」コマンド。待つときや回復に有用である。</td></tr>
+		<tr><td align="left">i</td><td align="justify">&quot;inventory&quot;。アイテムの一覧。持ち歩いている荷物をリスト表示する。</td></tr>
+		<tr><td align="left">q</td><td align="justify">&quot;quaff potion&quot;。持ち運んでいる水薬の一本をゴクゴクと飲む。</td></tr>
+		<tr><td align="left">r</td><td align="justify">&quot;read scroll&quot;。荷物の中にある巻き物の一つを読む。</td></tr>
+		<tr><td align="left">e</td><td align="justify">&quot;eat food&quot;。荷物の中の食糧を食べる。</td></tr>
+		<tr><td align="left">w</td><td align="justify">&quot;wield a weapon&quot;。武器を装備する。荷物から武器を取り出し、戦闘で使うために持ち、それまで使っていたもの（もしあるならば）と取り替える。</td></tr>
+		<tr><td align="left">W</td><td align="justify">&quot;wear armor&quot;。鎧を着用する。一度に着用できる鎧は一着だけである。これは特別に時間がかかる。</td></tr>
+		<tr><td align="left">T</td><td align="justify">&quot;take armor off&quot;。鎧を脱ぐ。呪われた鎧は脱ぐことができない。これは特別に時間がかかる。</td></tr>
+		<tr><td align="left">P</td><td align="justify">&quot;put on ring&quot;。指輪をはめる。一度にはめられる指輪は二つまでである（それぞれの手に一つずつ）。まだ指輪をはめていない場合、このコマンドはどちらの手にはめるのかを尋ねる。そうでなければまだはめていない方の手に置かれる。プログラムは右手に剣を持っていることを前提にしている。</td></tr>
+		<tr><td align="left">R</td><td align="justify">&quot;remove ring&quot;。指輪を外す。このコマンドは、一つだけ指輪をはめている時はそれを外す。二つはめている時はどちらを外すかを尋ねる。</td></tr>
+		<tr><td align="left">d</td><td align="justify">&quot;drop object&quot;。アイテムを落とす。荷物から取り出しそれを床に置く。一つのスペースを占められるのはアイテム一つだけである。呪われたアイテムを装備したり着用していれば落とすことはできない。</td></tr>
+		<tr><td align="left">c</td><td align="justify">&quot;call object&quot;。アイテムに呼び名をつける。荷物の中に何であるか覚えておきたいアイテムがあれば、callコマンドを使ってそのアイテムに呼び名をつけることができる。</td></tr>
+		<tr><td align="left">D</td><td align="justify">&quot;recall what's been discovered&quot;。これまで発見したものを表示する。このコマンドは知りたい物のタイプを尋ねるので、アイテムの規定の種類の記号（例：水薬は&quot;!&quot;）を入力すると、これまでに発見したアイテムの種類を表示する。</td></tr>
+		<tr><td align="left">o</td><td align="justify">&quot;examine/set options&quot;。オプションを調べて設定する。このコマンドについてはオプションの節でさらに説明を加える。</td></tr>
+		<tr><td align="left">a</td><td align="justify">直前のコマンドを繰り返す。</td></tr>
+		<tr><td align="left">F</td><td align="justify">The Any Keyを定義する。ここで定義した内容はF9またはCtrl-Fで実行できる。</td></tr>
+		<tr><td align="left">^F</td><td align="justify">The Any Keyを実行する。</td></tr>
+		<tr><td align="left">^R</td><td align="justify">&quot;print last message&quot;。直前のメッセージを表示する。読む前にメッセージが消えてしまった時に役に立つ。</td></tr>
+		<tr><td align="left">^T</td><td align="justify">簡潔な表示を切り替える。</td></tr>
+		<tr><td align="left">^L</td><td align="justify">DOS版風の画面確認メッセージを表示する。</td></tr>
+		<tr><td align="left" colspan="2">[esc]</td></tr>
+		<tr><td align="left">&nbsp;</td><td align="justify">コマンド、接頭辞、回数の入力をキャンセルする。</td></tr>
+		<tr><td align="left">!</td><td align="justify">fake DOSに入る。ゲームに戻りたい時は「rogue」と入力するか[esc]を押す。</td></tr>
+		<tr><td align="left">Q</td><td align="justify">&quot;quit&quot;。終了する。ゲームを離れる。</td></tr>
+		<tr><td align="left">S</td><td align="justify">&quot;save game&quot;。現在のゲームをファイルに保存する。デフォルトのセーブファイルを使うかを尋ねる。<i>警告：</i>ローグはセーブのコピーは起動させない上に、セーブされたゲームを再開すると直ちにセーブファイルを削除する。これは、危険なところでゲームをセーブして死んでしまったらゲームをやり直すことをさせないようにするためである。<br>セーブファイルをデフォルトで保存した場合は、ゲームを再開するためには以下のようにする。<br>
+			<pre class="prompt">rogue -r</pre>
+			ファイル名を指定して保存した場合は、以下のようにローグの引数としてファイル名を指定する。
+			<pre class="prompt">rogue <i>save_file</i></pre>
+			</td></tr>
+		<tr><td align="left">v</td><td align="justify">&quot;version number&quot;。プログラムのバージョンナンバーを表示する。</td></tr>
+	</table>
+</div>
+
+<h3 align="justify" id="dos148_05"><b>5.  部屋</b></h2>
+	<div class="padding_3em">
+<p class="indent">洞窟の部屋は、明るいか暗いかのいずれかである。明るい部屋に入ると、入るのと同時に部屋全体が画面に描かれる。暗い部屋に入ると、探索しているところだけが表示される。部屋を出ると、部屋の中にいる全ての怪物が画面から消去される。暗闇の中で見えるのはプレイヤーの全周囲一コマ分だけである。通路は常に暗い。</p>
+</div>
+
+<h3 align="justify" id="dos148_06"><b>6.  戦闘</b></h2>
+	<div class="padding_3em">
+<p class="indent">怪物を見つけて戦いたいと思えば、ぶつかろうとするだけで良い。こちらから攻撃を加えない限り向こうからは干渉してこないことも多いだろう。「逃げるが勝ち」ということもよくあるのだ。</p>
+</div>
+
+<h3 align="justify" id="dos148_07"><b>7.  見つけられるアイテム</b></h2>
+	<div class="padding_3em">
+<p class="indent">洞窟の中で何かを見つけたら、そのアイテムを拾いたくなるものだろう。ローグではアイテムの上を歩くことでそれができる（上で述べた接頭辞コマンドの「m」を使わなければ）。ものを持ちすぎている場合にはプログラムがアイテムを拾えないと伝えてくる。そうでなければプログラムはそれを荷物に加え、何を拾ったのかを教えてくれる。</p>
+
+<p class="indent">アイテムを扱う多くのコマンドでは、どのアイテムを使うのかを指示する必要がある。気が変わってそのコマンドを使いたくなくなった時には、[esc]キーをタイプすればコマンドは中止される。</p>
+
+<p class="indent">鎧や武器のようなアイテムは簡単に見分けることができる。他のもの、すなわち巻き物や水薬のようなものは種類によって異なるラベルが付いている。ゲーム中、同じラベルを持つ二つのアイテムがあればそれらは同じ種類である。ただしラベルはゲームごとに違うものになる。</p>
+
+<p class="indent">ラベルが付いたアイテムを使ったときには、効果が一目瞭然の場合にはそれが何であるかをローグが覚えていてくれる。効果が非常に明確ではない場合には、後でわかるようにメモする内容を聞かれるか、上述のcallコマンドを使うことができる。</p>
+</div>
+
+<h4 align="justify"><b>7.1.  武器（Weapons）</b></h4>
+<div class="padding_3em">
+<p class="indent">矢などのいくつかの武器は束になっているが、たいていのものでは一度に入手するのは一つである。武器を使うためには装備する必要がある。弓から矢を射るためには、まず弓を装備してから矢を放つ必要がある。一度に装備できるのは一つの武器だけだが、現在装備している武器が呪われている場合は武器を変更することはできない。武器を使うためのコマンドは、「w」(wield：装備する)と「+」(throw：投げる)である。</p>
+</div>
+<h4 align="justify"><b>7.2.  鎧（Armor）</b></h4>
+<div class="padding_3em">
+<p class="indent">洞窟にはさまざまな種類の鎧が置かれている。祝福されたものもあれば呪われたものもあり、単に通常のものもある。鎧の種類によって守備力は違ってくる。守備力の数値が高いほど怪物の攻撃に対して効果的な守備ができる。以下にさまざまな鎧の種類と通常の守備力の一覧を示す：</p>
+<div align="center">
+	<table border="1" cellspacing="3" cellpadding="3" id="dos148_table4" rules="none" bordercolor="#cccccc">
+		<tr bgcolor="#EFEFEF">
+			<th align="left"><i>&nbsp;&nbsp;種類</i></th>
+			<th align="left"><i>&nbsp;&nbsp;</i></th>
+			<th><i>守備&nbsp;</i></th>
+		</tr>
+		<tr>
+			<td>&nbsp;無し</td>
+			<td>&nbsp;None</td>
+			<td align="right">0&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;革のよろい</td>
+			<td>&nbsp;leather armor</td>
+			<td align="right">2&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;<ruby>鋲<rp>（</rp><rt>びょう</rt><rp>）</rp></ruby>つき革のよろい / <ruby>鉄環<rp>（</rp><rt>てっかん</rt><rp>）</rp></ruby>のよろい</td>
+			<td>&nbsp;studded leather armor / ring mail</td>
+			<td align="right">3&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;<ruby>鱗<rp>（</rp><rt>うろこ</rt><rp>）</rp></ruby>のよろい</td>
+			<td>&nbsp;scale mail</td>
+			<td align="right">4&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;<ruby>鎖<rp>（</rp><rt>くさり</rt><rp>）</rp></ruby>のよろい</td>
+			<td>&nbsp;chain mail</td>
+			<td align="right">5&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;<ruby>鉄片<rp>（</rp><rt>てっぺん</rt><rp>）</rp></ruby>のよろい / <ruby>帯金<rp>（</rp><rt>おびがね</rt><rp>）</rp></ruby>のよろい</td>
+			<td>&nbsp;splint mail / banded mail</td>
+			<td align="right">6&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;全身のよろい</td>
+			<td>&nbsp;plate mail</td>
+			<td align="right">7&nbsp;</td>
+		</tr>
+	</table>
+</div>
+<p align="justify">
+鎧が祝福されている場合、その守備力は通常より高くなる。一組の鎧が呪われていた場合、守備力は低くなり、鎧を脱ぐことができなくなる。しかし、通常より低い守備力の鎧の全てが呪われているわけではない。
+</p>
+<p class="indent">鎧を使うためのコマンドは、「W」(wear：着用する)と「T」(take off：脱ぐ)である。</p>
+</div>
+
+<h4 align="justify"><b>7.3.  巻き物（Scrolls）</b></h4>
+<div class="padding_3em">
+<p class="indent">巻き物には未知の言語<sup class="message" id="dos148_b3"><a href="#dos148_c3">[3]<span class="remark">実際には外モンゴルのある部族の27人のメンバーのみで話される方言なのだが、君はそれを知らないことになっている。</span></a></sup>のタイトルが付いている。巻き物を読んだ後には荷物から消えてしまう。巻き物を使うためのコマンドは、「r」(read：読む)である。</p>
+</div>
+
+<h4 align="justify"><b>7.4.  水薬（Potions）</b></h4>
+<div class="padding_3em">
+<p class="indent">水薬はフラスコ内の液体の色によってラベル付けされており、飲んだら消えてしまう。水薬を使うためのコマンドは「q」(quaff：がぶがぶ飲む)である。</p>
+</div>
+
+<h4 align="justify"><b>7.5.  杖と棒（Staves and Wands）</b></h4>
+<div class="padding_3em">
+<p class="indent">杖と棒は同じ性質のものである。杖は木の種類で、棒は金属か骨の種類で識別される。たいていは遠く離れたものに何かをしたい時に使われるものなので、効果を及したいものへの方向を示す必要がある。しかし、方向には関係がない杖もある。杖には魔法のチャージがあり、その量はランダムであり、使い切った杖はただの木や金属になってしまう。</p>
+<p align="justify">杖または棒を使うためのコマンドは、「-」(zap：素早く振る)である。</p>
+</div>
+
+<h4 align="justify"><b>7.6.  指輪（Rings）</b></h4>
+<div class="padding_3em">
+<p class="indent">指輪は、水薬や巻き物や杖による通常の一時的な効果とは違って、比較的持続する魔法を持つ非常に有用なアイテムである。もちろん悪い指輪もより強力である。ほとんどの指輪は食糧をより早く消費するが、その速さは指輪の種類によって異なる。指輪ははめこまれている石で区別される。指輪を使うためのコマンドは、「P」(put on：はめる)と「R」(remove：外す)である。</p>
+</div>
+
+<h4 align="justify"><b>7.7.  食糧（Food）</b></h4>
+<div class="padding_3em">
+<p class="indent">食糧はプレーヤーを活動させるために必要である。食事をせずにあまりにも長い時間を過ごすと気絶し、最後には飢えて死んでしまう。食糧を使うためのコマンドは、「e」(eat：食べる)である。</p>
+</div>
+
+<h3 align="justify" id="dos148_08"><b>8.  オプション</b></h3>
+<div class="padding_3em">
+<p class="indent">個人的な好みやローグが物事を行う考え方の違いによって、ローグをさまざまなやり方で動作させるために設定できるオプションがある。</p>
+</div>
+
+<h4 align="justify"><b>8.1.  オプション設定</b></h4>
+<div class="padding_3em">
+<p class="indent">オプションを設定する方法は二つある。一つはローグの&quot;o&quot;コマンドであり、二つめは環境変数「ROGUEOPTS」である。</p>
+</div>
+
+<h4 align="justify"><b>8.1.1.  'o'コマンドの使用</b></h4>
+<div class="padding_3em">
+<p class="indent">ローグに「o」と入力すると、画面がクリアされ、全てのオプションについて現在の設定が表示される。最初のオプションの値にカーソルが置かれ、入力を待つ。入力できるのは、次のオプションに進む[RETURN]キーか、一つ前のオプションに戻る「-」か、ゲームに戻る[esc]キーか、オプションの値である。真偽（有効／無効）を入力するオプションの場合、有効にしたい場合は「t」(True：真)を、無効にしたい場合は「f」(False：偽)を入力する。文字を入力するオプションの場合は、文字の後に[RETURN]を入力する。</p>
+</div>
+
+<h4 align="justify"><b>8.1.2.  環境変数「ROGUEOPTS」の使用</b></h4>
+<div class="padding_3em">
+<p class="indent">環境変数「ROGUEOPTS」は、さまざまなオプションの初期値をカンマで区切ってリストにした文字列である。Boolean変数はその名前をリストに入れることにより有効にすることができ、名前の前に&quot;no&quot;を加えると無効にすることができる。したがって、「<b>doscommands</b>」(DOS版風コマンド)と「<b>jump</b>」(移動中の表示を行わない)を有効に、「<b>terse</b>」(簡潔な表示)を無効、「<b>name</b>」（プレイヤー名）を「ブルー・ミーニー」になるように環境変数を設定するには、次のコマンドを使用する。</p>
+<pre class="prompt">export ROGUEOPTS=&quot;doscommands,jump,noterse,name=ブルー・ミーニー&quot;</pre>
+
+<p>表示言語は環境変数「ROGUE_LANG」でも指定できる。日本語で起動する場合は「ROGUE_LANG=ja ./rogue」、英語で起動する場合は「ROGUE_LANG=en ./rogue」のように指定する。</p>
+</div>
+
+<h4 align="justify"><b>8.2.  オプションのリスト</b></h4>
+<div class="padding_3em">
+<p class="indent">ここではオプションの一覧と、それぞれのオプションの説明を示す。それぞれのデフォルトの値は角括弧で囲まれている。文字列オプションの場合、48文字を超える入力は無視される。</p>
+
+<p align="justify"><b>terse</b>[<i>noterse</i>]（簡潔な表示）</p>
+	<p align="justify" class="padding_option">時々あるローグの長いメッセージにうんざりしている人に有用である。これは遅い端末で遊ぶのに便利なオプションなので、遅い（1200ボー以下）端末では<i>terse</i>（簡潔な表示）がデフォルトになる。</p>
+<p align="justify"><b>jump</b>[<i>nojump</i>]（移動中の表示を行わない）</p>
+	<p align="justify" class="padding_option">このオプションが設定されている場合、移動が終わるまで表示されない。これによりCPUと表示の時間がかなり節約される。遅い端末を使っている場合、このオプションのデフォルトは<i>jump</i>（移動中の表示を行わない）になる。</p>
+<p align="justify"><b>menu</b>[<i>on</i>]（持ちもの選択メニュー）</p>
+	<p align="justify" class="padding_option"><i>ROGUEOPTS</i>でのみ指定できる環境変数専用オプションであり、ゲーム中のオプション画面には表示されない。アイテムを使うコマンドで、持ちものの選択リストを先に表示するかどうかを指定する。<i>on</i>では、アイテムを選ぶ場面でリストが先に表示される。<i>sel</i>では、読む・飲む・装備するなど対象の種類を選ぶ場面ではリストを表示するが、食べる・落とすでは通常の入力を先に行う。<i>off</i>では、まず通常の入力を行い、「*」を入力したときだけリストを表示する。</p>
+<p align="justify"><b>doscommands</b>[<i>nodoscommands</i>]（DOS版風コマンド）</p>
+	<p align="justify" class="padding_option"><i>ROGUEOPTS</i>でのみ指定できる環境変数専用オプションであり、ゲーム中のオプション画面には表示されない。DOS版に近いコマンド体系を使うかどうかを指定する。<i>doscommands</i>では、+ が投げる、- が杖や棒、f が何かを見つけるまで進む接頭辞、g が拾わずに進む接頭辞になる。デフォルトは<i>nodoscommands</i>になる。</p>
+<p align="justify"><b>screenanim</b>[<i>screenanim</i>]（画面アニメーション）</p>
+	<p align="justify" class="padding_option"><i>ROGUEOPTS</i>でのみ指定できる環境変数専用オプションであり、ゲーム中のオプション画面には表示されない。カーテンと墓標の画面アニメーションを使うかどうかを指定する。</p>
+<p align="justify"><b>macro</b>[<i>v</i>]（F9マクロ）</p>
+	<p align="justify" class="padding_option"><i>ROGUEOPTS</i>でのみ指定できる環境変数専用オプションであり、ゲーム中のオプション画面には表示されない。<i>doscommands</i>有効時に使われるF9マクロの初期値を指定する。たとえば<i>macro=s</i>とすると、F9で探索を1回行う。</p>
+<p align="justify"><b>name</b> [<i>アカウント名</i>]（プレイヤー名）</p>
+	<p align="justify" class="padding_option">プレイヤーの名前。得点者リストのトップ10に入ったときに使われる。</p>
+<p align="justify"><b>fruit</b>[<i>ネバネバかび</i>]（好きな果物）</p>
+	<p align="justify" class="padding_option">これは君が食べるのが好きな果物の名前にしておくべきだろう。これは要するにローグが所々でやっている遊びのうちの一つである。</p>
+<p align="justify"><b>color</b>[<i>color</i>]（カラーで表示）</p>
+	<p align="justify" class="padding_option">各種のキャラクターがカラーで表示される。デフォルトは<i>color</i>になる。</p>
+<p align="justify"><b>extchars</b>[<i>extchars</i>]（拡張文字）</p>
+	<p align="justify" class="padding_option">拡張文字を使うかどうかを選ぶ。<i>extchars</i>ではUTF-8表示が可能な端末で、壁・扉・通路・階段・床・プレイヤー・罠・アイテムなどを拡張文字で表示する。<i>noextchars</i>では|、-、+、#、%、.、@などの基本的なRogue記号で表示する。デフォルトは<i>extchars</i>になる。</p>
+<p align="justify"><b>cursor</b>[<i>nocursor</i>]（プレイ中のカーソルを表示）</p>
+	<p align="justify" class="padding_option">プレイ中にもカーソルを表示する。無効にすると通常の移動中はカーソルを隠し、入力が必要な場面ではカーソルを表示する。デフォルトは<i>nocursor</i>になる。</p>
+<p align="justify"><b>language</b>[<i>環境により自動</i>]（表示する言語）</p>
+	<p align="justify" class="padding_option">表示する言語を切り替える。Jで日本語、Eで英語になる。オプション設定画面で切り替えた場合、以後のメッセージや表示名は選択した言語で再生成される。プレイヤー名や呼び名などユーザーが入力した文字列はUTF-8文字列としてそのまま保持される。</p>
+<p align="justify"><b>file</b>[<i>rogue.save</i>]（セーブファイル名）</p>
+	<p align="justify" class="padding_option">ゲームをセーブするためのデフォルトのファイル名。電話回線がアクシデントでハングアップした場合、ローグは自動的にこのファイルにゲームをセーブする。ファイル名はホームディレクトリとして展開される特殊文字である「~」で始めても良い。</p>
+</div>
+
+<h3 align="justify" id="dos148_09"><b>9.  スコア</b></h3>
+<div class="padding_3em">
+<p class="indent">ローグは、マシン上のトップスコアのリストを管理している。それぞれのプレイは別々に記録されるため、同じプレイヤーが複数回リストに載ることがある。スコアファイルには、表示言語に依存した死因文ではなく、死因IDと怪物IDが保存されるため、現在の表示言語でリストが表示される。このリストで他の人より高いスコアを得ると、現在の名前で適切な場所に挿入される。保存するスコアの数はマシンにインストールした誰もが設定することができる。</p>
+
+<p class="indent">ゲームを自分で終了したときには金塊は失われない。しかし、【運命の洞窟】で殺されてしまった場合は、死体は金塊の90%とともに近親者に送られ、金塊の10%は洞窟の魔法使いへの手数料となる<sup class="message" id="dos148_b4"><a href="#dos148_c4">[4]<span class="remark">洞窟の魔法使いは【驚くべきアナグマのウォリー】と呼ばれている。呪文には相当な額の寄付が付きものとされる。</span></a></sup>。怪物に最後の一撃を放って生き延びる可能性を望むのか、持ち物の全てを所持したまま終了するのかを考える必要がある。終了すれば金塊を全て手に入れられるのだが、攻撃して生き延びたならばもっと多くを見つけられるかもしれない。</p>
+<p>現在のトップスコアのリストを見たい場合は、次のように入力する。
+<pre class="prompt">rogue &minus;s</pre></p>
+</div>
+
+<h3 align="justify" id="dos148_10"><b>10.  謝辞</b></h3>
+<div class="padding_3em">
+<p class="indent">ローグは当初グレン・ウィックマンとマイケル・トイによって構想された。ケン・アーノルドとマイケル・トイはユーザーインターフェースを円滑にし、さらに多くの新機能を追加した。以下の人々にアイデアと援助に対しての感謝を表したい。ボブ・アーノルド、マイケル・ブッシュ、アンディー・ハッチャー、キップ・ヒックマン、マーク・ホートン、ダニエル・ジェンセン、ビル・ジョイ、ジョー・カラシュ、ステーブ・マウラー、マーティー・マクナリー、ジャン・ミラー、スコット・ネルソン。また、ローグをプレイするために快く仕事や学校や社会生活を無視して我々にバグや苦情や提案や純粋な情熱を送ってくれた、あふれんばかりのたくさんの人たちに。そして、母にも。</p>
+</div>
+<hr width="35%" align="left">
+<div class="padding_3em">
+	<p style="font-size: 85%;">
+	<sup id="dos148_c0"><a href="#dos148_b0">†</a></sup> UNIXはベル研究所の登録商標である。<br>
+	<sup id="dos148_c1"><a href="#dos148_b1">1</a></sup> 英語のような文章ではなく。<br>
+	<sup id="dos148_c2"><a href="#dos148_b2">2</a></sup> 最小の画面サイズは24行80桁が求められる。画面がそれ以上の場合は24x80の部分だけが使われる。<br>
+	<sup id="dos148_c3"><a href="#dos148_b3">3</a></sup> 実際には外モンゴルのある部族の27人のメンバーのみで話される方言なのだが、君はそれを知らないことになっている。<br>
+	<sup id="dos148_c4"><a href="#dos148_b4">4</a></sup> 洞窟の魔法使いは【驚くべきアナグマのウォリー】と呼ばれている。呪文には相当な額の寄付が付きものとされる。<br>
+	<sup id="dos148_c5"><a href="#dos148_b5">訳注</a></sup> 英語版の最下行では頭文字や略語が使われているので意味がわかりにくい。<br>
+</div>
+<br>
+<p align="justify"><span class="aks">日本語訳、Mac版およびClone III用の記述追加：</span><a href="https://twitter.com/leopard_gecko" target=”_blank”>leopardgecko</a></p>
+
+<div class="padding_3em">
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | 【運命の洞窟】への案内書 | <a href="ps.html?version=dos148"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target=”_blank”>ブログ</a></div>
+</div>
+
+</span><!-- font-family -->
+</div><!-- main -->
+</div><!-- out -->
+
+<div class="footer">
+	<div class="padding_6em">
+		2026 leopardgecko
+	</div>
+</div><!-- footer -->
+
+
+</div>
+
 </body></html>

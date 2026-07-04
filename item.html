@@ -41,6 +41,7 @@ function normalizeRogueVersion(value) {
 	if (value == '52' || value == '5.2' || value == 'r52' || value == 'rogue52') return 'r52';
 	if (value == 'clone2' || value == 'cloneii' || value == 'rogue-clone-ii') return 'clone2';
 	if (value == 'clone2j' || value == 'clone2ja' || value == 'clone2jp' || value == 'クローン2' || value == 'クローン２') return 'clone2j';
+	if (value == 'dos148' || value == 'dos1.48' || value == 'dos' || value == '148' || value == '1.48' || value == 'r148' || value == 'rogue148') return 'dos148';
 	if (value == '54' || value == '5.4' || value == 'r545' || value == 'rogue54') return 'r545';
 	return 'r545';
 }
@@ -57,14 +58,15 @@ function getInitialRogueVersion() {
 }
 function switchRogueVersion(value) {
 	var selected = normalizeRogueVersion(value || getInitialRogueVersion());
-	var panels = ['r545','clone3','r36','r52','clone2','clone2j'];
+	var panels = ['r545','clone3','r36','r52','clone2','clone2j','dos148'];
 	var panelIds = {
 		'r545':'version_rogue_545',
 		'clone3':'version_rogue_clone_iii',
 		'r36':'version_rogue_36',
 		'r52':'version_rogue_52',
 		'clone2':'version_rogue_clone_ii',
-		'clone2j':'version_rogue_clone_ii_japanese'
+		'clone2j':'version_rogue_clone_ii_japanese',
+		'dos148':'version_rogue_dos_148'
 	};
 	var selectIds = {
 		'r545':'rogue_version_select_545',
@@ -72,7 +74,8 @@ function switchRogueVersion(value) {
 		'r36':'rogue_version_select_36',
 		'r52':'rogue_version_select_52',
 		'clone2':'rogue_version_select_clone2',
-		'clone2j':'rogue_version_select_clone2j'
+		'clone2j':'rogue_version_select_clone2j',
+		'dos148':'rogue_version_select_dos148'
 	};
 	for (var i = 0; i < panels.length; i++) {
 		var panel = document.getElementById(panelIds[panels[i]]);
@@ -108,6 +111,7 @@ window.onload = initializeRogueVersion;
 		<option value="r52">Rogue 5.2 英語版</option>
 		<option value="clone2">Rogue Clone II 英語版</option>
 		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
 	</select>
 </div>
 
@@ -250,6 +254,7 @@ window.onload = initializeRogueVersion;
 		<option value="r52">Rogue 5.2 英語版</option>
 		<option value="clone2">Rogue Clone II 英語版</option>
 		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
 	</select>
 </div>
 
@@ -392,6 +397,7 @@ window.onload = initializeRogueVersion;
 		<option value="r52">Rogue 5.2 英語版</option>
 		<option value="clone2">Rogue Clone II 英語版</option>
 		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
 	</select>
 </div>
 
@@ -531,6 +537,7 @@ window.onload = initializeRogueVersion;
 		<option value="r52" selected="selected">Rogue 5.2 英語版</option>
 		<option value="clone2">Rogue Clone II 英語版</option>
 		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
 	</select>
 </div>
 
@@ -668,6 +675,7 @@ window.onload = initializeRogueVersion;
 		<option value="r52">Rogue 5.2 英語版</option>
 		<option value="clone2" selected="selected">Rogue Clone II 英語版</option>
 		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
 	</select>
 </div>
 
@@ -805,6 +813,7 @@ window.onload = initializeRogueVersion;
 		<option value="r52">Rogue 5.2 英語版</option>
 		<option value="clone2">Rogue Clone II 英語版</option>
 		<option value="clone2j" selected="selected">ローグ・クローン２ 日本語版 1.3</option>
+		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
 	</select>
 </div>
 
@@ -919,6 +928,158 @@ window.onload = initializeRogueVersion;
 <br>
 <br>
 <div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=clone2j">【運命の洞窟】への案内書</a> | <a href="ps.html?version=clone2j">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+</div>
+</div><!-- main -->
+</div><!-- out -->
+<div class="footer"><div class="padding_6em">2026 leopardgecko</div></div><!-- footer -->
+</div>
+
+<div id="version_rogue_dos_148" class="version_panel_hidden">
+	<div class="header">
+	<h2>アイテム番号と出現率の一覧</h2>
+	</div>
+<div class="out">
+<div class="main">
+<div class="padding_3em">
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=dos148">【運命の洞窟】への案内書</a> | <a href="ps.html?version=dos148">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<div class="version_selector">
+	<label for="rogue_version_select_dos148">洞窟を選ぶ：</label>
+	<select id="rogue_version_select_dos148" onchange="switchRogueVersion(this.value)">
+		<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
+		<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+		<option value="r36">Rogue 3.6 英語版</option>
+		<option value="r52">Rogue 5.2 英語版</option>
+		<option value="clone2">Rogue Clone II 英語版</option>
+		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+		<option value="dos148" selected="selected">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+	</select>
+</div>
+
+<br>
+<p><b>注：これはスポイラー（ゲームのヒント）です。必要がない方は読まないでください。</b></p>
+<br>
+<p><a href="wizardmode.html?version=dos148">ウィザードモード</a>で作成できる、Rogue DOS 1.48の各種アイテムの番号と出現率の一覧表です。</p>
+<h3>巻き物</h3>
+<table class="wm">
+<tr><th>番号</th><th>名前</th><th>出現率(%)</th></tr>
+<tr><td>0</td><td>怪物を混乱させる<br /><span class="en">monster confusion</span></td><td>8</td></tr>
+<tr><td>1</td><td>魔法の地図の<br /><span class="en">magic mapping</span></td><td>5</td></tr>
+<tr><td>2</td><td>怪物を封じこめる<br /><span class="en">hold monster</span></td><td>3</td></tr>
+<tr><td>3</td><td>眠りにおちる<br /><span class="en">sleep</span></td><td>5</td></tr>
+<tr><td>4</td><td>よろいに魔法をかける<br /><span class="en">enchant armor</span></td><td>8</td></tr>
+<tr><td>5</td><td>持ちものの種類がわかる<br /><span class="en">identify</span></td><td>27</td></tr>
+<tr><td>6</td><td>怪物を怖がらせる<br /><span class="en">scare monster</span></td><td>4</td></tr>
+<tr><td>7</td><td>食糧を見つける<br /><span class="en">food detection</span></td><td>4</td></tr>
+<tr><td>8</td><td>テレポートする<br /><span class="en">teleportation</span></td><td>7</td></tr>
+<tr><td>9</td><td>武器に魔法をかける<br /><span class="en">enchant weapon</span></td><td>10</td></tr>
+<tr><td>a</td><td>怪物を作りだす<br /><span class="en">create monster</span></td><td>5</td></tr>
+<tr><td>b</td><td>のろいを解く<br /><span class="en">remove curse</span></td><td>8</td></tr>
+<tr><td>c</td><td>怪物を怒らせる<br /><span class="en">aggravate monsters</span></td><td>4</td></tr>
+<tr><td>d</td><td>白紙の<br /><span class="en">blank paper</span></td><td>1</td></tr>
+<tr><td>e</td><td>武器を怪物殺しにする<br /><span class="en">vorpalize weapon</span></td><td>1</td></tr>
+</table>
+<br>
+<h3>水薬</h3>
+<table class="wm">
+<tr><th>番号</th><th>名前</th><th>出現率(%)</th></tr>
+<tr><td>0</td><td>頭が混乱する<br /><span class="en">confusion</span></td><td>8</td></tr>
+<tr><td>1</td><td>体が動かなくなる<br /><span class="en">paralysis</span></td><td>10</td></tr>
+<tr><td>2</td><td>毒の<br /><span class="en">poison</span></td><td>8</td></tr>
+<tr><td>3</td><td>強さが増す<br /><span class="en">gain strength</span></td><td>15</td></tr>
+<tr><td>4</td><td>見えないものが見える<br /><span class="en">see invisible</span></td><td>2</td></tr>
+<tr><td>5</td><td>体力が回復する<br /><span class="en">healing</span></td><td>15</td></tr>
+<tr><td>6</td><td>怪物探知の<br /><span class="en">monster detection</span></td><td>6</td></tr>
+<tr><td>7</td><td>魔法探知の<br /><span class="en">magic detection</span></td><td>6</td></tr>
+<tr><td>8</td><td>レベルが上がる<br /><span class="en">raise level</span></td><td>2</td></tr>
+<tr><td>9</td><td>体力がとても回復する<br /><span class="en">extra healing</span></td><td>5</td></tr>
+<tr><td>a</td><td>素早くなる<br /><span class="en">haste self</span></td><td>4</td></tr>
+<tr><td>b</td><td>強さが元にもどる<br /><span class="en">restore strength</span></td><td>14</td></tr>
+<tr><td>c</td><td>目が見えなくなる<br /><span class="en">blindness</span></td><td>4</td></tr>
+<tr><td>d</td><td>のどをうるおす<br /><span class="en">thirst quenching</span></td><td>1</td></tr>
+</table>
+<br>
+<h3>武器</h3>
+<table class="wm">
+<tr><th>番号</th><th>名前</th><th>出現率(%)</th></tr>
+<tr><td>0</td><td>つちほこ<br /><span class="en">mace</span></td><td>10</td></tr>
+<tr><td>1</td><td>長い剣<br /><span class="en">long sword</span></td><td>10</td></tr>
+<tr><td>2</td><td>短弓<br /><span class="en">short bow</span></td><td>10</td></tr>
+<tr><td>3</td><td>矢<br /><span class="en">arrow</span></td><td>10</td></tr>
+<tr><td>4</td><td>短剣<br /><span class="en">dagger</span></td><td>10</td></tr>
+<tr><td>5</td><td>両手持ちの剣<br /><span class="en">two handed sword</span></td><td>10</td></tr>
+<tr><td>6</td><td>投げ矢<br /><span class="en">dart</span></td><td>10</td></tr>
+<tr><td>7</td><td>クロスボウ<br /><span class="en">crossbow</span></td><td>10</td></tr>
+<tr><td>8</td><td>クロスボウの矢<br /><span class="en">crossbow bolt</span></td><td>10</td></tr>
+<tr><td>9</td><td>やり<br /><span class="en">spear</span></td><td>10</td></tr>
+</table>
+<br>
+<h3>よろい</h3>
+<table class="wm">
+<tr><th>番号</th><th>名前</th><th>出現率(%)</th></tr>
+<tr><td>0</td><td>革のよろい<br /><span class="en">leather armor</span></td><td>20</td></tr>
+<tr><td>1</td><td>鉄環のよろい<br /><span class="en">ring mail</span></td><td>15</td></tr>
+<tr><td>2</td><td>鋲つき革のよろい<br /><span class="en">studded leather armor</span></td><td>15</td></tr>
+<tr><td>3</td><td>鱗のよろい<br /><span class="en">scale mail</span></td><td>13</td></tr>
+<tr><td>4</td><td>鎖のよろい<br /><span class="en">chain mail</span></td><td>12</td></tr>
+<tr><td>5</td><td>鉄片のよろい<br /><span class="en">splint mail</span></td><td>10</td></tr>
+<tr><td>6</td><td>帯金のよろい<br /><span class="en">banded mail</span></td><td>10</td></tr>
+<tr><td>7</td><td>全身のよろい<br /><span class="en">plate mail</span></td><td>5</td></tr>
+</table>
+<br>
+<h3>つえと魔法の棒</h3>
+<table class="wm">
+<tr><th>番号</th><th>名前</th><th>出現率(%)</th></tr>
+<tr><td>0</td><td>灯りの<br /><span class="en">light</span></td><td>12</td></tr>
+<tr><td>1</td><td>打撃の<br /><span class="en">striking</span></td><td>9</td></tr>
+<tr><td>2</td><td>いなずまの<br /><span class="en">lightning</span></td><td>3</td></tr>
+<tr><td>3</td><td>炎の<br /><span class="en">fire</span></td><td>3</td></tr>
+<tr><td>4</td><td>冷気の<br /><span class="en">cold</span></td><td>3</td></tr>
+<tr><td>5</td><td>変身させる<br /><span class="en">polymorph</span></td><td>15</td></tr>
+<tr><td>6</td><td>魔法のミサイルの<br /><span class="en">magic missile</span></td><td>10</td></tr>
+<tr><td>7</td><td>怪物を素早くする<br /><span class="en">haste monster</span></td><td>9</td></tr>
+<tr><td>8</td><td>怪物を遅くする<br /><span class="en">slow monster</span></td><td>11</td></tr>
+<tr><td>9</td><td>いのちを削る<br /><span class="en">drain life</span></td><td>9</td></tr>
+<tr><td>a</td><td>役に立たない<br /><span class="en">nothing</span></td><td>1</td></tr>
+<tr><td>b</td><td>怪物を遠くに飛ばす<br /><span class="en">teleport away</span></td><td>5</td></tr>
+<tr><td>c</td><td>怪物を引き寄せる<br /><span class="en">teleport to</span></td><td>5</td></tr>
+<tr><td>d</td><td>魔力を封じる<br /><span class="en">cancellation</span></td><td>5</td></tr>
+</table>
+<br>
+<h3>指輪</h3>
+<table class="wm">
+<tr><th>番号</th><th>名前</th><th>出現率(%)</th></tr>
+<tr><td>0</td><td>守りの<br /><span class="en">protection</span></td><td>9</td></tr>
+<tr><td>1</td><td>強さが増す<br /><span class="en">add strength</span></td><td>9</td></tr>
+<tr><td>2</td><td>強さが減らない<br /><span class="en">sustain strength</span></td><td>5</td></tr>
+<tr><td>3</td><td>探索の<br /><span class="en">searching</span></td><td>10</td></tr>
+<tr><td>4</td><td>見えないものが見える<br /><span class="en">see invisible</span></td><td>10</td></tr>
+<tr><td>5</td><td>飾りものの<br /><span class="en">adornment</span></td><td>1</td></tr>
+<tr><td>6</td><td>怪物を怒らせる<br /><span class="en">aggravate monster</span></td><td>10</td></tr>
+<tr><td>7</td><td>機敏になる<br /><span class="en">dexterity</span></td><td>8</td></tr>
+<tr><td>8</td><td>ダメージを増やす<br /><span class="en">increase damage</span></td><td>8</td></tr>
+<tr><td>9</td><td>再生の<br /><span class="en">regeneration</span></td><td>4</td></tr>
+<tr><td>a</td><td>消化が遅くなる<br /><span class="en">slow digestion</span></td><td>9</td></tr>
+<tr><td>b</td><td>テレポートする<br /><span class="en">teleportation</span></td><td>5</td></tr>
+<tr><td>c</td><td>身を隠す<br /><span class="en">stealth</span></td><td>7</td></tr>
+<tr><td>d</td><td>よろいが丈夫になる<br /><span class="en">maintain armor</span></td><td>5</td></tr>
+</table>
+<br>
+<h3>食糧</h3>
+<table class="wm">
+<tr><th>番号</th><th>名前</th><th>出現率(%)</th></tr>
+<tr><td>0</td><td>食糧<br /><span class="en">food</span></td><td>90</td></tr>
+<tr><td>1</td><td>好きな果物<br /><span class="en">favorite fruit</span></td><td>10</td></tr>
+</table>
+<br>
+<h3>その他</h3>
+<table class="wm">
+<tr><th>記号</th><th>名前</th><th>備考</th></tr>
+<tr><td>*</td><td>金塊<br /><span class="en">gold</span></td><td>ウィザードモードで作成可能</td></tr>
+<tr><td>,</td><td>イェンダーの魔除け<br /><span class="en">Amulet of Yendor</span></td><td>ウィザードモードで作成可能</td></tr>
+</table>
+<br>
+<br>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=dos148">【運命の洞窟】への案内書</a> | <a href="ps.html?version=dos148">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 </div>
 </div><!-- main -->
 </div><!-- out -->

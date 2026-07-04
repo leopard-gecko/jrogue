@@ -40,6 +40,7 @@ function normalizeRogueVersion(value) {
 	if (value == '52' || value == '5.2' || value == 'r52' || value == 'rogue52') return 'r52';
 	if (value == 'clone2' || value == 'cloneii' || value == 'rogue-clone-ii') return 'clone2';
 	if (value == 'clone2j' || value == 'clone2ja' || value == 'clone2jp' || value == 'クローン2' || value == 'クローン２') return 'clone2j';
+	if (value == 'dos148' || value == 'dos1.48' || value == 'dos' || value == '148' || value == '1.48' || value == 'r148' || value == 'rogue148') return 'dos148';
 	if (value == '54' || value == '5.4' || value == 'r545' || value == 'rogue54') return 'r545';
 	return 'r545';
 }
@@ -56,14 +57,15 @@ function getInitialRogueVersion() {
 }
 function switchRogueVersion(value) {
 	var selected = normalizeRogueVersion(value || getInitialRogueVersion());
-	var panels = ['r545','clone3','r36','r52','clone2','clone2j'];
+	var panels = ['r545','clone3','r36','r52','clone2','clone2j','dos148'];
 	var panelIds = {
 		'r545':'version_rogue_545',
 		'clone3':'version_rogue_clone_iii',
 		'r36':'version_rogue_36',
 		'r52':'version_rogue_52',
 		'clone2':'version_rogue_clone_ii',
-		'clone2j':'version_rogue_clone_ii_japanese'
+		'clone2j':'version_rogue_clone_ii_japanese',
+		'dos148':'version_rogue_dos_148'
 	};
 	var selectIds = {
 		'r545':'rogue_version_select_545',
@@ -71,7 +73,8 @@ function switchRogueVersion(value) {
 		'r36':'rogue_version_select_36',
 		'r52':'rogue_version_select_52',
 		'clone2':'rogue_version_select_clone2',
-		'clone2j':'rogue_version_select_clone2j'
+		'clone2j':'rogue_version_select_clone2j',
+		'dos148':'rogue_version_select_dos148'
 	};
 	for (var i = 0; i < panels.length; i++) {
 		var panel = document.getElementById(panelIds[panels[i]]);
@@ -107,6 +110,7 @@ window.onload = initializeRogueVersion;
 		<option value="r52">Rogue 5.2 英語版</option>
 		<option value="clone2">Rogue Clone II 英語版</option>
 		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
 	</select>
 </div>
 
@@ -178,6 +182,7 @@ window.onload = initializeRogueVersion;
 		<option value="r52">Rogue 5.2 英語版</option>
 		<option value="clone2">Rogue Clone II 英語版</option>
 		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
 	</select>
 </div>
 
@@ -243,6 +248,7 @@ window.onload = initializeRogueVersion;
 		<option value="r52">Rogue 5.2 英語版</option>
 		<option value="clone2">Rogue Clone II 英語版</option>
 		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
 	</select>
 </div>
 
@@ -296,6 +302,7 @@ window.onload = initializeRogueVersion;
 		<option value="r52" selected="selected">Rogue 5.2 英語版</option>
 		<option value="clone2">Rogue Clone II 英語版</option>
 		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
 	</select>
 </div>
 
@@ -350,6 +357,7 @@ window.onload = initializeRogueVersion;
 		<option value="r52">Rogue 5.2 英語版</option>
 		<option value="clone2" selected="selected">Rogue Clone II 英語版</option>
 		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
 	</select>
 </div>
 
@@ -408,6 +416,7 @@ window.onload = initializeRogueVersion;
 		<option value="r52">Rogue 5.2 英語版</option>
 		<option value="clone2">Rogue Clone II 英語版</option>
 		<option value="clone2j" selected="selected">ローグ・クローン２ 日本語版 1.3</option>
+		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
 	</select>
 </div>
 
@@ -444,6 +453,47 @@ window.onload = initializeRogueVersion;
 <p>アイテム作成時の記号は、<a href="item.html?version=clone2j">アイテム番号と出現率の一覧</a>を参照してください。</p>
 <br>
 <div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=clone2j">【運命の洞窟】への案内書</a> | <a href="ps.html?version=clone2j">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+</div>
+</div><!-- main -->
+</div><!-- out -->
+<div class="footer"><div class="padding_6em">2026 leopardgecko</div></div><!-- footer -->
+</div>
+
+<div id="version_rogue_dos_148" class="version_panel_hidden">
+	<div class="header">
+	<h2>ウィザードモードのコマンド</h2>
+	</div>
+<div class="out">
+<div class="main">
+<div class="padding_3em">
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=dos148">【運命の洞窟】への案内書</a> | <a href="ps.html?version=dos148">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<div class="version_selector">
+	<label for="rogue_version_select_dos148">洞窟を選ぶ：</label>
+	<select id="rogue_version_select_dos148" onchange="switchRogueVersion(this.value)">
+		<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
+		<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+		<option value="r36">Rogue 3.6 英語版</option>
+		<option value="r52">Rogue 5.2 英語版</option>
+		<option value="clone2">Rogue Clone II 英語版</option>
+		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+		<option value="dos148" selected="selected">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+	</select>
+</div>
+
+<br>
+<p><b>注：これはスポイラー（ゲームのヒント）です。必要がない方は読まないでください。</b></p>
+<br>
+<p>Rogue DOS 1.48でウィザードモードに入った時に追加されるコマンドの一覧です。</p><p>「shift-c」というのはシフトキーを押しながら「c」をタイプするという意味です。</p>
+<p>このモードは本来デバッグ用のものであり、普通に遊ぶ際には全く必要がないものです。</p>
+<br>
+<table class="wm">
+<tr><th>コマンド</th><th>説明</th></tr>
+<tr><td>shift-c</td><td>アイテムを作る</td></tr>
+</table>
+<br>
+<p>アイテム作成時の番号は、<a href="item.html?version=dos148">アイテム番号と出現率の一覧</a>を参照してください。</p>
+<br>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=dos148">【運命の洞窟】への案内書</a> | <a href="ps.html?version=dos148">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 </div>
 </div><!-- main -->
 </div><!-- out -->

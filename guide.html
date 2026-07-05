@@ -1517,11 +1517,11 @@ ROGUE_LANG=en ./rogue-clone</pre>
 
 <h3 align="justify" id="dos148_04"><b>4.  コマンド</b></h2>
 	<div class="padding_3em">
-	<p class="indent">ローグへのコマンドは一つか二つの文字を入力することによって与えられる。大部分のコマンドは前に回数を入力すると繰り返すことができる（例：「10s」と入力すると10回の検索(search)が行われる）。回数が意味を持たないコマンドは回数を無視する。回数または接頭辞を取り消すには、[esc]を入力する。コマンドのリストはかなり長いが、「?」コマンドでゲーム中にいつでも読むことができる。以下はROGUEOPTSに<i>doscommands</i>を指定した場合の各コマンドの簡単な説明である。<br>
+	<p class="indent">ローグへのコマンドは一つか二つの文字を入力することによって与えられる。大部分のコマンドは前に回数を入力すると繰り返すことができる（例：「10s」と入力すると10回の検索(search)が行われる）。回数が意味を持たないコマンドは回数を無視する。回数または接頭辞を取り消すには、[esc]を入力する。コマンドのリストはかなり長いが、「?」コマンドでゲーム中にいつでも読むことができる。以下はROGUEOPTSに<i>doskeys</i>を指定した場合の各コマンドの簡単な説明である。<br>
 	&nbsp;</p>
 
 	<table class="guide">
-		<tr><td style="width: 2em;" align="left">?</td><td align="justify">ヘルプ用のコマンド。現在のコマンドモードで使用できるコマンド一覧を表示する。</td></tr>
+		<tr><td style="width: 2em;" align="left">?</td><td align="justify">ヘルプ用のコマンド。現在のキーモードで使用できるキー一覧を表示する。</td></tr>
 		<tr><td align="left">/</td><td align="justify">「画面上のそれは何なのか？」のコマンド。画面上で使われる記号とその意味を一覧表示する。</td></tr>
 		<tr><td align="left">F1</td><td align="justify">コマンド一覧を表示する。</td></tr>
 		<tr><td align="left">F2</td><td align="justify">画面記号の一覧を表示する。</td></tr>
@@ -1704,8 +1704,8 @@ ROGUE_LANG=en ./rogue-clone</pre>
 
 <h4 align="justify"><b>8.1.2.  環境変数「ROGUEOPTS」の使用</b></h4>
 <div class="padding_3em">
-<p class="indent">環境変数「ROGUEOPTS」は、さまざまなオプションの初期値をカンマで区切ってリストにした文字列である。Boolean変数はその名前をリストに入れることにより有効にすることができ、名前の前に&quot;no&quot;を加えると無効にすることができる。したがって、「<b>doscommands</b>」(DOS版風コマンド)と「<b>jump</b>」(移動中の表示を行わない)を有効に、「<b>terse</b>」(簡潔な表示)を無効、「<b>name</b>」（プレイヤー名）を「ブルー・ミーニー」になるように環境変数を設定するには、次のコマンドを使用する。</p>
-<pre class="prompt">export ROGUEOPTS=&quot;doscommands,jump,noterse,name=ブルー・ミーニー&quot;</pre>
+<p class="indent">環境変数「ROGUEOPTS」は、さまざまなオプションの初期値をカンマで区切ってリストにした文字列である。Boolean変数はその名前をリストに入れることにより有効にすることができ、名前の前に&quot;no&quot;を加えると無効にすることができる。したがって、「<b>doskeys</b>」(DOS版風キー操作)と「<b>jump</b>」(移動中の表示を行わない)を有効に、「<b>terse</b>」(簡潔な表示)を無効、「<b>name</b>」（プレイヤー名）を「ブルー・ミーニー」になるように環境変数を設定するには、次のコマンドを使用する。</p>
+<pre class="prompt">export ROGUEOPTS=&quot;doskeys,jump,noterse,name=ブルー・ミーニー&quot;</pre>
 
 <p>表示言語は環境変数「ROGUE_LANG」でも指定できる。日本語で起動する場合は「ROGUE_LANG=ja ./rogue」、英語で起動する場合は「ROGUE_LANG=en ./rogue」のように指定する。</p>
 </div>
@@ -1720,12 +1720,10 @@ ROGUE_LANG=en ./rogue-clone</pre>
 	<p align="justify" class="padding_option">このオプションが設定されている場合、移動が終わるまで表示されない。これによりCPUと表示の時間がかなり節約される。遅い端末を使っている場合、このオプションのデフォルトは<i>jump</i>（移動中の表示を行わない）になる。</p>
 <p align="justify"><b>menu</b>[<i>on</i>]（持ちもの選択メニュー）</p>
 	<p align="justify" class="padding_option"><i>ROGUEOPTS</i>でのみ指定できる環境変数専用オプションであり、ゲーム中のオプション画面には表示されない。アイテムを使うコマンドで、持ちものの選択リストを先に表示するかどうかを指定する。<i>on</i>では、アイテムを選ぶ場面でリストが先に表示される。<i>sel</i>では、読む・飲む・装備するなど対象の種類を選ぶ場面ではリストを表示するが、食べる・落とすでは通常の入力を先に行う。<i>off</i>では、まず通常の入力を行い、「*」を入力したときだけリストを表示する。</p>
-<p align="justify"><b>doscommands</b>[<i>nodoscommands</i>]（DOS版風コマンド）</p>
-	<p align="justify" class="padding_option"><i>ROGUEOPTS</i>でのみ指定できる環境変数専用オプションであり、ゲーム中のオプション画面には表示されない。DOS版に近いコマンド体系を使うかどうかを指定する。<i>doscommands</i>では、+ が投げる、- が杖や棒、f が何かを見つけるまで進む接頭辞、g が拾わずに進む接頭辞になる。デフォルトは<i>nodoscommands</i>になる。</p>
-<p align="justify"><b>screenanim</b>[<i>screenanim</i>]（画面アニメーション）</p>
-	<p align="justify" class="padding_option"><i>ROGUEOPTS</i>でのみ指定できる環境変数専用オプションであり、ゲーム中のオプション画面には表示されない。カーテンと墓標の画面アニメーションを使うかどうかを指定する。</p>
+<p align="justify"><b>doskeys</b>[<i>nodoskeys</i>]（DOS版風キー操作）</p>
+	<p align="justify" class="padding_option"><i>ROGUEOPTS</i>でのみ指定できる環境変数専用オプションであり、ゲーム中のオプション画面には表示されない。DOS版に近いキー割り当てを使うかどうかを指定する。<i>doskeys</i>では、+ が投げる、- が杖や棒、f が何かを見つけるまで進む接頭辞、g が拾わずに進む接頭辞になる。デフォルトは<i>nodoskeys</i>になる。</p>
 <p align="justify"><b>macro</b>[<i>v</i>]（F9マクロ）</p>
-	<p align="justify" class="padding_option"><i>ROGUEOPTS</i>でのみ指定できる環境変数専用オプションであり、ゲーム中のオプション画面には表示されない。<i>doscommands</i>有効時に使われるF9マクロの初期値を指定する。たとえば<i>macro=s</i>とすると、F9で探索を1回行う。</p>
+	<p align="justify" class="padding_option"><i>ROGUEOPTS</i>でのみ指定できる環境変数専用オプションであり、ゲーム中のオプション画面には表示されない。<i>doskeys</i>有効時に使われるF9マクロの初期値を指定する。たとえば<i>macro=s</i>とすると、F9で探索を1回行う。</p>
 <p align="justify"><b>name</b> [<i>アカウント名</i>]（プレイヤー名）</p>
 	<p align="justify" class="padding_option">プレイヤーの名前。得点者リストのトップ10に入ったときに使われる。</p>
 <p align="justify"><b>fruit</b>[<i>ネバネバかび</i>]（好きな果物）</p>

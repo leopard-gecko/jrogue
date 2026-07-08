@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
-<head profile="http://purl.org/net/ns/metaprof">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Rogue: ウィザードモードのコマンド</title>
-<meta name="robots" content="INDEX,FOLLOW" />
-<meta name="keywords" content="rogue mac" lang="ja" xml:lang="ja" />
-<meta name="description" content="ウィザードモードのコマンド" lang="ja" xml:lang="ja" />
-<meta http-equiv="content-style-type" content="text/css" />
-<meta http-equiv="content-script-type" content="text/javascript" />
-<meta http-equiv="content-language" content="ja" />
-<link rev="made" href="mailto:leopardgecko@hogehogehoge.com" />
-<meta name="author" content="author" />
-<link rel="start" type="text/html" href="/index.html" />
-<meta name="copyright" content="leopardgecko All rights reserved." />
-<link rel="stylesheet" href="style.css" type="text/css" />
-<link rel="alternate" type="application/atom+xml" title="Atom" href="atom.xml" />
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="index.xml" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<html dir="ltr" lang="ja" xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://purl.org/net/ns/metaprof">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Rogue: ウィザードモードのコマンド</title>
+<meta content="INDEX,FOLLOW" name="robots"/>
+<meta content="rogue mac" lang="ja" name="keywords" xml:lang="ja"/>
+<meta content="ウィザードモードのコマンド" lang="ja" name="description" xml:lang="ja"/>
+<meta content="text/css" http-equiv="content-style-type"/>
+<meta content="text/javascript" http-equiv="content-script-type"/>
+<meta content="ja" http-equiv="content-language"/>
+<link href="mailto:leopardgecko@hogehogehoge.com" rev="made"/>
+<meta content="author" name="author"/>
+<link href="/index.html" rel="start" type="text/html"/>
+<meta content="leopardgecko All rights reserved." name="copyright"/>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<link href="atom.xml" rel="alternate" title="Atom" type="application/atom+xml"/>
+<link href="index.xml" rel="alternate" title="RSS 2.0" type="application/rss+xml"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <style type="text/css">
 .version_selector {
 	text-align: center;
@@ -89,38 +89,35 @@ function initializeRogueVersion() {
 window.onload = initializeRogueVersion;
 //]]>
 </script>
-
 </head>
 <body>
-
 <div id="version_rogue_545">
-	<div class="header">
-	<h2>ウィザードモードのコマンド</h2>
-	</div>
+<div class="header">
+<h2>ウィザードモードのコマンド</h2>
+</div>
 <div class="out">
 <div class="main">
 <div class="padding_3em">
 <div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=54">【運命の洞窟】への案内書</a> | <a href="ps.html?version=54">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 <div class="version_selector">
-	<label for="rogue_version_select_545">洞窟を選ぶ：</label>
-	<select id="rogue_version_select_545" onchange="switchRogueVersion(this.value)">
-		<option value="r545" selected="selected">Rogue 5.4 日本語・英語／カラー対応版</option>
-		<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
-		<option value="r36">Rogue 3.6 英語版</option>
-		<option value="r52">Rogue 5.2 英語版</option>
-		<option value="clone2">Rogue Clone II 英語版</option>
-		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
-		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
-	</select>
+<label for="rogue_version_select_545">洞窟を選ぶ：</label>
+<select id="rogue_version_select_545" onchange="switchRogueVersion(this.value)">
+<option selected="selected" value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
+<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+<option value="r36">Rogue 3.6 日本語・英語対応版</option>
+<option value="r52">Rogue 5.2 日本語・英語対応版</option>
+<option value="clone2">Rogue Clone II 英語版</option>
+<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+</select>
 </div>
-
-<br>
+<br/>
 <p><b>注：これはスポイラー（ゲームのヒント）です。必要がない方は読まないでください。</b></p>
-<br>
+<br/>
 <p>Rogue 5.4でウィザードモードに入った時に追加されるコマンドと、ウィザードモード中に通常とは扱いが変わる操作の一覧です。</p>
 <p>このモードは本来デバッグ用のものであり、普通に遊ぶ際には全く必要がないものです。</p>
 <p>「shift-c」というのはシフトキーを押しながら「c」をタイプ、「ctrl-g」というのはコントロールキーを押しながら「g」をタイプという意味です。</p>
-<br>
+<br/>
 <table class="wm">
 <tr><th>コマンド</th><th>説明</th></tr>
 <tr><td>+</td><td>ウィザードモードのオンオフ切り替え</td></tr>
@@ -140,7 +137,7 @@ window.onload = initializeRogueVersion;
 <tr><td>ctrl-x</td><td>遠くの怪物が見える状態の切り替え</td></tr>
 <tr><td>ctrl-i</td><td>レベルを10上げて、長い剣と全身のよろいを装備する</td></tr>
 </table>
-<br>
+<br/>
 <p>ウィザードモード中は、以下の通常処理も通常時とは扱いが変わります。</p>
 <table class="wm">
 <tr><th>操作・場面</th><th>ウィザードモード中の動作</th></tr>
@@ -149,51 +146,47 @@ window.onload = initializeRogueVersion;
 <tr><td>さまよえる怪物の発生</td><td>発生した怪物名がメッセージとして表示されます。</td></tr>
 <tr><td>ゲーム終了後の入力</td><td>スコア画面に進む前の入力で、<code>edit</code> と <code>names</code> が有効になります。</td></tr>
 </table>
-<br>
+<br/>
 <p>＜その他＞</p>
 <ul>
 <li>起動時のコマンドに空の引数を指定してパスワードを入力すると、最初からウィザードモードで起動できます。<pre class="prompt">rogue ''</pre></li>
 <li>ゲームが終わって最初の「リターンキーを押してください」の画面で「edit」と入力してからリターンキーを押すと、スコアの編集画面になります。消去したいスコアの行で「d」をタイプしてリターンキーを押すとそのスコアが消去されます。</li>
 <li>同じ画面で「names」と入力すると、スコアのリストでプレイヤー名に加えてアカウント名も表示されます。</li>
 </ul>
-
-<br>
+<br/>
 <div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=54">【運命の洞窟】への案内書</a> | <a href="ps.html?version=54">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 </div>
 </div><!-- main -->
 </div><!-- out -->
 <div class="footer"><div class="padding_6em">2026 leopardgecko</div></div><!-- footer -->
 </div>
-
-<div id="version_rogue_clone_iii" class="version_panel_hidden">
-	<div class="header">
-	<h2>ウィザードモードのコマンド</h2>
-	</div>
+<div class="version_panel_hidden" id="version_rogue_clone_iii">
+<div class="header">
+<h2>ウィザードモードのコマンド</h2>
+</div>
 <div class="out">
 <div class="main">
 <div class="padding_3em">
 <div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=clone3">【運命の洞窟】への案内書</a> | <a href="ps.html?version=clone3">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 <div class="version_selector">
-	<label for="rogue_version_select_clone">洞窟を選ぶ：</label>
-	<select id="rogue_version_select_clone" onchange="switchRogueVersion(this.value)">
-		<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
-		<option value="clone3" selected="selected">Rogue Clone III 日本語・英語／カラー対応版</option>
-		<option value="r36">Rogue 3.6 英語版</option>
-		<option value="r52">Rogue 5.2 英語版</option>
-		<option value="clone2">Rogue Clone II 英語版</option>
-		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
-		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
-	</select>
+<label for="rogue_version_select_clone">洞窟を選ぶ：</label>
+<select id="rogue_version_select_clone" onchange="switchRogueVersion(this.value)">
+<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
+<option selected="selected" value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+<option value="r36">Rogue 3.6 日本語・英語対応版</option>
+<option value="r52">Rogue 5.2 日本語・英語対応版</option>
+<option value="clone2">Rogue Clone II 英語版</option>
+<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+</select>
 </div>
-
-
-<br>
+<br/>
 <p><b>注：これはスポイラー（ゲームのヒント）です。必要がない方は読まないでください。</b></p>
-<br>
+<br/>
 <p>Rogue Clone IIIでウィザードモードに入った時に追加されるコマンドと、ウィザードモード中に通常とは扱いが変わる操作の一覧です。</p>
 <p>このモードは本来デバッグ用のものであり、普通に遊ぶ際には全く必要がないものです。</p>
 <p>「ctrl-w」というのはコントロールキーを押しながら「w」をタイプするという意味です。</p>
-<br>
+<br/>
 <table class="wm">
 <tr><th>コマンド</th><th>説明</th></tr>
 <tr><td>ctrl-w</td><td>ウィザードモードのオンオフ切り替え</td></tr>
@@ -205,7 +198,7 @@ window.onload = initializeRogueVersion;
 <tr><td>ctrl-m</td><td>怪物を表示</td></tr>
 <tr><td>ctrl-a</td><td>平均体力を表示。Clone IIIではウィザードモードでなくても動作します。</td></tr>
 </table>
-<br>
+<br/>
 <p>ウィザードモード中は、以下の通常コマンドや通常処理も通常時とは扱いが変わります。</p>
 <table class="wm">
 <tr><th>コマンド・場面</th><th>ウィザードモード中の動作</th></tr>
@@ -216,48 +209,45 @@ window.onload = initializeRogueVersion;
 <tr><td>戦闘</td><td>プレイヤーの命中率と与えるダメージが大きくなり、怪物の命中率と与えるダメージが小さくなります。</td></tr>
 <tr><td>レベルアップ時の体力増加</td><td>経験レベルが上がった時の体力増加が固定値になります。</td></tr>
 </table>
-<br>
+<br/>
 <p>＜その他＞</p>
 <ul>
 <li>ウィザードモードに入るとスコア登録の対象外になります。</li>
 <li>Rogue Clone IIIでは、Rogue 5.4の「+」「*」「shift-c」ではなく、上記のコントロールキー系コマンドを使用します。</li>
 </ul>
-
-<br>
+<br/>
 <div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=clone3">【運命の洞窟】への案内書</a> | <a href="ps.html?version=clone3">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 </div>
 </div><!-- main -->
 </div><!-- out -->
 <div class="footer"><div class="padding_6em">2026 leopardgecko</div></div><!-- footer -->
 </div>
-
-<div id="version_rogue_36" class="version_panel_hidden">
-	<div class="header">
-	<h2>ウィザードモードのコマンド</h2>
-	</div>
+<div class="version_panel_hidden" id="version_rogue_36">
+<div class="header">
+<h2>ウィザードモードのコマンド</h2>
+</div>
 <div class="out">
 <div class="main">
 <div class="padding_3em">
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=36">【運命の洞窟】への案内書</a> | <a href="ps.html?version=36">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=36">【運命の洞窟】への案内書</a> | <a href="ps.html?version=36">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 <div class="version_selector">
-	<label for="rogue_version_select_36">洞窟を選ぶ：</label>
-	<select id="rogue_version_select_36" onchange="switchRogueVersion(this.value)">
-		<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
-		<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
-		<option value="r36" selected="selected">Rogue 3.6 英語版</option>
-		<option value="r52">Rogue 5.2 英語版</option>
-		<option value="clone2">Rogue Clone II 英語版</option>
-		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
-		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
-	</select>
+<label for="rogue_version_select_36">洞窟を選ぶ：</label>
+<select id="rogue_version_select_36" onchange="switchRogueVersion(this.value)">
+<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
+<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+<option selected="selected" value="r36">Rogue 3.6 日本語・英語対応版</option>
+<option value="r52">Rogue 5.2 日本語・英語対応版</option>
+<option value="clone2">Rogue Clone II 英語版</option>
+<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+</select>
 </div>
-
-<br>
+<br/>
 <p><b>注：これはスポイラー（ゲームのヒント）です。必要がない方は読まないでください。</b></p>
-<br>
+<br/>
 <p>Rogue 3.6でウィザードモードに入った時に追加されるコマンドの一覧です。</p><p>「ctrl-p」というのはコントロールキーを押しながら「p」をタイプするという意味です。</p>
 <p>このモードは本来デバッグ用のものであり、普通に遊ぶ際には全く必要がないものです。</p>
-<br>
+<br/>
 <table class="wm">
 <tr><th>コマンド</th><th>説明</th></tr>
 <tr><td>ctrl-p</td><td>ウィザードモードのオンオフ切り替え</td></tr>
@@ -274,44 +264,43 @@ window.onload = initializeRogueVersion;
 <tr><td>ctrl-a</td><td>荷物の数を表示</td></tr>
 <tr><td>ctrl-c</td><td>通路を表示</td></tr>
 <tr><td>ctrl-n</td><td>魔法の杖をチャージする</td></tr>
+<tr><td>ctrl-h</td><td>レベルを上げ、両手持ちの剣と全身のよろいを装備する</td></tr>
 </table>
-<br>
+<br/>
 <p>アイテム作成時の番号は、<a href="item.html?version=36">アイテム番号と出現率の一覧</a>を参照してください。</p>
-<br>
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=36">【運命の洞窟】への案内書</a> | <a href="ps.html?version=36">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<br/>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=36">【運命の洞窟】への案内書</a> | <a href="ps.html?version=36">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 </div>
 </div><!-- main -->
 </div><!-- out -->
 <div class="footer"><div class="padding_6em">2026 leopardgecko</div></div><!-- footer -->
 </div>
-
-<div id="version_rogue_52" class="version_panel_hidden">
-	<div class="header">
-	<h2>ウィザードモードのコマンド</h2>
-	</div>
+<div class="version_panel_hidden" id="version_rogue_52">
+<div class="header">
+<h2>ウィザードモードのコマンド</h2>
+</div>
 <div class="out">
 <div class="main">
 <div class="padding_3em">
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=52">【運命の洞窟】への案内書</a> | <a href="ps.html?version=52">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=52">【運命の洞窟】への案内書</a> | <a href="ps.html?version=52">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 <div class="version_selector">
-	<label for="rogue_version_select_52">洞窟を選ぶ：</label>
-	<select id="rogue_version_select_52" onchange="switchRogueVersion(this.value)">
-		<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
-		<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
-		<option value="r36">Rogue 3.6 英語版</option>
-		<option value="r52" selected="selected">Rogue 5.2 英語版</option>
-		<option value="clone2">Rogue Clone II 英語版</option>
-		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
-		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
-	</select>
+<label for="rogue_version_select_52">洞窟を選ぶ：</label>
+<select id="rogue_version_select_52" onchange="switchRogueVersion(this.value)">
+<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
+<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+<option value="r36">Rogue 3.6 日本語・英語対応版</option>
+<option selected="selected" value="r52">Rogue 5.2 日本語・英語対応版</option>
+<option value="clone2">Rogue Clone II 英語版</option>
+<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+</select>
 </div>
-
-<br>
+<br/>
 <p><b>注：これはスポイラー（ゲームのヒント）です。必要がない方は読まないでください。</b></p>
-<br>
+<br/>
 <p>Rogue 5.2でウィザードモードに入った時に追加されるコマンドの一覧です。</p><p>「ctrl-p」というのはコントロールキーを押しながら「p」をタイプするという意味です。</p>
 <p>このモードは本来デバッグ用のものであり、普通に遊ぶ際には全く必要がないものです。</p>
-<br>
+<br/>
 <table class="wm">
 <tr><th>コマンド</th><th>説明</th></tr>
 <tr><td>ctrl-p</td><td>ウィザードモードのオンオフ切り替え</td></tr>
@@ -330,43 +319,41 @@ window.onload = initializeRogueVersion;
 <tr><td>ctrl-n</td><td>魔法の杖をチャージする</td></tr>
 <tr><td>ctrl-h</td><td>レベルを10上げて、両手持ちの剣と全身のよろいを装備する</td></tr>
 </table>
-<br>
+<br/>
 <p>アイテム作成時の番号は、<a href="item.html?version=52">アイテム番号と出現率の一覧</a>を参照してください。</p>
-<br>
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=52">【運命の洞窟】への案内書</a> | <a href="ps.html?version=52">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<br/>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=52">【運命の洞窟】への案内書</a> | <a href="ps.html?version=52">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 </div>
 </div><!-- main -->
 </div><!-- out -->
 <div class="footer"><div class="padding_6em">2026 leopardgecko</div></div><!-- footer -->
 </div>
-
-<div id="version_rogue_clone_ii" class="version_panel_hidden">
-	<div class="header">
-	<h2>ウィザードモードのコマンド</h2>
-	</div>
+<div class="version_panel_hidden" id="version_rogue_clone_ii">
+<div class="header">
+<h2>ウィザードモードのコマンド</h2>
+</div>
 <div class="out">
 <div class="main">
 <div class="padding_3em">
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=clone2">【運命の洞窟】への案内書</a> | <a href="ps.html?version=clone2">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=clone2">【運命の洞窟】への案内書</a> | <a href="ps.html?version=clone2">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 <div class="version_selector">
-	<label for="rogue_version_select_clone2">洞窟を選ぶ：</label>
-	<select id="rogue_version_select_clone2" onchange="switchRogueVersion(this.value)">
-		<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
-		<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
-		<option value="r36">Rogue 3.6 英語版</option>
-		<option value="r52">Rogue 5.2 英語版</option>
-		<option value="clone2" selected="selected">Rogue Clone II 英語版</option>
-		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
-		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
-	</select>
+<label for="rogue_version_select_clone2">洞窟を選ぶ：</label>
+<select id="rogue_version_select_clone2" onchange="switchRogueVersion(this.value)">
+<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
+<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+<option value="r36">Rogue 3.6 日本語・英語対応版</option>
+<option value="r52">Rogue 5.2 日本語・英語対応版</option>
+<option selected="selected" value="clone2">Rogue Clone II 英語版</option>
+<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+</select>
 </div>
-
-<br>
+<br/>
 <p><b>注：これはスポイラー（ゲームのヒント）です。必要がない方は読まないでください。</b></p>
-<br>
+<br/>
 <p>Rogue Clone IIでウィザードモードに入った時に追加されるコマンドと、ウィザードモード中に通常とは扱いが変わる操作の一覧です。</p><p>「ctrl-w」というのはコントロールキーを押しながら「w」をタイプするという意味です。</p>
 <p>このモードは本来デバッグ用のものであり、普通に遊ぶ際には全く必要がないものです。</p>
-<br>
+<br/>
 <table class="wm">
 <tr><th>コマンド</th><th>説明</th></tr>
 <tr><td>ctrl-w</td><td>ウィザードモードのオンオフ切り替え</td></tr>
@@ -378,7 +365,7 @@ window.onload = initializeRogueVersion;
 <tr><td>ctrl-m</td><td>怪物を表示</td></tr>
 <tr><td>ctrl-a</td><td>平均体力を表示。Clone IIではウィザードモードでなくても動作します。</td></tr>
 </table>
-<br>
+<br/>
 <p>ウィザードモード中は、以下の通常コマンドや通常処理も通常時とは扱いが変わります。</p>
 <table class="wm">
 <tr><th>コマンド・場面</th><th>ウィザードモード中の動作</th></tr>
@@ -389,43 +376,41 @@ window.onload = initializeRogueVersion;
 <tr><td>戦闘</td><td>プレイヤーの命中率と与えるダメージが大きくなり、怪物の命中率と与えるダメージが小さくなります。</td></tr>
 <tr><td>レベルアップ時の体力増加</td><td>経験レベルが上がった時の体力増加が固定値になります。</td></tr>
 </table>
-<br>
+<br/>
 <p>アイテム作成時の番号は、<a href="item.html?version=clone2">アイテム番号と出現率の一覧</a>を参照してください。</p>
-<br>
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=clone2">【運命の洞窟】への案内書</a> | <a href="ps.html?version=clone2">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<br/>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=clone2">【運命の洞窟】への案内書</a> | <a href="ps.html?version=clone2">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 </div>
 </div><!-- main -->
 </div><!-- out -->
 <div class="footer"><div class="padding_6em">2026 leopardgecko</div></div><!-- footer -->
 </div>
-
-<div id="version_rogue_clone_ii_japanese" class="version_panel_hidden">
-	<div class="header">
-	<h2>ウィザードモードのコマンド</h2>
-	</div>
+<div class="version_panel_hidden" id="version_rogue_clone_ii_japanese">
+<div class="header">
+<h2>ウィザードモードのコマンド</h2>
+</div>
 <div class="out">
 <div class="main">
 <div class="padding_3em">
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=clone2j">【運命の洞窟】への案内書</a> | <a href="ps.html?version=clone2j">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=clone2j">【運命の洞窟】への案内書</a> | <a href="ps.html?version=clone2j">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 <div class="version_selector">
-	<label for="rogue_version_select_clone2j">洞窟を選ぶ：</label>
-	<select id="rogue_version_select_clone2j" onchange="switchRogueVersion(this.value)">
-		<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
-		<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
-		<option value="r36">Rogue 3.6 英語版</option>
-		<option value="r52">Rogue 5.2 英語版</option>
-		<option value="clone2">Rogue Clone II 英語版</option>
-		<option value="clone2j" selected="selected">ローグ・クローン２ 日本語版 1.3</option>
-		<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
-	</select>
+<label for="rogue_version_select_clone2j">洞窟を選ぶ：</label>
+<select id="rogue_version_select_clone2j" onchange="switchRogueVersion(this.value)">
+<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
+<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+<option value="r36">Rogue 3.6 日本語・英語対応版</option>
+<option value="r52">Rogue 5.2 日本語・英語対応版</option>
+<option value="clone2">Rogue Clone II 英語版</option>
+<option selected="selected" value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+</select>
 </div>
-
-<br>
+<br/>
 <p><b>注：これはスポイラー（ゲームのヒント）です。必要がない方は読まないでください。</b></p>
-<br>
+<br/>
 <p>ローグ・クローン２ 日本語版1.3でウィザードモードに入った時に追加されるコマンドと、ウィザードモード中に通常とは扱いが変わる操作の一覧です。</p><p>「ctrl-w」というのはコントロールキーを押しながら「w」をタイプするという意味です。</p>
 <p>このモードは本来デバッグ用のものであり、普通に遊ぶ際には全く必要がないものです。</p>
-<br>
+<br/>
 <table class="wm">
 <tr><th>コマンド</th><th>説明</th></tr>
 <tr><td>ctrl-w</td><td>ウィザードモードのオンオフ切り替え</td></tr>
@@ -438,7 +423,7 @@ window.onload = initializeRogueVersion;
 <tr><td>ctrl-a</td><td>平均体力を表示。クローン２日本語版ではウィザードモードでなくても動作します。</td></tr>
 <tr><td>ctrl-x</td><td>マップ、怪物、アイテム、わなをまとめて表示</td></tr>
 </table>
-<br>
+<br/>
 <p>ウィザードモード中は、以下の通常コマンドや通常処理も通常時とは扱いが変わります。</p>
 <table class="wm">
 <tr><th>コマンド・場面</th><th>ウィザードモード中の動作</th></tr>
@@ -449,55 +434,52 @@ window.onload = initializeRogueVersion;
 <tr><td>戦闘</td><td>プレイヤーの命中率と与えるダメージが大きくなり、怪物の命中率と与えるダメージが小さくなります。</td></tr>
 <tr><td>レベルアップ時の体力増加</td><td>経験レベルが上がった時の体力増加が固定値になります。</td></tr>
 </table>
-<br>
+<br/>
 <p>アイテム作成時の記号は、<a href="item.html?version=clone2j">アイテム番号と出現率の一覧</a>を参照してください。</p>
-<br>
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=clone2j">【運命の洞窟】への案内書</a> | <a href="ps.html?version=clone2j">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<br/>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=clone2j">【運命の洞窟】への案内書</a> | <a href="ps.html?version=clone2j">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 </div>
 </div><!-- main -->
 </div><!-- out -->
 <div class="footer"><div class="padding_6em">2026 leopardgecko</div></div><!-- footer -->
 </div>
-
-<div id="version_rogue_dos_148" class="version_panel_hidden">
-	<div class="header">
-	<h2>ウィザードモードのコマンド</h2>
-	</div>
+<div class="version_panel_hidden" id="version_rogue_dos_148">
+<div class="header">
+<h2>ウィザードモードのコマンド</h2>
+</div>
 <div class="out">
 <div class="main">
 <div class="padding_3em">
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=dos148">【運命の洞窟】への案内書</a> | <a href="ps.html?version=dos148">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=dos148">【運命の洞窟】への案内書</a> | <a href="ps.html?version=dos148">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 <div class="version_selector">
-	<label for="rogue_version_select_dos148">洞窟を選ぶ：</label>
-	<select id="rogue_version_select_dos148" onchange="switchRogueVersion(this.value)">
-		<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
-		<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
-		<option value="r36">Rogue 3.6 英語版</option>
-		<option value="r52">Rogue 5.2 英語版</option>
-		<option value="clone2">Rogue Clone II 英語版</option>
-		<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
-		<option value="dos148" selected="selected">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
-	</select>
+<label for="rogue_version_select_dos148">洞窟を選ぶ：</label>
+<select id="rogue_version_select_dos148" onchange="switchRogueVersion(this.value)">
+<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
+<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+<option value="r36">Rogue 3.6 日本語・英語対応版</option>
+<option value="r52">Rogue 5.2 日本語・英語対応版</option>
+<option value="clone2">Rogue Clone II 英語版</option>
+<option value="clone2j">ローグ・クローン２ 日本語版 1.3</option>
+<option selected="selected" value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+</select>
 </div>
-
-<br>
+<br/>
 <p><b>注：これはスポイラー（ゲームのヒント）です。必要がない方は読まないでください。</b></p>
-<br>
+<br/>
 <p>Rogue DOS 1.48でウィザードモードに入った時に追加されるコマンドの一覧です。</p><p>「shift-c」というのはシフトキーを押しながら「c」をタイプするという意味です。</p>
 <p>このモードは本来デバッグ用のものであり、普通に遊ぶ際には全く必要がないものです。</p>
-<br>
+<br/>
 <table class="wm">
 <tr><th>コマンド</th><th>説明</th></tr>
 <tr><td>shift-c</td><td>アイテムを作る</td></tr>
 </table>
-<br>
+<br/>
 <p>アイテム作成時の番号は、<a href="item.html?version=dos148">アイテム番号と出現率の一覧</a>を参照してください。</p>
-<br>
-<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide_w.html?version=dos148">【運命の洞窟】への案内書</a> | <a href="ps.html?version=dos148">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<br/>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=dos148">【運命の洞窟】への案内書</a> | <a href="ps.html?version=dos148">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
 </div>
 </div><!-- main -->
 </div><!-- out -->
 <div class="footer"><div class="padding_6em">2026 leopardgecko</div></div><!-- footer -->
 </div>
-
 </body></html>

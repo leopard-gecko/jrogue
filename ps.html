@@ -48,6 +48,7 @@ function normalizePsVersion(value) {
 	if (value == 'clone2' || value == 'cloneii' || value == 'rogue-clone-ii') return 'clone2';
 	if (value == 'clone2j' || value == 'clone2ja' || value == 'clone2jp' || value == 'クローン2' || value == 'クローン２') return 'clone2j';
 	if (value == 'dos148' || value == 'dos1.48' || value == 'dos' || value == '148' || value == '1.48' || value == 'r148' || value == 'rogue148') return 'dos148';
+	if (value == 'hybrid' || value == 'rogue-hybrid' || value == 'roguehybrid' || value == 'hybrid-edition') return 'hybrid';
 	if (value == '54' || value == '5.4' || value == 'r545' || value == 'rogue54') return '54';
 	return '54';
 }
@@ -66,8 +67,8 @@ function getInitialPsVersion() {
 }
 function switchPsVersion(value) {
 	var selected = normalizePsVersion(value || '54');
-	var panelIds = ['version_rogue_54', 'version_rogue_clone_iii', 'version_rogue_36', 'version_rogue_52', 'version_rogue_clone_ii', 'version_rogue_clone_ii_japanese', 'version_rogue_dos_148'];
-	var panelValues = ['54', 'clone3', '36', '52', 'clone2', 'clone2j', 'dos148'];
+	var panelIds = ['version_rogue_54', 'version_rogue_clone_iii', 'version_rogue_dos_148', 'version_rogue_hybrid', 'version_rogue_52', 'version_rogue_36', 'version_rogue_clone_ii', 'version_rogue_clone_ii_japanese'];
+	var panelValues = ['54', 'clone3', 'dos148', 'hybrid', '52', '36', 'clone2', 'clone2j'];
 	var selectors = document.getElementsByName('ps_version_select');
 	for (var i = 0; i < selectors.length; i++) {
 		selectors[i].value = selected;
@@ -98,9 +99,10 @@ window.onload = initializePsVersion;
 <div class="version_selector">
 <label>洞窟を選ぶ：</label>
 <select name="ps_version_select" onchange="switchPsVersion(this.value)">
-<option value="54" selected="selected">Rogue 5.4 日本語・英語／カラー対応版</option>
+<option selected="selected" value="54">Rogue 5.4 日本語・英語／カラー対応版</option>
 <option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
 <option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+<option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="52">Rogue 5.2 日本語・英語対応版</option>
 <option value="36">Rogue 3.6 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
@@ -231,7 +233,7 @@ window.onload = initializePsVersion;
 </tr>
 <tr>
 <th>気分がよくなってきた。<br/><span class="en">you begin to feel better</span></th>
-<td>体力が回復する水薬<br/><span class="en">healing</span></td>
+<td>傷を治す水薬<br/><span class="en">healing</span></td>
 </tr>
 <tr>
 <th>この階で魔法の存在を感じた。<br/><span class="en">You sense the presence of magic on this level.</span></th>
@@ -259,7 +261,7 @@ window.onload = initializePsVersion;
 </tr>
 <tr>
 <th>とても気分がよくなってきた。<br/><span class="en">you begin to feel much better</span></th>
-<td>体力がとても回復する水薬<br/><span class="en">extra healing</span></td>
+<td>とてもよく傷を治す水薬<br/><span class="en">extra healing</span></td>
 </tr>
 <tr>
 <th>深い暗闇のとばりがあたりをおおってゆく。<br/>なんてこった！全部真っ暗だ！助けて！<i>（幻覚時）</i><br/><span class="en">a cloak of darkness falls around you<br/>oh, bummer! Everything is dark! Help! <i>（hallucination）</i></span></th>
@@ -316,8 +318,9 @@ window.onload = initializePsVersion;
 <label>洞窟を選ぶ：</label>
 <select name="ps_version_select" onchange="switchPsVersion(this.value)">
 <option value="54">Rogue 5.4 日本語・英語／カラー対応版</option>
-<option value="clone3" selected="selected">Rogue Clone III 日本語・英語／カラー対応版</option>
+<option selected="selected" value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
 <option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+<option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="52">Rogue 5.2 日本語・英語対応版</option>
 <option value="36">Rogue 3.6 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
@@ -450,7 +453,7 @@ window.onload = initializePsVersion;
 </tr>
 <tr>
 <th>気分がよくなってきた。<br/><span class="en">you begin to feel better</span></th>
-<td>体力が回復する水薬<br/><span class="en">healing</span></td>
+<td>傷を治す水薬<br/><span class="en">healing</span></td>
 </tr>
 <tr>
 <th><i>（無し：この階にある物品が画面に表示される）</i><br/><span class="en"><i>（None: objects on this level are shown on the screen）</i></span></th>
@@ -478,7 +481,7 @@ window.onload = initializePsVersion;
 </tr>
 <tr>
 <th>とても気分がよくなってきた。<br/><span class="en">you begin to feel much better</span></th>
-<td>体力がとても回復する水薬<br/><span class="en">extra healing</span></td>
+<td>とてもよく傷を治す水薬<br/><span class="en">extra healing</span></td>
 </tr>
 <tr>
 <th>深い暗闇のとばりがあたりをおおってゆく。<br/><span class="en">a cloak of darkness falls around you</span></th>
@@ -537,8 +540,9 @@ window.onload = initializePsVersion;
 <option value="54">Rogue 5.4 日本語・英語／カラー対応版</option>
 <option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
 <option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+<option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="52">Rogue 5.2 日本語・英語対応版</option>
-<option value="36" selected="selected">Rogue 3.6 日本語・英語対応版</option>
+<option selected="selected" value="36">Rogue 3.6 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
@@ -666,7 +670,7 @@ window.onload = initializePsVersion;
 </tr>
 <tr>
 <th>気分がよくなってきた。<br/><span class="en">You begin to feel better.</span></th>
-<td class="en">体力が回復する水薬<br/><span class="en">healing</span></td>
+<td class="en">傷を治す水薬<br/><span class="en">healing</span></td>
 </tr>
 <tr>
 <th>怪物の存在を感じ始めた。--続く--<br/>変な気分におそわれたが、すぐに消えていった。<br/>（怪物がいない場合）<br/><span class="en">You begin to sense the presence of monsters.--More--<br/>You have a strange feeling for a moment, then it passes.<br/>（no monsters）</span></th>
@@ -682,7 +686,7 @@ window.onload = initializePsVersion;
 </tr>
 <tr>
 <th>とても気分がよくなってきた。<br/><span class="en">You begin to feel much better.</span></th>
-<td class="en">体力がとても回復する水薬<br/><span class="en">extra healing</span></td>
+<td class="en">とてもよく傷を治す水薬<br/><span class="en">extra healing</span></td>
 </tr>
 <tr>
 <th>動きが素早くなったようだ。<br/><span class="en">You feel yourself moving much faster.</span></th>
@@ -729,7 +733,8 @@ window.onload = initializePsVersion;
 <option value="54">Rogue 5.4 日本語・英語／カラー対応版</option>
 <option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
 <option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
-<option value="52" selected="selected">Rogue 5.2 日本語・英語対応版</option>
+<option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
+<option selected="selected" value="52">Rogue 5.2 日本語・英語対応版</option>
 <option value="36">Rogue 3.6 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
@@ -854,7 +859,7 @@ window.onload = initializePsVersion;
 </tr>
 <tr>
 <th>気分がよくなってきた。<br/><span class="en">you begin to feel better</span></th>
-<td class="en">体力が回復する水薬<br/><span class="en">healing</span></td>
+<td class="en">傷を治す水薬<br/><span class="en">healing</span></td>
 </tr>
 <tr>
 <th>（無し：遠くにいる怪物が画面に表示される）<br/>変な気分におそわれたが、すぐに消えていった。<br/>（怪物がいない場合）<br/><span class="en">（None: distant monsters are shown）<br/>you have a strange feeling for a moment<br/>（no monsters）</span></th>
@@ -870,7 +875,7 @@ window.onload = initializePsVersion;
 </tr>
 <tr>
 <th>とても気分がよくなってきた。<br/><span class="en">you begin to feel much better</span></th>
-<td class="en">体力がとても回復する水薬<br/><span class="en">extra healing</span></td>
+<td class="en">とてもよく傷を治す水薬<br/><span class="en">extra healing</span></td>
 </tr>
 <tr>
 <th>動きが素早くなったようだ。<br/><span class="en">you feel yourself moving much faster</span></th>
@@ -917,9 +922,10 @@ window.onload = initializePsVersion;
 <option value="54">Rogue 5.4 日本語・英語／カラー対応版</option>
 <option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
 <option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+<option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="52">Rogue 5.2 日本語・英語対応版</option>
 <option value="36">Rogue 3.6 日本語・英語対応版</option>
-<option value="clone2" selected="selected">Rogue Clone II 英語版</option>
+<option selected="selected" value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
 </div>
@@ -1093,10 +1099,11 @@ window.onload = initializePsVersion;
 <option value="54">Rogue 5.4 日本語・英語／カラー対応版</option>
 <option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
 <option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+<option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="52">Rogue 5.2 日本語・英語対応版</option>
 <option value="36">Rogue 3.6 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
-<option value="clone2j" selected="selected">ローグクローン２ 日本語版１.３</option>
+<option selected="selected" value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
 </div>
 <br/>
@@ -1194,11 +1201,11 @@ window.onload = initializePsVersion;
 </tr>
 <tr>
 <th>気分がよくなった！</th>
-<td class="en">体力が回復する水薬</td>
+<td class="en">傷を治す水薬</td>
 </tr>
 <tr>
 <th>とても気分がよくなった！</th>
-<td class="en">体力がとても回復する水薬</td>
+<td class="en">とてもよく傷を治す水薬</td>
 </tr>
 <tr>
 <th>この水薬は毒だった！</th>
@@ -1268,7 +1275,8 @@ window.onload = initializePsVersion;
 <select name="ps_version_select" onchange="switchPsVersion(this.value)">
 <option value="54">Rogue 5.4 日本語・英語／カラー対応版</option>
 <option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
-<option value="dos148" selected="selected">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+<option selected="selected" value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+<option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="52">Rogue 5.2 日本語・英語対応版</option>
 <option value="36">Rogue 3.6 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
@@ -1328,11 +1336,11 @@ window.onload = initializePsVersion;
 <tr><th>すごく具合が悪くなった。<br/>具合が悪くなったが、すぐに治った。<i>（無効時）</i><br/><span class="en">you feel very sick.<br/>you feel momentarily sick. <i>(when ineffective)</i></span></th><td>毒の水薬<br/><span class="en">poison</span></td></tr>
 <tr><th>強くなった気がするぞ。このはちきれそうな筋肉！<br/><span class="en">you feel stronger. What bulging muscles!</span></th><td>強さが増す水薬<br/><span class="en">gain strength</span></td></tr>
 <tr><th>この水薬は、[<i>果物</i>]ジュースのような味がする。<br/><span class="en">this potion tastes like [<i>fruit</i>] juice</span></th><td>見えないものが見える水薬<br/><span class="en">see invisible</span></td></tr>
-<tr><th>気分がよくなってきた。<br/><span class="en">you begin to feel better</span></th><td>体力が回復する水薬<br/><span class="en">healing</span></td></tr>
+<tr><th>気分がよくなってきた。<br/><span class="en">you begin to feel better</span></th><td>傷を治す水薬<br/><span class="en">healing</span></td></tr>
 <tr><th><i>（無し：怪物の位置が表示される）</i><br/>しばらく奇妙な気分におそわれた。<i>（無効時）</i><br/><span class="en"><i>（None: monster positions are displayed）</i><br/>you have a strange feeling for a moment <i>(when ineffective)</i></span></th><td>怪物探知の水薬<br/><span class="en">monster detection</span></td></tr>
 <tr><th>この階で魔法の存在を感じた。<br/>しばらく奇妙な気分におそわれたが、すぐに消えていった。<i>（無効時）</i><br/><span class="en">You sense the presence of magic.<br/>you have a strange feeling for a moment, then it passes <i>(when ineffective)</i></span></th><td>魔法探知の水薬<br/><span class="en">magic detection</span></td></tr>
 <tr><th>突然に腕前がすごく上がったようだ。<br/><span class="en">you suddenly feel much more skillful</span></th><td>レベルが上がる水薬<br/><span class="en">raise level</span></td></tr>
-<tr><th>とても気分がよくなってきた。<br/><span class="en">you begin to feel much better</span></th><td>体力がとても回復する水薬<br/><span class="en">extra healing</span></td></tr>
+<tr><th>とても気分がよくなってきた。<br/><span class="en">you begin to feel much better</span></th><td>とてもよく傷を治す水薬<br/><span class="en">extra healing</span></td></tr>
 <tr><th>動きが素早くなったようだ。<br/><span class="en">you feel yourself moving much faster</span></th><td>素早くなる水薬<br/><span class="en">haste self</span></td></tr>
 <tr><th>ああ、これはうまい。身体中があたたまる。<br/><span class="en">hey, this tastes great. It makes you feel warm all over</span></th><td>強さが元にもどる水薬<br/><span class="en">restore strength</span></td></tr>
 <tr><th>深い暗闇のとばりがあたりをおおってゆく。<br/><span class="en">a cloak of darkness falls around you</span></th><td>目が見えなくなる水薬<br/><span class="en">blindness</span></td></tr>
@@ -1345,5 +1353,224 @@ window.onload = initializePsVersion;
 </div><!-- main -->
 </div><!-- out -->
 <div class="footer"><div class="padding_6em">2026 leopardgecko</div></div><!-- footer -->
+</div><div class="version_panel_hidden" id="version_rogue_hybrid">
+<div class="header">
+<h2>巻き物と水薬の一覧</h2>
+</div>
+<div class="out">
+<div class="main">
+<div class="padding_3em">
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=hybrid">【運命の洞窟】への案内書</a> | 巻き物と水薬の一覧 | <a href="http://leopardgecko.hatenablog.com/" target="_blank">ブログ</a></div>
+<div class="version_selector">
+<label>洞窟を選ぶ：</label>
+<select name="ps_version_select" onchange="switchPsVersion(this.value)">
+<option value="54">Rogue 5.4 日本語・英語／カラー対応版</option>
+<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+<option selected="selected" value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
+<option value="52">Rogue 5.2 日本語・英語対応版</option>
+<option value="36">Rogue 3.6 日本語・英語対応版</option>
+<option value="clone2">Rogue Clone II 英語版</option>
+<option value="clone2j">ローグクローン２ 日本語版１.３</option>
+</select>
+</div>
+<br/>
+<p><b>注：これはスポイラー（ゲームのヒント）です。必要がない方は読まないでください。</b></p>
+<br/>
+<p>Rogue Hybrid Editionに出てくる巻き物と水薬の一覧表です。</p>
+<div class="only-pc"><p>アイテムを使用すると表示されるメッセージと名称を記載しています。日本語のメッセージの下に英語のメッセージを併記し、名称は和名と英名をまとめています。<br/>（識別の巻き物は使った効果が一目瞭然なので記載は省略しました）</p></div>
+<div class="only-sp"><p>使用すると表示されるメッセージとアイテム名を交互に記載しています。</p></div>
+<p>注意点として、幻覚を見ている状態では色の名前がランダムに変更されます。</p>
+</div>
+<div class="only-sp">
+<h3>目次</h3>
+<ol>
+<li><a href="#hybrid_01">巻き物の一覧</a></li>
+<li><a href="#hybrid_02">水薬の一覧</a></li>
+</ol>
+</div>
+<h3 id="hybrid_01">巻き物の一覧</h3>
+<div class="padding_3em">
+<table class="ps">
+<thead>
+<tr><td><i><b>メッセージ</b></i></td><td><i><b>名称</b></i></td></tr>
+</thead>
+<tbody>
+<tr>
+<th>おや、巻き物に地図が現れたぞ。<br/><span class="en">oh, now this scroll has a map on it</span></th>
+<td>魔法の地図の巻き物<br/><span class="en">magic mapping</span></td>
+</tr>
+<tr>
+<th>怪物（ども）は動けなくなった。<br/><span class="en">the monster(s) freeze</span></th>
+<td>怪物を封じこめる巻き物<br/><span class="en">hold monster</span></td>
+</tr>
+<tr>
+<th>かん高いうなり声が聞こえてくる。<br/><span class="en">you hear a high-pitched humming noise</span></th>
+<td>怪物を怒らせる巻き物<br/><span class="en">aggravate monsters</span></td>
+</tr>
+<tr>
+<th>着ているよろいが、少しのあいだ銀色に輝いた。<br/><span class="en">your armor glows silver for a moment</span></th>
+<td>よろいに魔法をかける巻き物<br/><span class="en">enchant armor</span></td>
+</tr>
+<tr>
+<th>着ているよろいは、輝く金色のシールドに包まれた。<br/><span class="en">your armor is covered by a shimmering gold shield</span></th>
+<td>よろいを守る巻き物<br/><span class="en">protect armor</span></td>
+</tr>
+<tr>
+<th>誰かに見守られているような気がした。<br/>宇宙の一体性に触れた気がした。<i>（幻覚時）</i><br/><span class="en">you feel as if someone is watching over you<br/>you feel in touch with the universal oneness <i>（hallucination）</i></span></th>
+<td>のろいを解く巻き物<br/><span class="en">remove curse</span></td>
+</tr>
+<tr>
+<th>手が赤色に輝きはじめた。<br/><span class="en">your hands begin to glow red</span></th>
+<td>怪物を混乱させる巻き物<br/><span class="en">monster confusion</span></td>
+</tr>
+<tr>
+<th>手に持った[<i>武器</i>]が、少しのあいだ青色に輝いた。<br/><span class="en">your [<i>weapon</i>] glows blue for a moment</span></th>
+<td>武器に魔法をかける巻き物<br/><span class="en">enchant weapon</span></td>
+</tr>
+<tr>
+<th>遠くから、狂ったような笑い声が聞こえてくる。<sup class="message" id="hybrid_b1"><a href="#hybrid_c1">[1]<span class="remark">この巻き物は読んでも効果は得られない。巻き物を地面に置くと怪物はそこを通れなくなる。</span></a></sup><br/><span class="en">you hear maniacal laughter in the distance</span></th>
+<td>怪物を怖がらせる巻き物<br/><span class="en">scare monster</span></td>
+</tr>
+<tr>
+<th>眠りにおちてしまった。<br/><span class="en">you fall asleep</span></th>
+<td>眠りにおちる巻き物<br/><span class="en">sleep</span></td>
+</tr>
+<tr>
+<th>鼻がむずむずして食べ物のにおいを感じる。<br/><span class="en">your nose tingles and you smell food</span></th>
+<td>食べ物を見つける巻き物<br/><span class="en">food detection</span></td>
+</tr>
+<tr>
+<th><i>（無し：プレーヤーの隣に怪物が出現する）</i><br/><span class="en"><i>（None: a monster appears next to the player）</i></span></th>
+<td>怪物を作りだす巻き物<br/><span class="en">create monster</span></td>
+</tr>
+<tr>
+<th><i>（無し：プレーヤーがテレポートする）</i><br/><span class="en"><i>（None: the player teleports）</i></span></th>
+<td>テレポートする巻き物<br/><span class="en">teleportation</span></td>
+</tr>
+<tr><th>この巻き物は白紙のようだ。<br/><span class="en">this scroll seems to be blank</span></th><td>白紙の巻き物<br/><span class="en">blank paper</span></td></tr>
+<tr><th>手に持った[<i>武器</i>]が閃光を放った。<br/>手に持った[<i>武器</i>]は煙とともに消えてしまった。<br/><span class="en">your [<i>weapon</i>] gives off a flash<br/>your [<i>weapon</i>] vanishes in a puff of smoke</span></th><td>武器を怪物殺しにする巻き物<br/><span class="en">vorpalize weapon</span></td></tr></tbody>
+</table>
+<p style="font-size: 85%;">
+<sup id="hybrid_c1"><a href="#hybrid_b1">[1]</a></sup> この巻き物は読んでも効果は得られない。巻き物を地面に置くと怪物はそこを通れなくなる。</p>
+<br/>
+<p>巻き物を読んでも何らかの理由で効果が現れなかった時には以下のメッセージが出ます。
+		<div class="only-sp">【無効時のメッセージ】</div>
+<table class="ps">
+<thead>
+<tr><td><i><b>無効時のメッセージ</b></i></td><td><i><b>名称</b></i></td></tr>
+</thead>
+<tbody>
+<tr>
+<th>奇妙な喪失感をかんじた。<sup class="message" id="hybrid_b2"><a href="#hybrid_c2">[2]<span class="remark">三種類の巻き物で共通したメッセージなので、三つのうちのどれであるかを特定することはできない。</span></a></sup><br/><span class="en">you feel a strange sense of loss</span></th>
+<td>怪物を封じこめる巻き物<span class="br">武器に魔法をかける巻き物</span><span class="br">よろいを守る巻き物</span><br/><span class="en">hold monster<br/>enchant weapon<br/>protect armor</span></td>
+</tr>
+<tr>
+<th>遠くから、かすかな苦悶の叫びが聞こえる。<br/><span class="en">you hear a faint cry of anguish in the distance</span></th>
+<td>怪物を作りだす巻き物<br/><span class="en">create monster</span></td>
+</tr>
+<tr>
+<th>鼻がむずむずする。<br/><span class="en">your nose tingles</span></th>
+<td>食べ物を見つける巻き物<br/><span class="en">food detection</span></td>
+</tr>
+</tbody>
+</table>
+<p style="font-size: 85%;">
+<sup id="hybrid_c2"><a href="#hybrid_b2">[2]</a></sup> 三種類の巻き物で共通したメッセージなので、三つのうちのどれであるかを特定することはできない。</p>
+</p></div>
+<h3 id="hybrid_02">水薬の一覧</h3>
+<div class="padding_3em">
+<table class="ps">
+<thead>
+<tr><td><i><b>メッセージ</b></i></td><td><i><b>名称</b></i></td></tr>
+</thead>
+<tbody>
+<tr>
+<th>ああ、これはうまい。身体中があたたまる。<br/><span class="en">hey, this tastes great. It make you feel warm all over</span></th>
+<td>強さが元にもどる水薬<br/><span class="en">restore strength</span></td>
+</tr>
+<tr>
+<th>動きが素早くなったようだ。<br/><span class="en">you feel yourself moving much faster</span></th>
+<td>素早くなる水薬<br/><span class="en">haste self</span></td>
+</tr>
+<tr>
+<th>体が宙に浮き始めた。<br/>わお！ 体が宙に浮いている！<i>（幻覚時）</i><br/><span class="en">you start to float in the air<br/>oh, wow! You're floating in the air! <i>（hallucination）</i></span></th>
+<td>空中に浮きあがる水薬<br/><span class="en">levitation</span></td>
+</tr>
+<tr>
+<th>気分がよくなってきた。<br/><span class="en">you begin to feel better</span></th>
+<td>傷を治す水薬<br/><span class="en">healing</span></td>
+</tr>
+<tr>
+<th>この階で魔法の存在を感じた。<br/><span class="en">You sense the presence of magic on this level.</span></th>
+<td>魔法探知の水薬<br/><span class="en">magic detection</span></td>
+</tr>
+<tr>
+<th>この水薬は、[<i>好きな果物</i>]ジュースのような味がする。<br/><span class="en">this potion tastes like [<i>favorite fruit</i>] juice</span></th>
+<td>見えないものが見える水薬<br/><span class="en">see invisible</span></td>
+</tr>
+<tr>
+<th>すごく具合が悪くなった。<br/>具合が悪くなったが、すぐに治った。<i>（耐性がある時）</i><br/><span class="en">you feel very sick now<br/>you feel momentarily sick <i>（with resistance）</i></span></th>
+<td>毒の水薬<br/><span class="en">poison</span></td>
+</tr>
+<tr>
+<th>ちょっと待った、何が起こったんだ？え？なに？だれ？<br/>トリップしている気分だ！<i>（幻覚時）</i><br/><span class="en">wait, what's going on here. Huh? What? Who?<br/>what a tripy feeling! <i>（hallucination）</i></span></th>
+<td>頭が混乱する水薬<br/><span class="en">confusion</span></td>
+</tr>
+<tr>
+<th>強くなった気がするぞ。このはちきれそうな筋肉！<br/><span class="en">you feel stronger, now. What bulging muscles!</span></th>
+<td>強さが増す水薬<br/><span class="en">gain strength</span></td>
+</tr>
+<tr>
+<th>突然に腕前がすごく上がったようだ。<br/><span class="en">you suddenly feel much more skillful</span></th>
+<td>レベルが上がる水薬<br/><span class="en">raise level</span></td>
+</tr>
+<tr>
+<th>とても気分がよくなってきた。<br/><span class="en">you begin to feel much better</span></th>
+<td>とてもよく傷を治す水薬<br/><span class="en">extra healing</span></td>
+</tr>
+<tr>
+<th>深い暗闇のとばりがあたりをおおってゆく。<br/>なんてこった！全部真っ暗だ！助けて！<i>（幻覚時）</i><br/><span class="en">a cloak of darkness falls around you<br/>oh, bummer! Everything is dark! Help! <i>（hallucination）</i></span></th>
+<td>目が見えなくなる水薬<br/><span class="en">blindness</span></td>
+</tr>
+<tr>
+<th>わお！ 何もかもが宇宙っぽく見える！<br/><span class="en">Oh, wow! Everything seems so cosmic!</span></th>
+<td>幻覚をおこす水薬<br/><span class="en">hallucination</span></td>
+</tr>
+<tr>
+<th><i>（無し：遠くにいる怪物が画面に反転表示される）</i><br/><span class="en"><i>（None: distant monsters are highlighted on the screen）</i></span></th>
+<td>怪物探知の水薬<br/><span class="en">monster detection</span></td>
+</tr>
+<tr><th>体が動かない。<br/><span class="en">you can't move</span></th><td>体が動かなくなる水薬<br/><span class="en">paralysis</span></td></tr>
+<tr><th>この水薬は、ひどくつまらない味がする。<br/><span class="en">this potion tastes extremely dull</span></th><td>のどをうるおす水薬<br/><span class="en">thirst quenching</span></td></tr></tbody>
+</table>
+<br/>
+<p>水薬を飲んでも何らかの理由で効果が現れなかった時には以下のメッセージが出ます。
+		<div class="only-sp">【無効時のメッセージ】</div>
+<table class="ps">
+<thead>
+<tr><td><i><b>無効時のメッセージ</b></i></td><td><i><b>名称</b></i></td></tr>
+</thead>
+<tbody>
+<tr>
+<th>奇妙な気分におそわれたが、すぐに消えていった。<br/>まともな気分におそわれたが、すぐに消えていった。<i>（幻覚時）</i><sup class="message" id="hybrid_b3"><a href="#hybrid_c3">[3]<span class="remark">二種類の水薬で共通したメッセージなので、二つのうちのどちらであるかを特定することはできない。</span></a></sup><br/><span class="en">you have a strange feeling for a moment, then it passes<br/>you have a normal feeling for a moment, then it passes <i>（hallucination）</i></span></th>
+<td>怪物探知の水薬<span class="br">魔法探知の水薬</span><br/><span class="en">monster detection<br/>magic detection</span></td>
+</tr>
+</tbody>
+</table>
+<p style="font-size: 85%;">
+<sup id="hybrid_c3"><a href="#hybrid_b3">[3]</a></sup> 二種類の水薬で共通したメッセージなので、二つのうちのどちらであるかを特定することはできない。</p>
+</p></div>
+<br/>
+<div class="padding_3em">
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=hybrid">【運命の洞窟】への案内書</a> | 巻き物と水薬の一覧 | <a href="http://leopardgecko.hatenablog.com/" target="_blank">ブログ</a></div>
+</div>
+</div><!-- main -->
+</div><!-- out -->
+<div class="footer">
+<div class="padding_6em">
+		2026 leopardgecko
+	</div>
+</div><!-- footer -->
 </div>
 </body></html>

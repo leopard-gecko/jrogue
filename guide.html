@@ -684,12 +684,11 @@ window.onload = initializeGuideVersion;
 <div class="padding_3em">
 <p class="indent">環境変数「ROGUEOPTS」は、さまざまなオプションの初期値をカンマで区切ってリストにした文字列である。Boolean変数はその名前をリストに入れることにより有効にすることができ、名前の前に"no"を加えると無効にすることができる。したがって、「<b>jump</b>」(移動中の表示を行わない)を有効に、「<b>terse</b>」(簡潔な表示)を無効、「<b>name</b>」（プレイヤー名）を「ブルー・ミーニー」になるように環境変数を設定するには、次のコマンドを使用する。</p>
 <pre class="prompt">export ROGUEOPTS="jump,noterse,name=ブルー・ミーニー"</pre>
-<p>表示言語は環境変数「ROGUE_LANG」でも指定できる。日本語で起動する場合は「ROGUE_LANG=ja ./rogue」、英語で起動する場合は「ROGUE_LANG=en ./rogue」のように指定する。</p>
+
 </div>
 <h4 align="justify"><b>8.2.  オプションのリスト</b></h4>
 <div class="padding_3em">
 <p class="indent">ここではオプションの一覧と、それぞれのオプションの説明を示す。それぞれのデフォルトの値は角括弧で囲まれている。文字列オプションの場合、48文字を超える入力は無視される。</p>
-<p class="indent">通常のビルドでは、Rogue本来の動作に近い初期値として、カラー表示、通路の角で止まらずに進む設定、識別の巻き物を１種類にまとめる設定はいずれも無効であり、プレイ中のカーソルは表示される。<i>modern</i>設定でビルドした場合は、カラー表示、通路の角で止まらずに進む設定、識別の巻き物を１種類にまとめる設定が有効になり、プレイ中のカーソルは通常は非表示になる。</p>
 <p align="justify"><b>terse</b>[<i>noterse</i>]（簡潔な表示）</p>
 <p align="justify" class="padding_option">
 	時々あるローグの長いメッセージにうんざりしている人に有用である。これは遅い端末で遊ぶのに便利なオプションなので、遅い（1200ボー以下）端末では<i>terse</i>（簡潔な表示）がデフォルトになる。</p>
@@ -699,8 +698,8 @@ window.onload = initializeGuideVersion;
 <p align="justify" class="padding_option">このオプションが設定されている場合、移動が終わるまで表示されない。これによりCPUと表示の時間がかなり節約される。遅い端末を使っている場合、このオプションのデフォルトは<i>jump</i>（移動中の表示を行わない）になる。</p>
 <p align="justify"><b>seefloor</b>[<i>seefloor</i>]（ランプで照らされた床を表示）</p>
 <p align="justify" class="padding_option">暗い部屋を移動するときにプレイヤーの周りに床を表示する。文字の量のために、遅い端末を使っているときは<i>noseefloor</i>（床を表示しない）がデフォルトである。</p>
-<p align="justify"><b>passgo</b>[<i>nopassgo</i>]（通路の角で止まらない）</p>
-<p align="justify" class="padding_option">通路の曲がり角に従って進む。通路を通って石や壁にぶつかると、ローグは右か左のどちらかに曲がれるかどうかを判別する。片方向だけに曲がれる場合にはその方向に曲がる。どちらにも曲がれるかどちらにも曲がれない場合は立ち止まる。通常のビルドでは<i>nopassgo</i>、<i>modern</i>設定でビルドした場合は<i>passgo</i>が初期値になる。</p>
+<p align="justify"><b>passgo</b>[<i>passgo</i>]（通路の角で止まらない）</p>
+<p align="justify" class="padding_option">通路の曲がり角に従って進む。通路を通って石や壁にぶつかると、ローグは右か左のどちらかに曲がれるかどうかを判別する。片方向だけに曲がれる場合にはその方向に曲がる。どちらにも曲がれるかどちらにも曲がれない場合は立ち止まる。</p>
 <p align="justify"><b>tombstone</b>[<i>tombstone</i>]（死んだときに墓石を表示）</p>
 <p align="justify" class="padding_option">プレイヤーが死んでしまったとき、最後に墓石を表示する。これは良いものだが遅くなるので、望むなら無効にできる。</p>
 <p align="justify"><b>inven</b>[<i>overwrite</i>]（持ち物の表示方式）</p>
@@ -708,15 +707,15 @@ window.onload = initializeGuideVersion;
 <p align="justify"><b>name</b> [<i>アカウント名</i>]（プレイヤー名）</p>
 <p align="justify" class="padding_option">プレイヤーの名前。得点者リストのトップ10に入ったときに使われる。</p>
 <p align="justify"><b>fruit</b>[<i>ネバネバかび</i>]（好きな果物）</p>
-<p align="justify" class="padding_option">これは君が食べるのが好きな果物の名前にしておくべきだろう。これは要するにローグが所々でやっている遊びのうちの一つである。英語表示では標準の名前は<i>slime-mold</i>になる。</p>
-<p align="justify"><b>idscrl</b>[<i>noidscrl</i>]（識別の巻き物を１種類に設定）</p>
-<p align="justify" class="padding_option">識別の巻き物を１種類にまとめる。ゲーム開始後には設定が変更できないため、オプション設定画面では表示値の変更もできない。通常のビルドでは<i>noidscrl</i>、<i>modern</i>設定でビルドした場合は<i>idscrl</i>が初期値になる。</p>
-<p align="justify"><b>color</b>[<i>nocolor</i>]（カラーで表示）</p>
-<p align="justify" class="padding_option">各種のキャラクターがカラーで表示される。有効にしたときは背景が黒くなる。通常のビルドでは<i>nocolor</i>、<i>modern</i>設定でビルドした場合は<i>color</i>が初期値になる。</p>
-<p align="justify"><b>cursor</b>[<i>cursor</i>]（プレイ中のカーソルを表示）</p>
-<p align="justify" class="padding_option">プレイ中にもカーソルを表示する。無効にすると、コマンド入力や文字入力など必要な場面だけカーソルが表示される。通常のビルドでは<i>cursor</i>、<i>modern</i>設定でビルドした場合は<i>nocursor</i>が初期値になる。</p>
-<p align="justify"><b>language</b>[<i>環境により自動</i>]（表示する言語）</p>
-<p align="justify" class="padding_option">表示言語を切り替える。Jで日本語、Eで英語になる。通常のビルドでは、ROGUE_LANG、LC_ALL、LC_MESSAGES、LANGの順で起動時の言語が選ばれる。日本語版または英語版としてビルドした場合でも、ROGUE_LANGで起動時の表示言語を指定できる。オプション設定画面で切り替えた場合、以後のメッセージや表示名は選択した言語で再生成される。プレイヤー名や呼び名などユーザーが入力した文字列はUTF-8文字列としてそのまま保持される。</p>
+<p align="justify" class="padding_option">これは君が食べるのが好きな果物の名前にしておくべきだろう。これは要するにローグが所々でやっている遊びのうちの一つである。</p>
+<p align="justify"><b>idscrl</b>[<i>idscrl</i>]（識別の巻き物を１種類に設定）</p>
+<p align="justify" class="padding_option">識別の巻き物を１種類にまとめる。<i>noidscrl</i>を指定すると、ローグ本来の設定である５種類の設定になる。この設定はゲーム中には変更できない。</p>
+<p align="justify"><b>color</b>[<i>color</i>]（カラーで表示）</p>
+<p align="justify" class="padding_option">各種のキャラクターがカラーで表示される。有効にしたときは背景が黒くなる。</p>
+<p align="justify"><b>cursor</b>[<i>nocursor</i>]（プレイ中のカーソルを表示）</p>
+<p align="justify" class="padding_option">プレイ中にもカーソルを表示する。無効にすると、コマンド入力や文字入力など必要な場面だけカーソルが表示される。</p>
+<p align="justify"><b>language</b>[<i>auto</i>]（表示する言語）</p>
+<p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p>
 <p align="justify"><b>file</b>[<i>rogue.save</i>]（セーブファイル名）</p>
 <p align="justify" class="padding_option">ゲームをセーブするためのデフォルトのファイル名。電話回線がアクシデントでハングアップした場合、ローグは自動的にこのファイルにゲームをセーブする。ファイル名はホームディレクトリとして展開される特殊文字である「~」で始めても良い。</p>
 </div>
@@ -1127,19 +1126,16 @@ window.onload = initializeGuideVersion;
 </div>
 <h4 align="justify"><b>8.1.  オプション設定</b></h4>
 <div class="padding_3em">
-<p class="indent">オプションを設定する方法は二つある。一つはローグの"o"コマンドであり、二つめは環境変数「ROGUEOPTS」である。起動時の表示言語だけを指定したい場合には、環境変数「ROGUE_LANG」も使用できる。</p>
+<p class="indent">オプションを設定する方法は二つある。一つはローグの"o"コマンドであり、二つめは環境変数「ROGUEOPTS」である。</p>
 </div>
 <h4 align="justify"><b>8.1.1.  'o'コマンドの使用</b></h4>
 <div class="padding_3em">
 <p class="indent">ローグに「o」と入力すると、画面がクリアされ、全てのオプションについて現在の設定が表示される。最初のオプションの値にカーソルが置かれ、入力を待つ。入力できるのは、次のオプションに進む[RETURN]キーか、一つ前のオプションに戻る「-」か、ゲームに戻る[esc]キーか、オプションの値である。真偽（有効／無効）を入力するオプションの場合、有効にしたい場合は「t」(True：真)を、無効にしたい場合は「f」(False：偽)を入力する。言語の項目では「J」で日本語、「E」で英語に切り替えることができる。文字を入力するオプションの場合は、文字の後に[RETURN]を入力する。</p>
 </div>
-<h4 align="justify"><b>8.1.2.  環境変数「ROGUEOPTS」と「ROGUE_LANG」の使用</b></h4>
+<h4 align="justify"><b>8.1.2.  環境変数「ROGUEOPTS」の使用</b></h4>
 <div class="padding_3em">
 <p class="indent">環境変数「ROGUEOPTS」は、さまざまなオプションの初期値をカンマで区切ってリストにした文字列である。Boolean変数はその名前をリストに入れることにより有効にすることができ、名前の前に"no"を加えると無効にすることができる。したがって、「<b>jump</b>」(移動中の表示を行わない)を有効に、「<b>passgo</b>」(通路の角で止まらずに進む)を無効、「<b>name</b>」（プレイヤー名）を「ブルー・ミーニー」にし、表示言語を日本語にするには、次のコマンドを使用する。</p>
 <pre class="prompt">export ROGUEOPTS="jump,nopassgo,name=ブルー・ミーニー,language=ja"</pre>
-<p class="indent">起動時の言語だけを明示したい場合は、次のように「ROGUE_LANG」を使うこともできる。</p>
-<pre class="prompt">ROGUE_LANG=ja ./rogue-clone
-ROGUE_LANG=en ./rogue-clone</pre>
 </div>
 <h4 align="justify"><b>8.2.  オプションのリスト</b></h4>
 <div class="padding_3em">
@@ -1156,12 +1152,12 @@ ROGUE_LANG=en ./rogue-clone</pre>
 <p align="justify" class="padding_option">各種のキャラクターがカラーで表示される。<i>nocolor</i>を指定するとカラー表示を行わない。</p>
 <p align="justify"><b>cursor / showcursor</b>[<i>nocursor</i>]（プレイ中のカーソルを表示）</p>
 <p align="justify" class="padding_option">プレイ中にプレイヤー位置のカーソルを表示する。通常はカーソルを表示しない。</p>
-<p align="justify"><b>language / lang</b>[<i>環境により自動</i>]（表示言語）</p>
-<p align="justify" class="padding_option">表示言語を指定する。値は<i>ja</i>または<i>en</i>である。通常のビルドでは、ROGUE_LANG、LC_ALL、LC_MESSAGES、LANGの順で起動時の言語が選ばれる。</p>
+<p align="justify"><b>language</b>[<i>auto</i>]（表示言語）</p>
+<p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p>
 <p align="justify"><b>name</b> [<i>アカウント名</i>]（プレイヤー名）</p>
 <p align="justify" class="padding_option">プレイヤーの名前。得点者リストに入ったときに使われる。</p>
 <p align="justify"><b>fruit</b>[<i>ネバネバかび</i>]（好きな果物）</p>
-<p align="justify" class="padding_option">これは君が食べるのが好きな果物の名前にしておくべきだろう。内蔵の初期値のままなら、日本語表示では「ネバネバかび」、英語表示では「slime-mold」として扱われる。</p>
+<p align="justify" class="padding_option">これは君が食べるのが好きな果物の名前にしておくべきだろう。これは要するにローグが所々でやっている遊びのうちの一つである。</p>
 <p align="justify"><b>file</b>[<i>rogue-clone.save</i>]（セーブファイル名）</p>
 <p align="justify" class="padding_option">ゲームをセーブするためのデフォルトのファイル名。ファイル名はホームディレクトリとして展開される特殊文字である「~」で始めても良い。</p>
 </div>
@@ -1591,7 +1587,7 @@ ROGUE_LANG=en ./rogue-clone</pre>
 <div class="padding_3em">
 <p class="indent">環境変数「ROGUEOPTS」は、さまざまなオプションの初期値をカンマで区切ってリストにした文字列である。Boolean変数はその名前をリストに入れることにより有効にすることができ、名前の前に"no"を加えると無効にすることができる。したがって、「<b>jump</b>」(移動中の表示を行わない)を有効に、「<b>terse</b>」(簡潔な表示)を無効、「<b>name</b>」（プレイヤー名）を「ブルー・ミーニー」になるように環境変数を設定するには、次のコマンドを使用する。</p>
 <pre class="prompt">export ROGUEOPTS="jump,noterse,name=ブルー・ミーニー"</pre>
-<p>表示言語は環境変数「ROGUE_LANG」でも指定できる。日本語で起動する場合は「ROGUE_LANG=ja ./rogue」、英語で起動する場合は「ROGUE_LANG=en ./rogue」のように指定する。</p>
+
 </div>
 <h4 align="justify"><b>8.2.  オプションのリスト</b></h4>
 <div class="padding_3em">
@@ -1601,23 +1597,23 @@ ROGUE_LANG=en ./rogue-clone</pre>
 <p align="justify"><b>jump</b>[<i>nojump</i>]（移動中の表示を行わない）</p>
 <p align="justify" class="padding_option">このオプションが設定されている場合、移動が終わるまで表示されない。これによりCPUと表示の時間がかなり節約される。遅い端末を使っている場合、このオプションのデフォルトは<i>jump</i>（移動中の表示を行わない）になる。</p>
 <p align="justify"><b>menu</b>[<i>on</i>]（持ちもの選択メニュー）</p>
-<p align="justify" class="padding_option"><i>ROGUEOPTS</i>でのみ指定できる環境変数専用オプションであり、ゲーム中のオプション画面には表示されない。アイテムを使うコマンドで、持ちものの選択リストを先に表示するかどうかを指定する。<i>on</i>では、アイテムを選ぶ場面でリストが先に表示される。<i>sel</i>では、読む・飲む・装備するなど対象の種類を選ぶ場面ではリストを表示するが、食べる・落とすでは通常の入力を先に行う。<i>off</i>では、まず通常の入力を行い、「*」を入力したときだけリストを表示する。</p>
+<p align="justify" class="padding_option">アイテムを使うコマンドで、持ちものの選択リストを先に表示するかどうかを指定する。<i>on</i>では、アイテムを選ぶ場面でリストが先に表示される。<i>sel</i>では、読む・飲む・装備するなど対象の種類を選ぶ場面ではリストを表示するが、食べる・落とすでは通常の入力を先に行う。<i>off</i>では、まず通常の入力を行い、「*」を入力したときだけリストを表示する。</p>
 <p align="justify"><b>doskeys</b>[<i>doskeys</i>]（DOS版風キー操作）</p>
-<p align="justify" class="padding_option"><i>ROGUEOPTS</i>でのみ指定できる環境変数専用オプションであり、ゲーム中のオプション画面には表示されない。DOS版に近いキー割り当てを使うかどうかを指定する。<i>nodoskeys</i>を指定した場合は、DOS版風キー操作を無効にし、バージョン5.4に準じたHybrid Editionとほぼ同様のキー割り当てになる。</p>
+<p align="justify" class="padding_option">DOS版に近いキー割り当てを使うかどうかを指定する。<i>nodoskeys</i>を指定した場合は、DOS版風キー操作を無効にし、バージョン5.4に準じたHybrid Editionとほぼ同様のキー割り当てになる。</p>
 <p align="justify"><b>macro</b>[<i>v</i>]（マクロ）</p>
-<p align="justify" class="padding_option"><i>ROGUEOPTS</i>でのみ指定できる環境変数専用オプションであり、ゲーム中のオプション画面には表示されない。マクロの初期値を指定する。たとえば<i>macro=5s</i>とすると、F9で探索を5回行う。</p>
+<p align="justify" class="padding_option">マクロの初期値を指定する。たとえば<i>macro=5s</i>とすると、F9で探索を5回行う。</p>
 <p align="justify"><b>name</b> [<i>アカウント名</i>]（プレイヤー名）</p>
 <p align="justify" class="padding_option">プレイヤーの名前。得点者リストのトップ10に入ったときに使われる。</p>
 <p align="justify"><b>fruit</b>[<i>ネバネバかび</i>]（好きな果物）</p>
 <p align="justify" class="padding_option">これは君が食べるのが好きな果物の名前にしておくべきだろう。これは要するにローグが所々でやっている遊びのうちの一つである。</p>
 <p align="justify"><b>color</b>[<i>color</i>]（カラーで表示）</p>
-<p align="justify" class="padding_option">各種のキャラクターがカラーで表示される。デフォルトは<i>color</i>になる。</p>
+<p align="justify" class="padding_option">各種のキャラクターがカラーで表示される。</p>
 <p align="justify"><b>extchars</b>[<i>extchars</i>]（拡張文字）</p>
-<p align="justify" class="padding_option">拡張文字を使うかどうかを選ぶ。<i>extchars</i>ではUTF-8表示が可能な端末で、壁・扉・通路・階段・床・プレイヤー・罠・アイテムなどを拡張文字で表示する。<i>noextchars</i>では|、-、+、#、%、.、@などの基本的なRogue記号で表示する。デフォルトは<i>extchars</i>になる。</p>
+<p align="justify" class="padding_option">拡張文字を使うかどうかを選ぶ。<i>extchars</i>ではUTF-8表示が可能な端末で、壁・扉・通路・階段・床・プレイヤー・罠・アイテムなどを拡張文字で表示する。<i>noextchars</i>では|、-、+、#、%、.、@などの基本的なRogue記号で表示する。</p>
 <p align="justify"><b>cursor</b>[<i>nocursor</i>]（プレイ中のカーソルを表示）</p>
-<p align="justify" class="padding_option">プレイ中にもカーソルを表示する。無効にすると通常の移動中はカーソルを隠し、入力が必要な場面ではカーソルを表示する。デフォルトは<i>nocursor</i>になる。</p>
-<p align="justify"><b>language</b>[<i>環境により自動</i>]（表示する言語）</p>
-<p align="justify" class="padding_option">表示する言語を切り替える。Jで日本語、Eで英語になる。オプション設定画面で切り替えた場合、以後のメッセージや表示名は選択した言語で再生成される。プレイヤー名や呼び名などユーザーが入力した文字列はUTF-8文字列としてそのまま保持される。</p>
+<p align="justify" class="padding_option">プレイ中にもカーソルを表示する。無効にすると通常の移動中はカーソルを隠し、入力が必要な場面ではカーソルを表示する。</p>
+<p align="justify"><b>language</b>[<i>auto</i>]（表示する言語）</p>
+<p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p>
 <p align="justify"><b>file</b>[<i>rogue.save</i>]（セーブファイル名）</p>
 <p align="justify" class="padding_option">ゲームをセーブするためのデフォルトのファイル名。電話回線がアクシデントでハングアップした場合、ローグは自動的にこのファイルにゲームをセーブする。ファイル名はホームディレクトリとして展開される特殊文字である「~」で始めても良い。</p>
 </div>
@@ -2188,35 +2184,34 @@ ROGUE_LANG=en ./rogue-clone</pre>
 <div class="padding_3em">
 <p class="indent">環境変数「ROGUEOPTS」は、さまざまなオプションの初期値をカンマで区切ってリストにした文字列である。Boolean変数はその名前をリストに入れることにより有効にすることができ、名前の前に"no"を加えると無効にすることができる。したがって、「<b>jump</b>」(移動中の表示を行わない)を有効に、「<b>terse</b>」(簡潔な表示)を無効、「<b>name</b>」（プレイヤー名）を「ブルー・ミーニー」になるように環境変数を設定するには、次のコマンドを使用する。</p>
 <pre class="prompt">export ROGUEOPTS="jump,noterse,name=ブルー・ミーニー"</pre>
-<p>表示言語は環境変数「ROGUE_LANG」でも指定できる。日本語で起動する場合は「ROGUE_LANG=ja ./rogue」、英語で起動する場合は「ROGUE_LANG=en ./rogue」のように指定する。</p>
+
 </div>
 <h4 align="justify"><b>8.2.  オプションのリスト</b></h4>
 <div class="padding_3em">
 <p class="indent">ここではオプションの一覧と、それぞれのオプションの説明を示す。それぞれのデフォルトの値は角括弧で囲まれている。文字列オプションの場合、48文字を超える入力は無視される。</p>
-<p class="indent">Rogue Hybrid Editionの標準ビルドでは、カラー表示と通路の角で止まらずに進む設定が有効であり、拡張文字は無効、プレイ中のカーソルは通常は非表示になる。識別の巻き物は、オプションではなく常に1種類にまとめられている。</p>
 <p align="justify"><b>terse</b>[<i>noterse</i>]（簡潔な表示）</p>
 <p align="justify" class="padding_option">
 	時々あるローグの長いメッセージにうんざりしている人に有用である。これは遅い端末で遊ぶのに便利なオプションなので、遅い（1200ボー以下）端末では<i>terse</i>（簡潔な表示）がデフォルトになる。</p>
 <p align="justify"><b>jump</b>[<i>nojump</i>]（移動中の表示を行わない）</p>
 <p align="justify" class="padding_option">このオプションが設定されている場合、移動が終わるまで表示されない。これによりCPUと表示の時間がかなり節約される。遅い端末を使っている場合、このオプションのデフォルトは<i>jump</i>（移動中の表示を行わない）になる。</p>
 <p align="justify"><b>passgo</b>[<i>passgo</i>]（通路の角で止まらない）</p>
-<p align="justify" class="padding_option">通路の曲がり角に従って進む。通路を通って石や壁にぶつかると、ローグは右か左のどちらかに曲がれるかどうかを判別する。片方向だけに曲がれる場合にはその方向に曲がる。どちらにも曲がれるかどちらにも曲がれない場合は立ち止まる。Rogue Hybrid Editionの標準ビルドでは<i>passgo</i>が初期値になる。</p>
+<p align="justify" class="padding_option">通路の曲がり角に従って進む。通路を通って石や壁にぶつかると、ローグは右か左のどちらかに曲がれるかどうかを判別する。片方向だけに曲がれる場合にはその方向に曲がる。どちらにも曲がれるかどちらにも曲がれない場合は立ち止まる。</p>
 <p align="justify"><b>name</b> [<i>アカウント名</i>]（プレイヤー名）</p>
 <p align="justify" class="padding_option">プレイヤーの名前。得点者リストのトップ10に入ったときに使われる。</p>
 <p align="justify"><b>fruit</b>[<i>ネバネバかび</i>]（好きな果物）</p>
-<p align="justify" class="padding_option">これは君が食べるのが好きな果物の名前にしておくべきだろう。これは要するにローグが所々でやっている遊びのうちの一つである。英語表示では標準の名前は<i>slime-mold</i>になる。</p>
+<p align="justify" class="padding_option">これは君が食べるのが好きな果物の名前にしておくべきだろう。これは要するにローグが所々でやっている遊びのうちの一つである。</p>
 <p align="justify"><b>macro</b>[<i>v</i>]（マクロ）</p>
-<p align="justify" class="padding_option">最大40コマンドまでのマクロを設定する。ゲーム中は <i>M</i> でマクロを定義・変更し、<i>x</i> で実行できる。起動時の環境変数でも、たとえば <code>ROGUEOPTS="macro=10s"</code> のように指定できる。</p>
+<p align="justify" class="padding_option">最大40コマンドまでのマクロを設定する。たとえば「s」を10回入力するマクロを指定する場合は、<i>macro=10s</i>のように設定する。</p>
 <p align="justify"><b>color</b>[<i>color</i>]（カラーで表示）</p>
-<p align="justify" class="padding_option">各種のキャラクターがカラーで表示される。有効にしたときは背景が黒くなる。Rogue Hybrid Editionの標準ビルドでは<i>color</i>が初期値になる。</p>
+<p align="justify" class="padding_option">各種のキャラクターがカラーで表示される。有効にしたときは背景が黒くなる。</p>
 <p align="justify"><b>extchars</b>[<i>noextchars</i>]（拡張文字）</p>
 <p align="justify" class="padding_option">壁・通路・階段・アイテムなどをDOS 1.48風の拡張文字で表示する。UTF-8環境ではUnicode文字、非UTF-8環境ではcursesのACS文字を使う。</p>
 <p align="justify"><b>cursor</b>[<i>nocursor</i>]（プレイ中のカーソルを表示）</p>
-<p align="justify" class="padding_option">プレイ中にもカーソルを表示する。無効にすると、コマンド入力や文字入力など必要な場面だけカーソルが表示される。Rogue Hybrid Editionの標準ビルドでは<i>nocursor</i>が初期値になる。</p>
-<p align="justify"><b>language</b>[<i>環境により自動</i>]（表示する言語）</p>
-<p align="justify" class="padding_option">表示言語を切り替える。Jで日本語、Eで英語になる。通常のビルドでは、ROGUE_LANG、LC_ALL、LC_MESSAGES、LANGの順で起動時の言語が選ばれる。日本語版または英語版としてビルドした場合でも、ROGUE_LANGで起動時の表示言語を指定できる。オプション設定画面で切り替えた場合、以後のメッセージや表示名は選択した言語で再生成される。プレイヤー名や呼び名などユーザーが入力した文字列はUTF-8文字列としてそのまま保持される。</p>
+<p align="justify" class="padding_option">プレイ中にもカーソルを表示する。無効にすると、コマンド入力や文字入力など必要な場面だけカーソルが表示される。</p>
+<p align="justify"><b>language</b>[<i>auto</i>]（表示する言語）</p>
+<p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p>
 <p align="justify"><b>monster</b>[<i>monster=54</i>]（怪物ルール）</p>
-<p align="justify" class="padding_option">怪物の種類、特殊能力、行動、能力値、出現階、徘徊条件、経験値をどの版の仕様にするかを選ぶ。<i>monster=54</i> はRogue 5.4仕様、<i>monster=148</i> はDOS 1.48仕様、<i>monster=52</i> はRogue 5.2仕様である。この設定はゲーム開始時のROGUEOPTS専用で、ゲーム中に変更することはできない。現在の設定は、vコマンドの英語表記のバージョン表示と、オプション設定画面の最後の読み取り専用行で確認できる。</p>
+<p align="justify" class="padding_option">怪物の種類、特殊能力、行動、能力値、出現階、徘徊条件、経験値をどの版の仕様にするかを選ぶ。<i>monster=54</i> はRogue 5.4仕様、<i>monster=148</i> はDOS 1.48仕様、<i>monster=52</i> はRogue 5.2仕様である。この設定はゲーム中に変更することはできない。現在の設定は、vコマンドの英語表記のバージョン表示と、オプション設定画面の最後の読み取り専用行で確認できる。</p>
 <p align="justify"><b>file</b>[<i>rogue.save</i>]（セーブファイル名）</p>
 <p align="justify" class="padding_option">ゲームをセーブするためのデフォルトのファイル名。電話回線がアクシデントでハングアップした場合、ローグは自動的にこのファイルにゲームをセーブする。ファイル名はホームディレクトリとして展開される特殊文字である「~」で始めても良い。</p>
 </div>
@@ -2651,7 +2646,7 @@ ROGUE_LANG=en ./rogue-clone</pre>
 <h4 align="justify"><b>8.1.2.  環境変数「ROGUEOPTS」の使用</b></h4>
 <div class="padding_3em">
 <p class="indent">環境変数「ROGUEOPTS」は、さまざまなオプションの初期値をカンマで区切ってリストにした文字列である。Boolean変数はその名前をリストに入れることにより有効にすることができ、名前の前に"no"を加えると無効にすることができる。したがって、「<b>jump</b>」(移動中の表示を行わない)を有効に、「<b>terse</b>」(簡潔な表示)を無効、「<b>name</b>」（プレイヤー名）を「ブルー・ミーニー」になるように環境変数を設定するには、次のコマンドを使用する。</p>
-<pre class="prompt">export ROGUEOPTS="jump,noterse,name=ブルー・ミーニー"</pre><p>表示言語は環境変数「ROGUE_LANG」でも指定できる。日本語で起動する場合は「ROGUE_LANG=ja ./rogue」、英語で起動する場合は「ROGUE_LANG=en ./rogue」のように指定する。ROGUEOPTSで指定する場合は「language=ja」または「language=en」を使用する。</p>
+<pre class="prompt">export ROGUEOPTS="jump,noterse,name=ブルー・ミーニー"</pre>
 </div>
 <h4 align="justify"><b>8.2.  オプションのリスト</b></h4>
 <div class="padding_3em">
@@ -2673,7 +2668,7 @@ ROGUE_LANG=en ./rogue-clone</pre>
 <p align="justify" class="padding_option">プレイヤーの名前。得点者リストのトップ10に入ったときに使われる。</p>
 <p align="justify"><b>fruit</b>[<i>slime-mold</i>]（好きな果物）</p>
 <p align="justify" class="padding_option">これは君が食べるのが好きな果物の名前にしておくべきだろう。これは要するにローグが所々でやっている遊びのうちの一つである。</p>
-<p align="justify"><b>language</b>[<i>自動判定</i>]（表示する言語）</p><p align="justify" class="padding_option">表示する言語を指定する。<i>ja</i>または<i>japanese</i>で日本語、<i>en</i>または<i>english</i>で英語になる。起動時にはロケールやビルド時設定に加えて、ROGUEOPTSの<i>language</i>オプションや環境変数「ROGUE_LANG」でも指定できる。</p><p align="justify"><b>file</b>[<i>~/rogue.save</i>]（セーブファイル名）</p>
+<p align="justify"><b>language</b>[<i>自動判定</i>]（表示する言語）</p><p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p><p align="justify"><b>file</b>[<i>~/rogue.save</i>]（セーブファイル名）</p>
 <p align="justify" class="padding_option">ゲームをセーブするためのデフォルトのファイル名。電話回線がアクシデントでハングアップした場合、ローグは自動的にこのファイルにゲームをセーブする。ファイル名はホームディレクトリとして展開される特殊文字である「~」で始めても良い。</p>
 </div>
 <h3 align="justify" id="52_09"><b>9.  スコア</b></h3>
@@ -3103,7 +3098,7 @@ ROGUE_LANG=en ./rogue-clone</pre>
 <h4 align="justify"><b>8.1.2.  環境変数「ROGUEOPTS」の使用</b></h4>
 <div class="padding_3em">
 <p class="indent">環境変数「ROGUEOPTS」は、さまざまなオプションの初期値をカンマで区切ってリストにした文字列である。Boolean変数はその名前をリストに入れることにより有効にすることができ、名前の前に"no"を加えると無効にすることができる。したがって、「<b>jump</b>」(移動中の表示を行わない)を有効に、「<b>terse</b>」(簡潔な表示)を無効、「<b>name</b>」（プレイヤー名）を「ブルー・ミーニー」になるように環境変数を設定するには、次のコマンドを使用する。</p>
-<pre class="prompt">export ROGUEOPTS="jump,noterse,name=ブルー・ミーニー"</pre><p>表示言語は環境変数「ROGUE_LANG」でも指定できる。日本語で起動する場合は「ROGUE_LANG=ja ./rogue」、英語で起動する場合は「ROGUE_LANG=en ./rogue」のように指定する。ROGUEOPTSで指定する場合は「language=ja」または「language=en」を使用する。</p>
+<pre class="prompt">export ROGUEOPTS="jump,noterse,name=ブルー・ミーニー"</pre>
 </div>
 <h4 align="justify"><b>8.2.  オプションのリスト</b></h4>
 <div class="padding_3em">
@@ -3123,7 +3118,7 @@ ROGUE_LANG=en ./rogue-clone</pre>
 <p align="justify" class="padding_option">プレイヤーの名前。得点者リストのトップ10に入ったときに使われる。</p>
 <p align="justify"><b>fruit</b>[<i>slime-mold</i>]（好きな果物）</p>
 <p align="justify" class="padding_option">これは君が食べるのが好きな果物の名前にしておくべきだろう。これは要するにローグが所々でやっている遊びのうちの一つである。</p>
-<p align="justify"><b>language</b>[<i>自動判定</i>]（表示する言語）</p><p align="justify" class="padding_option">表示する言語を指定する。<i>ja</i>または<i>japanese</i>で日本語、<i>en</i>または<i>english</i>で英語になる。起動時にはロケールやビルド時設定に加えて、ROGUEOPTSの<i>language</i>オプションや環境変数「ROGUE_LANG」でも指定できる。</p><p align="justify"><b>file</b>[<i>~/rogue.save</i>]（セーブファイル名）</p>
+<p align="justify"><b>language</b>[<i>自動判定</i>]（表示する言語）</p><p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p><p align="justify"><b>file</b>[<i>~/rogue.save</i>]（セーブファイル名）</p>
 <p align="justify" class="padding_option">ゲームをセーブするためのデフォルトのファイル名。電話回線がアクシデントでハングアップした場合、ローグは自動的にこのファイルにゲームをセーブする。ファイル名はホームディレクトリとして展開される特殊文字である「~」で始めても良い。</p>
 </div>
 <h3 align="justify" id="36_09"><b>9.  スコア</b></h3>
@@ -3993,7 +3988,8 @@ Level: 1  Gold: 0      Hp: 12(12)  Str: 16(16)  Arm: 4  Exp: 1/0
 <div class="padding_3em"><p class="indent">ローグに「o」と入力すると、画面がクリアされ、全てのオプションについて現在の設定が表示される。最初のオプションの値にカーソルが置かれ、入力を待つ。入力できるのは、次のオプションに進む[RETURN]キーか、一つ前のオプションに戻る「-」か、ゲームに戻る[esc]キーか、オプションの値である。真偽（有効／無効）を入力するオプションの場合、有効にしたい場合は「y」(Yes)を、無効にしたい場合は「n」(No)を入力する。文字を入力するオプションの場合は、文字の後に[RETURN]を入力する。</p></div>
 <h4 align="justify"><b>8.1.2.  環境変数「ROGUEOPTS」の使用</b></h4>
 <div class="padding_3em"><p class="indent">環境変数「ROGUEOPTS」は、さまざまなオプションの初期値をカンマで区切ってリストにした文字列である。Boolean変数はその名前をリストに入れることにより有効にすることができ、名前の前に"no"を加えると無効にすることができる。したがって、「<b>jump</b>」(移動中の表示を行わない)を無効、「<b>passgo</b>」(通路の角で止まらない)を有効、「<b>name</b>」（プレイヤー名）を「ブルー・ミーニー」になるように環境変数を設定するには、次のコマンドを使用する。</p>
-<pre class="prompt">export ROGUEOPTS="nojump,passgo,name=ブルー・ミーニー"</pre></div>
+<pre class="prompt">export ROGUEOPTS="nojump,passgo,name=ブルー・ミーニー"</pre>
+</div>
 <h4 align="justify"><b>8.2.  オプションのリスト</b></h4>
 <div class="padding_3em">
 <p class="indent">ここではオプションの一覧と、それぞれのオプションの説明を示す。それぞれのデフォルトの値は角括弧で囲まれている。文字列オプションの場合、30バイトを超える入力は短くされることがある。</p>

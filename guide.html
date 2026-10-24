@@ -93,6 +93,16 @@
 	background-color: #000000;
 }
 
+
+/* 3.1: Japanese labels remain unchanged; English is a discreet second line. */
+#version_rogue_52 .status_label_en,
+#version_rogue_36 .status_label_en {
+    display: block;
+    font-size: 85%;
+    color: #777777;
+    line-height: 1.05;
+    margin-top: -0.12em;
+}
 </style>
 <script type="text/javascript">
 //<![CDATA[
@@ -715,7 +725,7 @@ window.onload = initializeGuideVersion;
 <p align="justify"><b>cursor</b>[<i>nocursor</i>]（プレイ中のカーソルを表示）</p>
 <p align="justify" class="padding_option">プレイ中にもカーソルを表示する。無効にすると、コマンド入力や文字入力など必要な場面だけカーソルが表示される。</p>
 <p align="justify"><b>language</b>[<i>auto</i>]（表示する言語）</p>
-<p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p>
+<p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。オプション画面では「j」(Japanese：日本語)または「e」(English：英語)を入力する。ROGUEOPTSでは<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p>
 <p align="justify"><b>file</b>[<i>rogue.save</i>]（セーブファイル名）</p>
 <p align="justify" class="padding_option">ゲームをセーブするためのデフォルトのファイル名。電話回線がアクシデントでハングアップした場合、ローグは自動的にこのファイルにゲームをセーブする。ファイル名はホームディレクトリとして展開される特殊文字である「~」で始めても良い。</p>
 </div>
@@ -1153,7 +1163,7 @@ window.onload = initializeGuideVersion;
 <p align="justify"><b>cursor / showcursor</b>[<i>nocursor</i>]（プレイ中のカーソルを表示）</p>
 <p align="justify" class="padding_option">プレイ中にプレイヤー位置のカーソルを表示する。通常はカーソルを表示しない。</p>
 <p align="justify"><b>language</b>[<i>auto</i>]（表示言語）</p>
-<p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p>
+<p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。オプション画面では「j」(Japanese：日本語)または「e」(English：英語)を入力する。ROGUEOPTSでは<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p>
 <p align="justify"><b>name</b> [<i>アカウント名</i>]（プレイヤー名）</p>
 <p align="justify" class="padding_option">プレイヤーの名前。得点者リストに入ったときに使われる。</p>
 <p align="justify"><b>fruit</b>[<i>ネバネバかび</i>]（好きな果物）</p>
@@ -1369,7 +1379,7 @@ window.onload = initializeGuideVersion;
 </tr>
 <tr>
 <td><span class="dos-symbol dos-gold">☼</span></td>
-<td>金塊(gold)。</td>
+<td>金塊の山またはつぼ(gold)。</td>
 </tr>
 <tr>
 <td><span class="dos-symbol dos-item">↑</span></td>
@@ -1393,7 +1403,7 @@ window.onload = initializeGuideVersion;
 </tr>
 <tr>
 <td><span class="dos-symbol dos-item">τ</span></td>
-<td>魔法の杖や棒(staff / wand)。</td>
+<td>つえまたは魔法の棒(staff / wand)。</td>
 </tr>
 <tr>
 <td><span class="dos-symbol dos-trap">♦</span></td>
@@ -1442,7 +1452,7 @@ window.onload = initializeGuideVersion;
 <tr><td align="left">f</td><td align="justify">"forward until find something"。何かを見つけるまで進む。コマンドの後に方向を指定すると、興味深いものの隣に来るか壁に当たるまで指定した方向に移動し続ける。</td></tr>
 <tr><td align="left">g</td><td align="justify">"move onto without picking up"。物を拾わずに何かの上に移動する。指定した方向に一コマ進むが、そこに拾えるものがあっても拾わない。</td></tr>
 <tr><td align="left">+</td><td align="justify">"throw something"。ものを投げる。これは接頭辞コマンドである。コマンドの後に指定した方向に向かってものを投げる。</td></tr>
-<tr><td align="left">-</td><td align="justify">"zap"(素早く振る)の接頭辞コマンド。魔法の杖か棒を指定した方向に向けて発射する。方向性のない杖であっても、使う時にはどこかの方向を指す必要がある。</td></tr>
+<tr><td align="left">-</td><td align="justify">"zap"(素早く振る)の接頭辞コマンド。つえ/魔法の棒を指定した方向に向けて発射する。方向性のないつえ/魔法の棒であっても、使う時にはどこかの方向を指す必要がある。</td></tr>
 <tr><td align="left">^</td><td align="justify">わなを確認する。地図上に表示されているわなの種類を思い出せないときには、その隣に移動して「^」に続けて方向を入力することでローグにそれを思い出させることができる。</td></tr>
 <tr><td align="left">s</td><td align="justify">"search for trap/secret door"。わなと隠された扉を探す。プレーヤーのすぐ隣の各コマにあるわなや隠された扉を調べる。そこに何かがあっても発見できる可能性は低いので、何かを見つけるまでは探索をしばらく続ける必要があるだろう。</td></tr>
 <tr><td align="left">&gt;</td><td align="justify">階段で次の階に降りる。驚くほどのことではないが、これができるのは階段の上にいる時だけである。</td></tr>
@@ -1489,7 +1499,7 @@ window.onload = initializeGuideVersion;
 </div>
 <h3 align="justify" id="dos148_07"><b>7.  見つけられるアイテム</b></h3>
 <div class="padding_3em">
-<p class="indent">洞窟の中で何かを見つけたら、そのアイテムを拾いたくなるものだろう。ローグではアイテムの上を歩くことでそれができる（上で述べた接頭辞コマンドの「m」を使わなければ）。ものを持ちすぎている場合にはプログラムがアイテムを拾えないと伝えてくる。そうでなければプログラムはそれを荷物に加え、何を拾ったのかを教えてくれる。</p>
+<p class="indent">洞窟の中で何かを見つけたら、そのアイテムを拾いたくなるものだろう。ローグではアイテムの上を歩くことでそれができる（上で述べた「g」コマンドを使わなければ）。ものを持ちすぎている場合にはプログラムがアイテムを拾えないと伝えてくる。そうでなければプログラムはそれを荷物に加え、何を拾ったのかを教えてくれる。</p>
 <p class="indent">アイテムを扱う多くのコマンドでは、どのアイテムを使うのかを指示する必要がある。気が変わってそのコマンドを使いたくなくなった時には、[esc]キーをタイプすればコマンドは中止される。</p>
 <p class="indent">鎧や武器のようなアイテムは簡単に見分けることができる。他のもの、すなわち巻き物や水薬のようなものは種類によって異なるラベルが付いている。ゲーム中、同じラベルを持つ二つのアイテムがあればそれらは同じ種類である。ただしラベルはゲームごとに違うものになる。</p>
 <p class="indent">ラベルが付いたアイテムを使ったときには、効果が一目瞭然の場合にはそれが何であるかをローグが覚えていてくれる。効果が非常に明確ではない場合には、後でわかるようにメモする内容を聞かれるか、上述のcallコマンドを使うことができる。</p>
@@ -1558,14 +1568,14 @@ window.onload = initializeGuideVersion;
 <div class="padding_3em">
 <p class="indent">水薬はフラスコ内の液体の色によってラベル付けされており、飲んだら消えてしまう。水薬を使うためのコマンドは「q」(quaff：がぶがぶ飲む)である。</p>
 </div>
-<h4 align="justify"><b>7.5.  杖と棒（Staves and Wands）</b></h4>
+<h4 align="justify"><b>7.5.  つえと魔法の棒（Staves and Wands）</b></h4>
 <div class="padding_3em">
-<p class="indent">杖と棒は同じ性質のものである。杖は木の種類で、棒は金属か骨の種類で識別される。たいていは遠く離れたものに何かをしたい時に使われるものなので、効果を及したいものへの方向を示す必要がある。しかし、方向には関係がない杖もある。杖には魔法のチャージがあり、その量はランダムであり、使い切った杖はただの木や金属になってしまう。</p>
-<p align="justify">杖または棒を使うためのコマンドは、「-」(zap：素早く振る)である。</p>
+<p class="indent">つえは木、魔法の棒は金属などの材質で識別される。たいていは遠く離れたものに何かをしたい時に使われるものなので、効果を及したいものへの方向を示す必要がある。しかし、方向には関係がないつえ/魔法の棒もある。つえ/魔法の棒には魔法のチャージがあり、その量はランダムであり、使い切ったつえ/魔法の棒はただの木や金属になってしまう。</p>
+<p align="justify">つえ/魔法の棒を使うためのコマンドは、「-」(zap：素早く振る)である。</p>
 </div>
 <h4 align="justify"><b>7.6.  指輪（Rings）</b></h4>
 <div class="padding_3em">
-<p class="indent">指輪は、水薬や巻き物や杖による通常の一時的な効果とは違って、比較的持続する魔法を持つ非常に有用なアイテムである。もちろん悪い指輪もより強力である。ほとんどの指輪は食糧をより早く消費するが、その速さは指輪の種類によって異なる。指輪ははめこまれている石で区別される。指輪を使うためのコマンドは、「P」(put on：はめる)と「R」(remove：外す)である。</p>
+<p class="indent">指輪は、水薬や巻き物やつえ/魔法の棒による通常の一時的な効果とは違って、比較的持続する魔法を持つ非常に有用なアイテムである。もちろん悪い指輪もより強力である。ほとんどの指輪は食糧をより早く消費するが、その速さは指輪の種類によって異なる。指輪ははめこまれている石で区別される。指輪を使うためのコマンドは、「P」(put on：はめる)と「R」(remove：外す)である。</p>
 </div>
 <h4 align="justify"><b>7.7.  食糧（Food）</b></h4>
 <div class="padding_3em">
@@ -1597,11 +1607,11 @@ window.onload = initializeGuideVersion;
 <p align="justify"><b>jump</b>[<i>nojump</i>]（移動中の表示を行わない）</p>
 <p align="justify" class="padding_option">このオプションが設定されている場合、移動が終わるまで表示されない。これによりCPUと表示の時間がかなり節約される。遅い端末を使っている場合、このオプションのデフォルトは<i>jump</i>（移動中の表示を行わない）になる。</p>
 <p align="justify"><b>menu</b>[<i>on</i>]（持ちもの選択メニュー）</p>
-<p align="justify" class="padding_option">アイテムを使うコマンドで、持ちものの選択リストを先に表示するかどうかを指定する。<i>on</i>では、アイテムを選ぶ場面でリストが先に表示される。<i>sel</i>では、読む・飲む・装備するなど対象の種類を選ぶ場面ではリストを表示するが、食べる・落とすでは通常の入力を先に行う。<i>off</i>では、まず通常の入力を行い、「*」を入力したときだけリストを表示する。</p>
+<p align="justify" class="padding_option">アイテムを使うコマンドで、持ちものの選択リストを先に表示するかどうかを指定する。<i>on</i>では、アイテムを選ぶ場面でリストが先に表示される。<i>sel</i>では、読む・飲む・装備するなど対象の種類を選ぶ場面ではリストを表示するが、食べる・落とすでは通常の入力を先に行う。<i>off</i>では、まず通常の入力を行い、「*」を入力したときだけリストを表示する。持ちもの一覧そのものは画面をクリアして表示される。</p>
 <p align="justify"><b>doskeys</b>[<i>doskeys</i>]（DOS版風キー操作）</p>
 <p align="justify" class="padding_option">DOS版に近いキー割り当てを使うかどうかを指定する。<i>nodoskeys</i>を指定した場合は、DOS版風キー操作を無効にし、バージョン5.4に準じたHybrid Editionとほぼ同様のキー割り当てになる。</p>
 <p align="justify"><b>macro</b>[<i>v</i>]（マクロ）</p>
-<p align="justify" class="padding_option">マクロの初期値を指定する。たとえば<i>macro=5s</i>とすると、F9で探索を5回行う。</p>
+<p align="justify" class="padding_option">マクロの初期値を指定する。ゲーム中のオプション画面でも変更できる。DOS版風キー操作では<i>F</i>で登録・変更し、<i>F9</i>または<i>Ctrl-F</i>で実行する。<i>nodoskeys</i>では<i>M</i>で登録・変更し、<i>x</i>で実行する。たとえば<i>macro=5s</i>とすると、マクロ実行コマンドで探索を5回行う。自己呼び出しになるキーは登録時に取り除かれる。</p>
 <p align="justify"><b>name</b> [<i>アカウント名</i>]（プレイヤー名）</p>
 <p align="justify" class="padding_option">プレイヤーの名前。得点者リストのトップ10に入ったときに使われる。</p>
 <p align="justify"><b>fruit</b>[<i>ネバネバかび</i>]（好きな果物）</p>
@@ -1613,9 +1623,9 @@ window.onload = initializeGuideVersion;
 <p align="justify"><b>cursor</b>[<i>nocursor</i>]（プレイ中のカーソルを表示）</p>
 <p align="justify" class="padding_option">プレイ中にもカーソルを表示する。無効にすると通常の移動中はカーソルを隠し、入力が必要な場面ではカーソルを表示する。</p>
 <p align="justify"><b>language</b>[<i>auto</i>]（表示する言語）</p>
-<p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p>
-<p align="justify"><b>file</b>[<i>rogue.save</i>]（セーブファイル名）</p>
-<p align="justify" class="padding_option">ゲームをセーブするためのデフォルトのファイル名。電話回線がアクシデントでハングアップした場合、ローグは自動的にこのファイルにゲームをセーブする。ファイル名はホームディレクトリとして展開される特殊文字である「~」で始めても良い。</p>
+<p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。オプション画面では「j」(Japanese：日本語)または「e」(English：英語)を入力する。ROGUEOPTSでは<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p>
+<p align="justify"><b>file</b>[<i>PROGRAM.save</i>]（セーブファイル名）</p>
+<p align="justify" class="padding_option">ゲームをセーブするためのデフォルトのファイル名。電話回線がアクシデントでハングアップした場合、ローグは自動的にこのファイルにゲームをセーブする。ファイル名はホームディレクトリとして展開される特殊文字である「~」で始めても良い。セーブファイルには保存時の言語が記録されるが、現在の表示する言語が異なっていても再開できる。アイテム名は内部IDから現在の表示する言語で再生成される。巻き物の未識別名も音節IDとして保存され、現在の表示する言語の音節で再生成される。プレイヤーが入力した名前や呼び名だけはUTF-8文字列としてそのまま保存される。</p>
 </div>
 <h3 align="justify" id="dos148_09"><b>9.  スコア</b></h3>
 <div class="padding_3em">
@@ -2209,7 +2219,7 @@ window.onload = initializeGuideVersion;
 <p align="justify"><b>cursor</b>[<i>nocursor</i>]（プレイ中のカーソルを表示）</p>
 <p align="justify" class="padding_option">プレイ中にもカーソルを表示する。無効にすると、コマンド入力や文字入力など必要な場面だけカーソルが表示される。</p>
 <p align="justify"><b>language</b>[<i>auto</i>]（表示する言語）</p>
-<p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p>
+<p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。オプション画面では「j」(Japanese：日本語)または「e」(English：英語)を入力する。ROGUEOPTSでは<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p>
 <p align="justify"><b>monster</b>[<i>monster=54</i>]（怪物ルール）</p>
 <p align="justify" class="padding_option">怪物の種類、特殊能力、行動、能力値、出現階、徘徊条件、経験値をどの版の仕様にするかを選ぶ。<i>monster=54</i> はRogue 5.4仕様、<i>monster=148</i> はDOS 1.48仕様、<i>monster=52</i> はRogue 5.2仕様である。この設定はゲーム中に変更することはできない。現在の設定は、vコマンドの英語表記のバージョン表示と、オプション設定画面の最後の読み取り専用行で確認できる。</p>
 <p align="justify"><b>file</b>[<i>rogue.save</i>]（セーブファイル名）</p>
@@ -2366,12 +2376,12 @@ window.onload = initializeGuideVersion;
 <p class="indent">画面の一番下の行はプレイヤーの現在の状態を示す暗号のような<sup class="message" id="52_b5"><a href="#52_c5">訳注<span class="remark">英語表示の最下行では英語の頭文字や略語が使われているので意味がわかりにくい。</span></a></sup>いくつかの情報である。以下はこれらが何を意味するのかの説明である：<br/>
 <br/>
 <table class="guide">
-<tr><td style="width: 3em;">階<br/><span class="en">Level</span></td><td>この数値は洞窟の中でどこまで降りて行ったかを示している。１から始まり、洞窟を降りて行くに従い数値が上がっていく。</td></tr>
-<tr><td>金塊<br/><span class="en">Gold</span></td><td>今まで見つけて手に入れた金塊の数。</td></tr>
-<tr><td>体力<br/><span class="en">Hp</span></td><td>健康状態の現在値と最大値。体力ポイントは、死ぬまでにどれだけのダメージを受けることができるのかを示している。戦いで攻撃を受けるほど数値は下がっていく。休むことによって体力ポイントを取り戻すことができる。カッコ内の数値は体力ポイントの最大値である。</td></tr>
-<tr><td>強さ<br/><span class="en">Str</span></td><td>強さの現在値と最大値。数値が高いほど、より強いことを示している。カッコ内の数値はこれまでのゲームで達した最大値である。</td></tr>
-<tr><td>守備<br/><span class="en">Ac</span></td><td>現在の鎧の守備力。この数値は非友好的な生き物からの攻撃を食い止めるのにどれだけ効果があるかを示している。この数値が低いほど、鎧の効果がより高い。</td></tr>
-<tr><td>経験<br/><span class="en">Exp</span></td><td>この二つの数値は現在の経験レベルと経験値を示している。行動に応じて経験値が得られる。合計で一定の経験値になると経験レベルが得られる。経験を積んでいくにつれ、戦いの能力が上がり、不可思議な攻撃に耐えられるようになっていく。</td></tr>
+<tr><td style="width: 3em;">階<span class="en status_label_en">Level</span></td><td>この数値は洞窟の中でどこまで降りて行ったかを示している。１から始まり、洞窟を降りて行くに従い数値が上がっていく。</td></tr>
+<tr><td>金塊<span class="en status_label_en">Gold</span></td><td>今まで見つけて手に入れた金塊の数。</td></tr>
+<tr><td>体力<span class="en status_label_en">Hp</span></td><td>健康状態の現在値と最大値。体力ポイントは、死ぬまでにどれだけのダメージを受けることができるのかを示している。戦いで攻撃を受けるほど数値は下がっていく。休むことによって体力ポイントを取り戻すことができる。カッコ内の数値は体力ポイントの最大値である。</td></tr>
+<tr><td>強さ<span class="en status_label_en">Str</span></td><td>強さの現在値と最大値。数値が高いほど、より強いことを示している。カッコ内の数値はこれまでのゲームで達した最大値である。</td></tr>
+<tr><td>守備<span class="en status_label_en">Ac</span></td><td>現在の鎧の守備力。この数値は非友好的な生き物からの攻撃を食い止めるのにどれだけ効果があるかを示している。この数値が低いほど、鎧の効果がより高い。</td></tr>
+<tr><td>経験<span class="en status_label_en">Exp</span></td><td>この二つの数値は現在の経験レベルと経験値を示している。行動に応じて経験値が得られる。合計で一定の経験値になると経験レベルが得られる。経験を積んでいくにつれ、戦いの能力が上がり、不可思議な攻撃に耐えられるようになっていく。</td></tr>
 </table>
 </p></div>
 <h4 align="justify"><b>3.2.  最上行</b></h4>
@@ -2668,7 +2678,7 @@ window.onload = initializeGuideVersion;
 <p align="justify" class="padding_option">プレイヤーの名前。得点者リストのトップ10に入ったときに使われる。</p>
 <p align="justify"><b>fruit</b>[<i>slime-mold</i>]（好きな果物）</p>
 <p align="justify" class="padding_option">これは君が食べるのが好きな果物の名前にしておくべきだろう。これは要するにローグが所々でやっている遊びのうちの一つである。</p>
-<p align="justify"><b>language</b>[<i>自動判定</i>]（表示する言語）</p><p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p><p align="justify"><b>file</b>[<i>~/rogue.save</i>]（セーブファイル名）</p>
+<p align="justify"><b>language</b>[<i>自動判定</i>]（表示する言語）</p><p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。オプション画面では「j」(Japanese：日本語)または「e」(English：英語)を入力する。ROGUEOPTSでは<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p><p align="justify"><b>file</b>[<i>~/rogue.save</i>]（セーブファイル名）</p>
 <p align="justify" class="padding_option">ゲームをセーブするためのデフォルトのファイル名。電話回線がアクシデントでハングアップした場合、ローグは自動的にこのファイルにゲームをセーブする。ファイル名はホームディレクトリとして展開される特殊文字である「~」で始めても良い。</p>
 </div>
 <h3 align="justify" id="52_09"><b>9.  スコア</b></h3>
@@ -2822,12 +2832,12 @@ window.onload = initializeGuideVersion;
 <p class="indent">画面の一番下の行はプレイヤーの現在の状態を示す暗号のような<sup class="message" id="36_b5"><a href="#36_c5">訳注<span class="remark">英語表示の最下行では英語の頭文字や略語が使われているので意味がわかりにくい。</span></a></sup>いくつかの情報である。以下はこれらが何を意味するのかの説明である：<br/>
 <br/>
 <table class="guide">
-<tr><td style="width: 3em;">階<br/><span class="en">Level</span></td><td>この数値は洞窟の中でどこまで降りて行ったかを示している。１から始まり、洞窟を降りて行くに従い数値が上がっていく。</td></tr>
-<tr><td>金塊<br/><span class="en">Gold</span></td><td>今まで見つけて手に入れた金塊の数。</td></tr>
-<tr><td>体力<br/><span class="en">Hp</span></td><td>健康状態の現在値と最大値。体力ポイントは、死ぬまでにどれだけのダメージを受けることができるのかを示している。戦いで攻撃を受けるほど数値は下がっていく。休むことによって体力ポイントを取り戻すことができる。カッコ内の数値は体力ポイントの最大値である。</td></tr>
-<tr><td>強さ<br/><span class="en">Str</span></td><td>強さの現在値。数値が高いほど、より強いことを示している。</td></tr>
-<tr><td>守備<br/><span class="en">Ac</span></td><td>現在の鎧の守備力。この数値は非友好的な生き物からの攻撃を食い止めるのにどれだけ効果があるかを示している。この数値が低いほど、鎧の効果がより高い。</td></tr>
-<tr><td>経験<br/><span class="en">Exp</span></td><td>この二つの数値は現在の経験レベルと経験値を示している。行動に応じて経験値が得られる。合計で一定の経験値になると経験レベルが得られる。経験を積んでいくにつれ、戦いの能力が上がり、不可思議な攻撃に耐えられるようになっていく。</td></tr>
+<tr><td style="width: 3em;">階<span class="en status_label_en">Level</span></td><td>この数値は洞窟の中でどこまで降りて行ったかを示している。１から始まり、洞窟を降りて行くに従い数値が上がっていく。</td></tr>
+<tr><td>金塊<span class="en status_label_en">Gold</span></td><td>今まで見つけて手に入れた金塊の数。</td></tr>
+<tr><td>体力<span class="en status_label_en">Hp</span></td><td>健康状態の現在値と最大値。体力ポイントは、死ぬまでにどれだけのダメージを受けることができるのかを示している。戦いで攻撃を受けるほど数値は下がっていく。休むことによって体力ポイントを取り戻すことができる。カッコ内の数値は体力ポイントの最大値である。</td></tr>
+<tr><td>強さ<span class="en status_label_en">Str</span></td><td>強さの現在値。数値が高いほど、より強いことを示している。</td></tr>
+<tr><td>守備<span class="en status_label_en">Ac</span></td><td>現在の鎧の守備力。この数値は非友好的な生き物からの攻撃を食い止めるのにどれだけ効果があるかを示している。この数値が低いほど、鎧の効果がより高い。</td></tr>
+<tr><td>経験<span class="en status_label_en">Exp</span></td><td>この二つの数値は現在の経験レベルと経験値を示している。行動に応じて経験値が得られる。合計で一定の経験値になると経験レベルが得られる。経験を積んでいくにつれ、戦いの能力が上がり、不可思議な攻撃に耐えられるようになっていく。</td></tr>
 </table>
 </p></div>
 <h4 align="justify"><b>3.2.  最上行</b></h4>
@@ -3118,7 +3128,7 @@ window.onload = initializeGuideVersion;
 <p align="justify" class="padding_option">プレイヤーの名前。得点者リストのトップ10に入ったときに使われる。</p>
 <p align="justify"><b>fruit</b>[<i>slime-mold</i>]（好きな果物）</p>
 <p align="justify" class="padding_option">これは君が食べるのが好きな果物の名前にしておくべきだろう。これは要するにローグが所々でやっている遊びのうちの一つである。</p>
-<p align="justify"><b>language</b>[<i>自動判定</i>]（表示する言語）</p><p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p><p align="justify"><b>file</b>[<i>~/rogue.save</i>]（セーブファイル名）</p>
+<p align="justify"><b>language</b>[<i>自動判定</i>]（表示する言語）</p><p align="justify" class="padding_option">表示言語の設定。これには<i>自動判定(auto)</i>、<i>日本語(ja)</i>、<i>英語(en)</i>の３つのうちいずれかを設定できる。オプション画面では「j」(Japanese：日本語)または「e」(English：英語)を入力する。ROGUEOPTSでは<i>language=ja</i>のように指定する。<i>auto</i>ではOSの言語設定が反映される。</p><p align="justify"><b>file</b>[<i>~/rogue.save</i>]（セーブファイル名）</p>
 <p align="justify" class="padding_option">ゲームをセーブするためのデフォルトのファイル名。電話回線がアクシデントでハングアップした場合、ローグは自動的にこのファイルにゲームをセーブする。ファイル名はホームディレクトリとして展開される特殊文字である「~」で始めても良い。</p>
 </div>
 <h3 align="justify" id="36_09"><b>9.  スコア</b></h3>

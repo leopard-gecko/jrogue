@@ -37,6 +37,7 @@ function normalizeRogueVersion(value) {
 	value = value.toLowerCase();
 	if (value == 'clone3' || value == 'clone' || value == 'cloneiii' || value == 'rogue-clone-iii') return 'clone3';
 	if (value == '36' || value == '3.6' || value == 'r36' || value == 'rogue36') return 'r36';
+	if (value == '34' || value == '3.4' || value == 'r34' || value == 'rogue34') return 'r34';
 	if (value == '52' || value == '5.2' || value == 'r52' || value == 'rogue52') return 'r52';
 	if (value == 'clone2' || value == 'cloneii' || value == 'rogue-clone-ii') return 'clone2';
 	if (value == 'clone2j' || value == 'clone2ja' || value == 'clone2jp' || value == 'クローン2' || value == 'クローン２') return 'clone2j';
@@ -58,11 +59,12 @@ function getInitialRogueVersion() {
 }
 function switchRogueVersion(value) {
 	var selected = normalizeRogueVersion(value || getInitialRogueVersion());
-	var panels = ['r545','clone3','r36','r52','clone2','clone2j','dos148','hybrid'];
+	var panels = ['r545','clone3','r36','r34','r52','clone2','clone2j','dos148','hybrid'];
 	var panelIds = {
 		'r545':'version_rogue_545',
 		'clone3':'version_rogue_clone_iii',
 		'r36':'version_rogue_36',
+		'r34':'version_rogue_34',
 		'r52':'version_rogue_52',
 		'clone2':'version_rogue_clone_ii',
 		'clone2j':'version_rogue_clone_ii_japanese',
@@ -73,6 +75,7 @@ function switchRogueVersion(value) {
 		'r545':'rogue_version_select_545',
 		'clone3':'rogue_version_select_clone',
 		'r36':'rogue_version_select_36',
+		'r34':'rogue_version_select_34',
 		'r52':'rogue_version_select_52',
 		'clone2':'rogue_version_select_clone2',
 		'clone2j':'rogue_version_select_clone2j',
@@ -111,6 +114,7 @@ window.onload = initializeRogueVersion;
 <option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="r52">Rogue 5.2 日本語・英語対応版</option>
 <option value="r36">Rogue 3.6 日本語・英語対応版</option>
+<option value="r34">Rogue 3.4 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
@@ -181,6 +185,7 @@ window.onload = initializeRogueVersion;
 <option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="r52">Rogue 5.2 日本語・英語対応版</option>
 <option value="r36">Rogue 3.6 日本語・英語対応版</option>
+<option value="r34">Rogue 3.4 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
@@ -244,6 +249,7 @@ window.onload = initializeRogueVersion;
 <option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="r52">Rogue 5.2 日本語・英語対応版</option>
 <option value="r36" selected="selected">Rogue 3.6 日本語・英語対応版</option>
+<option value="r34">Rogue 3.4 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
@@ -281,6 +287,50 @@ window.onload = initializeRogueVersion;
 </div><!-- out -->
 <div class="footer"><div class="padding_6em">2026 leopardgecko</div></div><!-- footer -->
 </div>
+<div class="version_panel_hidden" id="version_rogue_34">
+<div class="header"><h2>ウィザードモードのコマンド</h2></div>
+<div class="out"><div class="main"><div class="padding_3em">
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=34">【運命の洞窟】への案内書</a> | <a href="ps.html?version=34">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+<div class="version_selector">
+<label for="rogue_version_select_34">洞窟を選ぶ：</label>
+<select id="rogue_version_select_34" onchange="switchRogueVersion(this.value)">
+<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
+<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+<option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
+<option value="r52">Rogue 5.2 日本語・英語対応版</option>
+<option value="r36">Rogue 3.6 日本語・英語対応版</option>
+<option value="r34" selected="selected">Rogue 3.4 日本語・英語対応版</option>
+<option value="clone2">Rogue Clone II 英語版</option>
+<option value="clone2j">ローグクローン２ 日本語版１.３</option>
+</select></div>
+<br/>
+<p><b>注：これはスポイラー（ゲームのヒント）です。必要がない方は読まないでください。</b></p>
+<br/>
+<p>Rogue 3.4 JECでウィザードモードに入った時に追加されるコマンドの一覧です。</p>
+<p>「ctrl-p」はコントロールキーを押しながら「p」を、「shift-c」はシフトキーを押しながら「c」をタイプするという意味です。</p>
+<p>このモードは本来デバッグ用のものであり、普通に遊ぶ際には全く必要がないものです。</p>
+<br/>
+<table class="wm">
+<tr><th>コマンド</th><th>説明</th></tr>
+<tr><td>ctrl-p</td><td>ウィザードモードのオンオフ切り替え</td></tr>
+<tr><td>@</td><td>現在位置の座標を表示</td></tr>
+<tr><td>shift-c</td><td>アイテムを作る</td></tr>
+<tr><td>ctrl-i</td><td>今いる階に落ちているアイテムの種類を表示</td></tr>
+<tr><td>ctrl-w</td><td>指定した所持品を鑑別</td></tr>
+<tr><td>ctrl-d</td><td>一階下がる</td></tr>
+<tr><td>ctrl-f</td><td>現在の階のマップを表示</td></tr>
+<tr><td>ctrl-x</td><td>怪物を表示</td></tr>
+</table>
+<br/>
+<p>アイテムを作るときは、種類の記号を入力し、品物の番号（<code>0</code>～<code>9</code>、<code>a</code>～<code>f</code>）と祝福状態（<code>+</code>、<code>-</code>、<code>n</code>）を指定します。作成できる番号の上限は種類によって異なります。</p>
+<p>巻き物は <code>?</code>（<code>0</code>～<code>d</code> の14種類）、水薬は <code>!</code>（<code>0</code>～<code>b</code> の12種類）です。番号は<a href="ps.html?version=34">巻き物と水薬の一覧</a>に記載しています。武器（<code>)</code>）、鎧（<code>]</code>）、食糧（<code>:</code>）、魔除け（<code>,</code>）も作成できます。</p>
+<p>全種類の作成番号と出現率は、<a href="item.html?version=34">アイテム番号と出現率の一覧</a>を参照してください。</p>
+<br/>
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | <a href="guide.html?version=34">【運命の洞窟】への案内書</a> | <a href="ps.html?version=34">巻き物と水薬の一覧</a> | <a href="http://leopardgecko.hatenablog.com/">ブログ</a></div>
+</div></div></div>
+<div class="footer"><div class="padding_6em">2026 leopardgecko</div></div><!-- footer -->
+</div>
 <div class="version_panel_hidden" id="version_rogue_52">
 <div class="header">
 <h2>ウィザードモードのコマンド</h2>
@@ -298,6 +348,7 @@ window.onload = initializeRogueVersion;
 <option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="r52" selected="selected">Rogue 5.2 日本語・英語対応版</option>
 <option value="r36">Rogue 3.6 日本語・英語対応版</option>
+<option value="r34">Rogue 3.4 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
@@ -352,6 +403,7 @@ window.onload = initializeRogueVersion;
 <option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="r52">Rogue 5.2 日本語・英語対応版</option>
 <option value="r36">Rogue 3.6 日本語・英語対応版</option>
+<option value="r34">Rogue 3.4 日本語・英語対応版</option>
 <option value="clone2" selected="selected">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
@@ -410,6 +462,7 @@ window.onload = initializeRogueVersion;
 <option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="r52">Rogue 5.2 日本語・英語対応版</option>
 <option value="r36">Rogue 3.6 日本語・英語対応版</option>
+<option value="r34">Rogue 3.4 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j" selected="selected">ローグクローン２ 日本語版１.３</option>
 </select>
@@ -469,6 +522,7 @@ window.onload = initializeRogueVersion;
 <option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="r52">Rogue 5.2 日本語・英語対応版</option>
 <option value="r36">Rogue 3.6 日本語・英語対応版</option>
+<option value="r34">Rogue 3.4 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
@@ -529,6 +583,7 @@ window.onload = initializeRogueVersion;
 <option value="hybrid" selected="selected">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="r52">Rogue 5.2 日本語・英語対応版</option>
 <option value="r36">Rogue 3.6 日本語・英語対応版</option>
+<option value="r34">Rogue 3.4 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>

@@ -104,6 +104,7 @@ function normalizeGuideVersion(value) {
 	if (value == 'dos148' || value == 'dos' || value == '148' || value == '1.48' || value == 'rogue148' || value == 'rogue-dos-148') return 'dos148';
 	if (value == 'hybrid' || value == 'rogue-hybrid' || value == 'roguehybrid' || value == 'hybrid-edition') return 'hybrid';
 	if (value == '36' || value == '3.6' || value == 'r36' || value == 'rogue36') return '36';
+	if (value == '34' || value == '3.4' || value == 'r34' || value == 'rogue34') return '34';
 	if (value == '52' || value == '5.2' || value == 'r52' || value == 'rogue52') return '52';
 	if (value == 'clone2' || value == 'cloneii' || value == 'rogue-clone-ii') return 'clone2';
 	if (value == 'clone2j' || value == 'clone2ja' || value == 'clone2jp' || value == 'roguec2j' || value == 'クローン2' || value == 'クローン２') return 'clone2j';
@@ -129,8 +130,8 @@ function getInitialGuideVersion() {
 }
 function switchGuideVersion(value) {
 	var selected = normalizeGuideVersion(value);
-	var panelIds = ['version_rogue_545', 'version_rogue_clone_iii', 'version_rogue_dos148', 'version_rogue_hybrid', 'version_rogue_52', 'version_rogue_36', 'version_rogue_clone2', 'version_rogue_clone2j'];
-	var panelValues = ['r545', 'clone3', 'dos148', 'hybrid', '52', '36', 'clone2', 'clone2j'];
+	var panelIds = ['version_rogue_545', 'version_rogue_clone_iii', 'version_rogue_dos148', 'version_rogue_hybrid', 'version_rogue_52', 'version_rogue_36', 'version_rogue_34', 'version_rogue_clone2', 'version_rogue_clone2j'];
+	var panelValues = ['r545', 'clone3', 'dos148', 'hybrid', '52', '36', '34', 'clone2', 'clone2j'];
 	for (var i = 0; i < panelIds.length; i++) {
 		var panel = document.getElementById(panelIds[i]);
 		if (panel) panel.className = (selected == panelValues[i]) ? '' : 'version_panel_hidden';
@@ -169,6 +170,7 @@ window.onload = initializeGuideVersion;
 <option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="52">Rogue 5.2 日本語・英語対応版</option>
 <option value="36">Rogue 3.6 日本語・英語対応版</option>
+<option value="34">Rogue 3.4 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
@@ -772,6 +774,7 @@ window.onload = initializeGuideVersion;
 <option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="52">Rogue 5.2 日本語・英語対応版</option>
 <option value="36">Rogue 3.6 日本語・英語対応版</option>
+<option value="34">Rogue 3.4 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
@@ -1214,6 +1217,7 @@ window.onload = initializeGuideVersion;
 <option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="52">Rogue 5.2 日本語・英語対応版</option>
 <option value="36">Rogue 3.6 日本語・英語対応版</option>
+<option value="34">Rogue 3.4 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
@@ -1669,6 +1673,7 @@ window.onload = initializeGuideVersion;
 <option selected="selected" value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="52">Rogue 5.2 日本語・英語対応版</option>
 <option value="36">Rogue 3.6 日本語・英語対応版</option>
+<option value="34">Rogue 3.4 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
@@ -2270,6 +2275,7 @@ window.onload = initializeGuideVersion;
 <option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option selected="selected" value="52">Rogue 5.2 日本語・英語対応版</option>
 <option value="36">Rogue 3.6 日本語・英語対応版</option>
+<option value="34">Rogue 3.4 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
@@ -2719,6 +2725,7 @@ window.onload = initializeGuideVersion;
 <option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="52">Rogue 5.2 日本語・英語対応版</option>
 <option selected="selected" value="36">Rogue 3.6 日本語・英語対応版</option>
+<option value="34">Rogue 3.4 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
@@ -3117,6 +3124,272 @@ window.onload = initializeGuideVersion;
 	</div>
 </div><!-- footer -->
 </div>
+<div class="version_panel_hidden" id="version_rogue_34">
+<div class="header">
+<h2>【運命の<ruby>洞窟<rp>（</rp><rt>ダンジョン</rt><rp>）</rp></ruby>】への案内書</h2>
+</div>
+<div class="out">
+<div class="main">
+<div class="padding_3em">
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | 【運命の洞窟】への案内書 | <a class="guide_ps_link" href="ps.html?version=34"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target="”_blank”">ブログ</a></div>
+<div class="version_selector">
+<label>洞窟を選ぶ：</label>
+<select class="guide_version_select" onchange="switchGuideVersion(this.value)">
+<option value="r545">Rogue 5.4 日本語・英語／カラー対応版</option>
+<option value="clone3">Rogue Clone III 日本語・英語／カラー対応版</option>
+<option value="dos148">Rogue DOS 1.48 日本語・英語／カラー対応版</option>
+<option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
+<option value="52">Rogue 5.2 日本語・英語対応版</option>
+<option value="36">Rogue 3.6 日本語・英語対応版</option>
+<option selected="selected" value="34">Rogue 3.4 日本語・英語対応版</option>
+<option value="clone2">Rogue Clone II 英語版</option>
+<option value="clone2j">ローグクローン２ 日本語版１.３</option>
+</select>
+</div>
+</div>
+<span style="font-family: sans-serif;">
+<br/>
+<p><div class="center_pc"><i>マイケル C. トイ</i></div></p>
+<p><div class="center_pc">カリフォルニア大学<br/>
+電気工学およびコンピューターサイエンス学科<br/>
+コンピューターシステムリサーチグループ<br/>
+カリフォルニア州バークレー  94720</div></p>
+<div class="only-pc"><p> </p></div>
+<div class="padding_3em">
+<p style="font-size: 130%; text-align: center;"><i>概要</i></p>
+<div class="padding_3em">
+<p><b><i>ローグ</i></b>とは、視覚的なモニターをベースとしてUNIX時分割システムで動作するファンタジーゲームである。ここにローグを楽しむための案内を記し、【運命の<ruby>洞窟<rp>（</rp><rt>ダンジョン</rt><rp>）</rp></ruby>】の中で迷ってしまうかもしれぬ者達のためのいくばくかの手がかりとしよう。</p>
+</div>
+</div>
+<div class="only-pc">
+<p> 
+<hr width="100%"/>
+<p style="font-size: 130%; text-align: center; margin: 0;">目次</p>
+<table align="center" width="70%">
+<tr><td><ol style="padding: 0; margin: 0;">
+<li><a href="#34_01">導入</a></li>
+<li><a href="#34_02">ここで何が起こっているのか？</a></li>
+<li><a href="#34_03">画面上のものは何を意味しているのか？</a></li>
+<li><a href="#34_04">コマンド</a></li>
+<li><a href="#34_05">見つけられるアイテム</a></li></ol>
+</td>
+<td><ol style="padding: 0; margin: 0;">
+<li value="6"><a href="#34_06">戦闘</a></li>
+<li><a href="#34_07">鎧</a></li>
+<li><a href="#34_08">オプション</a></li>
+<li><a href="#34_09">謝辞</a></li>
+</ol>
+</td></tr>
+</table>
+<hr width="100%"/>
+</p></div>
+<div class="only-sp">
+<div style="font-size: 90%;">
+<h3>目次</h3>
+<ol>
+<li><a href="#34_01">導入</a></li>
+<li><a href="#34_02">ここで何が起こっているのか？</a></li>
+<li><a href="#34_03">画面上のものは何を意味しているのか？</a></li>
+<li><a href="#34_04">コマンド</a></li>
+<li><a href="#34_05">見つけられるアイテム</a></li>
+<li><a href="#34_06">戦闘</a></li>
+<li><a href="#34_07">鎧</a></li>
+<li><a href="#34_08">オプション</a></li>
+<li><a href="#34_09">謝辞</a></li>
+</ol>
+</div>
+</div>
+<h3 align="justify" id="34_01"><b>1.  導入</b></h3>
+<div class="padding_3em">
+<p class="indent">君は、とある地方の<ruby>戦士組合<rp>（</rp><rt>ファイターズ・ギルド</rt><rp>）</rp></ruby>の訓練生としての数年の期間をちょうど終えたところだ。幾多の修練と流した汗の後についに訓練を完璧に仕上げ、危険に満ちた冒険に乗り出す準備ができた。地方ギルドの<ruby>長<rp>（</rp><rt>おさ</rt><rp>）</rp></ruby>たちは腕前を<ruby>検<rp>（</rp><rt>あらた</rt><rp>）</rp></ruby>める試練として君を【運命の洞窟】へと送り込んだ。任務は【イェンダーの魔除け】を持ち帰ってくることだ。この任務を成し遂げた暁には、地方ギルドの完全な会員資格が与えられるだろう。それに加え、洞窟から持ち帰った戦利品をすべて自分のものとすることも許されるのだ。</p>
+<p class="indent">旅立ちに備えて、魔法のかけられた剣が与えられる。それは、はるか彼方の【暗き山】に<ruby>棲<rp>（</rp><rt>す</rt><rp>）</rp></ruby>むドラゴンの秘宝から得られたものである。さらに、エルフが<ruby>拵<rp>（</rp><rt>こしら</rt><rp>）</rp></ruby>えた鎧と、洞窟にたどり着くまでの食糧が用意される。これが最後となるかもしれない別れのあいさつを家族や友人たちに告げ、道に向かう。</p>
+<p class="indent">洞窟に至る道へ出発し、平穏無事な数日の旅の後に、【運命の洞窟】の入り口を示す<ruby>古<rp>（</rp><rt>いにしえ</rt><rp>）</rp></ruby>の廃墟を見つける。すでに夜も更けたため入り口で野営をし、広々とした空のもとで眠りにつき夜を過ごす。朝には剣を手に取り、鎧を身につけ、ほとんど最後となった食糧を口にし、洞窟へと入っていく。</p>
+</div>
+<h3 align="justify" id="34_02"><b>2.  ここで何が起こっているのか？</b></h3>
+<div class="padding_3em">
+<p class="indent">君はローグのゲームを始めたところである。ゴールは、できる限り多くの宝物を手に入れ、【イェンダーの魔除け】を見つけ、【運命の洞窟】から生きて帰ること。画面上にはプレイヤーが行ったことのある場所と、現在いる洞窟の階の地図が示されている。その階での探索を進めていくにつれ、目の前の画面に表示されていく。</p>
+<p class="indent">ローグはほとんどのコンピューターファンタジーゲームと違ってスクリーン指向である。コマンドはすべて一つか二つのキーを押すこと<sup class="message" id="34_b1"><a href="#34_c1">[1]<span class="remark">英語のような文章を入力するのではなく。</span></a></sup>により行われ、コマンドの結果は言葉による長い説明ではなく、画面上でグラフィカルに表示される。</p>
+<p class="indent">ローグと他のコンピューターファンタジーゲームとのもう一つの大きな違いは、標準的なファンタジーゲームでは一度すべての謎を解いてしまうとほとんどの興奮と楽しみが失われてしまうのに対して、ローグは毎回新しい洞窟を作り出すので作者ですら面白くてエキサイティングなゲームだと感じることだろう。</p>
+</div>
+<h3 align="justify" id="34_03"><b>3.  画面上のものは何を意味しているのか？</b></h3>
+<div class="padding_3em">
+<p class="indent">ローグで何が起こっているのかを理解するためには、まずローグが画面で何をしているのかをつかんでおく必要がある。ローグの画面は、標準的なファンタジーゲームでの「あなたは〜を見る」という説明に取って代わるものである。以下はローグの画面がどのように見えるかの例である。</p>
+<div align="center">
+<div class="scroll">
+<table><tr><td>
+<pre class="map">
+                      ---------------------
+                      |...................+
+                      |...@...........[...|
+                      |........B..........|
+                      |...................|
+                      --------+------------
+
+階: 1  金塊: 0      体力: 12(12)  強さ: 18  守備: 6   経験: 1/0</pre>
+
+</td></tr></table>
+</div>
+</div>
+</div>
+<h4 align="justify"><b>3.1.  最下行</b></h4>
+<div class="padding_3em">
+<p class="indent">画面の一番下の行はプレイヤーの現在の状態を示す暗号のようないくつかの情報である。以下はこれらが何を意味するのかの説明である：<br/>
+<br/>
+<table class="guide">
+<tr><td style="width: 3em;">階</td><td>この数値は洞窟の中でどこまで降りて行ったかを示している。１から始まり、洞窟を降りて行くに従い数値が上がっていく<sup class="message" id="34_b2"><a href="#34_c2">[2]<span class="remark">命を落としたり、ゲームを終了したりしない限り。</span></a></sup>。</td></tr>
+<tr><td>金塊</td><td>今まで見つけて手に入れた金塊の数。</td></tr>
+<tr><td>体力</td><td>健康状態の現在値と最大値。体力ポイントは、死ぬまでにどれだけのダメージを受けることができるのかを示している。戦いで攻撃を受けるほど数値は下がっていく。休むことによって体力ポイントを取り戻すことができる。カッコ内の数値は体力ポイントの最大値である。</td></tr>
+<tr><td>強さ</td><td>現在の強さ。18以下の整数であり、数値が高いほど、より強いことを示している。</td></tr>
+<tr><td>守備</td><td>現在の鎧の防御性能を示す数値。非友好的な生き物からの攻撃を食い止めるのにどれだけ効果があるかを表している。この数値が低いほど、鎧の効果がより高い。</td></tr>
+<tr><td>経験</td><td>この二つの数値は現在の経験レベルと経験値を示している。行動に応じて経験値が得られる。合計で一定の経験値になると経験レベルが上がる。経験を積んでいくにつれ、戦いの能力が上がり、不可思議な攻撃に耐えられるようになっていく。</td></tr>
+</table>
+</p></div>
+<h4 align="justify"><b>3.2.  最上行</b></h4>
+<div class="padding_3em">
+<p class="indent">画面の一番上の行は、視覚的に表現できない物事を表すメッセージを表示するために予約されている。最上行に「--続く--」が表示された場合は、ローグは画面に他のメッセージを表示しようとしているが、まずはそこにあるメッセージがすでに読まれているのかを確認したいということである。次のメッセージを読むためにはスペースキーを押すだけでよい。</p>
+</div>
+<h4 align="justify"><b>3.3.  画面の残りの部分</b></h4>
+<div class="padding_3em">
+<p class="indent">画面の残りの部分はこれまでに探検した階の地図である。画面上の各々の文字は何らかのものを意味している。以下は個々の文字が何を意味しているかの一覧である：</p>
+<table class="guide">
+<tr><td style="width: 3em;">@</td><td>この記号は冒険者であるプレイヤー(player)を表している。</td></tr>
+<tr><td>- |</td><td>これらの記号は部屋の壁(wall)を表している。</td></tr>
+<tr><td>+</td><td>部屋に入る／出るためのドア(door)。</td></tr>
+<tr><td>.</td><td>部屋の床(floor)。</td></tr>
+<tr><td>#</td><td>部屋の間の通路(passage)の床。</td></tr>
+<tr><td>*</td><td>金塊(gold)の山またはつぼ。</td></tr>
+<tr><td>)</td><td>何らかの武器(weapon)。</td></tr>
+<tr><td>]</td><td>ひとそろいの鎧(armor)。</td></tr>
+<tr><td>!</td><td>魔法の薬が入っているフラスコ、すなわち水薬(potion)。</td></tr>
+<tr><td>?</td><td>一枚の紙、通常は魔法の巻き物(scroll)。</td></tr>
+<tr><td>^</td><td>わな(trap)。これには気をつけよ。</td></tr>
+<tr><td>%</td><td>次の階へ降りるための階段(stairs)。</td></tr>
+<tr><td>:</td><td>一片の食糧(food)。</td></tr>
+<tr><td nowrap="">A-Z</td><td>大文字のアルファベットは【運命の洞窟】の様々な住民を表している。注意せよ、奴らは厄介で凶暴だ。</td></tr>
+</table>
+</div>
+<h3 align="justify" id="34_04"><b>4.  コマンド</b></h3>
+<div class="padding_3em">
+<p class="indent">ローグへのコマンドは主として一つか二つの文字を入力することによって与えられる。大部分のコマンドは前に回数を入力すると繰り返すことができる（例：「10s」と入力すると10回の探索が行われる）。コマンドのリストはかなり長いが、「?」コマンドでゲーム中にいつでも読むことができる。以下は参照用としての各コマンドの簡単な説明である。</p>
+<table class="guide">
+<tr><td align="left" class="command_key">?</td><td align="justify" class="command_desc">ヘルプ用のコマンド。ヘルプを表示してほしいコマンドの文字は何かを尋ねてくる。そこで「*」と入力すればすべてのコマンドが一覧表示され、それ以外の文字を入力すれば、それが何を行うかを説明する。</td></tr>
+<tr><td align="left" class="command_key">/</td><td align="justify" class="command_desc">「画面上のそれは何なのか？」のコマンド。その階で見た何らかの文字を「/」の後に続けて入力すると、その文字が何であるかを示す。例えば、「/@」と入力すると、「@」がプレイヤーを表していることがわかる。</td></tr>
+<tr><td align="left" class="command_key">d</td><td align="justify" class="command_desc">アイテムを落とす。荷物から取り出し、それを床に置く。一つのスペースを占められるのはアイテム一つだけである。</td></tr>
+<tr><td align="left" class="command_key">e</td><td align="justify" class="command_desc">食糧を食べる。荷物の中の食糧を食べる。</td></tr>
+<tr><td align="left" class="command_key">f</td><td align="justify" class="command_desc">何かを見つけるまで進む。後に方向を指定すると、興味深いもののそばを通るか、壁にぶつかるまで、その方向に移動し続ける。</td></tr>
+<tr><td align="left" class="command_key">i</td><td align="justify" class="command_desc">持ちものの一覧。持ち歩いている荷物をリスト表示する。</td></tr>
+<tr><td align="left" class="command_key">I</td><td align="justify" class="command_desc">選択的なアイテム表示。荷物の中のアイテムが何であるかを一つだけ表示する。</td></tr>
+<tr><td align="left" class="command_key">h, H</td><td align="justify" class="command_desc">左に移動。小文字の「h」では一コマ左に移動する。大文字の「H」では何かにぶつかるまで左に移動し続ける。これはすべての移動コマンドで機能する（例：「L」は右方向に走ることを意味する）。</td></tr>
+<tr><td align="left" class="command_key">j</td><td align="justify" class="command_desc">下に移動。</td></tr>
+<tr><td align="left" class="command_key">k</td><td align="justify" class="command_desc">上に移動。</td></tr>
+<tr><td align="left" class="command_key">l</td><td align="justify" class="command_desc">右に移動。</td></tr>
+<tr><td align="left" class="command_key">y</td><td align="justify" class="command_desc">斜め左上に移動。</td></tr>
+<tr><td align="left" class="command_key">u</td><td align="justify" class="command_desc">斜め右上に移動。</td></tr>
+<tr><td align="left" class="command_key">b</td><td align="justify" class="command_desc">斜め左下に移動。</td></tr>
+<tr><td align="left" class="command_key">n</td><td align="justify" class="command_desc">斜め右下に移動。</td></tr>
+<tr><td align="left" class="command_key">o</td><td align="justify" class="command_desc">オプションを調べて設定する。このコマンドについてはオプションの節でさらに説明を加える。</td></tr>
+<tr><td align="left" class="command_key">Q</td><td align="justify" class="command_desc">終了する。ゲームを離れる。</td></tr>
+<tr><td align="left" class="command_key">q</td><td align="justify" class="command_desc">水薬を飲む。持ち運んでいる水薬の一本をゴクゴクと飲む。</td></tr>
+<tr><td align="left" class="command_key">R</td><td align="justify" class="command_desc">直前のメッセージを表示する。読む前にメッセージが消えてしまった時に役に立つ。</td></tr>
+<tr><td align="left" class="command_key">r</td><td align="justify" class="command_desc">巻き物を読む。荷物の中にある巻き物の一つを読む。</td></tr>
+<tr><td align="left" class="command_key">s</td><td align="justify" class="command_desc">わなと隠された扉を探す。プレイヤーのすぐ隣の各コマにあるわなや隠された扉を調べる。そこに何かがあっても発見できる可能性は低いので、何かを見つけるまでは探索をしばらく続ける必要があるだろう。</td></tr>
+<tr><td align="left" class="command_key">S</td><td align="justify" class="command_desc">現在のゲームをファイルに保存する。警告：ローグは保存したゲームのコピーを使って再開することを認めず、保存したゲームを再開すると直ちにセーブファイルを削除する。これは、危険なところでゲームをセーブしておき、死んでしまったらやり直すことを防ぐためである。保存したゲームを再開するには、セーブファイル名をローグの引数として指定する。JEC版では、標準のセーブファイルから「rogue -r」で再開することもできる。</td></tr>
+<tr><td align="left" class="command_key">T</td><td align="justify" class="command_desc">鎧を脱ぐ。呪われた鎧は脱ぐことができない。これは特別に時間がかかる。</td></tr>
+<tr><td align="left" class="command_key">t</td><td align="justify" class="command_desc">ものを投げる。これは接頭辞コマンドである。コマンドの後に指定した方向に向かってものを投げる（例：「th」と入力すると左に何かを投げる）。</td></tr>
+<tr><td align="left" class="command_key">v</td><td align="justify" class="command_desc">プログラムのバージョンを表示する。</td></tr>
+<tr><td align="left" class="command_key">w</td><td align="justify" class="command_desc">武器を装備する。荷物から武器を取り出して戦闘で使うために持つ。矢を射るときには弓を装備する必要がある。一度に装備できる武器は一つだけである。</td></tr>
+<tr><td align="left" class="command_key">W</td><td align="justify" class="command_desc">鎧を着用する。一度に着用できる鎧は一着だけである。</td></tr>
+<tr><td align="left" class="command_key">&gt;</td><td align="justify" class="command_desc">階段で次の階に降りる。これができるのは階段の上にいる時だけである。</td></tr>
+<tr><td align="left" class="command_key">[space]</td><td align="justify" class="command_desc">休息する。「何もしない」コマンド。待つときや体力の回復に有用である。</td></tr>
+</table>
+</div>
+<h3 align="justify" id="34_05"><b>5.  見つけられるアイテム</b></h3>
+<div class="padding_3em">
+<p class="indent">洞窟の中で何かを見つけたら、そのアイテムを拾いたくなるものだろう。ローグではアイテムの上を歩くことでそれができる。ものを持ちすぎている場合にはプログラムがアイテムを拾えないと伝えてくる。そうでなければそれを荷物に加え、何を拾ったのかを教えてくれる。</p>
+<p class="indent">アイテムを扱う多くのコマンドでは、どのアイテムを使うのかを指示する必要がある。気が変わってそのコマンドを使いたくなくなった時には、[esc]キーを押せばコマンドは中止される。</p>
+</div>
+<h3 align="justify" id="34_06"><b>6.  戦闘</b></h3>
+<div class="padding_3em">
+<p class="indent">怪物を見つけて戦いたいと思えば、ぶつかろうとするだけでよい。こちらから攻撃を加えない限り向こうからは干渉してこないことも多いだろう。「逃げるが勝ち」ということもよくあるのだ。</p>
+</div>
+<h3 align="justify" id="34_07"><b>7.  鎧</b></h3>
+<div class="padding_3em">
+<p class="indent">洞窟にはさまざまな種類の鎧が置かれている。魔法のかけられたものもあれば呪われたものもあり、単に通常のものもある。鎧の種類によって守備力は違ってくる。魔法をかけられたり呪われたりした鎧は、守備力の数値が通常より高くなったり低くなったりする。以下にさまざまな鎧の種類と通常の守備力の一覧を示す。</p>
+<div align="center"><table border="1" bordercolor="#cccccc" cellpadding="3" cellspacing="3" id="34_table4" rules="none">
+<tr bgcolor="#EFEFEF"><th align="left"><i>種類</i></th><th align="right"><i>守備</i></th></tr>
+<tr><td>革のよろい</td><td align="right">8</td></tr>
+<tr><td>鋲つき革のよろい／鉄環のよろい</td><td align="right">7</td></tr>
+<tr><td>鱗のよろい</td><td align="right">6</td></tr>
+<tr><td>鎖のよろい</td><td align="right">5</td></tr>
+<tr><td>鉄片のよろい／帯金のよろい</td><td align="right">4</td></tr>
+<tr><td>全身のよろい</td><td align="right">3</td></tr>
+</table></div></div>
+<h3 align="justify" id="34_08"><b>8.  オプション</b></h3>
+<div class="padding_3em">
+<p class="indent">個人的な好みやローグが物事を行う考え方の違いによって、ローグをさまざまなやり方で動作させるために設定できるオプションがある。</p>
+</div>
+<h4 align="justify"><b>8.1.  オプション設定</b></h4>
+<div class="padding_3em">
+<p class="indent">オプションを設定する方法は二つある。一つはローグの「o」コマンドであり、二つめは環境変数「ROGUEOPTS」である。V6システムには「ROGUEOPTS」に相当する機能はない。</p>
+</div>
+<h4 align="justify"><b>8.1.1.  「o」コマンドの使用</b></h4>
+<div class="padding_3em">
+<p class="indent">ローグで「o」と入力すると、画面がクリアされ、すべてのオプションについて現在の設定が表示される。最初のオプションの値にカーソルが置かれ、入力を待つ。入力できるのは、次のオプションに進む[RETURN]キーか、一つ前のオプションに戻る「-」か、ゲームに戻る[esc]キーか、オプションの値である。有効／無効を入力するオプションの場合、有効にしたい場合は「t」（True：真）を、無効にしたい場合は「f」（False：偽）を入力する。文字を入力するオプションの場合は、文字の後に[RETURN]を入力する。</p>
+</div>
+<h4 align="justify"><b>8.1.2.  環境変数「ROGUEOPTS」の使用</b></h4>
+<div class="padding_3em">
+<p class="indent">環境変数「ROGUEOPTS」は、さまざまなオプションの初期値をカンマで区切ってリストにした文字列である。真偽値はその名前をリストに入れることにより有効にすることができ、名前の前に「no」を加えると無効にすることができる。したがって、「jump」（移動中の表示を行わない）を有効に、「terse」（簡潔な表示）を無効、プレイヤー名を「コナン・ザ・グレート」、好きな果物を「マンゴー🥭」にするには、次のように設定する。</p>
+<pre class="prompt">setenv ROGUEOPTS "jump,noterse,name=コナン・ザ・グレート,fruit=マンゴー🥭"</pre>
+<p class="indent">Bourneシェルを使っている場合は、次のように入力する。</p>
+<pre class="prompt">ROGUEOPTS="jump,noterse,name=コナン・ザ・グレート,fruit=マンゴー🥭"
+export ROGUEOPTS</pre>
+</div>
+<h4 align="justify"><b>8.2.  オプションのリスト</b></h4>
+<div class="padding_3em">
+<p class="indent">ここではオプションの一覧と、それぞれのオプションの説明を示す。初期値を示す場合は角括弧で囲んである。</p>
+<p align="justify"><b>terse</b> [<i>noterse</i>]（簡潔な表示）</p>
+<p align="justify" class="padding_option">時々あるローグの長いメッセージにうんざりしている人に有用である。遅い端末で遊ぶのに便利なオプションだろう。</p>
+<p align="justify"><b>jump</b> [<i>nojump</i>]（移動中の表示を行わない）</p>
+<p align="justify" class="padding_option">このオプションが設定されている場合、走っている途中の表示は移動が終わるまで行われない。これによりCPUと表示の時間がかなり節約される。</p>
+<p align="justify"><b>step</b> [<i>nostep</i>]（持ちものを1行ずつ表示）</p>
+<p align="justify" class="padding_option">持ちものの一覧やアイテム選択の際のリストを、画面全体にまとめて表示するかわりに、画面上部に一項目ずつ表示する。</p>
+<p align="justify"><b>flush</b> [<i>noflush</i>]（戦闘時に先行入力をキャンセル）</p>
+<p align="justify" class="padding_option">戦闘のたびに、それまでに入力された未処理のキーを破棄する。急いでキーを押しすぎ、コボルドに殺されてしまうのをただ見つめるような人にとって有用である。</p>
+<p align="justify"><b>askme</b> [<i>noaskme</i>]（未識別の品物について尋ねる）</p>
+<p align="justify" class="padding_option">巻き物や水薬を使ってもその正体が自動的には判明しない場合、後から見分けられるように呼び名を尋ねる。</p>
+<p align="justify"><b>name</b> [<i>アカウント名</i>]（プレイヤー名）</p>
+<p align="justify" class="padding_option">プレイヤーの名前。得点者リストの上位10位に入ったときに使われる。80文字未満にすることが望ましい。</p>
+<p align="justify"><b>fruit</b> [<i>ネバネバかび</i>]（好きな果物）</p>
+<p align="justify" class="padding_option">これは君が食べるのが好きな果物の名前にしておくべきだろう。これは要するにローグが所々でやっている遊びのうちの一つである。</p>
+<p align="justify"><b>language</b> [<i>auto</i>]（表示する言語）</p>
+<p align="justify" class="padding_option">日本語（ja）・英語（en）を選ぶ。autoではOSの言語設定に従う。オプション画面ではJまたはEを入力する。（JEC追加）</p>
+<p align="justify"><b>file</b>（セーブファイル名）</p>
+<p align="justify" class="padding_option">標準のセーブファイル名を設定する。</p>
+</div>
+<h3 align="justify" id="34_09"><b>9.  謝辞</b></h3>
+<div class="padding_3em">
+<p class="indent">ローグは当初グレン・ウィックマンとマイケル・トイによって構想された。ケン・アーノルドは、プログラムを使いやすくし、最後の仕上げをするうえで大きな力を貸してくれた。その助力に深く感謝したい。</p>
+<p class="indent">また、アイデアと援助を寄せてくれたマーティー・マクナリー、スコット・ネルソン、ダニエル・ジェンセン、キップ・ヒックマン、ジョー・カラシュ、マーク・ホートン、ジャン・ミラーの各氏にも感謝の意を表したい。</p>
+</div>
+<hr align="left" width="35%"/>
+<div class="padding_3em"><p style="font-size: 85%;">
+<sup id="34_c1"><a href="#34_b1">1</a></sup> 英語のような文章を入力するのではなく。<br/>
+<sup id="34_c2"><a href="#34_b2">2</a></sup> 命を落としたり、ゲームを終了したりしない限り。<br/>
+</p></div>
+<br/>
+<p align="justify"><span class="aks">日本語訳および各バージョン用の記述追加・修正：</span><a href="https://x.com/leopard_gecko" target="”_blank”">leopardgecko</a></p>
+<div class="padding_3em">
+<div class="menu"><a href="index.html">トップページ</a> | <a href="gui.html">GUI版の解説書</a> | 【運命の洞窟】への案内書 | <a class="guide_ps_link" href="ps.html?version=34"><span class="aks">巻き物と水薬の一覧</span></a> | <a href="http://leopardgecko.hatenablog.com/" target="”_blank”">ブログ</a></div>
+</div>
+</span><!-- font-family -->
+</div><!-- main -->
+</div><!-- out -->
+<div class="footer">
+<div class="padding_6em">
+		2026 leopardgecko
+	</div>
+</div><!-- footer -->
+</div>
 <div class="version_panel_hidden" id="version_rogue_clone2">
 <div class="header">
 <h2>【運命の<ruby>洞窟<rp>（</rp><rt>ダンジョン</rt><rp>）</rp></ruby>】への案内書</h2>
@@ -3134,6 +3407,7 @@ window.onload = initializeGuideVersion;
 <option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="52">Rogue 5.2 日本語・英語対応版</option>
 <option value="36">Rogue 3.6 日本語・英語対応版</option>
+<option value="34">Rogue 3.4 日本語・英語対応版</option>
 <option selected="selected" value="clone2">Rogue Clone II 英語版</option>
 <option value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
@@ -3584,6 +3858,7 @@ Level: 1  Gold: 0      Hp: 12(12)  Str: 16(16)  Arm: 4  Exp: 1/0
 <option value="hybrid">Rogue Hybrid Edition 日本語・英語／カラー対応版</option>
 <option value="52">Rogue 5.2 日本語・英語対応版</option>
 <option value="36">Rogue 3.6 日本語・英語対応版</option>
+<option value="34">Rogue 3.4 日本語・英語対応版</option>
 <option value="clone2">Rogue Clone II 英語版</option>
 <option selected="selected" value="clone2j">ローグクローン２ 日本語版１.３</option>
 </select>
